@@ -328,7 +328,6 @@ a {
     margin-right: 10px;
 }
 
-
 /* CATEGORIES */
 #categories {
     display: flex;
@@ -345,43 +344,6 @@ a {
     margin-bottom: 0;
     margin-left: 0;
     padding-bottom: 10px;
-}
-
-
-.main-slideshow {
-    position: relative;
-    height: 447px;
-}
-
-.main-slideshow .fa-chevron-left {
-    position: absolute;
-    top: 42%;
-    left: 2%;
-    font-size: 25px;
-    color: #2980d1c7;
-}
-
-.main-slideshow .fa-chevron-right {
-    position: absolute;
-    top: 42%;
-    right: 2%;
-    font-size: 25px;
-    color: #2980d1c7;
-}
-
-.main-slideshow .fa-chevron-left:hover, .main-slideshow .fa-chevron-right:hover {
-    color: #005eb8;
-}
-
-.radio-buttons {
-    position: absolute;
-    bottom: 8%;
-    right: 3%;
-}
-
-.radio-buttons input {
-    width: 12px;
-    cursor: pointer;
 }
 
 .fa-headset {
@@ -419,6 +381,49 @@ a {
     color: #005eb8;
     border-top: 1px solid rgba(216, 216, 216, 0.726);
     border-bottom: 1px solid rgba(216, 216, 216, 0.726);
+}
+
+.select-categories {
+    display: flex;
+    position: relative;
+    border-top: 0;
+    box-shadow: 0px 3px 4px 0px rgba(148, 146, 146, 0.75);
+}
+
+.main-slideshow {
+    position: relative;
+    height: 447px;
+}
+
+.main-slideshow .fa-chevron-left {
+    position: absolute;
+    top: 42%;
+    left: 2%;
+    font-size: 25px;
+    color: #2980d1c7;
+}
+
+.main-slideshow .fa-chevron-right {
+    position: absolute;
+    top: 42%;
+    right: 2%;
+    font-size: 25px;
+    color: #2980d1c7;
+}
+
+.main-slideshow .fa-chevron-left:hover, .main-slideshow .fa-chevron-right:hover {
+    color: #005eb8;
+}
+
+.radio-buttons {
+    position: absolute;
+    bottom: 8%;
+    right: 3%;
+}
+
+.radio-buttons input {
+    width: 12px;
+    cursor: pointer;
 }
 
 .category-menu {
