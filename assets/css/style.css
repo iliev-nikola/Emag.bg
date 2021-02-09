@@ -347,6 +347,43 @@ a {
     padding-bottom: 10px;
 }
 
+
+.main-slideshow {
+    position: relative;
+    height: 447px;
+}
+
+.main-slideshow .fa-chevron-left {
+    position: absolute;
+    top: 42%;
+    left: 2%;
+    font-size: 25px;
+    color: #2980d1c7;
+}
+
+.main-slideshow .fa-chevron-right {
+    position: absolute;
+    top: 42%;
+    right: 2%;
+    font-size: 25px;
+    color: #2980d1c7;
+}
+
+.main-slideshow .fa-chevron-left:hover, .main-slideshow .fa-chevron-right:hover {
+    color: #005eb8;
+}
+
+.radio-buttons {
+    position: absolute;
+    bottom: 8%;
+    right: 3%;
+}
+
+.radio-buttons input {
+    width: 12px;
+    cursor: pointer;
+}
+
 .fa-headset {
     font-size: 18px;
 }
