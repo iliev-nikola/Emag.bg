@@ -298,3 +298,32 @@ a {
     color: white;
     background-color: #fe2d34;
 }
+
+
+/* NAVIGATION */
+.nav-bar {
+    width: 100%;
+    background: linear-gradient(to right,#ff1d25 5%,#a0328c 35%,#7040a4 45%,#4359c7 55%,#0082e6 70%);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-container a {
+    color: white;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 16px;
+    border:  transparent 1px solid;
+    margin: 8px 0 8px 4px;
+}
+
+.nav-container a:hover {
+    border: 1px solid white;
+}
+
+.nav-container i {
+    margin-right: 10px;
+}
