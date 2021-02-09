@@ -327,3 +327,146 @@ a {
 .nav-container i {
     margin-right: 10px;
 }
+
+
+/* CATEGORIES */
+#categories {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    color: black;
+    font-weight: 600;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-bottom: 10px;
+}
+
+.fa-headset {
+    font-size: 18px;
+}
+
+.empty-space {
+    width: 200px;
+}
+
+.categories-menu li > a {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.categories-menu li:last-of-type a {
+    padding-bottom: 12.5px;
+}
+
+.categories-menu {
+    background-color: white;
+    width: fit-content;
+    position: relative;
+    height: fit-content;
+}
+
+.categories-menu li a img {
+    width: 18px;
+    padding-right: 10px;
+}
+
+.categories-menu > li:hover {
+    color: #005eb8;
+    border-top: 1px solid rgba(216, 216, 216, 0.726);
+    border-bottom: 1px solid rgba(216, 216, 216, 0.726);
+}
+
+.category-menu {
+    position: absolute;
+    display: none;
+    top: 0;
+    width: 959px;
+    height: 100%;
+    left: 239px;
+    z-index: 3;
+    background-color: white;
+    justify-content: space-between;
+    border-left: 2px solid rgba(128, 128, 128, 0.527);
+}
+
+.categories-menu li:hover + div {
+    display: flex;
+}
+
+.category-menu span {
+    font-weight: bold;
+}
+
+.categories-banner {
+    height: -webkit-fill-available;
+}
+
+.category-menu a {
+    padding-bottom: 6px;
+    font-size: 13px;
+}
+
+.category-menu a:hover {
+    text-decoration: underline;
+    color: #004381;
+}
+
+.category-menu a span:hover {
+    color: #005eb8;
+}
+
+.first-column, .second-column, .third-column, .fourth-column {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 18px 0 18px;
+    width: inherit;
+}
+
+.second-column {
+    margin: 0 10px;
+}
+
+.fourth-column-baner {
+    position: relative;
+}
+
+.close-ad-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+}
+
+.fa-times {
+    color: #00aecd;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.red-label {
+    background-color: #ef2809;
+    color: white;
+    font-size: 10px;
+    padding: 0 6px;
+    border-radius: 2px;
+}
+
+.green-label {
+    background-color: #090;
+    color: white;
+    font-size: 10px;
+    padding: 0 6px;
+    border-radius: 2px;
+}
+
+.category-menu .red-label:hover, .category-menu .green-label:hover {
+    color: white;
+}
