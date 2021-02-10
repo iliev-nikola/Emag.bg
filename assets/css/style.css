@@ -682,3 +682,77 @@ a {
 .section-bars{
     padding-top: 20px;
 }
+/*MOBILE BAR*/
+.technology-bars{   
+    display: flex;
+}
+.technology-nav{
+    width: 300px;
+    background-color: #f4f8fb;
+}
+.technology-nav ul{
+    padding: 10px 20px;
+}
+.technology-nav a{
+    color:rgb(0, 42, 82);
+    font-size: 13px;
+}
+.technology-nav a:hover{
+    text-decoration: underline;
+}
+.a-type{
+    font-family: 400;
+    margin:6px 0px 6px 10px;
+}
+.a-title a{
+    font-weight: 700;
+    text-decoration-style: solid;
+}
+.technology-menu{
+    font-size: 13px;
+    width: 300px;
+    background-color: #fff;
+    
+}
+
+.technology-menu li{
+    padding: 0px 15px;
+}
+.technology-menu a{
+    border-bottom: 1px #f4f8fb solid;
+    display: inline-block;
+    margin: 0 auto;
+    width: 240px;
+    padding: 13px 10px;
+}
+.technology-menu a:hover{
+    text-decoration: underline;
+}
+.technology-menu li:last-child{
+    border: none;
+}
+.technology-image img{
+    width: 600px;
+    height: 100%;
+}
+.category{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+.section-bars h2{
+    font-size:25px;
+    font-weight: 400;
+}
+
+.benefits a{
+    text-decoration: none;
+    color:#005eb8;
+}
+.benefits span{
+    padding: 0px 15px;
+}
+.benefits{
+    display: inline-block;
+    align-self: flex-end;
+}
