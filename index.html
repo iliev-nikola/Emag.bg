@@ -69,12 +69,12 @@
                     </div>
                 </div>
                 <div class="profile-icon">
-                    <span>НИ</span>
+                    <span id="userPic">НИ</span>
                     <p>Моят акаунт</p>
                     <i class="fas fa-sort-down"></i>
                     <div class="dropdown-container">
                         <div class="invisible-filler"></div>
-                        <div class="profile-nav dropdown-menu">
+                        <!-- <div class="profile-nav dropdown-menu">
                             <p>Здравей, Никола Илиев</p>
                             <p class="line"></p>
                             <ul>
@@ -92,8 +92,13 @@
                                 <li><a href="#">Настройки за сигурност</a></li>
                                 <li><a href="#">Моите абонаменти</a></li>
                                 <p class="line"></p>
-                                <li><a href="#">Изход</a></li>
+                                <li><a href="#logout">Изход</a></li>
                             </ul>
+                        </div> -->
+                        <div class="guest-nav dropdown-menu">
+                            <i class="fas fa-user-tie"></i>
+                            <p>Влез в акаунта си и се възползвай от
+                                предимствата!</p>
                         </div>
                     </div>
                 </div>
@@ -1085,8 +1090,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="asd"></div>
         <!-- javascript -->
         <script src="./assets/js/constants.js"></script>
         <script src="./assets/js/utils.js"></script>

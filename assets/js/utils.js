@@ -1,4 +1,4 @@
-// Search bar
+// SEARCH BAR
 function onFocus() {
     SEARCH_BOX.style.display = 'block';
     SEARCH_FORM.style.borderBottomLeftRadius = 0;
@@ -20,3 +20,5 @@ function onFocusOut() {
     SUBMIT_BUTTON.style.borderBottomRightRadius = '25px';
     document.body.style.pointerEvents = 'all';
 }
+
+// LOGIN & REGISTER
