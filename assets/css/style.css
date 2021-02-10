@@ -782,3 +782,55 @@ footer{
     font-size: 12px;
     color:rgb(136, 136, 136);
 }
+/*MARKETPLACE*/
+.marketplace{
+    position: relative;
+    margin-top: 40px;
+    height: auto;
+    padding: 0;
+    background-color: rgb(0, 91, 195);
+}
+#marketplace-image{
+    position: absolute;
+    right: 0px;
+}
+.marketplace-nav{
+    position: relative;
+    padding: 40px 20px;
+    color: rgb(255, 255, 255);
+    height: 215px;
+}
+#marketplace-banner{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.marketplace-nav h2{
+    margin: 0;
+    font-size: 32px;
+}
+.marketplace-nav ul{
+    padding-left: 20px;
+    font-size: 16px;
+    list-style: disc;
+}
+.marketplace-nav strong{
+    font-weight: bold;
+}
+#btn-marketplace{
+    margin-top:20px;
+    width: 315px;
+    border: 2px solid rgb(235, 52, 36);
+    border-radius:24px;
+    padding: 7px 12px;
+    background-color: unset;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+#btn-marketplace:hover{
+    background-color: #fff;
+    color:rgb(235, 52, 36);
+}
