@@ -885,3 +885,57 @@ footer{
     background-color: #fff;
     color:rgb(235, 52, 36);
 }
+/*BRANDS*/
+#title-brand{
+    padding-bottom: 15px;
+}
+.top-brands ul{
+    display: flex;
+    border-bottom: 1px solid rgb(68, 64, 64,.1);
+    padding-bottom: 2px;
+}
+.top-brands{
+    background-color: #fff;
+}
+.top-brands span{
+    display: inline-block;
+    font-size: 13px;
+    padding: 13px 30px;
+}
+#topBrands ul{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding:20px 0;
+}
+.brand-bar{
+    
+    border-bottom: 1px solid rgb(68, 64, 64,.1);
+}
+#fashionBrands .brand-bar{
+    border-bottom: none;
+}
+#topBrands li{
+    border-right:1px solid rgb(68, 64, 64,.1);
+    padding-bottom: 2px;
+}
+#topBrands li:last-child{
+    border-right: none;
+}
+#topBrands a{
+    display: inline-block;
+    padding: 50px 50px;
+    
+}
+.top-brands a:focus{
+    display: inline-block;
+    height: 100%;
+    color:rgb(13, 13, 141);
+    border-top: 2px solid rgb(13, 13, 141);
+    box-shadow: 2px 0px 6px 0 rgba(0, 0, 0, 0.2);
+}
+#topBrands img{
+    width: 99px;
+    height: 42px;
+}
