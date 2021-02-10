@@ -756,3 +756,29 @@ a {
     display: inline-block;
     align-self: flex-end;
 }
+/*FOOTER*/
+footer{
+    width: 100%;
+    background-color: rgb(231, 239, 248);
+    padding: 15px 0px;
+}
+.footer-nav{
+    display: flex;
+    
+    font-size: 14px;
+   
+}
+.footer-nav div{
+    width: 305px;
+    padding: 0px 10px;
+}
+.footer-title{
+    color: rgb(57, 89, 195);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.footer-category{
+    margin-bottom:10px;
+    font-size: 12px;
+    color:rgb(136, 136, 136);
+}
