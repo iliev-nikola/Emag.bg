@@ -779,7 +779,7 @@ a {
 .bulletin-inputs{
     padding-top: 20px;
 }
-#check-bulettin input,  button{
+.bulletin-form{
     display: inline-block;
     padding: 0;
     outline: none;
@@ -938,4 +938,68 @@ footer{
 #topBrands img{
     width: 99px;
     height: 42px;
+}
+/*APP EMAG*/
+.app-emag{
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 0;
+    padding: 15px 0px;
+}
+#app-emag{
+    display: flex;
+}
+#app-emag div{
+    padding: 0px 10px;
+    width: 33.33%;
+}
+#app-emag strong{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 17px;
+    color: rgb(34, 34, 34);
+    margin-bottom: 10px;
+}
+#app-emag p{
+    font-size: 11.9px;
+    color: rgb(34, 34, 34);
+}
+#send-message{
+    display: flex;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+#send-message input{
+    outline: none;
+    padding: 9px 12px;
+    width: 250.33px;
+    align-self: center;
+    border: 1px solid rgb(68, 64, 64,.2);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+#send-message button{
+    background-color: rgb(0, 94, 184);
+    outline: none;
+    cursor: pointer;
+    border: none;
+    color:#fff;
+    width: 113px;
+    padding: 9px 12px;
+    align-self: center;
+    font-size: 14px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#play-store{
+    display: flex;
+    justify-content:flex-end;
+}
+#play-store a{
+    display: flex;
+    align-self: center;
+    
+}
+#play-store a:first-child{
+    padding-right: 40px;
 }
