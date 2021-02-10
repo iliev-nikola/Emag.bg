@@ -278,10 +278,13 @@ a {
     padding: 0;
 }
 
-.shopping-cart-btn {
+.shopping-cart-btn a {
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+.shopping-cart-btn {
+    display: flex;
     cursor: pointer;
     border-radius: 3px;
     margin-top: 10px;
@@ -290,8 +293,9 @@ a {
 }
 
 .shopping-cart-btn p {
+    display: inline;
     color: white;
-    padding: 7px 51px;
+    padding: 0px 51px;
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
 }
