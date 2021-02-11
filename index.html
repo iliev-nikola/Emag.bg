@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0,
@@ -18,6 +19,7 @@
             crossorigin="anonymous"></script>
         <title>eMAG.bg - Широка гама продукти</title>
     </head>
+
     <body>
         <!-- HEADER -->
         <div class="header-section">
@@ -69,7 +71,8 @@
                     </div>
                 </div>
                 <div class="profile-icon">
-                    <span id="userPic">НИ</span>
+                    <span id="userPic" class="guest-user-icon"><i class="far
+                            fa-user"></i></span>
                     <p>Моят акаунт</p>
                     <i class="fas fa-sort-down"></i>
                     <div class="dropdown-container">
@@ -96,9 +99,16 @@
                             </ul>
                         </div> -->
                         <div class="guest-nav dropdown-menu">
-                            <i class="fas fa-user-tie"></i>
-                            <p>Влез в акаунта си и се възползвай от
-                                предимствата!</p>
+                            <div><i class="fas fa-user-tie"></i><p>Влез в
+                                    акаунта си и се възползвай от
+                                    предимствата!</p></div>
+                            <div><div class="shopping-cart-btn">
+                                    <a href="#login"><i class="fas
+                                            fa-angle-double-right"></i>
+                                        <p>влез в акаунт</p>
+                                    </a></div>
+                                <a href="#register">Нов акаунт</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,8 +133,10 @@
                             <p>Нямаш нито един продукт в количката</p>
                             <div class="shopping-cart-btn">
                                 <a href="#cart"><i class="fas
-                                        fa-angle-double-right"></i><p>Виж
-                                        количката</p></a>
+                                        fa-angle-double-right"></i>
+                                    <p>Виж
+                                        количката</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -134,7 +146,9 @@
         <!-- NAVIGATION -->
         <nav class="nav-bar">
             <div class="nav-container content">
-                <a id="categories" href="#"><i class="fas fa-bars"></i><p>Категории</p></a>
+                <a id="categories" href="#"><i class="fas fa-bars"></i>
+                    <p>Категории</p>
+                </a>
                 <a href="#">Оферта на деня</a>
                 <a href="#">БЛОГ</a>
                 <a href="#">Седмична ПРОМОЦИЯ</a>
@@ -150,8 +164,10 @@
             <ul class="categories-menu">
                 <li><a href="#"><img
                             src="./assets/images/icons/mobile-phone.svg"
-                            alt=""><p>Телефони,
-                            Таблети & Лаптопи</p></a></li>
+                            alt="">
+                        <p>Телефони,
+                            Таблети & Лаптопи</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Мобилни телефони и аксесоари</span></a>
@@ -200,7 +216,8 @@
                         <a href="#">Smart home решения и сензори</a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/1.jpg" alt=""
+                        <img src="./assets/images/categories-ads/1.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
@@ -209,8 +226,10 @@
                 </div>
                 <li><a href="#"><img
                             src="./assets/images/icons/computer-mouse.svg"
-                            alt=""><p>Компютри &
-                            Периферия</p></a></li>
+                            alt="">
+                        <p>Компютри &
+                            Периферия</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Настолни компютри & Монитори</span></a>
@@ -265,7 +284,8 @@
                         <a href="#"><span>Сървъри и UPS-и</span></a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/2.jpg" alt=""
+                        <img src="./assets/images/categories-ads/2.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
@@ -273,9 +293,11 @@
                     </div>
                 </div>
                 <li><a href="#"><img src="./assets/images/icons/camera.svg"
-                            alt=""><p>ТВ,
+                            alt="">
+                        <p>ТВ,
                             Аудио &
-                            Фото</p></a></li>
+                            Фото</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Телевизори & аксесоари</span></a>
@@ -299,7 +321,8 @@
                     <div class="second-column">
                         <a href="#"><span>Видео проетори & екрани</span></a>
                         <br>
-                        <a href="#"><span>Системи за домашно кино & Аудио Hi-Fi</span></a>
+                        <a href="#"><span>Системи за домашно кино & Аудио
+                                Hi-Fi</span></a>
                         <a href="#">Soundbars</a>
                         <a href="#">Аудио системи</a>
                         <a href="#">Системи за домашно кино</a>
@@ -332,7 +355,8 @@
                         <a href="#">Обективи</a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/3.jpg" alt=""
+                        <img src="./assets/images/categories-ads/3.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
@@ -340,7 +364,9 @@
                     </div>
                 </div>
                 <li><a href="#"><img src="./assets/images/icons/gamepad.svg"
-                            alt=""><p>Gaming</p></a></li>
+                            alt="">
+                        <p>Gaming</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Гейминг конзоли</span></a>
@@ -371,7 +397,8 @@
                         <a href="#">Подложки за Мишка</a>
                         <a href="#">Слушалки</a>
                         <br>
-                        <a href="#"><span>Гейминг Настолни компютри & Монитори</span></a>
+                        <a href="#"><span>Гейминг Настолни компютри &
+                                Монитори</span></a>
                         <a href="#">Настолни компютри</a>
                         <a href="#">ACER</a>
                         <a href="#">LENOVO</a>
@@ -396,7 +423,8 @@
                         <a href="#">DELL</a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/4.jpg" alt=""
+                        <img src="./assets/images/categories-ads/4.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
@@ -405,8 +433,10 @@
                 </div>
                 <li><a href="#"><img
                             src="./assets/images/icons/washing-machine.svg"
-                            alt=""><p>Големи
-                            електроуреди</p></a></li>
+                            alt="">
+                        <p>Големи
+                            електроуреди</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Хладилна техника</span></a>
@@ -462,7 +492,8 @@
                                 class="red-label">НОВО</span></a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/5.jpg" alt=""
+                        <img src="./assets/images/categories-ads/5.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
@@ -470,8 +501,10 @@
                     </div>
                 </div>
                 <li><a href="#"><img src="./assets/images/icons/mixer.svg"
-                            alt=""><p>Малки
-                            електроуреди</p></a></li>
+                            alt="">
+                        <p>Малки
+                            електроуреди</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Прахосмукачки и ютии</span></a>
@@ -524,7 +557,8 @@
                         <a href="#">С капсули</a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/6.jpg" alt=""
+                        <img src="./assets/images/categories-ads/6.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
@@ -532,7 +566,9 @@
                     </div>
                 </div>
                 <li><a href="#"><img src="./assets/images/icons/tshirt.svg"
-                            alt=""><p>Мода</p></a></li>
+                            alt="">
+                        <p>Мода</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>ЖЕНИ</span></a>
@@ -582,7 +618,8 @@
                         <a href="#"><span>NEW IN</span> <span
                                 class="green-label">Ново</span></a>
                         <br>
-                        <a href="#"><span>Outlet</span> <span class="red-label">%</span></a>
+                        <a href="#"><span>Outlet</span> <span
+                                class="red-label">%</span></a>
                         <br>
                         <a href="#"><span>Fashion marketplace</span></a>
                         <br>
@@ -593,7 +630,8 @@
                         <a href="#">Casio</a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/7.jpg" alt=""
+                        <img src="./assets/images/categories-ads/7.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
@@ -601,9 +639,11 @@
                     </div>
                 </div>
                 <li><a href="#"><img src="./assets/images/icons/mirror.svg"
-                            alt=""><p>Здраве
+                            alt="">
+                        <p>Здраве
                             и
-                            красота</p></a></li>
+                            красота</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Уреди & Аксесоари за лична грижа</span></a>
@@ -643,7 +683,8 @@
                         <a href="#">Кантари</a>
                         <a href="#">Масажори</a>
                         <br>
-                        <a href="#"><span>Козметика & Продукти за лична грижа</span></a>
+                        <a href="#"><span>Козметика & Продукти за лична
+                                грижа</span></a>
                         <a href="#">Кремове за лице</a>
                         <a href="#">Дезодоранти и антиперспиранти</a>
                         <a href="#">Слънцезащитни продукти</a>
@@ -653,17 +694,21 @@
                         <a href="#">Класически самобръсначки</a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/8.jpg" alt=""
+                        <img src="./assets/images/categories-ads/8.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
                         </div>
                     </div>
                 </div>
-                <li><a href="#"><img src="./assets/images/icons/armchair.svg"
-                            alt=""><p>Дом,
+                <li><a href="#"><img
+                            src="./assets/images/icons/armchair.svg"
+                            alt="">
+                        <p>Дом,
                             градина
-                            & Petshop</p></a></li>
+                            & Petshop</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Мебели & Матраци</span></a>
@@ -726,17 +771,21 @@
                         <a href="#">Храна за риби и влечуги</a>
                         <a href="#">Бисквити и награди</a>
                         <br>
-                        <a href="#"><span>Мебели и транспорт за домашни любимци</span></a>
+                        <a href="#"><span>Мебели и транспорт за домашни
+                                любимци</span></a>
                         <a href="#">Легла, възглавници и дюшеци</a>
                         <a href="#">Чанти и транспортни артикули</a>
                         <a href="#">Клетки, къщички, кошари и кафези</a>
                         <a href="#">Кътове за игра за домашни любимци</a>
                     </div>
                 </div>
-                <li><a href="#"><img src="./assets/images/icons/teddy-bear.svg"
-                            alt=""><p>Играчки
+                <li><a href="#"><img
+                            src="./assets/images/icons/teddy-bear.svg"
+                            alt="">
+                        <p>Играчки
                             &
-                            Детски артикули</p></a></li>
+                            Детски артикули</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Пелени и мокри кърпички</span></a>
@@ -811,10 +860,13 @@
                         <a href="#"><span>Хоби играчки</span></a>
                     </div>
                 </div>
-                <li><a href="#"><img src="./assets/images/icons/ping-pong.svg"
-                            alt=""><p>Спорт
+                <li><a href="#"><img
+                            src="./assets/images/icons/ping-pong.svg"
+                            alt="">
+                        <p>Спорт
                             &
-                            свободно време</p></a></li>
+                            свободно време</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Фитнес и хранителни добавки</span></a>
@@ -870,16 +922,20 @@
                         <a href="#">Спортни панталони</a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/9.jpg" alt=""
+                        <img src="./assets/images/categories-ads/9.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
                         </div>
                     </div>
                 </div>
-                <li><a href="#"><img src="./assets/images/icons/car.svg" alt=""><p>Авто
+                <li><a href="#"><img src="./assets/images/icons/car.svg"
+                            alt="">
+                        <p>Авто
                             &
-                            Направи си сам</p></a></li>
+                            Направи си сам</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Автомобилни гуми</span></a>
@@ -935,7 +991,8 @@
                         <a href="#"><span>Осветление & Електроматериали</span></a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/10.jpg" alt=""
+                        <img src="./assets/images/categories-ads/10.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
@@ -944,8 +1001,10 @@
                 </div>
                 <li><a href="#"><img
                             src="./assets/images/icons/shopping-basket.svg"
-                            alt=""><p>Книги, Офис
-                            & Храни</p></a></li>
+                            alt="">
+                        <p>Книги, Офис
+                            & Храни</p>
+                    </a></li>
                 <div class="category-menu">
                     <div class="first-column">
                         <a href="#"><span>Книги</span></a>
@@ -1003,7 +1062,8 @@
                         <a href="#">Зелен и черен чай</a>
                     </div>
                     <div class="fourth-column-baner">
-                        <img src="./assets/images/categories-ads/11.jpg" alt=""
+                        <img src="./assets/images/categories-ads/11.jpg"
+                            alt=""
                             class="categories-banner">
                         <div class="close-ad-btn">
                             <i class="fas fa-times"></i>
@@ -1045,7 +1105,8 @@
                 </a>
                 <div class="dropdown-menu" id="delivery-info">
                     <p>За целта получателят следва да посочи етажа, до който
-                        продуктите следва да бъдат доставени в полето за адреса
+                        продуктите следва да бъдат доставени в полето за
+                        адреса
                         в
                         електронния формуляр на emag.bg, определено за това.</p>
                     <a href="#">Прочети още</a>
@@ -1057,9 +1118,12 @@
                     <p>Проверка на пратката при доставка</p>
                 </a>
                 <div class="dropdown-menu" id="delivery-info">
-                    <p>Знаеш какво си поръчал! При доставка на пратката поискай
-                        на куриера да го отвориш, за да провериш, че продуктите
-                        са точно тези, които си поръчал! Купувайки от eMAG, имаш
+                    <p>Знаеш какво си поръчал! При доставка на пратката
+                        поискай
+                        на куриера да го отвориш, за да провериш, че
+                        продуктите
+                        са точно тези, които си поръчал! Купувайки от eMAG,
+                        имаш
                         това право!</p>
                     <a href="#">Прочети още</a>
                 </div>
@@ -1071,7 +1135,8 @@
                 </a>
                 <div class="dropdown-menu" id="delivery-info">
                     <p>Целият процес по доставката на твоята поръчка може да
-                        бъде следен в твоя акаунт и в реално време може да видиш
+                        бъде следен в твоя акаунт и в реално време може да
+                        видиш
                         точно къде се намира твоята пратка.</p>
                     <a href="#">Прочети още</a>
                 </div>
@@ -1083,16 +1148,51 @@
                 </a>
                 <div class="dropdown-menu" id="delivery-info">
                     <p>Страх те е да пазаруваш онлайн, защото мислиш, че ако
-                        продукта не ти хареса няма да можеш да го върнеш? Това
-                        не е така! В eMAG можеш да върнеш закупеният продукт в
+                        продукта не ти хареса няма да можеш да го върнеш?
+                        Това
+                        не е така! В eMAG можеш да върнеш закупеният продукт
+                        в
                         срок от 30 дни!</p>
                     <a href="#">Прочети още</a>
                 </div>
             </div>
         </div>
+
+        <!--FOCUS BAR-->
+        <section class="focus-section focus-bar">
+            <div class='content'>
+                <div id='focus-main'>
+                    <img src="./assets/images/sections/focus.png" alt=""
+                        id="focus-image">
+                    <div>
+                        <button id='section-button'>виж тук</button>
+                    </div>
+                </div>
+
+                <div id='navbar-sections'>
+                    <ul>
+                        <li><a href="#"><span>Мобилни устройства & IT</span></a></li>
+                        <li><a href="#"><span>ТВ и Електроника</span></a></li>
+                        <li><a href="#"><span>Големи и малки електроуреди</span></a></li>
+                        <li><a href="#"><span>Електроинструмен санитария и
+                                    осветление</span></a></li>
+                        <li><a href="#"><span>Авто</span></a></li>
+                    </ul>
+                </div>
+                <div class="cards"> OBJECTS</div>
+                <div class="cards-radio-buttons">
+                    <input type="radio" name="radio-button" checked>
+                    <input type="radio" name="radio-button">
+                    <input type="radio" name="radio-button">
+
+                </div>
+            </div>
+        </section>
+
         <!-- javascript -->
         <script src="./assets/js/constants.js"></script>
         <script src="./assets/js/utils.js"></script>
         <script src="./assets/js/script.js"></script>
     </body>
+
 </html>

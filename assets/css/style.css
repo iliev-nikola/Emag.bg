@@ -163,12 +163,18 @@ a {
     color: #444444;
 }
 
-.profile-icon > span {
+.logged-user-icon {
     background-color: #2196f3;
     color: white;
     padding: 8px 7px;
     font-size: 14px;
     border-radius: 100%;
+}
+
+.guest-user-icon {
+    background-color: inherit;
+    color: #2196f3;
+    font-size: 24px;
 }
 
 .fa-heart {
@@ -212,6 +218,7 @@ a {
     z-index: 2;
     background-color: white;
     box-shadow: 0px 0px 21px -5px rgba(153,153,153,1);
+    cursor: initial;
 }
 
 @keyframes mover {
@@ -249,11 +256,11 @@ a {
     margin-top: -5px;
 }
 
-.profile-icon:hover .profile-nav, .favourite-icon:hover .favourite-nav, .shopping-cart:hover .shopping-cart-nav {
+.profile-icon:hover .profile-nav, .favourite-icon:hover .favourite-nav, .shopping-cart:hover .shopping-cart-nav, .profile-icon:hover .guest-nav {
     display: block;
 }
 
-.favourite-nav, .shopping-cart-nav {
+.favourite-nav, .shopping-cart-nav, .guest-nav {
     text-align: center;
     padding: 10px;
     font-size: 12px;
@@ -264,6 +271,43 @@ a {
 .profile-nav {
     display: none;
     width: 200px;
+}
+
+.guest-nav {
+    width: 300px;
+    text-align: left;
+    margin-top: 12px;
+    margin-left: -40px;
+}
+
+.guest-nav > div > p {
+    margin-left: 15px;
+}
+
+.guest-nav > div:first-of-type {
+    display: flex;
+}
+
+.guest-nav .shopping-cart-btn {
+    width: 150px;
+    display: inline-block;
+}
+
+a[href="#register"] {
+    color: #005eb8;
+    margin-left: 20px;
+}
+
+a[href="#register"]:hover {
+    color: #004381;
+    text-decoration: underline;
+}
+
+.fa-user-tie {
+    font-size: 30px;
+    color: #005eb8;
+    padding: 0 5px 0 5px;
+    display: inline;
 }
 
 .favourite-nav {
@@ -284,18 +328,16 @@ a {
 }
 
 .shopping-cart-btn {
-    display: flex;
     cursor: pointer;
     border-radius: 3px;
     margin-top: 10px;
     background: linear-gradient(to right,#4a60c1 10%,#3985e0);
-
 }
 
 .shopping-cart-btn p {
     display: inline;
     color: white;
-    padding: 0px 51px;
+    margin: 0 auto;
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
 }
@@ -453,13 +495,7 @@ a {
     background-color: white;
     justify-content: space-between;
     border-left: 2px solid rgba(128, 128, 128, 0.527);
-    /* animation: pop-out 0.1s forwards; */
 }
-
-/* @keyframes pop-out {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-} */
 
 .category-menu:hover {
     display: flex;
@@ -600,7 +636,85 @@ a {
     color: #00376c
 }
 
-.asd {
-    height: 500px;
-    background-color: grey;
+/*FOCUS BAR*/
+#focus-main{
+    display: flex;
+}
+#focus-main div{
+    align-self: center;
+}
+
+
+.focus-section{
+    padding: 0;
+    background-color: rgb(166, 68, 177);
+}
+
+#focus-image{
+
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+    margin-top:10px;
+}
+#section-button{
+    border-radius: 3px;
+    margin-top:10px;
+    padding: 5px 10px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 14px;
+    outline:none;
+    border: none;
+    cursor: pointer;
+    color: rgb(34, 34, 34);
+    line-height: 20px;
+}
+#section-button:hover{
+    color:#005eb8;
+}
+#navbar-sections{
+    
+    padding-top: 7px;
+    margin-top:-7px;
+    margin-bottom: 13px;
+}
+#navbar-sections li{
+   
+    vertical-align: bottom;
+    text-align: center;
+    display: inline-block;
+    width: 125px;
+    list-style-type: none;
+    padding-right: 8px;
+}
+#navbar-sections a{
+    margin:0;
+    padding: 0 5px;
+    display: flex;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-weight: 600;
+    line-height: 1.2;
+    height: 40px;
+    font-size: 11px;
+    justify-content: center;
+}
+#navbar-sections a:hover{
+    text-decoration: underline;
+}
+#navbar-sections span{
+    align-self: center;
+}
+.cards{
+    height: 200px;
+    background-color: white;
+}
+.cards-radio-buttons{
+    text-align: center;
+}
+.section-bars{
+    padding-top: 20px;
 }
