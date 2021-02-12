@@ -1419,3 +1419,106 @@ footer {
   text-decoration: underline;
   cursor: pointer;
 }
+*ITEMS CARDS*/ #play-store a:first-child {
+  padding-right: 40px;
+}
+#cards-container {
+  position: relative;
+  width: 1200px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.items-card {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  background-color: #fff;
+  margin: 5px 10px 5px 0px;
+  padding: 30px 15px;
+  text-align: center;
+}
+.items-card img {
+  height: 137px;
+  width: 138px;
+  margin-bottom: 20px;
+}
+.items-card h5 {
+  font-size: 13px;
+  height: 54px;
+  width: 161px;
+  overflow: hidden;
+  white-space: normal;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.items-card span {
+  position: absolute;
+  bottom: 15px;
+  left: 60px;
+  color: rgb(239, 40, 9);
+  font-size: 18px;
+  font-weight: 600;
+}
+.items-card sup {
+  font-size: 10px;
+  position: absolute;
+  top: 4px;
+}
+.items-card p {
+  margin-bottom: 10px;
+}
+.items-card sub {
+  font-size: 10px;
+  position: absolute;
+  bottom: 44px;
+  text-decoration-line: line-through;
+}
+.regular-price {
+  margin-bottom: 10px;
+}
+.regular-price sub,
+small,
+strong {
+  text-decoration-line: line-through;
+}
+.regular-price small {
+  margin-right: 7px;
+}
+.regular-price b {
+  color: rgb(153, 153, 153);
+}
+.items-card small {
+  margin-left: 13px;
+}
+.percentage {
+  position: absolute;
+  top: 5px;
+  color: #fff;
+  left: -3px;
+  font-size: 13px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  background-color: rgb(255, 66, 0);
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 6px -2px;
+  width: 72px;
+  height: 16px;
+  padding: 5px 5px;
+}
+.fav,
+.shop-card {
+  position: absolute;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  color: rgb(187, 187, 187);
+  cursor: pointer;
+}
+.fav {
+  top: 5px;
+}
+.shop-card {
+  top: 30px;
+}
