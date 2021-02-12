@@ -636,25 +636,27 @@ a[href="#register"]:hover {
   width: 300px;
   top: 80px;
   left: -20px;
+  padding: 10px;
 }
 
 .options-panel > div:hover > .dropdown-menu {
   display: block;
 }
 
-.options-panel .dropdown-menu p {
-  margin: 13px;
+.options-panel .dropdown-menu p,
+.benefits .dropdown-menu p {
   font-size: 12px;
+  padding-bottom: 10px;
 }
 
-.options-panel .dropdown-menu a {
-  margin-left: 13px;
-  margin-bottom: 13px;
+.options-panel .dropdown-menu a,
+.benefits .dropdown-menu a {
   font-size: 12px;
   color: #005eb8;
 }
 
-.options-panel .dropdown-menu a:hover {
+.options-panel .dropdown-menu a:hover,
+.benefits .dropdown-menu a:hover {
   text-decoration: underline;
   color: #00376c;
 }
@@ -838,6 +840,25 @@ a[href="#register"]:hover {
 .benefits {
   display: inline-block;
   align-self: flex-end;
+}
+
+.benefits > div {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+}
+
+.benefits .dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 250px;
+  top: 30px;
+  left: -60px;
+  padding: 10px;
+}
+
+.benefits > div:hover > .dropdown-menu {
+  display: block;
 }
 
 /*BULLETIN*/
@@ -1246,6 +1267,32 @@ footer {
   margin-top: 13px;
 }
 
+.social-login {
+  position: relative;
+}
+
+.line-through {
+  width: 100%;
+  display: inline-block;
+  height: 1px;
+  background-color: rgba(161, 159, 159, 0.356);
+  border: none;
+}
+
+.social-login > div:first-of-type {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.social-login > div:first-of-type > p:first-of-type {
+  display: inline-block;
+  padding: 0 8px;
+  color: #999;
+}
+
 #fb-button {
   background-color: #415a94;
 }
@@ -1268,7 +1315,7 @@ footer {
 }
 
 #google-button .fa-google {
-  padding: 0 10px 0 15px;
+  padding: 0 7px 0 18px;
 }
 
 .social-buttons-login p.separator {

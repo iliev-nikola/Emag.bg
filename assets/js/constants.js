@@ -1,10 +1,10 @@
-// Search bar
+// SEARCH BAR
 const SEARCH_BOX = document.querySelector('.searchbox');
 const SEARCH_BAR = getById('search');
 const SEARCH_FORM = getById('searchForm');
 const SUBMIT_BUTTON = getById('submitBtn');
 
-// Router
+// ROUTER
 const MAIN_SECTION = document.querySelector('.main-section');
 const LOGIN_SECTION = document.querySelector('.login-section');
 const LOGIN_PAGE = getById('loginPage');
@@ -21,6 +21,8 @@ const REGISTER_USER = getById('regUsername');
 const REGISTER_PASS = getById('regPassword');
 const REGISTER_RE_PASS = getById('regRePassword');
 const REGISTER_BTN = getById('registerBtn');
+
+// HEADER SECTION
 const USER_PIC = getById('userPic');
 const PROFILE_NAV = document.querySelector('.profile-nav');
 const GUEST_NAV = document.querySelector('.guest-nav');

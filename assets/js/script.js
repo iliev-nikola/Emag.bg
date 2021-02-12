@@ -1,27 +1,8 @@
 (function () {
-    // SEARCH BAR ON FOCUS, outer space grey and none-active
-    SEARCH_BAR.addEventListener('focus', onFocus);
-
     // LOGIN & REGISTER
     localStorage.setItem('users', JSON.stringify(new Array));
     localStorage.setItem('isLoggedIn', false);
     const users = JSON.parse(localStorage.getItem('users'));
-
-    REGISTER_BTN.addEventListener('click', (e) => {
-        e.preventDefault();
-        registerUser(NAMES.value, REGISTER_USER.value, REGISTER_PASS.value, REGISTER_RE_PASS.value);
-    });
-
-    LOGIN_BTN.addEventListener('click', (e) => {
-        e.preventDefault();
-        loginUser(LOGIN_USER.value, LOGIN_PASS.value);
-    });
-
-    LOGOUT_BTN.addEventListener('click', () => {
-        logout();
-        renderHeader();
-        success('Излязохте успешно!');
-    });
 
     function registerUser(names, username, password, rePasword) {
         if (!names.trim().includes(' ')) {
@@ -91,7 +72,7 @@
         }
     }
 
-    // RENDER
+    // RENDERING
     function renderHeader(firstName, lastName) {
         if (arguments.length) {
             let [firstLetter, secondLetter] = [firstName[0].toUpperCase(), lastName[0].toUpperCase()];
@@ -125,11 +106,6 @@
         }, 3000);
     }
 
-    // ERROR PAGE
-    ERROR_TEXT.addEventListener('click', () => {
-        history.back();
-    });
-
     // ROUTER
     function onHashChange(e) {
         const hash = e.target.location.hash.substring(1);
@@ -162,6 +138,25 @@
                 ERROR_PAGE.style.display = 'block';
         }
     }
+
+    // EVENT LISTENERS
     window.addEventListener('hashchange', onHashChange);
     window.addEventListener('DOMContentLoaded', onHashChange);
+    SEARCH_BAR.addEventListener('focus', onFocus);
+    ERROR_TEXT.addEventListener('click', () => {
+        history.back();
+    });
+    REGISTER_BTN.addEventListener('click', (e) => {
+        e.preventDefault();
+        registerUser(NAMES.value, REGISTER_USER.value, REGISTER_PASS.value, REGISTER_RE_PASS.value);
+    });
+    LOGIN_BTN.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginUser(LOGIN_USER.value, LOGIN_PASS.value);
+    });
+    LOGOUT_BTN.addEventListener('click', () => {
+        logout();
+        renderHeader();
+        success('Излязохте успешно!');
+    });
 })();
