@@ -21,4 +21,8 @@ function onFocusOut() {
     document.body.style.pointerEvents = 'all';
 }
 
+function getById(id) {
+    return document.getElementById(id);
+}
+
 // LOGIN & REGISTER
