@@ -17,6 +17,12 @@
         loginUser(LOGIN_USER.value, LOGIN_PASS.value);
     });
 
+    LOGOUT_BTN.addEventListener('click', () => {
+        logout();
+        renderHeader();
+        success('Излязохте успешно!');
+    });
+
     function registerUser(names, username, password, rePasword) {
         if (!names.trim().includes(' ')) {
             return error('Моля, въведи име и фамилия.');
@@ -44,15 +50,31 @@
             return error('Паролите не съвпадат.');
         }
 
-        NAMES.value = '';
-        REGISTER_USER.value = '';
-        REGISTER_PASS.value = '';
-        REGISTER_RE_PASS.value = '';
-        let [firstName, lastName] = names.split(' ');
+        const [firstName, lastName] = names.split(' ');
         users.push({ username, password, firstName, lastName });
         localStorage.setItem('users', JSON.stringify(users));
-        loginUser(REGISTER_USER.value, REGISTER_PASS.value);
-        success('Успешна регистрация!');
+        onSuccess('register', firstName, lastName);
+    }
+
+    function onSuccess(type, firstName, lastName) {
+        if (type === 'login') {
+            LOGIN_USER.value = '';
+            LOGIN_PASS.value = '';
+            success(`Добре дошъл, ${firstName} ${lastName}!`);
+        } else {
+            NAMES.value = '';
+            REGISTER_USER.value = '';
+            REGISTER_PASS.value = '';
+            REGISTER_RE_PASS.value = '';
+            success('Успешна регистрация!');
+        }
+
+        login();
+        renderHeader(firstName, lastName);
+        PROFILE_NAV.classList.add('checked');
+        GUEST_NAV.classList.remove('checked');
+        location.replace('#home');
+        document.documentElement.scrollTop = 0;
     }
 
     function loginUser(username, password) {
@@ -63,11 +85,27 @@
                 if (user.password !== password) {
                     return error('Невалидна парола.');
                 } else {
-                    login();
-                    success(`Добре дошъл, ${username.firstName} ${username.lastName}`);
+                    onSuccess('login', user.firstName, user.lastName);
                 }
             }
         }
+    }
+
+    // RENDER
+    function renderHeader(firstName, lastName) {
+        if (arguments.length) {
+            let [firstLetter, secondLetter] = [firstName[0].toUpperCase(), lastName[0].toUpperCase()];
+            USER_PIC.innerText = firstLetter + secondLetter;
+            USER_PIC.className = 'logged-user-icon';
+            HELLO_MESSAGE.innerText = `Здравей, ${firstName} ${lastName}`;
+        } else {
+            PROFILE_NAV.classList.remove('checked');
+            GUEST_NAV.classList.add('checked');
+            USER_PIC.innerHTML = `<i class="far fa-user">`;
+            USER_PIC.className = 'guest-user-icon';
+        }
+
+        document.documentElement.scrollTop = 0;
     }
 
     // INFO BANNERS

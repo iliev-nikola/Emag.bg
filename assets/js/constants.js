@@ -19,6 +19,11 @@ const REGISTER_USER = getById('regUsername');
 const REGISTER_PASS = getById('regPassword');
 const REGISTER_RE_PASS = getById('regRePassword');
 const REGISTER_BTN = getById('registerBtn');
+const USER_PIC = getById('userPic');
+const PROFILE_NAV = document.querySelector('.profile-nav');
+const GUEST_NAV = document.querySelector('.guest-nav');
+const HELLO_MESSAGE = getById('helloMessage');
+const LOGOUT_BTN = getById('logoutBtn');
 
 // INFORMATION BANNERS
 const SUCCESS_BANNER = getById('success');
