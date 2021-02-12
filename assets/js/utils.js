@@ -21,8 +21,20 @@ function onFocusOut() {
     document.body.style.pointerEvents = 'all';
 }
 
+// HELPER FUNCTIONS
 function getById(id) {
     return document.getElementById(id);
 }
 
 // LOGIN & REGISTER
+function isLoggedIn() {
+    return localStorage.getItem('isLoggedIn');
+}
+
+function login() {
+    localStorage.setItem('isLoggedIn', true);
+}
+
+function logout() {
+    localStorage.setItem('isLoggedIn', false);
+}

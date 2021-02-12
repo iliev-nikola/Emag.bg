@@ -312,14 +312,12 @@ a {
   display: inline-block;
 }
 
-a[href="#register"],
-a[href="#login"] {
+a[href="#register"] {
   color: #005eb8;
   margin-left: 20px;
 }
 
-a[href="#register"]:hover,
-a[href="#login"]:hover {
+a[href="#register"]:hover {
   color: #004381;
   text-decoration: underline;
 }
@@ -1153,17 +1151,6 @@ footer {
 /* LOGIN AND REGISTER PAGE */
 
 /* LOGIN */
-
-/* .main-section {
-  display: none;
-} */
-
-/* .login-page,
-.register-page {
-  display: flex;
-  flex-direction: column;
-} */
-
 .login-section {
   text-align: center;
 }
@@ -1214,11 +1201,17 @@ footer {
 #loginPage > p > a,
 #registerPage > p > a {
   margin: 0;
+  color: #005eb8;
 }
 
 #loginPage > p,
 #registerPage > p {
   margin: 20px 0;
+}
+
+#registerPage > p > a:hover {
+  color: #004381;
+  text-decoration: underline;
 }
 
 .user-form label {
@@ -1260,10 +1253,6 @@ footer {
   background-color: #0065b3;
 }
 
-#loginPage {
-  /* display: none; */
-}
-
 /* INFORMATION BANNER */
 #success,
 #error {
@@ -1274,9 +1263,32 @@ footer {
   color: white;
   padding: 15px;
   width: fit-content;
-  background-color: rebeccapurple;
   position: fixed;
   top: 100px;
   right: 0px;
   display: none;
+  animation: info 3s both;
+}
+
+#success {
+  background-color: #0082e6;
+}
+
+#error {
+  background-color: #ff1e26;
+}
+
+@keyframes info {
+  0% {
+    transform: translateX(100%);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
