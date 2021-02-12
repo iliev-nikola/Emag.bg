@@ -1224,7 +1224,8 @@ footer {
 }
 
 #loginBtn,
-#registerBtn {
+#registerBtn,
+.social-buttons-login {
   background-color: #0082e6;
   width: 82%;
   margin: 0 auto;
@@ -1238,9 +1239,62 @@ footer {
   font-weight: 600;
 }
 
+.social-buttons-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 13px;
+}
+
+#fb-button {
+  background-color: #415a94;
+}
+
+#google-button {
+  background-color: #cf553d;
+}
+
+#google-button:hover {
+  background-color: #ae412b;
+}
+
+#fb-button:hover {
+  background-color: #314471;
+}
+
+.social-title {
+  flex: 1;
+  padding-right: 50px;
+}
+
+#google-button .fa-google {
+  padding: 0 10px 0 15px;
+}
+
+.social-buttons-login p.separator {
+  font-size: 26px;
+  font-weight: 100;
+  padding-bottom: 5px;
+  color: #999;
+}
+
+.social-buttons-login > p {
+  color: white;
+}
+
+.social-buttons-login i {
+  padding: 0 10px 0 20px;
+  font-size: 16px;
+}
+
 #loginBtn:hover,
 #registerBtn:hover {
   background-color: #0065b3;
+}
+
+.social-login > p {
+  color: #999;
+  margin: 0;
 }
 
 /* INFORMATION BANNER */
