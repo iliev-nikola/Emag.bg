@@ -9,6 +9,8 @@ const MAIN_SECTION = document.querySelector('.main-section');
 const LOGIN_SECTION = document.querySelector('.login-section');
 const LOGIN_PAGE = getById('loginPage');
 const REGISTER_PAGE = getById('registerPage');
+const ERROR_PAGE = getById('errorPage');
+const ERROR_TEXT = getById('errorText');
 
 // LOGIN & REGISTER
 const LOGIN_USER = getById('loginUsername');

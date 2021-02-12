@@ -125,6 +125,11 @@
         }, 3000);
     }
 
+    // ERROR PAGE
+    ERROR_TEXT.addEventListener('click', () => {
+        history.back();
+    });
+
     // ROUTER
     function onHashChange(e) {
         const hash = e.target.location.hash.substring(1);
@@ -133,6 +138,7 @@
                 MAIN_SECTION.style.display = 'block';
                 LOGIN_SECTION.style.display = 'none';
                 document.body.style.backgroundColor = '#e9ebee';
+                ERROR_PAGE.style.display = 'none';
                 break;
             case 'login':
                 MAIN_SECTION.style.display = 'none';
@@ -140,6 +146,7 @@
                 LOGIN_PAGE.style.display = 'block';
                 REGISTER_PAGE.style.display = 'none';
                 document.body.style.backgroundColor = '#f7f7f7';
+                ERROR_PAGE.style.display = 'none';
                 break;
             case 'register':
                 MAIN_SECTION.style.display = 'none';
@@ -147,10 +154,12 @@
                 LOGIN_SECTION.style.display = 'block';
                 REGISTER_PAGE.style.display = 'block';
                 document.body.style.backgroundColor = '#f7f7f7';
+                ERROR_PAGE.style.display = 'none';
                 break;
             default:
-                MAIN_SECTION.style.display = 'block';
+                MAIN_SECTION.style.display = 'none';
                 LOGIN_SECTION.style.display = 'none';
+                ERROR_PAGE.style.display = 'block';
         }
     }
     window.addEventListener('hashchange', onHashChange);
