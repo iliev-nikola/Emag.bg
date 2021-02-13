@@ -15,16 +15,18 @@ function scrollItems(rightScroll, leftScroll, container) {
                 container.classList.remove('blur');
                 totalAmount += scrollAmount;
             }
+
             if (totalAmount >= lengthScroll) {
                 rightScroll.style.display = 'none';
             }
+
             if (container.scrollLeft > 0) {
                 leftScroll.style.display = 'block';
             }
-            console.log(totalAmount);
         }, 30);
 
     });
+
     leftScroll.addEventListener('click', function () {
         container.className = 'blur';
         let scrollAmount = 0;
@@ -36,15 +38,16 @@ function scrollItems(rightScroll, leftScroll, container) {
                 container.classList.remove('blur');
                 totalAmount -= scrollAmount;
             }
+
             if (container.scrollLeft === 0) {
                 leftScroll.style.display = 'none';
             }
+
             if (totalAmount < lengthScroll) {
                 rightScroll.style.display = 'block';
             }
-            console.log(totalAmount);
         }, 30);
-
     });
 }
+
 scrollItems(rightScroll, leftScroll, cardsContainer);

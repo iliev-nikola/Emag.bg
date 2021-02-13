@@ -141,7 +141,9 @@
 
     // EVENT LISTENERS
     window.addEventListener('hashchange', onHashChange);
-    window.addEventListener('DOMContentLoaded', onHashChange);
+    window.addEventListener('DOMContentLoaded', () => {
+        location.replace('#home');
+    });
     SEARCH_BAR.addEventListener('focus', onFocus);
     ERROR_TEXT.addEventListener('click', () => {
         history.back();

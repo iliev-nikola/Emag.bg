@@ -61,6 +61,7 @@ function createItemsCard(array, container) {
             addFavourite.className = 'fas fa-heart fav';
             addFavourite.style.color = "red";
         });
+
         itemPrice.append(sup, valute);
         container.append(cardContainer);
         imageContainer.append(itemImage);
@@ -76,6 +77,7 @@ function createItemsCard(array, container) {
             valute.className = 'line';
             regular.append(sup, valute, sale);
         }
+
         let watchedContainer = document.getElementById('history-section');
         //ADDING ITEMS IN HISTORY SECTION
         function watchedItem(array) {
@@ -84,10 +86,10 @@ function createItemsCard(array, container) {
             if (array.length === 12) {
                 array.pop();
                 array.unshift(currentItem.image);
-            }
-            else {
+            } else {
                 array.push(currentItem.image);
             }
+
             array = new Set(array);
             array = Array.from(array);
             array.forEach(function (item) {
@@ -99,12 +101,13 @@ function createItemsCard(array, container) {
                 mainContainer.append(watchedImage);
             });
         }
+
         titleContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
-        })
+        });
         imageContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
-        })
+        });
         //DELETE ITEMS FROM HISTORY SECTION
         let deleteWatched = document.getElementById('delete-watched');
         deleteWatched.addEventListener('click', function () {

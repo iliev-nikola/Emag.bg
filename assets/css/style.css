@@ -1121,6 +1121,11 @@ footer {
   width: 33.33%;
 }
 
+#app-emag .app-bars,
+.footer-nav > div:first-of-type {
+  padding-left: 0;
+}
+
 #app-emag strong {
   display: inline-block;
   font-weight: 700;
@@ -1162,6 +1167,10 @@ footer {
   font-size: 14px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+}
+
+#send-message button:hover {
+  background-color: #004381;
 }
 
 #play-store {
