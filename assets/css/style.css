@@ -774,6 +774,7 @@ a[href="#register"]:hover {
 
 .technology-nav a:hover {
   text-decoration: underline;
+  color: #005eb8;
 }
 
 .a-type {
@@ -784,6 +785,10 @@ a[href="#register"]:hover {
 .a-title a {
   font-weight: 700;
   text-decoration-style: solid;
+}
+.a-title,
+.a-type {
+  margin: 6px 0;
 }
 
 .technology-menu {
@@ -833,10 +838,16 @@ a[href="#register"]:hover {
   color: #005eb8;
 }
 
-.benefits span {
-  padding: 0px 15px;
+.benefits a:hover {
+  color: rgb(0, 42, 82);
 }
 
+.benefits span {
+  padding: 0px 7px 0px 7px;
+}
+.bold {
+  font-weight: bold;
+}
 .benefits {
   display: inline-block;
   align-self: flex-end;
@@ -904,7 +915,7 @@ a[href="#register"]:hover {
   border-radius: 25px;
   border: 1px solid #be2007;
   padding: 5px 10px;
-  margin: 0px 10px;
+  margin: 10px 5px 10px 0;
   font-size: 12px;
 }
 
@@ -957,7 +968,9 @@ footer {
   font-size: 12px;
   color: rgb(136, 136, 136);
 }
-
+.footer-category a:hover {
+  text-decoration: underline;
+}
 /*MARKETPLACE*/
 
 .marketplace {
@@ -1016,6 +1029,7 @@ footer {
 
 #btn-marketplace:hover {
   background-color: #fff;
+  border: 2px solid #fff;
   color: rgb(235, 52, 36);
 }
 
@@ -1069,14 +1083,19 @@ footer {
 #topBrands a {
   display: inline-block;
   padding: 50px 50px;
+  color: rgb(102, 102, 102);
 }
 
+#most-popular,
 .top-brands a:focus {
   display: inline-block;
   height: 100%;
-  color: rgb(13, 13, 141);
+  color: rgb(0, 94, 184);
   border-top: 2px solid rgb(13, 13, 141);
   box-shadow: 2px 0px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.top-brands a:hover {
+  color: rgb(0, 42, 82);
 }
 
 #topBrands img {

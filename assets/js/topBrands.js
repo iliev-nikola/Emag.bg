@@ -1,9 +1,11 @@
+//SHOW TOP BRANDS SECTION
 const topBrands = document.getElementById("topBrands");
 const mobileBrands = document.getElementById("mobileBrands");
 const electronicsBrands = document.getElementById("electronicsBrands");
 const healthBRands = document.getElementById("healthBRands");
 const fashionBrands = document.getElementById("fashionBrands");
 let allBrandsSections = document.getElementsByClassName('brands');
+let mostPopularStyle = document.getElementById('most-popular');
 topBrands.style.display = 'block';
 mobileBrands.style.display = 'none';
 electronicsBrands.style.display = 'none';
@@ -26,6 +28,7 @@ for (let i = 0; i < allBrandsSections.length; i++) {
                 electronicsBrands.style.display = 'none';
                 healthBRands.style.display = 'none';
                 fashionBrands.style.display = 'none';
+                mostPopularStyle.id = '';
                 break;
             case 2:
                 topBrands.style.display = 'none';
