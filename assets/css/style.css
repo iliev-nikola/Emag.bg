@@ -1419,7 +1419,8 @@ footer {
   text-decoration: underline;
   cursor: pointer;
 }
-*ITEMS CARDS*/ #play-store a:first-child {
+/*ITEMS CARDS*/
+#play-store a:first-child {
   padding-right: 40px;
 }
 #cards-container {
@@ -1473,15 +1474,13 @@ footer {
   font-size: 10px;
   position: absolute;
   bottom: 44px;
+}
+.line {
+  background-color: #fff;
   text-decoration-line: line-through;
 }
 .regular-price {
   margin-bottom: 10px;
-}
-.regular-price sub,
-small,
-strong {
-  text-decoration-line: line-through;
 }
 .regular-price small {
   margin-right: 7px;
@@ -1559,4 +1558,42 @@ strong {
   -moz-filter: blur(5px);
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
+}
+/*WATCHED ITEMS HISTORY SECTION*/
+#watched-items {
+  display: flex;
+}
+#watched-items div {
+  margin-right: 10px;
+  padding: 10px 7px;
+  background-color: #fff;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+#watched-items div:hover {
+  border: 2px solid rgb(125, 126, 126);
+}
+#watched-items div:active {
+  border: 2px solid rgb(0, 94, 184);
+}
+.watched-images {
+  width: 56px;
+  height: 50px;
+  align-self: center;
+}
+#watched-text {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+#history-section {
+  display: none;
+}
+#delete-watched {
+  cursor: pointer;
+  color: rgb(136, 136, 136);
 }
