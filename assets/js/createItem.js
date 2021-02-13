@@ -108,10 +108,20 @@ function createItemsCard(array, container) {
         //DELETE ITEMS FROM HISTORY SECTION
         let deleteWatched = document.getElementById('delete-watched');
         deleteWatched.addEventListener('click', function () {
-            watchedContainer.style.display = 'none';
-            focusSectionItems.watchedItems = [];
-        })
+            let counterLoader = 0;
+            let intervalLoader = setInterval(function () {
+                counterLoader++;
+                watchedContainer.style.opacity = '0.1';
+                let animationHistory = document.getElementById('animation-history')
+                animationHistory.className = 'loader';
+                if (counterLoader === 2) {
+                    window.clearInterval(intervalLoader);
+                    animationHistory.style.display = 'none';
+                    watchedContainer.style.display = 'none';
+                }
+            }, 800);
+        });
     });
-};
+}
 //ITEMS IN FOCUS-BAR SECTION
 createItemsCard(focusSectionItems.allItems, cardsContainer);

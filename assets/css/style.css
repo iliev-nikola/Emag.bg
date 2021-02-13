@@ -1560,6 +1560,9 @@ footer {
   -ms-filter: blur(5px);
 }
 /*WATCHED ITEMS HISTORY SECTION*/
+#history-section {
+  position: relative;
+}
 #watched-items {
   display: flex;
 }
@@ -1596,4 +1599,30 @@ footer {
 #delete-watched {
   cursor: pointer;
   color: rgb(136, 136, 136);
+}
+/*ANIMATION DELETING HISTORY*/
+#animation-history {
+  position: absolute;
+  z-index: 1;
+  margin-bottom: 100px;
+}
+#animation-container {
+  display: flex;
+  justify-content: center;
+}
+.loader {
+  border: 2px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 2px solid black;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.4s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
