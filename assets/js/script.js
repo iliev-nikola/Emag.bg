@@ -59,11 +59,19 @@
     }
 
     function loginUser(username, password) {
+        if (!username.trim()) {
+            return error('Невалидно потребителско име');
+        }
+
+        if (!password.trim()) {
+            return error('Невалидна парола');
+        }
+
         for (const user of users) {
-            if (user.username !== username) {
+            if (user.username !== username.trim()) {
                 return error('Невалидно потребителско име.');
             } else {
-                if (user.password !== password) {
+                if (user.password !== password.trim()) {
                     return error('Невалидна парола.');
                 } else {
                     onSuccess('login', user.firstName, user.lastName);

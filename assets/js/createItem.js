@@ -61,7 +61,6 @@ function createItemsCard(array, container) {
             addFavourite.className = 'fas fa-heart fav';
             addFavourite.style.color = "red";
         });
-
         itemPrice.append(sup, valute);
         container.append(cardContainer);
         imageContainer.append(itemImage);
