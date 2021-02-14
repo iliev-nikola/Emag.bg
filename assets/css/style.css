@@ -1570,7 +1570,7 @@ footer {
   justify-content: center;
   visibility: hidden;
   height: 17px;
-  background-color: rgb(84, 166, 243);
+  background-color: #22a7f0;
   color: #fff;
   font-size: 11px;
   text-align: center;
@@ -1597,7 +1597,7 @@ footer {
   margin-top: -13px;
   border-width: 13px;
   border-style: solid;
-  border-color: transparent transparent transparent rgb(84, 166, 243);
+  border-color: transparent transparent transparent #22a7f0;
 }
 
 .shop-card {
@@ -1726,9 +1726,10 @@ footer {
 }
 
 /*OPEN ITEM SECTION*/
-#open-item-section{
+#open-item-section {
   display: none;
 }
-#login, #errorPage{
+#login,
+#errorPage {
   display: none;
 }
