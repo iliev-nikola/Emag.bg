@@ -1193,6 +1193,7 @@ footer {
 /* LOGIN */
 .login-section {
   text-align: center;
+  display: none;
 }
 
 .login-section .logo {
@@ -1417,6 +1418,7 @@ footer {
 #errorPage {
   margin: 0 auto;
   text-align: center;
+  display: none;
 }
 
 #errorPic {
@@ -1726,9 +1728,6 @@ footer {
 }
 
 /*OPEN ITEM SECTION*/
-#open-item-section{
-  display: none;
-}
-#login, #errorPage{
+#open-item-section {
   display: none;
 }

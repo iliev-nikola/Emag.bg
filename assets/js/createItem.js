@@ -33,7 +33,7 @@ function createItemsCard(array, container) {
         let addShoppingCard = createNewElement('i');
         addShoppingCard.className = 'fas fa-shopping-cart shop-card';
         let imageContainer = createNewElement('a');
-        imageContainer.href = '#image';
+        imageContainer.href = '#article';
         let itemImage = createNewElement('img');
         itemImage.src = currentItem.image;
         let sup = createNewElement('sup', '99');
