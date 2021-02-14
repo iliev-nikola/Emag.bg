@@ -1714,3 +1714,13 @@ footer {
     transform: rotate(360deg);
   }
 }
+
+/*RADIO BUTTONS*/
+#dots-container,
+#other-dots-container {
+  text-align: center;
+}
+.dots {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

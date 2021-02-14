@@ -1,5 +1,5 @@
 //ITEMS IN FOCUS-BAR SECTION
-const allFocusItems = [
+const ALL_FOCUS_ITEMS = [
     {
         'id': 1,
         'title': 'Смартфон Xiaomi Redmi 9C NFC, Dual SIM, 32GB, 4G, Midnight Gray',
@@ -146,7 +146,7 @@ const allFocusItems = [
     },
 ]
 //ITEMS IN FOCUS-BAR SECTION
-const otherClientsWatched = [
+const OTHER_CLIENTS_WATCHED = [
     {
         'id': 1,
         'title': 'Промо пакет: Смартфон Huawei P40 Lite E, Dual SIM, 64GB, 4G, Aurora Blue + Фитнес гривна Lenovo G02, черна Fitness Band',

@@ -34,25 +34,43 @@ const SUCCESS_BANNER = getById('success');
 const ERROR_BANNER = getById('error');
 
 //BUTONS IN FOCUS-BAR SECTION
-let rightScroll = getById('right-scroll');
-let leftScroll = getById('left-scroll');
+const RIGHT_SCROLL = getById('right-scroll');
+const LEFT_SCROLL = getById('left-scroll');
 
 //BUTTONS IN OTHER CLIENTS WATCHED SECTION
-let rightOtherScroll = getById('other-right-scroll');
-let lefttOtherScroll = getById('other-left-scroll');
+const RIGTH_OTHER_SCROLL = getById('other-right-scroll');
+const LEFT_OTHER_SCROLL = getById('other-left-scroll');
 
 //CONTAINER IN FOCUS-BAR SECTION
-let cardsContainer = getById('cards-container');
-let watchedItems = getById('watched-items');
+const CARDS_CONTAINER = getById('cards-container');
+const WATCHED_ITEMS = getById('watched-items');
 
 //CONTAINER IN HISTORY SECTION
-let watchedContainer = getById('history-section');
+const WATCHED_CONTAINER = getById('history-section');
 
 //DELETE ITEMS - HISTORY SECTION
-let deleteWatched = getById('delete-watched');
+const DELETE_WATCHED = getById('delete-watched');
 
 //ANIMATION CONTAINER IN HISTORY SECTION
-let animationHistory = getById('animation-history')
+const ANIMATION_HISTORY = getById('animation-history')
 
 //CONTAINER IN OTHER CLIENTS WATCHED SETION
-let otherWatchedContainer = getById('other-watched-container');
+const OTHER_WATCHED_CONTAINER = getById('other-watched-container');
+
+//FOCUS-BAR SECTION
+const FOCUS_BAR = getById('focus-section');
+
+//RADIO BUTTONS IN FOCUS-BAR SECTION
+const DOTS_CONTAINER = getById('dots-container');
+
+//RADIO BUTTONS IN OTHER CLIENTS WATCHED
+const DOTS_CONTAINER_OTHER = getById('other-dots-container');
+
+//CONTAINERS IN TOP BRANDS
+const TOP_BRANDS = getById("topBrands");
+const MOBILE_BRANDS = getById("mobileBrands");
+const ELECTRONIC_BRANDS = getById("electronicsBrands");
+const HEALTH_BRANDS = getById("healthBRands");
+const FASHION_BRANDS = getById("fashionBrands");
+const ALL_BRANDS_SECTION = document.getElementsByClassName('brands');
+const MOST_POPULAR_STYLE = getById('most-popular');

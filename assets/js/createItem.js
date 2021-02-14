@@ -15,7 +15,7 @@ class Items {
     }
 }
 let focusSectionItems = new Items();
-allFocusItems.forEach(function (item) {
+ALL_FOCUS_ITEMS.forEach(function (item) {
     focusSectionItems.addProduct(item);
 });
 //CREATING ITEMS
@@ -100,32 +100,34 @@ function createItemsCard(array, container) {
 
         titleContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
+            openItem();
         });
         imageContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
+            openItem();
         });
 
         //DELETE ITEMS FROM HISTORY SECTION
-        deleteWatched.addEventListener('click', function () {
+        DELETE_WATCHED.addEventListener('click', function () {
             let counterLoader = 0;
             let intervalLoader = setInterval(function () {
                 counterLoader++;
-                watchedContainer.style.opacity = '0.3';
-                animationHistory.className = 'loader';
+                WATCHED_CONTAINER.style.opacity = '0.3';
+                ANIMATION_HISTORY.className = 'loader';
                 if (counterLoader === 3) {
                     window.clearInterval(intervalLoader);
-                    animationHistory.style.display = 'none';
-                    watchedContainer.style.display = 'none';
+                    ANIMATION_HISTORY.style.display = 'none';
+                    WATCHED_CONTAINER.style.display = 'none';
                 }
             }, 800);
         });
     });
 }
 //ITEMS IN FOCUS-BAR SECTION
-createItemsCard(focusSectionItems.allItems, cardsContainer);
+createItemsCard(focusSectionItems.allItems, CARDS_CONTAINER);
 //ITEMS IN OTHER-CLIENTS-WATCHED
 let otherWatched = new Items();
-otherClientsWatched.forEach(function (item) {
+OTHER_CLIENTS_WATCHED.forEach(function (item) {
     otherWatched.addProduct(item);
 });
-createItemsCard(otherWatched.allItems, otherWatchedContainer);
+createItemsCard(otherWatched.allItems, OTHER_WATCHED_CONTAINER);
