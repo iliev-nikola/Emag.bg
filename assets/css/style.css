@@ -1452,7 +1452,7 @@ footer {
 #play-store a:first-child {
   padding-right: 40px;
 }
-#cards-container {
+#cards-container, #other-watched-container {
   position: relative;
   width: 1200px;
   overflow: hidden;
@@ -1555,7 +1555,9 @@ footer {
   position: relative;
 }
 #left-scroll,
-#right-scroll {
+#right-scroll,
+#other-right-scroll,
+#other-left-scroll {
   color: rgb(0, 94, 184);
   font-size: 20px;
   border-radius: 4px;
@@ -1568,16 +1570,20 @@ footer {
   top: 40%;
 }
 #left-scroll:hover,
-#right-scroll:hover {
+#right-scroll:hover,
+#other-right-scroll:hover,
+#other-left-scroll:hover {
   background-color: #fff;
   opacity: unset;
 }
-#left-scroll {
+#left-scroll,
+#other-left-scroll  {
   display: none;
   position: absolute;
   left: -5px;
 }
-#right-scroll {
+#right-scroll,
+#other-right-scroll  {
   position: absolute;
   right: -2px;
 }

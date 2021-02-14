@@ -127,3 +127,10 @@ function createItemsCard(array, container) {
 }
 //ITEMS IN FOCUS-BAR SECTION
 createItemsCard(focusSectionItems.allItems, cardsContainer);
+//ITEMS IN OTHER-CLIENTS-WATCHED
+let otherWatched = new Items();
+otherClientsWatched.forEach(function (item) {
+    otherWatched.addProduct(item);
+});
+let otherWatchedContainer = document.getElementById('other-watched-container');
+createItemsCard(otherWatched.allItems, otherWatchedContainer);

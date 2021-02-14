@@ -51,3 +51,7 @@ function scrollItems(rightScroll, leftScroll, container) {
 }
 
 scrollItems(rightScroll, leftScroll, cardsContainer);
+//BUTTONS' ANIMATION IN OTHER CLIENTS WATCHED SECTION
+let rightOtherScroll = document.getElementById('other-right-scroll');
+let lefttOtherScroll = document.getElementById('other-left-scroll');
+scrollItems(rightOtherScroll, lefttOtherScroll, otherWatchedContainer);

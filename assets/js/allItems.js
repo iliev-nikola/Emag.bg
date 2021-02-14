@@ -145,3 +145,150 @@ const allFocusItems = [
 
     },
 ]
+//ITEMS IN FOCUS-BAR SECTION
+const otherClientsWatched = [
+    {
+        'id': 1,
+        'title': 'Промо пакет: Смартфон Huawei P40 Lite E, Dual SIM, 64GB, 4G, Aurora Blue + Фитнес гривна Lenovo G02, черна Fitness Band',
+        'image': './assets/images/other-clients-watched/1.png',
+        'currentPrice': 283,
+        'regularPrice': 304
+
+    },
+    {
+        'id': 2,
+        'title': 'Смартфон Xiaomi Redmi Note 9 Pro, Dual SIM, 128GB, 6GB RAM, 4G, Interstellar Grey',
+        'image': './assets/images/other-clients-watched/2.png',
+        'currentPrice': 425,
+        'regularPrice': '-'
+
+    },
+    {
+        'id': 3,
+        'title': 'Климатик Star-Light ACT-12WIFI, Control WiFi, 3D Inverter, 12000 BTU, Функция отопление, Клас A++, Дисплей, Бял',
+        'image': './assets/images/other-clients-watched/3.png',
+        'currentPrice': 649,
+        'regularPrice': '-'
+
+    },
+    {
+        'id': 4,
+        'title': 'Промо пакет: Смартфон Samsung Galaxy A20e, Dual SIM, 32GB, 4G, Black + Фитнес гривна Lenovo G02, черна Fitness Band',
+        'image': './assets/images/other-clients-watched/4.png',
+        'currentPrice': 267,
+        'regularPrice': 288
+
+    }
+    ,
+    {
+        'id': 5,
+        'title': 'Конзола Sony PlayStation 5',
+        'image': './assets/images/other-clients-watched/5.png',
+        'regularPrice': 2699,
+        'currentPrice': 2599
+
+    },
+    {
+        'id': 6,
+        'title': 'Комплект медицински маски INTEXTRED TYPE IIR, за еднократна употреба, С телче за носа, Трислойни, Сини, 50 броя',
+        'image': './assets/images/other-clients-watched/6.png',
+        'currentPrice': 6,
+        'regularPrice': 72
+
+    },
+    {
+        'id': 7,
+        'title': 'Смарт ТВ Бокс, Android 7.1 TV BOX, безплатна телевизия 4K, HDMI , Wi-Fi , Internet TV',
+        'image': './assets/images/other-clients-watched/7.png',
+        'currentPrice': 48,
+        'regularPrice': 96
+    },
+    {
+        'id': 8,
+        'title': 'Solid State Drive (SSD) Kingston A2000, 1TB, NVMe, M.2',
+        'image': './assets/images/other-clients-watched/8.png',
+        'currentPrice': 260,
+        'regularPrice': '-'
+
+    },
+    {
+        'id': 9,
+        'title': 'Телевизор LED Star-Light, 32" (80 см), 32DM3500, HD',
+        'image': './assets/images/other-clients-watched/9.png',
+        'currentPrice': 229,
+        'regularPrice': '-'
+
+    },
+    {
+        'id': 10,
+        'title': 'Акумулаторна бормашина Steinhaus, PRO-CD18X, 18 V 1.3 Ah Li-Ion, 30Nm, 2 степени 400/1500 об/мин, Бърз патронник 10мм, 13 аксесоара, Пластмасова кутия',
+        'image': './assets/images/other-clients-watched/10.png',
+        'currentPrice': 62,
+        'regularPrice': '-'
+    },
+    {
+        'id': 11,
+        'title': 'Комплект тенджери Madeline Cooking by Heinner, 10 части, Индукция, Инокс',
+        'image': './assets/images/other-clients-watched/11.png',
+        'currentPrice': 100,
+        'regularPrice': 120
+
+    },
+    {
+        'id': 12,
+        'title': 'Хладилна витрина Star-Light VFM-211L, 211 л, 160 бутилки, Вентилатор, H 174.7 см, Бяла',
+        'image': './assets/images/other-clients-watched/12.png',
+        'currentPrice': 704,
+        'regularPrice': '-'
+
+    },
+    {
+        'id': 13,
+        'title': 'Защитна маска за лице KN95 - FFP2 - за многократна употреба',
+        'image': './assets/images/other-clients-watched/13.png',
+        'currentPrice': 6,
+        'regularPrice': 9
+
+    },
+    {
+        'id': 14,
+        'title': 'Телевизор LED Diamant, 32" (80 см), 32HL4300H/A, HD',
+        'image': './assets/images/other-clients-watched/14.png',
+        'currentPrice': 219,
+        'regularPrice': '-'
+
+    },
+    {
+        'id': 15,
+        'title': 'Телевизор LG 49UN73003LA, 49" (123 см), Smart, 4K Ultra HD, LED',
+        'image': './assets/images/other-clients-watched/15.png',
+        'currentPrice': 769,
+        'regularPrice': '-'
+
+    },
+    {
+        'id': 16,
+        'title': 'Solid State Drive (SSD) Kingston A400, 120GB, 2.5", SATA III',
+        'image': './assets/images/other-clients-watched/16.png',
+        'currentPrice': 44,
+        'regularPrice': '-'
+
+    }
+    ,
+    {
+        'id': 17,
+        'title': 'Телевизор Samsung 55TU7172, 55" (138 см), Smart, 4K Ultra HD, LED',
+        'image': './assets/images/other-clients-watched/17.png',
+        'currentPrice': 849,
+        'regularPrice': '-'
+
+    },
+    {
+        'id': 18,
+        'title': 'Телевизор Samsung 43TU7172, 43" (108 см), Smart, 4K Ultra HD, LED',
+        'image': './assets/images/other-clients-watched/18.png',
+        'currentPrice': 649,
+        'regularPrice': '-'
+
+    },
+]
