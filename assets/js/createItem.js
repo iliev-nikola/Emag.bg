@@ -52,10 +52,14 @@ function createItemsCard(array, container) {
         percentageBar.className = 'percentage';
         regular.append(regPrice);
         tooltipContainer.addEventListener("click", function () {
-            addFavourite.className = 'fas fa-heart fav';
-            addFavourite.style.color = "red";
             if (addFavourite.style.color === 'red') {
+                addFavourite.className = 'far fa-heart fav';
                 tooltipText.innerText = 'Добавено в Любими';
+                addFavourite.style.color = '#2196f3';
+            } else {
+                addFavourite.className = 'fas fa-heart fav';
+                addFavourite.style.color = 'red';
+                tooltipText.innerText = 'Премахни от Любими';
             }
         });
         itemPrice.append(sup, valute);

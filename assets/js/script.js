@@ -157,6 +157,8 @@
                 LOGIN_SECTION.style.display = 'none';
                 ERROR_PAGE.style.display = 'block';
         }
+
+        document.documentElement.scrollTop = 0;
     }
 
     // EVENT LISTENERS
