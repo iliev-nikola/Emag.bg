@@ -34,8 +34,12 @@ function createItemsCard(array, container) {
     array.forEach(function (currentItem) {
         let cardContainer = createNewElement('div');
         cardContainer.className = 'items-card';
+        let tooltipContainer = createNewElement('div');
+        tooltipContainer.className = 'tooltip';
         let addFavourite = createNewElement('i');
         addFavourite.className = 'far fa-heart fav';
+        let tooltipText = createNewElement('div', 'Добави в Любими');
+        tooltipText.className = 'tooltiptext';
         let addShoppingCard = createNewElement('i');
         addShoppingCard.className = 'fas fa-shopping-cart shop-card';
         let imageContainer = createNewElement('a');
@@ -57,15 +61,19 @@ function createItemsCard(array, container) {
         let sale = createNewElement('b', `(-${percentage}%)`);
         percentageBar.className = 'percentage';
         regular.append(regPrice);
-        addFavourite.addEventListener("click", function () {
+        tooltipContainer.addEventListener("click", function () {
             addFavourite.className = 'fas fa-heart fav';
             addFavourite.style.color = "red";
+            if (addFavourite.style.color === 'red') {
+                tooltipText.innerText = 'Добавено в Любими';
+            }
         });
         itemPrice.append(sup, valute);
         container.append(cardContainer);
         imageContainer.append(itemImage);
         titleContainer.append(itemTitle);
-        cardContainer.append(imageContainer, titleContainer, itemPrice, addFavourite, addShoppingCard, percentageBar, regular);
+        cardContainer.append(imageContainer, titleContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer);
+        tooltipContainer.append(tooltipText, addFavourite);
         if (currentItem.regularPrice === '-') {
             regular.style.visibility = 'hidden';
             percentageBar.style.display = 'none';
@@ -113,10 +121,10 @@ function createItemsCard(array, container) {
             let counterLoader = 0;
             let intervalLoader = setInterval(function () {
                 counterLoader++;
-                watchedContainer.style.opacity = '0.1';
+                watchedContainer.style.opacity = '0.3';
                 let animationHistory = document.getElementById('animation-history')
                 animationHistory.className = 'loader';
-                if (counterLoader === 2) {
+                if (counterLoader === 3) {
                     window.clearInterval(intervalLoader);
                     animationHistory.style.display = 'none';
                     watchedContainer.style.display = 'none';
