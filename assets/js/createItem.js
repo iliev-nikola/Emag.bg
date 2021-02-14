@@ -36,7 +36,7 @@ function createItemsCard(array, container) {
         imageContainer.href = '#article';
         let itemImage = createNewElement('img');
         itemImage.src = currentItem.image;
-        let sup = createNewElement('sup', '99');
+        let sup = createNewElement('sup', currentItem.currentPennies);
         let valute = createNewElement('small', 'лв');
         let titleContainer = createNewElement('a');
         titleContainer.href = '#title';
@@ -46,7 +46,9 @@ function createItemsCard(array, container) {
         let regPrice = createNewElement('strong', currentItem.regularPrice);
         regPrice.className = 'line';
         let itemPrice = createNewElement('span', currentItem.currentPrice);
-        let percentage = Math.floor(100 - 100 * (currentItem.currentPrice / currentItem.regularPrice));
+        let currentPrice = parseFloat(currentItem.currentPrice + '.' + currentItem.currentPennies);
+        let regularPrice = parseFloat(currentItem.regularPrice + '.' + currentItem.regularPennies);
+        let percentage = Math.floor(100 - 100 * (currentPrice / regularPrice));
         let percentageBar = createNewElement('div', `-${percentage}%`);
         let sale = createNewElement('b', `(-${percentage}%)`);
         percentageBar.className = 'percentage';
@@ -72,7 +74,7 @@ function createItemsCard(array, container) {
             regular.style.visibility = 'hidden';
             percentageBar.style.display = 'none';
         } else {
-            let sup = createNewElement('sub', '99');
+            let sup = createNewElement('sub', currentItem.regularPennies);
             sup.style.textDecoration = 'line-through';
             let valute = createNewElement('small', `лв `);
             valute.className = 'line';
