@@ -1724,3 +1724,11 @@ footer {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+/*OPEN ITEM SECTION*/
+#open-item-section{
+  display: none;
+}
+#login, #errorPage{
+  display: none;
+}

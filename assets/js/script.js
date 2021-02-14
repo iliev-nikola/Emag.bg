@@ -140,6 +140,18 @@
                 document.body.style.backgroundColor = '#f7f7f7';
                 ERROR_PAGE.style.display = 'none';
                 break;
+            case 'title':
+            case 'image':
+                FOCUS_SECTION.style.display = 'none';
+                MAIN_MENU.style.display = 'none';
+                OPTIONAL_PANEL.style.display = 'none';
+                MOBILE_SECTION.style.display = 'none';
+                MOBILE_APP.style.display = 'none';
+                TV_SECTION.style.display = 'none';
+                TOP_SECTION.style.display = 'none';
+                BIG_TECHNOLOGIES.style.display = 'none';
+                BULLETIN.style.display = 'none';
+                break;
             default:
                 MAIN_SECTION.style.display = 'none';
                 LOGIN_SECTION.style.display = 'none';

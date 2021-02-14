@@ -33,13 +33,13 @@ function createItemsCard(array, container) {
         let addShoppingCard = createNewElement('i');
         addShoppingCard.className = 'fas fa-shopping-cart shop-card';
         let imageContainer = createNewElement('a');
-        imageContainer.href = '#';
+        imageContainer.href = '#image';
         let itemImage = createNewElement('img');
         itemImage.src = currentItem.image;
         let sup = createNewElement('sup', '99');
         let valute = createNewElement('small', 'лв');
         let titleContainer = createNewElement('a');
-        titleContainer.href = '#';
+        titleContainer.href = '#title';
         let itemTitle = createNewElement('h5', currentItem.title);
         let regular = createNewElement('div');
         regular.className = 'regular-price';
@@ -77,8 +77,8 @@ function createItemsCard(array, container) {
 
         //ADDING ITEMS IN HISTORY SECTION
         function watchedItem(array) {
-            watchedContainer.style.display = 'block';
-            watchedItems.innerHTML = '';
+            WATCHED_CONTAINER.style.display = 'block';
+            WATCHED_ITEMS.innerHTML = '';
             if (array.length === 12) {
                 array.pop();
                 array.unshift(currentItem.image);
@@ -93,7 +93,7 @@ function createItemsCard(array, container) {
                 let watchedImage = createNewElement('img');
                 watchedImage.className = 'watched-images';
                 watchedImage.src = item;
-                watchedItems.append(mainContainer);
+                WATCHED_ITEMS.append(mainContainer);
                 mainContainer.append(watchedImage);
             });
         }
@@ -101,6 +101,7 @@ function createItemsCard(array, container) {
         titleContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
             openItem();
+
         });
         imageContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);

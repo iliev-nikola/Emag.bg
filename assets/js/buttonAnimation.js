@@ -1,8 +1,10 @@
 //BUTTONS' ANIMATION IN FOCUS-BAR SECTION AND OTHER CLIENTS WATCHED SECTION
-function scrollItems(array,rightScroll, leftScroll, container) {
+function scrollItems(array, rightScroll, leftScroll, container) {
     let lengthScroll = 100 * ((array.length) / 6 - 1);
     let totalAmount = 0;
+    let counter=0;
     rightScroll.addEventListener('click', function () {
+        counter++;
         container.className = 'blur';
         let scrollAmount = 0;
         let slideTimer = setInterval(function () {
@@ -22,7 +24,6 @@ function scrollItems(array,rightScroll, leftScroll, container) {
                 leftScroll.style.display = 'block';
             }
         }, 30);
-
     });
 
     leftScroll.addEventListener('click', function () {
@@ -48,5 +49,5 @@ function scrollItems(array,rightScroll, leftScroll, container) {
     });
 }
 
-scrollItems(ALL_FOCUS_ITEMS,RIGHT_SCROLL, LEFT_SCROLL, CARDS_CONTAINER);
-scrollItems(OTHER_CLIENTS_WATCHED,RIGTH_OTHER_SCROLL, LEFT_OTHER_SCROLL, OTHER_WATCHED_CONTAINER);
+scrollItems(ALL_FOCUS_ITEMS, RIGHT_SCROLL, LEFT_SCROLL, CARDS_CONTAINER);
+scrollItems(OTHER_CLIENTS_WATCHED, RIGTH_OTHER_SCROLL, LEFT_OTHER_SCROLL, OTHER_WATCHED_CONTAINER);

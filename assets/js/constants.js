@@ -74,3 +74,16 @@ const HEALTH_BRANDS = getById("healthBRands");
 const FASHION_BRANDS = getById("fashionBrands");
 const ALL_BRANDS_SECTION = document.getElementsByClassName('brands');
 const MOST_POPULAR_STYLE = getById('most-popular');
+
+//
+const FOCUS_SECTION = getById('focus-section');
+const MAIN_MENU = getById('main');
+const OPTIONAL_PANEL = getById('optional-panel');
+const MOBILE_SECTION = getById('mobile-bar');
+const MOBILE_APP = getById('mobile-app');
+const TV_SECTION = getById('tv-bar');
+const TOP_SECTION = getById('top');
+const BIG_TECHNOLOGIES = getById('big-technologies');
+const BULLETIN = getById('bulletin');
+const OPEN_ITEM = getById('open-item-section');
+const LOGIN = getById('login');
