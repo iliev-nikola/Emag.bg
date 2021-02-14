@@ -1,6 +1,4 @@
-let rightScroll = document.getElementById('right-scroll');
-let leftScroll = document.getElementById('left-scroll');
-//BUTTONS' ANIMATION IN FOCUS-BAR SECTION
+//BUTTONS' ANIMATION IN FOCUS-BAR SECTION AND OTHER CLIENTS WATCHED SECTION
 function scrollItems(rightScroll, leftScroll, container) {
     let lengthScroll = 100 * ((allFocusItems.length) / 6 - 1);
     let totalAmount = 0;
@@ -51,7 +49,4 @@ function scrollItems(rightScroll, leftScroll, container) {
 }
 
 scrollItems(rightScroll, leftScroll, cardsContainer);
-//BUTTONS' ANIMATION IN OTHER CLIENTS WATCHED SECTION
-let rightOtherScroll = document.getElementById('other-right-scroll');
-let lefttOtherScroll = document.getElementById('other-left-scroll');
 scrollItems(rightOtherScroll, lefttOtherScroll, otherWatchedContainer);

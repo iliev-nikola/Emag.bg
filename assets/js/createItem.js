@@ -1,11 +1,3 @@
-//CREATE NEW HTML ELEMENT
-function createNewElement(type, text) {
-    let element = document.createElement(type);
-    if (text) {
-        element.innerText = text;
-    }
-    return element;
-}
 //TEMPLATE FOR ADDING ITEMS
 class Items {
     constructor() {
@@ -27,8 +19,6 @@ allFocusItems.forEach(function (item) {
     focusSectionItems.addProduct(item);
 });
 //CREATING ITEMS
-let cardsContainer = document.getElementById('cards-container');
-let watchedItems = document.getElementById('watched-items');
 function createItemsCard(array, container) {
     container.innerHTML = '';
     array.forEach(function (currentItem) {
@@ -85,7 +75,6 @@ function createItemsCard(array, container) {
             regular.append(sup, valute, sale);
         }
 
-        let watchedContainer = document.getElementById('history-section');
         //ADDING ITEMS IN HISTORY SECTION
         function watchedItem(array) {
             watchedContainer.style.display = 'block';
@@ -115,14 +104,13 @@ function createItemsCard(array, container) {
         imageContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
         });
+
         //DELETE ITEMS FROM HISTORY SECTION
-        let deleteWatched = document.getElementById('delete-watched');
         deleteWatched.addEventListener('click', function () {
             let counterLoader = 0;
             let intervalLoader = setInterval(function () {
                 counterLoader++;
                 watchedContainer.style.opacity = '0.3';
-                let animationHistory = document.getElementById('animation-history')
                 animationHistory.className = 'loader';
                 if (counterLoader === 3) {
                     window.clearInterval(intervalLoader);
@@ -140,5 +128,4 @@ let otherWatched = new Items();
 otherClientsWatched.forEach(function (item) {
     otherWatched.addProduct(item);
 });
-let otherWatchedContainer = document.getElementById('other-watched-container');
 createItemsCard(otherWatched.allItems, otherWatchedContainer);

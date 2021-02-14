@@ -26,6 +26,15 @@ function getById(id) {
     return document.getElementById(id);
 }
 
+//CREATE NEW HTML ELEMENT
+function createNewElement(type, text) {
+    let element = document.createElement(type);
+    if (text) {
+        element.innerText = text;
+    }
+    return element;
+}
+
 // LOGIN & REGISTER
 function isLoggedIn() {
     return localStorage.getItem('isLoggedIn');

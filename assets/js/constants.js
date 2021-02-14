@@ -32,3 +32,27 @@ const LOGOUT_BTN = getById('logoutBtn');
 // INFORMATION BANNERS
 const SUCCESS_BANNER = getById('success');
 const ERROR_BANNER = getById('error');
+
+//BUTONS IN FOCUS-BAR SECTION
+let rightScroll = getById('right-scroll');
+let leftScroll = getById('left-scroll');
+
+//BUTTONS IN OTHER CLIENTS WATCHED SECTION
+let rightOtherScroll = getById('other-right-scroll');
+let lefttOtherScroll = getById('other-left-scroll');
+
+//CONTAINER IN FOCUS-BAR SECTION
+let cardsContainer = getById('cards-container');
+let watchedItems = getById('watched-items');
+
+//CONTAINER IN HISTORY SECTION
+let watchedContainer = getById('history-section');
+
+//DELETE ITEMS - HISTORY SECTION
+let deleteWatched = getById('delete-watched');
+
+//ANIMATION CONTAINER IN HISTORY SECTION
+let animationHistory = getById('animation-history')
+
+//CONTAINER IN OTHER CLIENTS WATCHED SETION
+let otherWatchedContainer = getById('other-watched-container');
