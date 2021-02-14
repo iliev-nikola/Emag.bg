@@ -1,8 +1,8 @@
 (function () {
     // LOGIN & REGISTER
-    localStorage.setItem('users', JSON.stringify(new Array));
+    localStorage.setItem('users', JSON.stringify(new Array)); //
     localStorage.setItem('isLoggedIn', false);
-    const users = JSON.parse(localStorage.getItem('users'));
+    const users = JSON.parse(localStorage.getItem('users')); //
 
     function registerUser(names, username, password, rePasword) {
         if (!names.trim().includes(' ')) {
@@ -141,7 +141,7 @@
                 ERROR_PAGE.style.display = 'none';
                 break;
             case 'title':
-            case 'image':
+            case 'article':
                 FOCUS_SECTION.style.display = 'none';
                 MAIN_MENU.style.display = 'none';
                 OPTIONAL_PANEL.style.display = 'none';
