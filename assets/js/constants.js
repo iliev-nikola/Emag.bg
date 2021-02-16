@@ -92,3 +92,9 @@ const TOP_SECTION = getById('top');
 const BIG_TECHNOLOGIES = getById('big-technologies');
 const BULLETIN = getById('bulletin');
 const OPEN_ITEM = getById('open-item-section');
+
+//RAITING STARS
+const RAITING_STARS = document.getElementsByClassName('stars');
+
+//OPEN ITEM CONTAINER
+let OPEN_ITEM_CONTAINER = getById('open-item-container');

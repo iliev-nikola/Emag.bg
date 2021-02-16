@@ -107,12 +107,12 @@ function createItemsCard(array, container) {
 
         titleContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
-            openItem();
+            openItem(currentItem,currentPrice);
 
         });
         imageContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
-            openItem();
+            openItem(currentItem,currentPrice);
         });
 
         //DELETE ITEMS FROM HISTORY SECTION
