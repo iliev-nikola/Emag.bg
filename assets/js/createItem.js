@@ -35,6 +35,7 @@ function createItemsCard(array, container) {
         let imageContainer = createNewElement('a');
         imageContainer.href = '#article';
         let itemImage = createNewElement('img');
+        itemImage.className = 'item-image';
         itemImage.src = currentItem.image;
         let sup = createNewElement('sup', currentItem.currentPennies);
         let valute = createNewElement('small', 'лв');

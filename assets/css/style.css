@@ -1484,11 +1484,13 @@ footer {
   margin: 5px 10px 5px 0px;
   padding: 30px 15px;
 }
-.items-card img {
+
+.items-card .item-image {
   height: 137px;
   width: 138px;
   margin-bottom: 20px;
 }
+
 .items-card h5 {
   font-size: 13px;
   height: 54px;
@@ -1500,9 +1502,11 @@ footer {
   margin-bottom: 20px;
   font-weight: 600;
 }
+
 .items-card h5:hover {
   color: #005eb8;
 }
+
 .items-card span {
   position: absolute;
   bottom: 15px;
@@ -1511,35 +1515,44 @@ footer {
   font-size: 18px;
   font-weight: 600;
 }
+
 .items-card sup {
   font-size: 10px;
   position: absolute;
   top: 4px;
 }
+
 .items-card p {
   margin-bottom: 10px;
 }
+
 .items-card sub {
   font-size: 10px;
   position: absolute;
   bottom: 44px;
 }
+
 .line {
   background-color: #fff;
   text-decoration-line: line-through;
 }
+
 .regular-price {
   margin-bottom: 10px;
 }
+
 .regular-price small {
   margin-right: 7px;
 }
+
 .regular-price b {
   color: rgb(153, 153, 153);
 }
+
 .items-card small {
   margin-left: 13px;
 }
+
 .percentage {
   position: absolute;
   top: 5px;
@@ -1558,6 +1571,7 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
 .tooltip,
 .shop-card {
   position: absolute;
@@ -1566,9 +1580,11 @@ footer {
   height: 8px;
   cursor: pointer;
 }
+
 .tooltip {
   top: 5px;
 }
+
 /*TOOLTIP IN ITEMS*/
 .tooltip .tooltiptext {
   display: flex;
@@ -1609,10 +1625,12 @@ footer {
 .shop-card {
   top: 30px;
 }
+
 /*BUTTONS STYLE-FOCUS-BARS SECTION*/
 .scroll-menu {
   position: relative;
 }
+
 #left-scroll,
 #right-scroll,
 #other-right-scroll,
@@ -1628,6 +1646,7 @@ footer {
   height: 80px;
   top: 40%;
 }
+
 #left-scroll:hover,
 #right-scroll:hover,
 #other-right-scroll:hover,
@@ -1635,17 +1654,20 @@ footer {
   background-color: #fff;
   opacity: unset;
 }
+
 #left-scroll,
 #other-left-scroll {
   display: none;
   position: absolute;
-  left: -5px;
+  left: -50px;
 }
+
 #right-scroll,
 #other-right-scroll {
   position: absolute;
-  right: -2px;
+  right: -50px;
 }
+
 .blur {
   filter: blur(5px);
   -webkit-filter: blur(5px);
@@ -1653,13 +1675,16 @@ footer {
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
 }
+
 /*WATCHED ITEMS HISTORY SECTION*/
 #history-section {
   position: relative;
 }
+
 #watched-items {
   display: flex;
 }
+
 #watched-items div {
   margin-right: 10px;
   padding: 10px 7px;

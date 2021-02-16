@@ -60,11 +60,17 @@ const OTHER_WATCHED_CONTAINER = getById('other-watched-container');
 //FOCUS-BAR SECTION
 const FOCUS_BAR = getById('focus-section');
 
-//RADIO BUTTONS IN FOCUS-BAR SECTION
+//RADIO BUTTONS CONTAINER IN FOCUS-BAR SECTION
 const DOTS_CONTAINER = getById('dots-container');
 
-//RADIO BUTTONS IN OTHER CLIENTS WATCHED
+//RADIO BUTTONS CONTAINER IN OTHER CLIENTS WATCHED
 const DOTS_CONTAINER_OTHER = getById('other-dots-container');
+
+//ALL RADIO BUTTONS IN FOCUS SECTION
+const ALL_RADIO_BUTTONS = document.getElementsByClassName('dots');
+
+//ALL RADIO BUTTONS IN OTHER CLIENTS WATCHED
+const ALL_OTHER_BUTTONS = document.getElementsByClassName('other-dots');
 
 //CONTAINERS IN TOP BRANDS
 const TOP_BRANDS = getById("topBrands");
@@ -86,4 +92,3 @@ const TOP_SECTION = getById('top');
 const BIG_TECHNOLOGIES = getById('big-technologies');
 const BULLETIN = getById('bulletin');
 const OPEN_ITEM = getById('open-item-section');
-const LOGIN = getById('login');

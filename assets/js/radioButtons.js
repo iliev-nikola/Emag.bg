@@ -4,11 +4,12 @@ function createDots(array, container) {
         dot.type = 'radio';
         if (container.id === 'dots-container') {
             dot.name = 'dots-container';
+            dot.className = 'dots';
         } else {
             dot.name = 'other-dots-container';
+            dot.className = 'other-dots';
         }
 
-        dot.className = 'dots';
         dot.value = i + 1;
         container.append(dot);
         if (i === 0) {
