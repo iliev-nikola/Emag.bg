@@ -28,8 +28,12 @@ function createItemsCard(array, container) {
         tooltipContainer.className = 'tooltip';
         let addFavourite = createNewElement('i');
         addFavourite.className = 'far fa-heart fav';
-        let tooltipText = createNewElement('div', 'Добави в Любими');
+        let tooltipText = createNewElement('div', 'Добави в любими');
         tooltipText.className = 'tooltiptext';
+        let tooltipShoppingCardContainer = createNewElement('div');
+        tooltipShoppingCardContainer.className = 'shop-tooltip';
+        let tooltipShoppingCard = createNewElement('div', 'Добави в количката');
+        tooltipShoppingCard.className = 'tooltip-shopping-card';
         let addShoppingCard = createNewElement('i');
         addShoppingCard.className = 'fas fa-shopping-cart shop-card';
         let imageContainer = createNewElement('a');
@@ -57,19 +61,30 @@ function createItemsCard(array, container) {
         tooltipContainer.addEventListener("click", function () {
             if (addFavourite.style.color === 'red') {
                 addFavourite.className = 'far fa-heart fav';
-                tooltipText.innerText = 'Добавено в Любими';
                 addFavourite.style.color = '#2196f3';
+                tooltipText.innerText = 'Добави в Любими';
             } else {
                 addFavourite.className = 'fas fa-heart fav';
                 addFavourite.style.color = 'red';
-                tooltipText.innerText = 'Премахни от Любими';
+                tooltipText.innerText = 'Добавено в Любими';
+            }
+        });
+        tooltipShoppingCardContainer.addEventListener('click', function () {
+            if (addShoppingCard.style.color === 'red') {
+                tooltipShoppingCard.innerText = 'Добави в количката';
+                addShoppingCard.style.color = null;
+            }
+            else {
+                addShoppingCard.style.color = 'red';
+                tooltipShoppingCard.innerText = 'Добавено в количката';
             }
         });
         itemPrice.append(sup, valute);
         container.append(cardContainer);
         imageContainer.append(itemImage);
         titleContainer.append(itemTitle);
-        cardContainer.append(imageContainer, titleContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer);
+        cardContainer.append(imageContainer, titleContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer, tooltipShoppingCardContainer);
+        tooltipShoppingCardContainer.append(tooltipShoppingCard, addShoppingCard);
         tooltipContainer.append(tooltipText, addFavourite);
         if (currentItem.regularPrice === '-') {
             regular.style.visibility = 'hidden';
@@ -107,12 +122,12 @@ function createItemsCard(array, container) {
 
         titleContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
-            openItem(currentItem,currentPrice);
+            openItem(currentItem, currentPrice);
 
         });
         imageContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
-            openItem(currentItem,currentPrice);
+            openItem(currentItem, currentPrice);
         });
 
         //DELETE ITEMS FROM HISTORY SECTION

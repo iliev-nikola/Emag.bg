@@ -1586,7 +1586,12 @@ footer {
 }
 
 /*TOOLTIP IN ITEMS*/
-.tooltip .tooltiptext {
+.shop-tooltip {
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext,
+.shop-tooltip .tooltip-shopping-card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1607,11 +1612,18 @@ footer {
   box-shadow: rgb(0 0 0 / 40%) 0px 2px 6px -2px;
 }
 
-.tooltip:hover .tooltiptext {
+.shop-tooltip .tooltip-shopping-card {
+  top: 22px;
+  right: 38px;
+}
+
+.tooltip:hover .tooltiptext,
+.shop-tooltip:hover .tooltip-shopping-card {
   visibility: visible;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltiptext::after,
+.shop-tooltip .tooltip-shopping-card::after {
   content: " ";
   position: absolute;
   top: 50%;
