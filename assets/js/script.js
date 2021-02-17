@@ -1,8 +1,9 @@
+// GENERAL FUNCTIONALITY
 (function () {
     // LOGIN & REGISTER
-    localStorage.setItem('users', JSON.stringify(new Array)); //
+    localStorage.setItem('users', JSON.stringify(new Array));
     localStorage.setItem('isLoggedIn', false);
-    const users = JSON.parse(localStorage.getItem('users')); //
+    const users = JSON.parse(localStorage.getItem('users'));
 
     function registerUser(names, username, password, rePasword) {
         if (!names.trim().includes(' ')) {
@@ -34,28 +35,12 @@
         const [firstName, lastName] = names.split(' ');
         users.push({ username, password, firstName, lastName });
         localStorage.setItem('users', JSON.stringify(users));
-        onSuccess('register', firstName, lastName);
-    }
-
-    function onSuccess(type, firstName, lastName) {
-        if (type === 'login') {
-            LOGIN_USER.value = '';
-            LOGIN_PASS.value = '';
-            success(`Добре дошъл, ${firstName} ${lastName}!`);
-        } else {
-            NAMES.value = '';
-            REGISTER_USER.value = '';
-            REGISTER_PASS.value = '';
-            REGISTER_RE_PASS.value = '';
-            success('Успешна регистрация!');
-        }
-
-        login();
-        renderHeader(firstName, lastName);
-        PROFILE_NAV.classList.add('checked');
-        GUEST_NAV.classList.remove('checked');
-        location.replace('#home');
-        document.documentElement.scrollTop = 0;
+        NAMES.value = '';
+        REGISTER_USER.value = '';
+        REGISTER_PASS.value = '';
+        REGISTER_RE_PASS.value = '';
+        success('Успешна регистрация!');
+        location.replace('#login');
     }
 
     function loginUser(username, password) {
@@ -74,10 +59,22 @@
                 if (user.password !== password.trim()) {
                     return error('Невалидна парола.');
                 } else {
-                    onSuccess('login', user.firstName, user.lastName);
+                    onLoginSuccess(user.firstName, user.lastName);
                 }
             }
         }
+    }
+
+    function onLoginSuccess(firstName, lastName) {
+        LOGIN_USER.value = '';
+        LOGIN_PASS.value = '';
+        success(`Добре дошъл, ${firstName} ${lastName}!`);
+        login();
+        renderHeader(firstName, lastName);
+        PROFILE_NAV.classList.add('checked');
+        GUEST_NAV.classList.remove('checked');
+        location.replace('#home');
+        document.documentElement.scrollTop = 0;
     }
 
     // RENDERING
@@ -115,6 +112,7 @@
     }
 
     // ROUTER
+    const mainSections = [FOCUS_SECTION, MOBILE_SECTION, MOBILE_APP, TV_SECTION, TOP_SECTION, BIG_TECHNOLOGIES, BULLETIN];
     function onHashChange(e) {
         const hash = e.target.location.hash.substring(1);
         switch (hash) {
@@ -123,6 +121,10 @@
                 LOGIN_SECTION.style.display = 'none';
                 document.body.style.backgroundColor = '#e9ebee';
                 ERROR_PAGE.style.display = 'none';
+                MAIN_MENU.style.display = 'flex';
+                OPTIONS_PANEL.style.display = 'flex';
+                OPEN_ITEM.style.display = 'none';
+                mainSections.map(section => section.style.display = 'block');
                 break;
             case 'login':
                 MAIN_SECTION.style.display = 'none';
@@ -131,6 +133,10 @@
                 REGISTER_PAGE.style.display = 'none';
                 document.body.style.backgroundColor = '#f7f7f7';
                 ERROR_PAGE.style.display = 'none';
+                MAIN_MENU.style.display = 'flex';
+                OPTIONS_PANEL.style.display = 'flex';
+                OPEN_ITEM.style.display = 'none';
+                mainSections.map(section => section.style.display = 'block');
                 break;
             case 'register':
                 MAIN_SECTION.style.display = 'none';
@@ -139,23 +145,25 @@
                 REGISTER_PAGE.style.display = 'block';
                 document.body.style.backgroundColor = '#f7f7f7';
                 ERROR_PAGE.style.display = 'none';
+                MAIN_MENU.style.display = 'flex';
+                OPTIONS_PANEL.style.display = 'flex';
+                OPEN_ITEM.style.display = 'none';
+                mainSections.map(section => section.style.display = 'block');
                 break;
             case 'title':
             case 'article':
-                FOCUS_SECTION.style.display = 'none';
                 MAIN_MENU.style.display = 'none';
-                OPTIONAL_PANEL.style.display = 'none';
-                MOBILE_SECTION.style.display = 'none';
-                MOBILE_APP.style.display = 'none';
-                TV_SECTION.style.display = 'none';
-                TOP_SECTION.style.display = 'none';
-                BIG_TECHNOLOGIES.style.display = 'none';
-                BULLETIN.style.display = 'none';
+                OPTIONS_PANEL.style.display = 'none';
+                mainSections.map(section => section.style.display = 'none');
                 break;
             default:
                 MAIN_SECTION.style.display = 'none';
                 LOGIN_SECTION.style.display = 'none';
                 ERROR_PAGE.style.display = 'block';
+                mainSections.map(section => section.style.display = 'none');
+                MAIN_MENU.style.display = 'none';
+                OPTIONS_PANEL.style.display = 'none';
+                OPEN_ITEM.style.display = 'none';
         }
 
         document.documentElement.scrollTop = 0;
@@ -166,7 +174,13 @@
     window.addEventListener('DOMContentLoaded', () => {
         location.replace('#home');
     });
-    SEARCH_BAR.addEventListener('focus', onFocus);
+    SEARCH_INPUT.addEventListener('focus', onFocus);
+    const searchBoxContent = Array.from(SEARCH_BOX_CONTENT.children);
+    searchBoxContent.forEach(el => {
+        el.addEventListener('click', (e) => {
+            console.log(e.target.innerText);
+        })
+    });
     ERROR_TEXT.addEventListener('click', () => {
         history.back();
     });

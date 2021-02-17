@@ -8,7 +8,6 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-'
-
     },
     {
         'id': 2,
@@ -184,7 +183,7 @@ const ALL_FOCUS_ITEMS = [
 //ITEMS IN FOCUS-BAR SECTION
 const OTHER_CLIENTS_WATCHED = [
     {
-        'id': 1,
+        'id': 19,
         'title': 'Промо пакет: Смартфон Huawei P40 Lite E, Dual SIM, 64GB, 4G, Aurora Blue + Фитнес гривна Lenovo G02, черна Fitness Band',
         'image': './assets/images/other-clients-watched/1.png',
         'currentPrice': 283,
@@ -194,7 +193,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 2,
+        'id': 20,
         'title': 'Смартфон Xiaomi Redmi Note 9 Pro, Dual SIM, 128GB, 6GB RAM, 4G, Interstellar Grey',
         'image': './assets/images/other-clients-watched/2.png',
         'currentPrice': 425,
@@ -204,7 +203,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 3,
+        'id': 21,
         'title': 'Климатик Star-Light ACT-12WIFI, Control WiFi, 3D Inverter, 12000 BTU, Функция отопление, Клас A++, Дисплей, Бял',
         'image': './assets/images/other-clients-watched/3.png',
         'currentPrice': 649,
@@ -214,7 +213,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 4,
+        'id': 22,
         'title': 'Промо пакет: Смартфон Samsung Galaxy A20e, Dual SIM, 32GB, 4G, Black + Фитнес гривна Lenovo G02, черна Fitness Band',
         'image': './assets/images/other-clients-watched/4.png',
         'currentPrice': 267,
@@ -225,7 +224,7 @@ const OTHER_CLIENTS_WATCHED = [
     }
     ,
     {
-        'id': 5,
+        'id': 23,
         'title': 'Конзола Sony PlayStation 5',
         'image': './assets/images/other-clients-watched/5.png',
         'regularPrice': 2699,
@@ -234,7 +233,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': '99'
     },
     {
-        'id': 6,
+        'id': 24,
         'title': 'Комплект медицински маски INTEXTRED TYPE IIR, за еднократна употреба, С телче за носа, Трислойни, Сини, 50 броя',
         'image': './assets/images/other-clients-watched/6.png',
         'currentPrice': 6,
@@ -243,7 +242,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': '00'
     },
     {
-        'id': 7,
+        'id': 25,
         'title': 'Смарт ТВ Бокс, Android 7.1 TV BOX, безплатна телевизия 4K, HDMI , Wi-Fi , Internet TV',
         'image': './assets/images/other-clients-watched/7.png',
         'currentPrice': 48,
@@ -252,7 +251,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': '00'
     },
     {
-        'id': 8,
+        'id': 26,
         'title': 'Solid State Drive (SSD) Kingston A2000, 1TB, NVMe, M.2',
         'image': './assets/images/other-clients-watched/8.png',
         'currentPrice': 260,
@@ -262,7 +261,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 9,
+        'id': 27,
         'title': 'Телевизор LED Star-Light, 32" (80 см), 32DM3500, HD',
         'image': './assets/images/other-clients-watched/9.png',
         'currentPrice': 229,
@@ -272,7 +271,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 10,
+        'id': 28,
         'title': 'Акумулаторна бормашина Steinhaus, PRO-CD18X, 18 V 1.3 Ah Li-Ion, 30Nm, 2 степени 400/1500 об/мин, Бърз патронник 10мм, 13 аксесоара, Пластмасова кутия',
         'image': './assets/images/other-clients-watched/10.png',
         'currentPrice': 62,
@@ -281,7 +280,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': '99'
     },
     {
-        'id': 11,
+        'id': 29,
         'title': 'Комплект тенджери Madeline Cooking by Heinner, 10 части, Индукция, Инокс',
         'image': './assets/images/other-clients-watched/11.png',
         'currentPrice': 100,
@@ -291,7 +290,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 12,
+        'id': 30,
         'title': 'Хладилна витрина Star-Light VFM-211L, 211 л, 160 бутилки, Вентилатор, H 174.7 см, Бяла',
         'image': './assets/images/other-clients-watched/12.png',
         'currentPrice': 704,
@@ -301,7 +300,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 13,
+        'id': 31,
         'title': 'Защитна маска за лице KN95 - FFP2 - за многократна употреба',
         'image': './assets/images/other-clients-watched/13.png',
         'currentPrice': 6,
@@ -311,7 +310,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 14,
+        'id': 32,
         'title': 'Телевизор LED Diamant, 32" (80 см), 32HL4300H/A, HD',
         'image': './assets/images/other-clients-watched/14.png',
         'currentPrice': 219,
@@ -321,7 +320,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 15,
+        'id': 33,
         'title': 'Телевизор LG 49UN73003LA, 49" (123 см), Smart, 4K Ultra HD, LED',
         'image': './assets/images/other-clients-watched/15.png',
         'currentPrice': 769,
@@ -331,7 +330,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 16,
+        'id': 34,
         'title': 'Solid State Drive (SSD) Kingston A400, 120GB, 2.5", SATA III',
         'image': './assets/images/other-clients-watched/16.png',
         'currentPrice': 44,
@@ -342,7 +341,7 @@ const OTHER_CLIENTS_WATCHED = [
     }
     ,
     {
-        'id': 17,
+        'id': 35,
         'title': 'Телевизор Samsung 55TU7172, 55" (138 см), Smart, 4K Ultra HD, LED',
         'image': './assets/images/other-clients-watched/17.png',
         'currentPrice': 849,
@@ -352,7 +351,7 @@ const OTHER_CLIENTS_WATCHED = [
 
     },
     {
-        'id': 18,
+        'id': 36,
         'title': 'Телевизор Samsung 43TU7172, 43" (108 см), Smart, 4K Ultra HD, LED',
         'image': './assets/images/other-clients-watched/18.png',
         'currentPrice': 649,

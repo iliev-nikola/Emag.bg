@@ -28,14 +28,15 @@ function getById(id) {
 
 //CREATE NEW HTML ELEMENT
 function createNewElement(type, text) {
-    let element = document.createElement(type);
+    const element = document.createElement(type);
     if (text) {
         element.innerText = text;
     }
+
     return element;
 }
 
-// LOGIN & REGISTER
+// LOGIN & LOGOUT
 function isLoggedIn() {
     return localStorage.getItem('isLoggedIn');
 }

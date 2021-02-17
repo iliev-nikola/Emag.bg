@@ -4,20 +4,25 @@ class Items {
         this.allItems = [];
         this.watchedItems = [];
     }
+
     addProduct(item) {
         this.allItems.push(item);
     }
+
     addWatched(item) {
         if (this.watchedItems.length === 3) {
             this.watchedItems.shift();
         }
+
         this.watchedItems.push(item);
     }
 }
+
 let focusSectionItems = new Items();
 ALL_FOCUS_ITEMS.forEach(function (item) {
     focusSectionItems.addProduct(item);
 });
+
 //CREATING ITEMS
 function createItemsCard(array, container) {
     container.innerHTML = '';
@@ -59,6 +64,8 @@ function createItemsCard(array, container) {
         percentageBar.className = 'percentage';
         regular.append(regPrice);
         tooltipContainer.addEventListener("click", function () {
+            // TODO: adding to favs and render the header
+
             if (addFavourite.style.color === 'red') {
                 addFavourite.className = 'far fa-heart fav';
                 addFavourite.style.color = '#2196f3';
@@ -69,16 +76,19 @@ function createItemsCard(array, container) {
                 tooltipText.innerText = 'Добавено в Любими';
             }
         });
+
         tooltipShoppingCardContainer.addEventListener('click', function () {
+            // TODO: adding to cart and render the header
+
             if (addShoppingCard.style.color === 'red') {
                 tooltipShoppingCard.innerText = 'Добави в количката';
                 addShoppingCard.style.color = null;
-            }
-            else {
+            } else {
                 addShoppingCard.style.color = 'red';
                 tooltipShoppingCard.innerText = 'Добавено в количката';
             }
         });
+
         itemPrice.append(sup, valute);
         container.append(cardContainer);
         imageContainer.append(itemImage);
@@ -125,6 +135,7 @@ function createItemsCard(array, container) {
             openItem(currentItem, currentPrice);
 
         });
+
         imageContainer.addEventListener('click', function () {
             watchedItem(focusSectionItems.watchedItems);
             openItem(currentItem, currentPrice);

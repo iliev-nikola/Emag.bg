@@ -1,9 +1,10 @@
-//SHOW TOP BRANDS SECTION
+// SHOW TOP BRANDS SECTION
 TOP_BRANDS.style.display = 'block';
 MOBILE_BRANDS.style.display = 'none';
 ELECTRONIC_BRANDS.style.display = 'none';
 HEALTH_BRANDS.style.display = 'none';
 FASHION_BRANDS.style.display = 'none';
+
 for (let i = 0; i < ALL_BRANDS_SECTION.length; i++) {
     ALL_BRANDS_SECTION[i].addEventListener("click", function (ev) {
         ev.preventDefault();

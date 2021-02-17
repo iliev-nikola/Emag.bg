@@ -678,6 +678,7 @@ a[href="#register"]:hover {
 
 .focus-section {
   padding: 0;
+  position: relative;
   background-color: rgb(166, 68, 177);
 }
 
@@ -755,6 +756,7 @@ a[href="#register"]:hover {
 
 .section-bars {
   padding-top: 20px;
+  position: relative;
 }
 
 /*MOBILE BAR*/
@@ -1641,6 +1643,7 @@ footer {
 /*BUTTONS STYLE-FOCUS-BARS SECTION*/
 .scroll-menu {
   position: relative;
+  margin-top: 10px;
 }
 
 #left-scroll,
@@ -1656,7 +1659,8 @@ footer {
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
   height: 80px;
-  top: 40%;
+  top: 55%;
+  position: absolute;
 }
 
 #left-scroll:hover,
@@ -1667,16 +1671,22 @@ footer {
   opacity: unset;
 }
 
-#left-scroll,
-#other-left-scroll {
+#left-scroll {
   display: none;
-  position: absolute;
-  left: -50px;
+  left: 135px;
 }
 
-#right-scroll,
+#right-scroll {
+  right: 140px;
+}
+
+#other-left-scroll {
+  left: -55px;
+  top: 47%;
+}
+
 #other-right-scroll {
-  position: absolute;
+  top: 47%;
   right: -50px;
 }
 

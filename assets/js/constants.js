@@ -1,6 +1,11 @@
+// MAIN
+const BODY = document.body;
+
 // SEARCH BAR
 const SEARCH_BOX = document.querySelector('.searchbox');
-const SEARCH_BAR = getById('search');
+const SEARCH_BOX_CONTENT = document.querySelector('.searchbox-content');
+const SEARCH_BAR = document.querySelector('.search-bar');
+const SEARCH_INPUT = getById('search')
 const SEARCH_FORM = getById('searchForm');
 const SUBMIT_BUTTON = getById('submitBtn');
 
@@ -81,10 +86,10 @@ const FASHION_BRANDS = getById("fashionBrands");
 const ALL_BRANDS_SECTION = document.getElementsByClassName('brands');
 const MOST_POPULAR_STYLE = getById('most-popular');
 
-//
+// SECTIONS
 const FOCUS_SECTION = getById('focus-section');
 const MAIN_MENU = getById('main');
-const OPTIONAL_PANEL = getById('optional-panel');
+const OPTIONS_PANEL = getById('optionsPanel');
 const MOBILE_SECTION = getById('mobile-bar');
 const MOBILE_APP = getById('mobile-app');
 const TV_SECTION = getById('tv-bar');

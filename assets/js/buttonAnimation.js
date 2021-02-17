@@ -1,4 +1,4 @@
-//BUTTONS' ANIMATION IN FOCUS-BAR SECTION AND OTHER CLIENTS WATCHED SECTION
+//BUTTONS ANIMATION IN FOCUS-BAR SECTION AND OTHER CLIENTS WATCHED SECTION
 function scrollItems(array, rightScroll, leftScroll, container) {
     let counterFocus = 0;
     let counterOther = 0;
@@ -24,11 +24,11 @@ function scrollItems(array, rightScroll, leftScroll, container) {
                 leftScroll.style.display = 'block';
             }
         }, 30);
+
         if (container === CARDS_CONTAINER) {
             counterFocus++;
             ALL_RADIO_BUTTONS[counterFocus].checked = true;
-        }
-        else {
+        } else {
             counterOther++;
             ALL_OTHER_BUTTONS[counterOther].checked = true;
         }
@@ -54,18 +54,18 @@ function scrollItems(array, rightScroll, leftScroll, container) {
                 rightScroll.style.display = 'block';
             }
         }, 30);
+
         if (container === CARDS_CONTAINER) {
             counterFocus--;
             ALL_RADIO_BUTTONS[counterFocus].checked = true;
-        }
-        else {
+        } else {
             counterOther--;
             ALL_OTHER_BUTTONS[counterOther].checked = true;
         }
     }
+
     rightScroll.addEventListener('click', scrollLeft);
     leftScroll.addEventListener('click', scrollRight);
-
 }
 
 scrollItems(ALL_FOCUS_ITEMS, RIGHT_SCROLL, LEFT_SCROLL, CARDS_CONTAINER);
