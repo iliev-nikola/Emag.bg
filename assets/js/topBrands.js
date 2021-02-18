@@ -30,6 +30,7 @@ for (let i = 0; i < ALL_BRANDS_SECTION.length; i++) {
                 ELECTRONIC_BRANDS.style.display = 'block';
                 HEALTH_BRANDS.style.display = 'none';
                 FASHION_BRANDS.style.display = 'none';
+                MOST_POPULAR_STYLE.id = '';
                 break;
             case 3:
                 TOP_BRANDS.style.display = 'none';
@@ -37,6 +38,7 @@ for (let i = 0; i < ALL_BRANDS_SECTION.length; i++) {
                 ELECTRONIC_BRANDS.style.display = 'none';
                 HEALTH_BRANDS.style.display = 'block';
                 FASHION_BRANDS.style.display = 'none';
+                MOST_POPULAR_STYLE.id = '';
                 break;
             case 4:
                 TOP_BRANDS.style.display = 'none';
@@ -44,6 +46,7 @@ for (let i = 0; i < ALL_BRANDS_SECTION.length; i++) {
                 ELECTRONIC_BRANDS.style.display = 'none';
                 HEALTH_BRANDS.style.display = 'none';
                 FASHION_BRANDS.style.display = 'block';
+                MOST_POPULAR_STYLE.id = '';
                 break;
         }
     })

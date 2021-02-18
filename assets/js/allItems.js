@@ -7,7 +7,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 199,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/1.jpg','./assets/images/focus-items/1.1.png']
     },
     {
         'id': 2,
@@ -16,7 +17,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 294,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/2.jpg','./assets/images/focus-items/2.1.png']
 
     },
     {
@@ -26,7 +28,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 539,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/3.jpg','./assets/images/focus-items/3.1.png']
 
     },
     {
@@ -36,7 +39,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 89,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/4.jpg','./assets/images/focus-items/4.1.png']
 
     }
     ,
@@ -47,7 +51,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': 849,
         'currentPrice': 589,
         'currentPennies': '99',
-        'regularPennies': '99'
+        'regularPennies': '99',
+        'allImages':['./assets/images/focus-items/5.png','./assets/images/focus-items/5.1.png']
 
     },
     {
@@ -57,7 +62,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 569,
         'regularPrice': 799,
         'currentPennies': '99',
-        'regularPennies': '99'
+        'regularPennies': '99',
+        'allImages':['./assets/images/focus-items/6.jpg','./assets/images/focus-items/6.1.png']
 
     },
     {
@@ -67,7 +73,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 1199,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/7.png','./assets/images/focus-items/7.1.png']
     },
     {
         'id': 8,
@@ -76,7 +83,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 9,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/8.png','./assets/images/focus-items/8.1.png']
 
     },
     {
@@ -86,7 +94,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 439,
         'regularPrice': 599,
         'currentPennies': '99',
-        'regularPennies': '99'
+        'regularPennies': '99',
+        'allImages':['./assets/images/focus-items/9.png','./assets/images/focus-items/9.1.png']
 
     },
     {
@@ -96,7 +105,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 389,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/10.png','./assets/images/focus-items/10.1.png']
     },
     {
         'id': 11,
@@ -125,7 +135,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 44,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/13.png','./assets/images/focus-items/13.1.png']
 
     },
     {
@@ -135,7 +146,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 39,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/14.png','./assets/images/focus-items/14.1.png']
 
     },
     {
@@ -145,7 +157,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 39,
         'regularPrice': 54,
         'currentPennies': '99',
-        'regularPennies': '99'
+        'regularPennies': '99',
+        'allImages':['./assets/images/focus-items/15.png','./assets/images/focus-items/15.1.png']
 
     },
     {
@@ -155,7 +168,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 72,
         'regularPrice': 84,
         'currentPennies': '99',
-        'regularPennies': '99'
+        'regularPennies': '99',
+        'allImages':['./assets/images/focus-items/16.png','./assets/images/focus-items/16.1.png']
 
     }
     ,
@@ -166,7 +180,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 749,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/focus-items/17.png','./assets/images/focus-items/17.1.png']
 
     },
     {
@@ -176,7 +191,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 444,
         'regularPrice': 594,
         'currentPennies': '99',
-        'regularPennies': '99'
+        'regularPennies': '99',
+        'allImages':['./assets/images/focus-items/18.png','./assets/images/focus-items/18.1.png']
 
     },
 ]
@@ -184,42 +200,46 @@ const ALL_FOCUS_ITEMS = [
 const OTHER_CLIENTS_WATCHED = [
     {
         'id': 19,
-        'title': 'Промо пакет: Смартфон Huawei P40 Lite E, Dual SIM, 64GB, 4G, Aurora Blue + Фитнес гривна Lenovo G02, черна Fitness Band',
+        'title': 'Смартфон Apple iPhone 12, 64GB, 5G, Blue',
         'image': './assets/images/other-clients-watched/1.png',
-        'currentPrice': 283,
-        'regularPrice': 304,
-        'currentPennies': '70',
-        'regularPennies': '00'
+        'currentPrice': 1.699,
+        'regularPrice': '-',
+        'currentPennies': '99',
+        'regularPennies': '-',
+        'allImages':['./assets/images/other-clients-watched/1.png','./assets/images/other-clients-watched/1.1.png']
 
     },
     {
         'id': 20,
-        'title': 'Смартфон Xiaomi Redmi Note 9 Pro, Dual SIM, 128GB, 6GB RAM, 4G, Interstellar Grey',
+        'title': 'Рокля - Костюм На Елза От Замръзналото Кралство, Disney Frozen, 130см, Размер за 6год',
         'image': './assets/images/other-clients-watched/2.png',
-        'currentPrice': 425,
-        'regularPrice': '-',
-        'currentPennies': '99',
-        'regularPennies': '-'
+        'currentPrice': 39,
+        'regularPrice': 79,
+        'currentPennies': '98',
+        'regularPennies': '99',
+        'allImages':['./assets/images/other-clients-watched/2.png','./assets/images/other-clients-watched/2.2.png']
 
     },
     {
         'id': 21,
-        'title': 'Климатик Star-Light ACT-12WIFI, Control WiFi, 3D Inverter, 12000 BTU, Функция отопление, Клас A++, Дисплей, Бял',
+        'title': 'Комплект Кухненска Мивка с отцедник и смесител Kring, Композитен гранит, 780x440 мм, Дълбочина 170 мм, Обратима, Монтаж на плот, Бял',
         'image': './assets/images/other-clients-watched/3.png',
-        'currentPrice': 649,
-        'regularPrice': '-',
+        'currentPrice': 299,
+        'regularPrice': 399,
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '99',
+        'allImages':['./assets/images/other-clients-watched/3.png','./assets/images/other-clients-watched/3.3.png']
 
     },
     {
         'id': 22,
-        'title': 'Промо пакет: Смартфон Samsung Galaxy A20e, Dual SIM, 32GB, 4G, Black + Фитнес гривна Lenovo G02, черна Fitness Band',
+        'title': 'Телевизор Samsung 32T4302, 32" (80 см), Smart, HD, LED',
         'image': './assets/images/other-clients-watched/4.png',
-        'currentPrice': 267,
-        'regularPrice': 288,
-        'currentPennies': '70',
-        'regularPennies': '00'
+        'currentPrice': 419,
+        'regularPrice': '-',
+        'currentPennies': '98',
+        'regularPennies': '-',
+        'allImages':['./assets/images/other-clients-watched/4.png','./assets/images/other-clients-watched/4.1.png']
 
     }
     ,
@@ -230,25 +250,28 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': 2699,
         'currentPrice': 2599,
         'currentPennies': '99',
-        'regularPennies': '99'
+        'regularPennies': '99',
+        'allImages':['./assets/images/other-clients-watched/5.png','./assets/images/other-clients-watched/5.1.png']
     },
     {
         'id': 24,
-        'title': 'Комплект медицински маски INTEXTRED TYPE IIR, за еднократна употреба, С телче за носа, Трислойни, Сини, 50 броя',
+        'title': 'Планетарен миксер Daewoo DHM150Y, 1600 W, 10 скорости, 4.5 л. Иноксова купа',
         'image': './assets/images/other-clients-watched/6.png',
-        'currentPrice': 6,
-        'regularPrice': 72,
-        'currentPennies': '00',
-        'regularPennies': '00'
+        'currentPrice': 129,
+        'regularPrice': 149,
+        'currentPennies': '99',
+        'regularPennies': '99',
+        'allImages':['./assets/images/other-clients-watched/6.png','./assets/images/other-clients-watched/6.1.png']
     },
     {
         'id': 25,
-        'title': 'Смарт ТВ Бокс, Android 7.1 TV BOX, безплатна телевизия 4K, HDMI , Wi-Fi , Internet TV',
+        'title': 'Гардероб Kring Houston, Плъзгащи се врати, Чекмеджета, Цвят дъб / Ефект тъмносив бетон, 200 x 200 x 61 см',
         'image': './assets/images/other-clients-watched/7.png',
-        'currentPrice': 48,
-        'regularPrice': 96,
-        'currentPennies': '00',
-        'regularPennies': '00'
+        'currentPrice': 579,
+        'regularPrice': 1049,
+        'currentPennies': '99',
+        'regularPennies': '99',
+        'allImages':['./assets/images/other-clients-watched/7.png','./assets/images/other-clients-watched/7.1.png']
     },
     {
         'id': 26,
@@ -257,7 +280,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 260,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/other-clients-watched/8.png','./assets/images/other-clients-watched/8.1.png']
 
     },
     {
@@ -277,7 +301,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 62,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '99'
+        'regularPennies': '99',
+        'allImages':['./assets/images/focus-items/4.jpg','./assets/images/focus-items/4.1.png']
     },
     {
         'id': 29,
@@ -286,7 +311,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 100,
         'regularPrice': 120,
         'currentPennies': '46',
-        'regularPennies': '56'
+        'regularPennies': '56',
+        'allImages':['./assets/images/other-clients-watched/11.png','./assets/images/other-clients-watched/11.1.png']
 
     },
     {
@@ -306,7 +332,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 6,
         'regularPrice': 9,
         'currentPennies': '00',
-        'regularPennies': '60'
+        'regularPennies': '60',
+        'allImages':['./assets/images/other-clients-watched/13.png','./assets/images/other-clients-watched/13.1.png']
 
     },
     {
@@ -316,7 +343,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 219,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/other-clients-watched/14.png','./assets/images/other-clients-watched/14.1.png']
 
     },
     {
@@ -326,7 +354,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 769,
         'regularPrice': '-',
         'currentPennies': '78',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/other-clients-watched/15.png','./assets/images/other-clients-watched/15.1.png']
 
     },
     {
@@ -336,7 +365,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 44,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/other-clients-watched/16.png','./assets/images/other-clients-watched/16.2.png']
 
     }
     ,
@@ -347,7 +377,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 849,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/other-clients-watched/17.png','./assets/images/other-clients-watched/17.2.png']
 
     },
     {
@@ -357,6 +388,7 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 649,
         'regularPrice': '-',
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': '-',
+        'allImages':['./assets/images/other-clients-watched/18.png','./assets/images/other-clients-watched/18.1.png']
     },
 ]

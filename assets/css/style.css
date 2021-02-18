@@ -1864,20 +1864,6 @@ footer {
   padding-bottom: 10px;
 }
 
-.prices {
-  display: flex;
-  justify-content: space-between;
-}
-
-.total {
-  display: inline-block;
-  color: rgb(239, 40, 9);
-  font-size: 25px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  border-right: 1px rgb(232, 232, 232) solid;
-}
-
 .add-shopping-cart,
 .add-favourite {
   display: flex;
@@ -1938,4 +1924,92 @@ footer {
 
 .stars {
   padding-bottom: 3px;
+}
+
+.main-image-item {
+  width: 476px;
+  height: 476px;
+  cursor: pointer;
+}
+
+.images-item {
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.images-item:hover {
+  cursor: pointer;
+  border: 1px solid rgb(0, 94, 184);
+  border-radius: 3px;
+}
+
+.regular-container-item {
+  position: relative;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+}
+
+.regular-pennies-item {
+  position: absolute;
+  top: 0;
+}
+
+.regular-price-item,
+.regular-pennies-item,
+.lv {
+  padding-left: 2px;
+  text-decoration: line-through;
+}
+
+.lv {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.regular-price-item {
+  font-size: 14px;
+}
+
+.regular-pennies-item {
+  font-size: 9px;
+}
+
+.prices-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-sale {
+  color: rgb(153, 153, 153);
+}
+
+.total-container {
+  position: relative;
+}
+
+.current-price-item,
+.current-pennies-item,
+.lv-item {
+  color: rgb(239, 40, 9);
+  font-weight: 600;
+}
+
+.current-price-item {
+  font-size: 25px;
+}
+
+.current-pennies-item {
+  font-size: 16px;
+}
+
+.lv-item {
+  font-size: 25px;
+  padding-left: 20px;
+}
+
+.current-pennies-item {
+  position: absolute;
+  top: 0;
 }
