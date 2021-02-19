@@ -119,6 +119,7 @@
                         </div>
                     </div>
                     <div class="favourite-icon">
+                        <p id="favCounter"></p>
                         <i class="far fa-heart"></i>
                         <p>Любими</p>
                         <i class="fas fa-sort-down"></i>
@@ -130,6 +131,7 @@
                         </div>
                     </div>
                     <div class="shopping-cart">
+                        <p id="cartCounter"></p>
                         <img src="./assets/images/icons/shopping-cart.png"
                             alt="shopping-cart" class="shopping-cart-icon">
                         <p>Моята количка</p>
@@ -137,13 +139,17 @@
                         <div class="dropdown-container">
                             <div class="invisible-filler"></div>
                             <div class="shopping-cart-nav dropdown-menu">
-                                <p>Нямаш нито един продукт в количката</p>
-                                <div class="shopping-cart-btn">
-                                    <a href="#cart"><i class="fas
-                                            fa-angle-double-right"></i>
-                                        <p>Виж
-                                            количката</p>
-                                    </a>
+                                <div class="cart-nav-container">
+                                    <p>Нямаш нито един продукт в количката</p>
+                                </div>
+                                <div id="sh-cart-btn">
+                                    <div class="shopping-cart-btn">
+                                        <a href="#cart"><i class="fas
+                                                fa-angle-double-right"></i>
+                                            <p>Виж
+                                                количката</p>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1901,6 +1907,7 @@
         <script src="./assets/js/utils.js"></script>
         <script src="./assets/js/constants.js"></script>
         <script src="./assets/js/topBrands.js"></script>
+        <script src="./assets/js/renderFavAndCartNav.js"></script>
         <script src="./assets/js/script.js"></script>
         <script src="./assets/js/createItem.js"></script>
         <script src="./assets/js/buttonAnimation.js"></script>

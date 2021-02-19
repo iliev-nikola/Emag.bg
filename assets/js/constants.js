@@ -34,7 +34,10 @@ const GUEST_NAV = document.querySelector('.guest-nav');
 const HELLO_MESSAGE = utils.getById('helloMessage');
 const LOGOUT_BTN = utils.getById('logoutBtn');
 const FAVOURITE_NAV_CONTAINER = document.querySelector('.favourite-nav');
-// const CART_NAV_CONTAINER = document.querySelector
+const FAVOURITE_COUNTER = utils.getById('favCounter');
+const CART_NAV_CONTAINER = document.querySelector('.cart-nav-container');
+const CART_COUNTER = utils.getById('cartCounter');
+const SHOPPING_CART_NAV = document.querySelector('.shopping-cart-nav');
 
 // INFORMATION BANNERS
 const SUCCESS_BANNER = utils.getById('success');

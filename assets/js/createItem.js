@@ -88,26 +88,23 @@ function createItemsCard(array, container) {
                 addFavourite.className = 'far fa-heart fav';
                 addFavourite.style.color = '#2196f3';
                 tooltipText.innerText = 'Добави в Любими';
+                main.success('Премахнато от любими');
             } else {
                 utils.addToFav(currentItem);
                 addFavourite.className = 'fas fa-heart fav';
                 addFavourite.style.color = 'red';
                 tooltipText.innerText = 'Добавено в Любими';
+                main.success('Добавено в любими');
             }
 
             main.renderHeader();
         });
 
         tooltipShoppingCardContainer.addEventListener('click', () => {
-            // TODO: adding to cart and render the header
+            // Adding to cart and render the header
             utils.addToCart(currentItem);
-            if (addShoppingCard.style.color === 'red') {
-                tooltipShoppingCard.innerText = 'Добави в количката';
-                addShoppingCard.style.color = null;
-            } else {
-                addShoppingCard.style.color = 'red';
-                tooltipShoppingCard.innerText = 'Добавено в количката';
-            }
+            main.success('Добавено в количката');
+            main.renderHeader();
         });
 
         itemPrice.append(sup, valute);

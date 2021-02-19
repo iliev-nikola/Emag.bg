@@ -9,7 +9,10 @@ const main = (function () {
         localStorage.setItem('isLoggedIn', false);
     }
 
-    localStorage.setItem('guest', JSON.stringify({ favourites: [], cart: [] }));
+    if (utils.getItem('guest') === null) {
+        utils.setItem('guest', { favourites: [], cart: [] })
+    }
+
     const users = utils.getUsers();
 
     function registerUser(names, username, password, rePasword) {
@@ -76,16 +79,20 @@ const main = (function () {
                     return error('Невалидна парола.');
                 } else {
                     utils.login(username.trim());
-                    onLoginSuccess(user.firstName, user.lastName);
+                    onLoginSuccess(user.firstName, user.lastName, true);
+                    location.reload();
                 }
             }
         }
     }
 
-    function onLoginSuccess(firstName, lastName) {
+    function onLoginSuccess(firstName, lastName, isLogin) {
         LOGIN_USER.value = '';
         LOGIN_PASS.value = '';
-        success(`Добре дошъл, ${firstName} ${lastName}!`);
+        if (isLogin) {
+            success(`Добре дошъл, ${firstName} ${lastName}!`);
+        }
+
         renderHeader();
         PROFILE_NAV.classList.add('checked');
         GUEST_NAV.classList.remove('checked');
@@ -116,57 +123,7 @@ const main = (function () {
             cart = utils.getItem('guest').cart;
         }
 
-        if (favourites.length) {
-            FAVOURITE_NAV_CONTAINER.style.padding = '0';
-            FAVOURITE_NAV_CONTAINER.style.width = '300px';
-            FAVOURITE_NAV_CONTAINER.innerHTML = '';
-            const soonAddedText = utils.createNewElement('p', 'НАСКОРО ДОБАВЕНИ');
-            soonAddedText.className = 'soon-added-text';
-            FAVOURITE_NAV_CONTAINER.append(soonAddedText);
-            favourites.forEach(el => {
-                const articleDiv = utils.createNewElement('div');
-                articleDiv.className = 'nav-dropdown-item';
-                const img = utils.createNewElement('img');
-                img.src = el.image;
-                img.className = 'nav-dropdown-img';
-                const title = utils.createNewElement('a', el.title);
-                title.href = `#article/${el.id}`;
-                title.className = 'nav-dropdown-title';
-                const percentage = Math.floor(100 - 100 * (el.currentPrice / el.regularPrice));
-                title.addEventListener('click', () => {
-                    // watchedItem(focusSectionItems.watchedItems);
-                    openItem(el, percentage);
-                });
-
-                img.addEventListener('click', () => {
-                    // watchedItem(focusSectionItems.watchedItems);
-                    openItem(el, percentage);
-                });
-
-                const price = utils.createNewElement('p', el.currentPrice + el.currentPennies + 'лв');
-                price.className = 'nav-dropdown-price';
-                articleDiv.append(img, title, price);
-                FAVOURITE_NAV_CONTAINER.append(articleDiv);
-            });
-
-            const goToFavsDiv = utils.createNewElement('div');
-            const goToFavsText = utils.createNewElement('a', '>> Виж всички любими продукти');
-            goToFavsText.href = '#favourites';
-            goToFavsDiv.className = 'go-to-favs';
-            // TODO: whole div has to be link
-            goToFavsDiv.append(goToFavsText);
-            FAVOURITE_NAV_CONTAINER.append(goToFavsDiv);
-        } else {
-            FAVOURITE_NAV_CONTAINER.style.padding = '10px';
-            FAVOURITE_NAV_CONTAINER.innerHTML = '<p>Нямаш любими продукти</p>';
-            FAVOURITE_NAV_CONTAINER.style.width = '180px';
-        }
-
-        cart.forEach(el => {
-
-        });
-
-        document.documentElement.scrollTop = 0;
+        renderFavAndCart(favourites, cart);
     }
 
     // INFO BANNERS
@@ -268,7 +225,10 @@ const main = (function () {
     // window.addEventListener('DOMContentLoaded', () => {
     //     location.replace('#home');
     // });
-    window.addEventListener('DOMContentLoaded', onHashChange)
+    window.addEventListener('DOMContentLoaded', (e) => {
+        onHashChange(e);
+        renderHeader();
+    });
     SEARCH_INPUT.addEventListener('focus', utils.onFocus);
     const searchBoxContent = Array.from(SEARCH_BOX_CONTENT.children);
     // TODO...
@@ -291,10 +251,13 @@ const main = (function () {
     LOGOUT_BTN.addEventListener('click', () => {
         utils.logout();
         renderHeader();
+        location.reload();
         success('Излязохте успешно!');
     });
 
     return {
-        renderHeader
+        renderHeader,
+        success,
+        error,
     }
 })();

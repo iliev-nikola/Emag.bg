@@ -78,7 +78,7 @@ const utils = (function () {
     }
 
     function getItem(item) {
-        return JSON.parse(item);
+        return JSON.parse(localStorage.getItem(item));
     }
 
     function setItem(key, value) {
@@ -125,19 +125,39 @@ const utils = (function () {
     function addToCart(article) {
         if (!isLoggedIn()) {
             const guest = JSON.parse(localStorage.getItem('guest'));
-            guest.cart.unshift(article);
-            localStorage.setItem('guest', JSON.stringify(guest));
-            return;
-        }
-
-        const users = utils.getUsers();
-        users.forEach(user => {
-            if (user.isLoggedIn) {
-                return user.cart.unshift(article);
+            if (guest.cart.some(el => el.id === article.id)) {
+                guest.cart.forEach(el => {
+                    if (el.id === article.id) {
+                        return el.count = el.count + 1 || 1;
+                    }
+                });
+            } else {
+                article.count = 1;
+                guest.cart.unshift(article);
             }
-        });
 
-        utils.setUsers(users);
+            utils.setItem('guest', guest);
+        } else {
+            const users = utils.getUsers();
+            users.forEach(user => {
+                if (user.isLoggedIn) {
+                    if (user.cart.some(el => el.id === article.id)) {
+                        user.cart.forEach(el => {
+                            if (el.id === article.id) {
+                                return el.count = el.count + 1 || 1;
+                            }
+                        });
+                    } else {
+                        article.count = 1;
+                        user.cart.unshift(article);
+                    }
+
+                    return;
+                }
+            });
+
+            utils.setUsers(users);
+        }
     }
 
     function removeFromCart(article) {
