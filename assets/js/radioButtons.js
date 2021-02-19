@@ -1,7 +1,7 @@
 // CREATING RADIO BUTTONS
 function createDots(array, container) {
     for (let i = 0; i < array.length / 6; i++) {
-        let dot = createNewElement('input');
+        const dot = utils.createNewElement('input');
         dot.type = 'radio';
         if (container.id === 'dots-container') {
             dot.name = 'dots-container';

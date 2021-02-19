@@ -1,9 +1,10 @@
 // GENERAL FUNCTIONALITY
 (function () {
     // LOGIN & REGISTER
-    localStorage.setItem('users', JSON.stringify(new Array));
+    utils.setUsers([]);
     localStorage.setItem('isLoggedIn', false);
-    const users = JSON.parse(localStorage.getItem('users'));
+    localStorage.setItem('guest', JSON.stringify({ favourites: [], cart: [] }));
+    const users = utils.getUsers();
 
     function registerUser(names, username, password, rePasword) {
         if (!names.trim().includes(' ')) {
@@ -33,8 +34,17 @@
         }
 
         const [firstName, lastName] = names.split(' ');
-        users.push({ username, password, firstName, lastName });
-        localStorage.setItem('users', JSON.stringify(users));
+        users.push({
+            username,
+            password,
+            firstName,
+            lastName,
+            isLoggedIn: false,
+            favourites: [],
+            cart: []
+        });
+
+        utils.setUsers(users);
         NAMES.value = '';
         REGISTER_USER.value = '';
         REGISTER_PASS.value = '';
@@ -59,6 +69,7 @@
                 if (user.password !== password.trim()) {
                     return error('Невалидна парола.');
                 } else {
+                    utils.login(username.trim());
                     onLoginSuccess(user.firstName, user.lastName);
                 }
             }
@@ -69,7 +80,6 @@
         LOGIN_USER.value = '';
         LOGIN_PASS.value = '';
         success(`Добре дошъл, ${firstName} ${lastName}!`);
-        login();
         renderHeader(firstName, lastName);
         PROFILE_NAV.classList.add('checked');
         GUEST_NAV.classList.remove('checked');
@@ -80,7 +90,7 @@
     // RENDERING
     function renderHeader(firstName, lastName) {
         if (arguments.length) {
-            let [firstLetter, secondLetter] = [firstName[0].toUpperCase(), lastName[0].toUpperCase()];
+            const [firstLetter, secondLetter] = [firstName[0].toUpperCase(), lastName[0].toUpperCase()];
             USER_PIC.innerText = firstLetter + secondLetter;
             USER_PIC.className = 'logged-user-icon';
             HELLO_MESSAGE.innerText = `Здравей, ${firstName} ${lastName}`;
@@ -113,8 +123,20 @@
 
     // ROUTER
     const mainSections = [FOCUS_SECTION, MOBILE_SECTION, MOBILE_APP, TV_SECTION, TOP_SECTION, BIG_TECHNOLOGIES, BULLETIN];
+    const idArr = ALL_FOCUS_ITEMS.map(el => el.id).concat(OTHER_CLIENTS_WATCHED.map(el => el.id));
     function onHashChange(e) {
         const hash = e.target.location.hash.substring(1);
+        // change hash with correct article id
+        const isCorrectId = idArr.some(el => el === +hash[hash.length - 1]);
+        if (isCorrectId && hash.includes('article/')) {
+            MAIN_MENU.style.display = 'none';
+            OPTIONS_PANEL.style.display = 'none';
+            mainSections.map(section => section.style.display = 'none');
+            OPEN_ITEM.style.display = 'block'
+            document.documentElement.scrollTop = 0;
+            return;
+        }
+
         switch (hash) {
             case 'home':
                 MAIN_SECTION.style.display = 'block';
@@ -171,11 +193,13 @@
 
     // EVENT LISTENERS
     window.addEventListener('hashchange', onHashChange);
-    window.addEventListener('DOMContentLoaded', () => {
-        location.replace('#home');
-    });
-    SEARCH_INPUT.addEventListener('focus', onFocus);
+    // window.addEventListener('DOMContentLoaded', () => {
+    //     location.replace('#home');
+    // });
+    window.addEventListener('DOMContentLoaded', onHashChange)
+    SEARCH_INPUT.addEventListener('focus', utils.onFocus);
     const searchBoxContent = Array.from(SEARCH_BOX_CONTENT.children);
+    // TODO...
     searchBoxContent.forEach(el => {
         el.addEventListener('click', (e) => {
             console.log(e.target.innerText);
@@ -193,7 +217,7 @@
         loginUser(LOGIN_USER.value, LOGIN_PASS.value);
     });
     LOGOUT_BTN.addEventListener('click', () => {
-        logout();
+        utils.logout();
         renderHeader();
         success('Излязохте успешно!');
     });

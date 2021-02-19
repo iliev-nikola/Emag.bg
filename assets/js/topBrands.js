@@ -6,8 +6,8 @@ HEALTH_BRANDS.style.display = 'none';
 FASHION_BRANDS.style.display = 'none';
 
 for (let i = 0; i < ALL_BRANDS_SECTION.length; i++) {
-    ALL_BRANDS_SECTION[i].addEventListener("click", function (ev) {
-        ev.preventDefault();
+    ALL_BRANDS_SECTION[i].addEventListener('click', (e) => {
+        e.preventDefault();
         switch (i) {
             case 0:
                 TOP_BRANDS.style.display = 'block';
@@ -49,5 +49,5 @@ for (let i = 0; i < ALL_BRANDS_SECTION.length; i++) {
                 MOST_POPULAR_STYLE.id = '';
                 break;
         }
-    })
+    });
 }

@@ -1683,6 +1683,7 @@ footer {
 #other-left-scroll {
   left: -55px;
   top: 47%;
+  display: none;
 }
 
 #other-right-scroll {
@@ -1840,6 +1841,10 @@ footer {
 
 .actives {
   color: rgb(249, 191, 59);
+}
+
+.inactives {
+  color: black;
 }
 
 .review,

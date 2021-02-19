@@ -18,7 +18,7 @@ class Items {
     }
 }
 
-let focusSectionItems = new Items();
+const focusSectionItems = new Items();
 ALL_FOCUS_ITEMS.forEach(function (item) {
     focusSectionItems.addProduct(item);
 });
@@ -26,60 +26,61 @@ ALL_FOCUS_ITEMS.forEach(function (item) {
 //CREATING ITEMS
 function createItemsCard(array, container) {
     container.innerHTML = '';
-    array.forEach(function (currentItem) {
-        let cardContainer = createNewElement('div');
+    array.forEach(currentItem => {
+        const cardContainer = utils.createNewElement('div');
         cardContainer.className = 'items-card';
-        let tooltipContainer = createNewElement('div');
+        const tooltipContainer = utils.createNewElement('div');
         tooltipContainer.className = 'tooltip';
-        let addFavourite = createNewElement('i');
+        const addFavourite = utils.createNewElement('i');
         addFavourite.className = 'far fa-heart fav';
-        let tooltipText = createNewElement('div', 'Добави в любими');
+        const tooltipText = utils.createNewElement('div', 'Добави в любими');
         tooltipText.className = 'tooltiptext';
-        let tooltipShoppingCardContainer = createNewElement('div');
+        const tooltipShoppingCardContainer = utils.createNewElement('div');
         tooltipShoppingCardContainer.className = 'shop-tooltip';
-        let tooltipShoppingCard = createNewElement('div', 'Добави в количката');
+        const tooltipShoppingCard = utils.createNewElement('div', 'Добави в количката');
         tooltipShoppingCard.className = 'tooltip-shopping-card';
-        let addShoppingCard = createNewElement('i');
+        const addShoppingCard = utils.createNewElement('i');
         addShoppingCard.className = 'fas fa-shopping-cart shop-card';
-        let imageContainer = createNewElement('a');
-        imageContainer.href = '#article';
-        let itemImage = createNewElement('img');
+        const imageContainer = utils.createNewElement('a');
+        imageContainer.href = `#article/${currentItem.id}`;
+        const itemImage = utils.createNewElement('img');
         itemImage.className = 'item-image';
         itemImage.src = currentItem.image;
-        let sup = createNewElement('sup', currentItem.currentPennies);
-        let valute = createNewElement('small', 'лв');
-        let titleContainer = createNewElement('a');
+        const sup = utils.createNewElement('sup', currentItem.currentPennies);
+        const valute = utils.createNewElement('small', 'лв');
+        const titleContainer = utils.createNewElement('a');
         titleContainer.href = '#title';
-        let itemTitle = createNewElement('h5', currentItem.title);
-        let regular = createNewElement('div');
+        const itemTitle = utils.createNewElement('h5', currentItem.title);
+        const regular = utils.createNewElement('div');
         regular.className = 'regular-price';
-        let regPrice = createNewElement('strong', currentItem.regularPrice);
+        const regPrice = utils.createNewElement('strong', currentItem.regularPrice);
         regPrice.className = 'line';
-        let itemPrice = createNewElement('span', currentItem.currentPrice);
-        let currentPrice = parseFloat(currentItem.currentPrice + '.' + currentItem.currentPennies);
-        let regularPrice = parseFloat(currentItem.regularPrice + '.' + currentItem.regularPennies);
-        let percentage = Math.floor(100 - 100 * (currentPrice / regularPrice));
-        let percentageBar = createNewElement('div', `-${percentage}%`);
-        let sale = createNewElement('b', `(-${percentage}%)`);
+        const itemPrice = utils.createNewElement('span', currentItem.currentPrice);
+        const currentPrice = parseFloat(currentItem.currentPrice + '.' + currentItem.currentPennies);
+        const regularPrice = parseFloat(currentItem.regularPrice + '.' + currentItem.regularPennies);
+        const percentage = Math.floor(100 - 100 * (currentPrice / regularPrice));
+        const percentageBar = utils.createNewElement('div', `-${percentage}%`);
+        const sale = utils.createNewElement('b', `(-${percentage}%)`);
         percentageBar.className = 'percentage';
         regular.append(regPrice);
-        tooltipContainer.addEventListener("click", function () {
+        tooltipContainer.addEventListener("click", () => {
             // TODO: adding to favs and render the header
-
             if (addFavourite.style.color === 'red') {
+                utils.removeFromFav(currentItem);
                 addFavourite.className = 'far fa-heart fav';
                 addFavourite.style.color = '#2196f3';
                 tooltipText.innerText = 'Добави в Любими';
             } else {
+                utils.addToFav(currentItem);
                 addFavourite.className = 'fas fa-heart fav';
                 addFavourite.style.color = 'red';
                 tooltipText.innerText = 'Добавено в Любими';
             }
         });
 
-        tooltipShoppingCardContainer.addEventListener('click', function () {
+        tooltipShoppingCardContainer.addEventListener('click', () => {
             // TODO: adding to cart and render the header
-
+            utils.addToCart(currentItem);
             if (addShoppingCard.style.color === 'red') {
                 tooltipShoppingCard.innerText = 'Добави в количката';
                 addShoppingCard.style.color = null;
@@ -100,9 +101,9 @@ function createItemsCard(array, container) {
             regular.style.visibility = 'hidden';
             percentageBar.style.display = 'none';
         } else {
-            let sup = createNewElement('sub', currentItem.regularPennies);
+            const sup = utils.createNewElement('sub', currentItem.regularPennies);
             sup.style.textDecoration = 'line-through';
-            let valute = createNewElement('small', `лв `);
+            const valute = utils.createNewElement('small', `лв `);
             valute.className = 'line';
             regular.append(sup, valute, sale);
         }
@@ -120,9 +121,9 @@ function createItemsCard(array, container) {
 
             array = new Set(array);
             array = Array.from(array);
-            array.forEach(function (item) {
-                let mainContainer = createNewElement('div');
-                let watchedImage = createNewElement('img');
+            array.forEach(item => {
+                const mainContainer = utils.createNewElement('div');
+                const watchedImage = utils.createNewElement('img');
                 watchedImage.className = 'watched-images';
                 watchedImage.src = item;
                 WATCHED_ITEMS.append(mainContainer);
@@ -130,25 +131,25 @@ function createItemsCard(array, container) {
             });
         }
 
-        titleContainer.addEventListener('click', function () {
+        titleContainer.addEventListener('click', () => {
             watchedItem(focusSectionItems.watchedItems);
             openItem(currentItem, percentage);
 
         });
 
-        imageContainer.addEventListener('click', function () {
+        imageContainer.addEventListener('click', () => {
             watchedItem(focusSectionItems.watchedItems);
             openItem(currentItem, percentage);
         });
 
         //DELETE ITEMS FROM HISTORY SECTION
-        DELETE_WATCHED.addEventListener('click', function () {
+        DELETE_WATCHED.addEventListener('click', () => {
             let counterLoader = 0;
-            let intervalLoader = setInterval(function () {
+            const intervalLoader = setInterval(() => {
                 counterLoader++;
                 WATCHED_CONTAINER.style.opacity = '0.3';
                 ANIMATION_HISTORY.className = 'loader';
-                if (counterLoader === 3) {
+                if (counterLoader >= 3) {
                     window.clearInterval(intervalLoader);
                     ANIMATION_HISTORY.style.display = 'none';
                     WATCHED_CONTAINER.style.display = 'none';
@@ -160,8 +161,9 @@ function createItemsCard(array, container) {
 //ITEMS IN FOCUS-BAR SECTION
 createItemsCard(focusSectionItems.allItems, CARDS_CONTAINER);
 //ITEMS IN OTHER-CLIENTS-WATCHED
-let otherWatched = new Items();
-OTHER_CLIENTS_WATCHED.forEach(function (item) {
+const otherWatched = new Items();
+OTHER_CLIENTS_WATCHED.forEach(item => {
     otherWatched.addProduct(item);
 });
+
 createItemsCard(otherWatched.allItems, OTHER_WATCHED_CONTAINER);

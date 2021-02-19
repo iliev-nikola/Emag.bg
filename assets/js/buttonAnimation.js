@@ -70,7 +70,3 @@ function scrollItems(array, rightScroll, leftScroll, container) {
 
 scrollItems(ALL_FOCUS_ITEMS, RIGHT_SCROLL, LEFT_SCROLL, CARDS_CONTAINER);
 scrollItems(OTHER_CLIENTS_WATCHED, RIGTH_OTHER_SCROLL, LEFT_OTHER_SCROLL, OTHER_WATCHED_CONTAINER);
-
-
-
-
