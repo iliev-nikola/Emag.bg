@@ -326,6 +326,59 @@ a[href="#register"]:hover {
 
 .favourite-nav {
   width: 180px;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  justify-content: space-between;
+  min-height: 50px;
+  font-size: 11px;
+  border-top: 1px solid rgba(173, 169, 169, 0.699);
+  padding: 7px 15px;
+}
+
+.nav-dropdown-item:hover {
+  background-color: #e9ebee55;
+}
+
+.nav-dropdown-title {
+  padding: 0 10px;
+}
+
+.nav-dropdown-price {
+  color: #005eb8;
+  font-weight: 600;
+}
+
+.soon-added-text {
+  font-size: 10px;
+  color: #005eb8;
+  padding: 10px;
+  align-self: center;
+}
+
+.go-to-favs {
+  border-top: 1px solid rgb(195, 192, 192);
+  font-size: 12px;
+  color: #005eb8;
+  position: sticky;
+  bottom: 0px;
+  background-color: white;
+  padding: 15px 0;
+}
+
+.go-to-favs:hover {
+  color: #00376c;
+  text-decoration: underline;
+}
+
+.nav-dropdown-img {
+  width: 50px;
+  height: fit-content;
+  align-self: center;
+  cursor: pointer;
 }
 
 .shopping-cart-nav {

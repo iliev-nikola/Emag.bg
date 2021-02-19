@@ -77,7 +77,15 @@ const utils = (function () {
         localStorage.setItem('users', JSON.stringify(users));
     }
 
-    // ADD TO FAVOURITES AND CART
+    function getItem(item) {
+        return JSON.parse(item);
+    }
+
+    function setItem(key, value) {
+        localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    // ADD & REMOVE TO/FROM FAVOURITES & CART
     function addToFav(article) {
         if (!isLoggedIn()) {
             const guest = JSON.parse(localStorage.getItem('guest'));
@@ -160,6 +168,8 @@ const utils = (function () {
         logout,
         getUsers,
         setUsers,
+        getItem,
+        setItem,
         addToFav,
         removeFromFav,
         addToCart,

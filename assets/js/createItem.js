@@ -35,6 +35,24 @@ function createItemsCard(array, container) {
         addFavourite.className = 'far fa-heart fav';
         const tooltipText = utils.createNewElement('div', 'Добави в любими');
         tooltipText.className = 'tooltiptext';
+        let favourites;
+        if (utils.isLoggedIn()) {
+            favourites = utils.getUsers().filter(user => user.isLoggedIn)[0].favourites;
+        } else {
+            favourites = utils.getItem('guest').favourites;
+        }
+
+        const isInFav = favourites.some(el => el.id === currentItem.id);
+        if (!isInFav) {
+            addFavourite.className = 'far fa-heart fav';
+            addFavourite.style.color = '#2196f3';
+            tooltipText.innerText = 'Добави в Любими';
+        } else {
+            addFavourite.className = 'fas fa-heart fav';
+            addFavourite.style.color = 'red';
+            tooltipText.innerText = 'Добавено в Любими';
+        }
+
         const tooltipShoppingCardContainer = utils.createNewElement('div');
         tooltipShoppingCardContainer.className = 'shop-tooltip';
         const tooltipShoppingCard = utils.createNewElement('div', 'Добави в количката');
@@ -63,8 +81,8 @@ function createItemsCard(array, container) {
         const sale = utils.createNewElement('b', `(-${percentage}%)`);
         percentageBar.className = 'percentage';
         regular.append(regPrice);
-        tooltipContainer.addEventListener("click", () => {
-            // TODO: adding to favs and render the header
+        tooltipContainer.addEventListener('click', () => {
+            // Adding to favs and render the header
             if (addFavourite.style.color === 'red') {
                 utils.removeFromFav(currentItem);
                 addFavourite.className = 'far fa-heart fav';
@@ -76,6 +94,8 @@ function createItemsCard(array, container) {
                 addFavourite.style.color = 'red';
                 tooltipText.innerText = 'Добавено в Любими';
             }
+
+            main.renderHeader();
         });
 
         tooltipShoppingCardContainer.addEventListener('click', () => {

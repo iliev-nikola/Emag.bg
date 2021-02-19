@@ -36,7 +36,7 @@ function openItem(currentItem, percentage) {
             allImgs.append(image);
             image.addEventListener('mouseover', () => {
                 mainImage.src = currentItem.allImages[i];
-            })
+            });
         }
     }
 

@@ -33,6 +33,8 @@ const PROFILE_NAV = document.querySelector('.profile-nav');
 const GUEST_NAV = document.querySelector('.guest-nav');
 const HELLO_MESSAGE = utils.getById('helloMessage');
 const LOGOUT_BTN = utils.getById('logoutBtn');
+const FAVOURITE_NAV_CONTAINER = document.querySelector('.favourite-nav');
+// const CART_NAV_CONTAINER = document.querySelector
 
 // INFORMATION BANNERS
 const SUCCESS_BANNER = utils.getById('success');

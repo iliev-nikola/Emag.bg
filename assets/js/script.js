@@ -1,8 +1,14 @@
 // GENERAL FUNCTIONALITY
-(function () {
+const main = (function () {
     // LOGIN & REGISTER
-    utils.setUsers([]);
-    localStorage.setItem('isLoggedIn', false);
+    if (!utils.getUsers()) {
+        utils.setUsers([]);
+    }
+
+    if (localStorage.getItem('isLoggedIn') === null) {
+        localStorage.setItem('isLoggedIn', false);
+    }
+
     localStorage.setItem('guest', JSON.stringify({ favourites: [], cart: [] }));
     const users = utils.getUsers();
 
@@ -80,7 +86,7 @@
         LOGIN_USER.value = '';
         LOGIN_PASS.value = '';
         success(`Добре дошъл, ${firstName} ${lastName}!`);
-        renderHeader(firstName, lastName);
+        renderHeader();
         PROFILE_NAV.classList.add('checked');
         GUEST_NAV.classList.remove('checked');
         location.replace('#home');
@@ -88,18 +94,77 @@
     }
 
     // RENDERING
-    function renderHeader(firstName, lastName) {
-        if (arguments.length) {
-            const [firstLetter, secondLetter] = [firstName[0].toUpperCase(), lastName[0].toUpperCase()];
+    function renderHeader() {
+        let favourites, cart;
+        if (utils.isLoggedIn()) {
+            // IF LOGGED IN USER
+            const currentUser = utils.getUsers().filter(user => user.isLoggedIn)[0];
+            const firstLetter = currentUser.firstName[0].toUpperCase();
+            const secondLetter = currentUser.lastName[0].toUpperCase();
             USER_PIC.innerText = firstLetter + secondLetter;
             USER_PIC.className = 'logged-user-icon';
-            HELLO_MESSAGE.innerText = `Здравей, ${firstName} ${lastName}`;
+            HELLO_MESSAGE.innerText = `Здравей, ${currentUser.firstName} ${currentUser.lastName}`;
+            favourites = utils.getUsers().filter(user => user.isLoggedIn)[0].favourites;
+            cart = utils.getUsers().filter(user => user.isLoggedIn)[0].cart;
         } else {
+            // IF GUEST USER
             PROFILE_NAV.classList.remove('checked');
             GUEST_NAV.classList.add('checked');
             USER_PIC.innerHTML = `<i class="far fa-user">`;
             USER_PIC.className = 'guest-user-icon';
+            favourites = utils.getItem('guest').favourites;
+            cart = utils.getItem('guest').cart;
         }
+
+        if (favourites.length) {
+            FAVOURITE_NAV_CONTAINER.style.padding = '0';
+            FAVOURITE_NAV_CONTAINER.style.width = '300px';
+            FAVOURITE_NAV_CONTAINER.innerHTML = '';
+            const soonAddedText = utils.createNewElement('p', 'НАСКОРО ДОБАВЕНИ');
+            soonAddedText.className = 'soon-added-text';
+            FAVOURITE_NAV_CONTAINER.append(soonAddedText);
+            favourites.forEach(el => {
+                const articleDiv = utils.createNewElement('div');
+                articleDiv.className = 'nav-dropdown-item';
+                const img = utils.createNewElement('img');
+                img.src = el.image;
+                img.className = 'nav-dropdown-img';
+                const title = utils.createNewElement('a', el.title);
+                title.href = `#article/${el.id}`;
+                title.className = 'nav-dropdown-title';
+                const percentage = Math.floor(100 - 100 * (el.currentPrice / el.regularPrice));
+                title.addEventListener('click', () => {
+                    // watchedItem(focusSectionItems.watchedItems);
+                    openItem(el, percentage);
+                });
+
+                img.addEventListener('click', () => {
+                    // watchedItem(focusSectionItems.watchedItems);
+                    openItem(el, percentage);
+                });
+
+                const price = utils.createNewElement('p', el.currentPrice + el.currentPennies + 'лв');
+                price.className = 'nav-dropdown-price';
+                articleDiv.append(img, title, price);
+                FAVOURITE_NAV_CONTAINER.append(articleDiv);
+            });
+
+            const goToFavsDiv = utils.createNewElement('div');
+            const goToFavsText = utils.createNewElement('a', '>> Виж всички любими продукти');
+            goToFavsText.href = '#favourites';
+            goToFavsDiv.className = 'go-to-favs';
+            // TODO: whole div has to be link
+            goToFavsDiv.append(goToFavsText);
+            FAVOURITE_NAV_CONTAINER.append(goToFavsDiv);
+        } else {
+            FAVOURITE_NAV_CONTAINER.style.padding = '10px';
+            FAVOURITE_NAV_CONTAINER.innerHTML = '<p>Нямаш любими продукти</p>';
+            FAVOURITE_NAV_CONTAINER.style.width = '180px';
+        }
+
+        cart.forEach(el => {
+
+        });
 
         document.documentElement.scrollTop = 0;
     }
@@ -192,6 +257,13 @@
     }
 
     // EVENT LISTENERS
+    if (utils.isLoggedIn()) {
+        let users = utils.getUsers();
+        users = users.filter(user => user.isLoggedIn);
+        const [firstName, lastName] = [users[0].firstName, users[0].lastName];
+        onLoginSuccess(firstName, lastName);
+    }
+
     window.addEventListener('hashchange', onHashChange);
     // window.addEventListener('DOMContentLoaded', () => {
     //     location.replace('#home');
@@ -221,4 +293,8 @@
         renderHeader();
         success('Излязохте успешно!');
     });
+
+    return {
+        renderHeader
+    }
 })();
