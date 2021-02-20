@@ -27,6 +27,24 @@ const utils = (function () {
         return document.getElementById(id);
     }
 
+    function success(message) {
+        const successBanner = utils.getById('success');
+        successBanner.innerText = message;
+        successBanner.style.display = 'block';
+        setTimeout(() => {
+            successBanner.style.display = 'none';
+        }, 3000);
+    }
+
+    function error(message) {
+        const errorBanner = utils.getById('error');
+        errorBanner.innerText = message;
+        errorBanner.style.display = 'block';
+        setTimeout(() => {
+            errorBanner.style.display = 'none';
+        }, 3000);
+    }
+
     //CREATE NEW HTML ELEMENT
     function createNewElement(type, text) {
         const element = document.createElement(type);
@@ -88,9 +106,9 @@ const utils = (function () {
     // ADD & REMOVE TO/FROM FAVOURITES & CART
     function addToFav(article) {
         if (!isLoggedIn()) {
-            const guest = JSON.parse(localStorage.getItem('guest'));
+            const guest = getItem('guest');
             guest.favourites.unshift(article);
-            localStorage.setItem('guest', JSON.stringify(guest));
+            setItem('guest', guest);
             return;
         }
 
@@ -101,14 +119,15 @@ const utils = (function () {
             }
         });
 
-        utils.setUsers(users);
+        setUsers(users);
+        success('Продуктът беше добавен в любими');
     }
 
     function removeFromFav(article) {
         if (!isLoggedIn()) {
-            const guest = JSON.parse(localStorage.getItem('guest'));
+            const guest = getItem('guest');
             guest.favourites = guest.favourites.filter(el => el.id !== article.id);
-            localStorage.setItem('guest', JSON.stringify(guest));
+            setItem('guest', guest);
             return;
         }
 
@@ -119,26 +138,28 @@ const utils = (function () {
             }
         });
 
-        utils.setUsers(users);
+        setUsers(users);
+        success('Продуктът беше премахнат от любими');
     }
 
     function addToCart(article) {
         if (!isLoggedIn()) {
-            const guest = JSON.parse(localStorage.getItem('guest'));
+            const guest = getItem('guest');
             if (guest.cart.some(el => el.id === article.id)) {
                 guest.cart.forEach(el => {
                     if (el.id === article.id) {
+                        if (el.count === 5) return;
                         return el.count = el.count + 1 || 1;
                     }
                 });
             } else {
                 article.count = 1;
-                guest.cart.unshift(article);
+                guest.cart.push(article);
             }
 
-            utils.setItem('guest', guest);
+            setItem('guest', guest);
         } else {
-            const users = utils.getUsers();
+            const users = getUsers();
             users.forEach(user => {
                 if (user.isLoggedIn) {
                     if (user.cart.some(el => el.id === article.id)) {
@@ -149,23 +170,24 @@ const utils = (function () {
                         });
                     } else {
                         article.count = 1;
-                        user.cart.unshift(article);
+                        user.cart.push(article);
                     }
 
                     return;
                 }
             });
 
-            utils.setUsers(users);
+            setUsers(users);
         }
+
+        success('Продуктът беше добавен в количката');
     }
 
     function removeFromCart(article) {
         if (!isLoggedIn()) {
-            const guest = JSON.parse(localStorage.getItem('guest'));
+            const guest = getItem('guest');
             guest.cart = guest.cart.filter(el => el.id !== article.id);
-            localStorage.setItem('guest', JSON.stringify(guest));
-            return;
+            return setItem('guest', guest);
         }
 
         let users = utils.getUsers();
@@ -175,13 +197,15 @@ const utils = (function () {
             }
         });
 
-        utils.setUsers(users);
+        setUsers(users);
     }
 
     return {
         onFocus,
         onFocusOut,
         getById,
+        success,
+        error,
         createNewElement,
         isLoggedIn,
         login,

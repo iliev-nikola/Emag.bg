@@ -204,14 +204,15 @@ a {
   padding: 0 5px 0 10px;
 }
 
-.logged-user-icon {
+.logged-user-icon > p {
+  padding: 5px;
   background-color: #2196f3;
-  color: white;
-  padding: 8px 7px;
   font-size: 14px;
   border-radius: 100%;
-  width: 20px;
+  color: white;
   text-align: center;
+  width: 20px;
+  height: 20px;
 }
 
 .guest-user-icon {
@@ -375,7 +376,8 @@ a[href="#register"]:hover {
   overflow: auto;
 }
 
-::-webkit-scrollbar {
+.favourite-nav::-webkit-scrollbar,
+.shopping-cart-nav::-webkit-scrollbar {
   width: 0;
 }
 
@@ -449,7 +451,12 @@ a[href="#register"]:hover {
   margin-top: 0px;
 }
 
-.hidden-options > p.nav-close-button {
+.nav-close-button {
+  font-weight: lighter;
+  text-align: right;
+}
+
+.hidden-options > i.nav-close-button {
   margin-left: 75px;
   font-weight: bold;
   font-size: 14px;
@@ -457,8 +464,16 @@ a[href="#register"]:hover {
   cursor: pointer;
 }
 
-.hidden-options > p.nav-close-button:hover {
+.hidden-options > i.nav-close-button:hover {
   color: #005eb8;
+}
+
+.shopping-cart-nav i.nav-close-button {
+  margin-left: 190px;
+}
+
+.shopping-cart-nav .hidden-options {
+  background: none;
 }
 
 .hidden-options i {
@@ -468,11 +483,11 @@ a[href="#register"]:hover {
 
 .hidden-options {
   background-color: #fbfdff;
-  margin-left: 75px;
+  margin-left: 70px;
   display: flex;
   opacity: 0;
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   left: 0;
   transition: all 0.2s ease;
 }
@@ -489,6 +504,7 @@ a[href="#register"]:hover {
 
 .nav-dropdown-item:hover > .hidden-options {
   opacity: 1;
+  bottom: 0;
 }
 
 #sh-cart-btn {
