@@ -400,9 +400,15 @@ a[href="#register"]:hover {
   text-align: left;
 }
 
-.nav-dropdown-price {
+.price-dropdown {
   color: #005eb8;
   font-weight: 600;
+}
+
+.regular-price-dropdown {
+  font-size: 9px;
+  text-decoration: line-through;
+  text-align: end;
 }
 
 .soon-added-text {
@@ -510,7 +516,7 @@ a[href="#register"]:hover {
 #sh-cart-btn {
   position: sticky;
   bottom: 0;
-  padding: 10px;
+  padding-top: 10px;
   background-color: white;
 }
 
@@ -1828,10 +1834,7 @@ footer {
   margin-top: 10px;
 }
 
-#left-scroll,
-#right-scroll,
-#other-right-scroll,
-#other-left-scroll {
+.arrow-buttons {
   color: rgb(0, 94, 184);
   font-size: 20px;
   border-radius: 4px;
@@ -1845,12 +1848,10 @@ footer {
   position: absolute;
 }
 
-#left-scroll:hover,
-#right-scroll:hover,
-#other-right-scroll:hover,
-#other-left-scroll:hover {
+.arrow-buttons:hover {
   background-color: #fff;
   opacity: unset;
+  box-shadow: 0px 0px 3px 0px rgba(179, 170, 179, 1);
 }
 
 #left-scroll {

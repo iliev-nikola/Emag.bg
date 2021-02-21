@@ -70,7 +70,7 @@ function createItemsCard(array, container) {
         const sup = utils.createNewElement('sup', currentItem.currentPennies);
         const valute = utils.createNewElement('small', 'лв');
         const titleContainer = utils.createNewElement('a');
-        titleContainer.href = '#article';
+        titleContainer.href = `#article/${currentItem.id}`;
         const itemTitle = utils.createNewElement('h5', currentItem.title);
         const regular = utils.createNewElement('div');
         regular.className = 'regular-price';
@@ -84,7 +84,6 @@ function createItemsCard(array, container) {
         regular.append(regPrice);
         tooltipContainer.addEventListener('click', () => {
             // Adding to favs and render the header
-            debugger
             if (addFavourite.style.color === 'red') {
                 utils.removeFromFav(currentItem);
                 addFavourite.className = 'far fa-heart fav';
@@ -120,11 +119,11 @@ function createItemsCard(array, container) {
             regular.style.visibility = 'hidden';
             percentageBar.style.display = 'none';
         } else {
-            const sup = utils.createNewElement('sub', currentItem.regularPennies);
-            sup.style.textDecoration = 'line-through';
+            const sub = utils.createNewElement('sub', currentItem.regularPennies);
+            sub.style.textDecoration = 'line-through';
             const valute = utils.createNewElement('small', `лв `);
             valute.className = 'line';
-            regular.append(sup, valute, sale);
+            regular.append(sub, valute, sale);
         }
 
         titleContainer.addEventListener('click', () => {

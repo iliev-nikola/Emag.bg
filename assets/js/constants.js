@@ -38,6 +38,10 @@ const FAVOURITE_COUNTER = utils.getById('favCounter');
 const CART_NAV_CONTAINER = document.querySelector('.cart-nav-container');
 const CART_COUNTER = utils.getById('cartCounter');
 const SHOPPING_CART_NAV = document.querySelector('.shopping-cart-nav');
+const SHOPPING_CART_BTN = utils.getById('sh-cart-btn');
+const PROFILE_ICON = document.querySelector('.profile-icon');
+const FAVOURITE_ICON = document.querySelector('.favourite-icon');
+const SHOPPING_CART_ICON = document.querySelector('.shopping-cart');
 
 // INFORMATION BANNERS
 const SUCCESS_BANNER = utils.getById('success');

@@ -122,8 +122,8 @@ const main = (function () {
             favourites = utils.getItem('guest').favourites;
             cart = utils.getItem('guest').cart;
         }
+
         renderFavAndCart(favourites, cart);
-        openFavAndCart(favourites, cart);
     }
 
     // ROUTER
@@ -132,8 +132,13 @@ const main = (function () {
     function onHashChange(e) {
         const hash = e.target.location.hash.substring(1);
         // change hash with correct article id
-        const isCorrectId = idArr.some(el => el === +hash[hash.length - 1]);
+        const isCorrectId = idArr.some(el => el === +hash.split('/')[1]);
         if (isCorrectId && hash.includes('article/')) {
+            const currentId = +hash.split('/')[1];
+            const ALL_ITEMS = ALL_FOCUS_ITEMS.concat(OTHER_CLIENTS_WATCHED);
+            const currentItem = ALL_ITEMS.filter(item => item.id === currentId)[0];
+            watchedItem(focusSectionItems.watchedItems, currentItem);
+            openItem(currentItem);
             MAIN_MENU.style.display = 'none';
             OPTIONS_PANEL.style.display = 'none';
             mainSections.map(section => section.style.display = 'none');
@@ -141,7 +146,9 @@ const main = (function () {
             document.documentElement.scrollTop = 0;
             return;
         }
+
         switch (hash) {
+            case '':
             case 'home':
                 MAIN_SECTION.style.display = 'block';
                 LOGIN_SECTION.style.display = 'none';
@@ -268,18 +275,28 @@ const main = (function () {
         utils.success('Излязохте успешно!');
     });
 
-    //ADD REMISE VOUCHER IN CART
+    // ADD REMISE VOUCHER IN CART
     ADD_VOUCHER.addEventListener('click', (e) => {
         e.preventDefault();
         if (ADD_CODE.style.display === 'block') {
             ADD_CODE.style.display = 'none';
             VOUCHER_CONTAINER.style.paddingBottom = '0';
-
         } else {
             ADD_CODE.style.display = 'block';
             VOUCHER_CONTAINER.style.paddingBottom = '20px';
         }
-    })
+    });
+
+    // ON CLICK ON HEADER NAV ICONS
+    FAVOURITE_ICON.addEventListener('click', () => {
+        location.replace('#favourites');
+    });
+    SHOPPING_CART_ICON.addEventListener('click', () => {
+        location.replace('#cart');
+    });
+    PROFILE_ICON.addEventListener('click', () => {
+        location.replace('#login');
+    });
 
     return {
         renderHeader

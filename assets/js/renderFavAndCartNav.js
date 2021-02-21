@@ -17,7 +17,6 @@ function renderFavAndCart(favourites, cart) {
             const title = utils.createNewElement('a', el.title);
             title.href = `#article/${el.id}`;
             title.className = 'nav-dropdown-title';
-            const percentage = Math.floor(100 - 100 * (el.currentPrice / el.regularPrice));
             title.addEventListener('click', () => {
                 watchedItem(focusSectionItems.watchedItems);
                 openItem(el);
@@ -28,9 +27,18 @@ function renderFavAndCart(favourites, cart) {
                 openItem(el);
             });
 
+            const priceDiv = utils.createNewElement('div');
             const price = utils.createNewElement('p');
             price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
-            price.className = 'nav-dropdown-price';
+            price.className = 'price-dropdown';
+            let regularPrice;
+            if (el.regularPrice !== '-') {
+                regularPrice = utils.createNewElement('p');
+                regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
+                regularPrice.className = 'regular-price-dropdown';
+            }
+            priceDiv.append(price, regularPrice || '');
+            priceDiv.className = 'price';
             const hiddenOptions = utils.createNewElement('div');
             const addToCartText = utils.createNewElement('p');
             addToCartText.innerHTML = '<i class="fas fa-shopping-cart"></i>Добави в количката';
@@ -47,7 +55,7 @@ function renderFavAndCart(favourites, cart) {
 
             hiddenOptions.append(addToCartText, closeButton);
             hiddenOptions.className = 'hidden-options';
-            articleDiv.append(img, title, price, hiddenOptions);
+            articleDiv.append(img, title, priceDiv, hiddenOptions);
             FAVOURITE_NAV_CONTAINER.append(articleDiv);
         });
 
@@ -84,22 +92,30 @@ function renderFavAndCart(favourites, cart) {
             const title = utils.createNewElement('a', el.title);
             title.href = `#article/${el.id}`;
             title.className = 'nav-dropdown-title';
-            const percentage = Math.floor(100 - 100 * (el.currentPrice / el.regularPrice));
             title.addEventListener('click', () => {
                 watchedItem(focusSectionItems.watchedItems);
-                openItem(el, percentage);
+                openItem(el);
             });
 
             img.addEventListener('click', () => {
                 watchedItem(focusSectionItems.watchedItems);
-                openItem(el, percentage);
+                openItem(el);
             });
 
             const count = utils.createNewElement('p', 'x' + el.count);
             count.className = 'cart-items-count';
+            const priceDiv = utils.createNewElement('div');
             const price = utils.createNewElement('p');
             price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
-            price.className = 'nav-dropdown-price';
+            price.className = 'price-dropdown';
+            let regularPrice;
+            if (el.regularPrice !== '-') {
+                regularPrice = utils.createNewElement('p');
+                regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
+                regularPrice.className = 'regular-price-dropdown';
+            }
+            priceDiv.append(price, regularPrice || '');
+            priceDiv.className = 'price';
             const hiddenOptions = utils.createNewElement('div');
             const closeButton = utils.createNewElement('i');
             closeButton.className = 'fas fa-times nav-close-button';
@@ -109,9 +125,9 @@ function renderFavAndCart(favourites, cart) {
             });
             hiddenOptions.append(closeButton);
             hiddenOptions.className = 'hidden-options';
-            articleDiv.append(img, title, count, price, hiddenOptions);
+            articleDiv.append(img, title, count, priceDiv, hiddenOptions);
             CART_NAV_CONTAINER.append(articleDiv);
-            totalPrice += eval(`${el.currentPrice}.${el.currentPennies}`);
+            totalPrice += eval(`${el.currentPrice}.${el.currentPennies}`) * el.count;
         });
 
         const totalText = utils.createNewElement('div');
@@ -121,9 +137,12 @@ function renderFavAndCart(favourites, cart) {
         const price = utils.createNewElement('span', totalPrice + 'лв.');
         totalText.append(span, p, price);
         CART_NAV_CONTAINER.append(totalText);
+        SHOPPING_CART_BTN.style.padding = '10px';
     } else {
         CART_NAV_CONTAINER.innerHTML = '<p>Нямаш нито един продукт в количката</p>';
-        CART_NAV_CONTAINER.style.width = '230px';
+        SHOPPING_CART_NAV.style.width = '230px';
+        SHOPPING_CART_NAV.style.padding = '10px';
         CART_COUNTER.style.display = 'none';
+        SHOPPING_CART_BTN.style.padding = '10px 0 0 0';
     }
 }
