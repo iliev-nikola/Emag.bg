@@ -1,162 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0,
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
             maximum-scale=5.0">
-        <meta name="description" content="Поръчай онлайн и с доставка до врата!
+    <meta name="description" content="Поръчай онлайн и с доставка до врата!
             Избери Електроника, големи и малки Електроуреди, IT, Продукти за
             дома, Градината, за Детето, Играчки, Книги и други.">
-        <meta name="theme-color" content="#005EB8">
-        <link rel="stylesheet" href="./assets/css/reset.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;display=swap">
-        <link rel="shortcut icon" href="./assets/images/icons/favicon.ico"
-            type="image/x-icon">
-        <script src="https://kit.fontawesome.com/b0087bbdd0.js"
-            crossorigin="anonymous"></script>
-        <title>eMAG.bg - Широка гама продукти</title>
-    </head>
+    <meta name="theme-color" content="#005EB8">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;display=swap">
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/b0087bbdd0.js" crossorigin="anonymous"></script>
+    <title>eMAG.bg - Широка гама продукти</title>
+</head>
 
-    <body>
-        <!-- MAIN SECTION -->
-        <div class="main-section">
-            <!-- HEADER -->
-            <div class="header-section">
-                <header class="header content">
-                    <a href="#home"><img class="logo"
-                            src="./assets/images/logo/emag-logo.svg"
-                            alt="emag-logo"></a>
-                    <div class="search-bar">
-                        <form action="" id="searchForm" autocomplete="off">
-                            <input type="search" id="search"
-                                placeholder="Какво търсиш днес?">
-                            <div class="search-bar-buttons">
-                                <button type="submit" id="submitBtn"><i
-                                        class="fas
+<body>
+    <!-- MAIN SECTION -->
+    <div class="main-section">
+        <!-- HEADER -->
+        <div class="header-section">
+            <header class="header content">
+                <a href="#home"><img class="logo" src="./assets/images/logo/emag-logo.svg" alt="emag-logo"></a>
+                <div class="search-bar">
+                    <form action="" id="searchForm" autocomplete="off">
+                        <input type="search" id="search" placeholder="Какво търсиш днес?">
+                        <div class="search-bar-buttons">
+                            <button type="submit" id="submitBtn"><i class="fas
                                         fa-search"></i></button>
-                            </div>
-                        </form>
-                        <div class="searchbox">
-                            <hr class="line">
-                            <p>Популярни търсения в eMAG</p>
-                            <ul class="searchbox-content">
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">nike</a></li>
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">iphone
-                                        12 mini</a></li>
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">pampers</a></li>
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">under
-                                        armour</a></li>
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">чорапи</a></li>
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">orient</a></li>
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">самозалепващи
-                                        3д тапети</a></li>
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">redmi
-                                        note 7 калъф</a></li>
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">шкаф
-                                        за баня</a></li>
-                                <li><a><img
-                                            src="./assets/images/icons/trend.svg">уред
-                                        с горещ въздух за готвене</a></li>
+                        </div>
+                    </form>
+                    <div class="searchbox">
+                        <hr class="line">
+                        <p>Популярни търсения в eMAG</p>
+                        <ul class="searchbox-content">
+                            <li><a><img src="./assets/images/icons/trend.svg">nike</a></li>
+                            <li><a><img src="./assets/images/icons/trend.svg">iphone
+                                    12 mini</a></li>
+                            <li><a><img src="./assets/images/icons/trend.svg">pampers</a></li>
+                            <li><a><img src="./assets/images/icons/trend.svg">under
+                                    armour</a></li>
+                            <li><a><img src="./assets/images/icons/trend.svg">чорапи</a></li>
+                            <li><a><img src="./assets/images/icons/trend.svg">orient</a></li>
+                            <li><a><img src="./assets/images/icons/trend.svg">самозалепващи
+                                    3д тапети</a></li>
+                            <li><a><img src="./assets/images/icons/trend.svg">redmi
+                                    note 7 калъф</a></li>
+                            <li><a><img src="./assets/images/icons/trend.svg">шкаф
+                                    за баня</a></li>
+                            <li><a><img src="./assets/images/icons/trend.svg">уред
+                                    с горещ въздух за готвене</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="profile-icon">
+                    <span id="userPic" class="guest-user-icon"><i class="far
+                                fa-user"></i></span>
+                    <p>Моят акаунт</p>
+                    <i class="fas fa-sort-down"></i>
+                    <div class="dropdown-container">
+                        <div class="invisible-filler"></div>
+                        <div class="profile-nav dropdown-menu">
+                            <p id="helloMessage">Здравей, Никола Илиев</p>
+                            <p class="line"></p>
+                            <ul>
+                                <li><a href="#">Моят акаунт</a></li>
+                                <li><a href="#">Моите поръчки</a></li>
+                                <li><a href="#">Моите карти</a></li>
+                                <li><a href="#">Любими</a></li>
+                                <li><a href="#">Карта eMAG Fibank</a></li>
+                                <li><a href="#">Ваучер за отстъпка</a></li>
+                                <li><a href="#">Моите ревюта</a></li>
+                                <li><a href="#">Моите гаранции</a></li>
+                                <li><a href="#">Върнати продукти</a></li>
+                                <li><a href="#">Сервиз</a></li>
+                                <li><a href="#">Лични данни</a></li>
+                                <li><a href="#">Настройки за сигурност</a></li>
+                                <li><a href="#">Моите абонаменти</a></li>
+                                <p class="line"></p>
+                                <li id="logoutBtn"><a href="#home">Изход</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="profile-icon">
-                        <span id="userPic" class="guest-user-icon"><i class="far
-                                fa-user"></i></span>
-                        <p>Моят акаунт</p>
-                        <i class="fas fa-sort-down"></i>
-                        <div class="dropdown-container">
-                            <div class="invisible-filler"></div>
-                            <div class="profile-nav dropdown-menu">
-                                <p id="helloMessage">Здравей, Никола Илиев</p>
-                                <p class="line"></p>
-                                <ul>
-                                    <li><a href="#">Моят акаунт</a></li>
-                                    <li><a href="#">Моите поръчки</a></li>
-                                    <li><a href="#">Моите карти</a></li>
-                                    <li><a href="#">Любими</a></li>
-                                    <li><a href="#">Карта eMAG Fibank</a></li>
-                                    <li><a href="#">Ваучер за отстъпка</a></li>
-                                    <li><a href="#">Моите ревюта</a></li>
-                                    <li><a href="#">Моите гаранции</a></li>
-                                    <li><a href="#">Върнати продукти</a></li>
-                                    <li><a href="#">Сервиз</a></li>
-                                    <li><a href="#">Лични данни</a></li>
-                                    <li><a href="#">Настройки за сигурност</a></li>
-                                    <li><a href="#">Моите абонаменти</a></li>
-                                    <p class="line"></p>
-                                    <li id="logoutBtn"><a href="#home">Изход</a></li>
-                                </ul>
+                        <div class="checked guest-nav dropdown-menu">
+                            <div><i class="fas fa-user-tie"></i>
+                                <p>Влез в
+                                    акаунта си и се възползвай от
+                                    предимствата!</p>
                             </div>
-                            <div class="checked guest-nav dropdown-menu">
-                                <div><i class="fas fa-user-tie"></i>
-                                    <p>Влез в
-                                        акаунта си и се възползвай от
-                                        предимствата!</p>
-                                </div>
-                                <div>
-                                    <div class="shopping-cart-btn">
-                                        <a href="#login"><i class="fas
+                            <div>
+                                <div class="shopping-cart-btn">
+                                    <a href="#login"><i class="fas
                                                 fa-angle-double-right"></i>
-                                            <p>влез в акаунт</p>
-                                        </a>
-                                    </div>
-                                    <a href="#register">Нов акаунт</a>
+                                        <p>влез в акаунт</p>
+                                    </a>
                                 </div>
+                                <a href="#register">Нов акаунт</a>
                             </div>
                         </div>
                     </div>
-                    <div class="favourite-icon">
-                        <p id="favCounter"></p>
-                        <i class="far fa-heart"></i>
-                        <p>Любими</p>
-                        <i class="fas fa-sort-down"></i>
-                        <div class="dropdown-container">
-                            <div class="invisible-filler"></div>
-                            <div class="favourite-nav dropdown-menu">
-                                <p>Нямаш любими продукти</p>
-                            </div>
+                </div>
+                <div class="favourite-icon">
+                    <p id="favCounter"></p>
+                    <i class="far fa-heart"></i>
+                    <p>Любими</p>
+                    <i class="fas fa-sort-down"></i>
+                    <div class="dropdown-container">
+                        <div class="invisible-filler"></div>
+                        <div class="favourite-nav dropdown-menu">
+                            <p>Нямаш любими продукти</p>
                         </div>
                     </div>
-                    <div class="shopping-cart">
-                        <p id="cartCounter"></p>
-                        <img src="./assets/images/icons/shopping-cart.png"
-                            alt="shopping-cart" class="shopping-cart-icon">
-                        <p>Моята количка</p>
-                        <i class="fas fa-sort-down"></i>
-                        <div class="dropdown-container">
-                            <div class="invisible-filler"></div>
-                            <div class="shopping-cart-nav dropdown-menu">
-                                <div class="cart-nav-container">
-                                    <p>Нямаш нито един продукт в количката</p>
-                                </div>
-                                <div id="sh-cart-btn">
-                                    <div class="shopping-cart-btn">
-                                        <a href="#cart"><i class="fas
+                </div>
+                <div class="shopping-cart">
+                    <p id="cartCounter"></p>
+                    <img src="./assets/images/icons/shopping-cart.png" alt="shopping-cart" class="shopping-cart-icon">
+                    <p>Моята количка</p>
+                    <i class="fas fa-sort-down"></i>
+                    <div class="dropdown-container">
+                        <div class="invisible-filler"></div>
+                        <div class="shopping-cart-nav dropdown-menu">
+                            <div class="cart-nav-container">
+                                <p>Нямаш нито един продукт в количката</p>
+                            </div>
+                            <div id="sh-cart-btn">
+                                <div class="shopping-cart-btn">
+                                    <a href="#cart"><i class="fas
                                                 fa-angle-double-right"></i>
-                                            <p>Виж
-                                                количката</p>
-                                        </a>
-                                    </div>
+                                        <p>Виж
+                                            количката</p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </header>
-            </div>
-            <!-- NAVIGATION -->
+                </div>
+            </header>
+        </div>
+        <!-- NAVIGATION -->
+        <div class="home-page-body">
             <nav class="nav-bar">
                 <div class="nav-container content">
                     <a id="categories" href="#"><i class="fas fa-bars"></i>
@@ -175,9 +158,7 @@
             <!-- CATEGORIES -->
             <main id='main' class="select-categories content">
                 <ul class="categories-menu">
-                    <li><a href="#"><img
-                                src="./assets/images/icons/mobile-phone.svg"
-                                alt="gsm-icon">
+                    <li><a href="#"><img src="./assets/images/icons/mobile-phone.svg" alt="gsm-icon">
                             <p>Телефони,
                                 Таблети & Лаптопи</p>
                         </a></li>
@@ -229,16 +210,13 @@
                             <a href="#">Smart home решения и сензори</a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/1.jpg"
-                                alt="gsm-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/1.jpg" alt="gsm-ad" class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img
-                                src="./assets/images/icons/computer-mouse.svg"
-                                alt="computer-icon">
+                    <li><a href="#"><img src="./assets/images/icons/computer-mouse.svg" alt="computer-icon">
                             <p>Компютри &
                                 Периферия</p>
                         </a></li>
@@ -296,15 +274,13 @@
                             <a href="#"><span>Сървъри и UPS-и</span></a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/2.jpg"
-                                alt="computer-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/2.jpg" alt="computer-ad" class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img src="./assets/images/icons/camera.svg"
-                                alt="photo-icon">
+                    <li><a href="#"><img src="./assets/images/icons/camera.svg" alt="photo-icon">
                             <p>ТВ,
                                 Аудио &
                                 Фото</p>
@@ -366,15 +342,13 @@
                             <a href="#">Обективи</a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/3.jpg"
-                                alt="tv-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/3.jpg" alt="tv-ad" class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img src="./assets/images/icons/gamepad.svg"
-                                alt="gaming-icon">
+                    <li><a href="#"><img src="./assets/images/icons/gamepad.svg" alt="gaming-icon">
                             <p>Gaming</p>
                         </a></li>
                     <div class="category-menu">
@@ -433,16 +407,13 @@
                             <a href="#">DELL</a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/4.jpg"
-                                alt="gaming-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/4.jpg" alt="gaming-ad" class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img
-                                src="./assets/images/icons/washing-machine.svg"
-                                alt="big-machines-icon">
+                    <li><a href="#"><img src="./assets/images/icons/washing-machine.svg" alt="big-machines-icon">
                             <p>Големи
                                 електроуреди</p>
                         </a></li>
@@ -497,19 +468,17 @@
                             <br>
                             <a href="#"><span>Miele</span></a>
                             <br>
-                            <a href="#"><span>Brand shop Dyson</span> <span
-                                    class="red-label">НОВО</span></a>
+                            <a href="#"><span>Brand shop Dyson</span> <span class="red-label">НОВО</span></a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/5.jpg"
-                                alt="big-machines-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/5.jpg" alt="big-machines-ad"
+                                class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img src="./assets/images/icons/mixer.svg"
-                                alt="small-machines-icon">
+                    <li><a href="#"><img src="./assets/images/icons/mixer.svg" alt="small-machines-icon">
                             <p>Малки
                                 електроуреди</p>
                         </a></li>
@@ -565,16 +534,14 @@
                             <a href="#">С капсули</a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/6.jpg"
-                                alt="small-machines-ad"
+                            <img src="./assets/images/categories-ads/6.jpg" alt="small-machines-ad"
                                 class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img src="./assets/images/icons/tshirt.svg"
-                                alt="fashion-icon">
+                    <li><a href="#"><img src="./assets/images/icons/tshirt.svg" alt="fashion-icon">
                             <p>Мода</p>
                         </a></li>
                     <div class="category-menu">
@@ -623,11 +590,9 @@
                             <br>
                             <a href="#"><span>СПОРТ</span></a>
                             <br>
-                            <a href="#"><span>NEW IN</span> <span
-                                    class="green-label">Ново</span></a>
+                            <a href="#"><span>NEW IN</span> <span class="green-label">Ново</span></a>
                             <br>
-                            <a href="#"><span>Outlet</span> <span
-                                    class="red-label">%</span></a>
+                            <a href="#"><span>Outlet</span> <span class="red-label">%</span></a>
                             <br>
                             <a href="#"><span>Fashion marketplace</span></a>
                             <br>
@@ -638,15 +603,13 @@
                             <a href="#">Casio</a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/7.jpg"
-                                alt="fashion-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/7.jpg" alt="fashion-ad" class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img src="./assets/images/icons/mirror.svg"
-                                alt="health-icon">
+                    <li><a href="#"><img src="./assets/images/icons/mirror.svg" alt="health-icon">
                             <p>Здраве
                                 и
                                 красота</p>
@@ -701,16 +664,13 @@
                             <a href="#">Класически самобръсначки</a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/8.jpg"
-                                alt="health-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/8.jpg" alt="health-ad" class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img
-                                src="./assets/images/icons/armchair.svg"
-                                alt="house-icon">
+                    <li><a href="#"><img src="./assets/images/icons/armchair.svg" alt="house-icon">
                             <p>Дом,
                                 градина
                                 & Petshop</p>
@@ -785,9 +745,7 @@
                             <a href="#">Кътове за игра за домашни любимци</a>
                         </div>
                     </div>
-                    <li><a href="#"><img
-                                src="./assets/images/icons/teddy-bear.svg"
-                                alt="toys-icon">
+                    <li><a href="#"><img src="./assets/images/icons/teddy-bear.svg" alt="toys-icon">
                             <p>Играчки
                                 &
                                 Детски артикули</p>
@@ -866,9 +824,7 @@
                             <a href="#"><span>Хоби играчки</span></a>
                         </div>
                     </div>
-                    <li><a href="#"><img
-                                src="./assets/images/icons/ping-pong.svg"
-                                alt="sport-icon">
+                    <li><a href="#"><img src="./assets/images/icons/ping-pong.svg" alt="sport-icon">
                             <p>Спорт
                                 &
                                 свободно време</p>
@@ -928,15 +884,13 @@
                             <a href="#">Спортни панталони</a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/9.jpg"
-                                alt="sport-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/9.jpg" alt="sport-ad" class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img src="./assets/images/icons/car.svg"
-                                alt="car-icon">
+                    <li><a href="#"><img src="./assets/images/icons/car.svg" alt="car-icon">
                             <p>Авто
                                 &
                                 Направи си сам</p>
@@ -996,16 +950,13 @@
                             <a href="#"><span>Осветление & Електроматериали</span></a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/10.jpg"
-                                alt="auto-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/10.jpg" alt="auto-ad" class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
                         </div>
                     </div>
-                    <li><a href="#"><img
-                                src="./assets/images/icons/shopping-basket.svg"
-                                alt="shopping-basket-icon">
+                    <li><a href="#"><img src="./assets/images/icons/shopping-basket.svg" alt="shopping-basket-icon">
                             <p>Книги, Офис
                                 & Храни</p>
                         </a></li>
@@ -1066,8 +1017,7 @@
                             <a href="#">Зелен и черен чай</a>
                         </div>
                         <div class="fourth-column-baner">
-                            <img src="./assets/images/categories-ads/11.jpg"
-                                alt="office-ad" class="categories-banner">
+                            <img src="./assets/images/categories-ads/11.jpg" alt="office-ad" class="categories-banner">
                             <div class="close-ad-btn">
                                 <i class="fas fa-times"></i>
                             </div>
@@ -1165,8 +1115,7 @@
                 <button id='left-scroll' class="fas fa-chevron-left"></button>
                 <div class='content'>
                     <div id='focus-main'>
-                        <img src="./assets/images/sections/focus.png" alt=""
-                            id="focus-image">
+                        <img src="./assets/images/sections/focus.png" alt="" id="focus-image">
                         <div>
                             <button id='section-button'>виж тук</button>
                         </div>
@@ -1194,7 +1143,7 @@
                 <div id='open-item-container' class="content section-bars"></div>
             </section>
             <!--OTHER CLIENTS WATCHED-->
-            <section class="content section-bars">
+            <section class="content section-bars other-clients">
                 <button id='other-left-scroll' class="fas fa-chevron-left"></button>
                 <h2 class="benefits">Други потребители са разгледали и</h2>
                 <div class="scroll-menu">
@@ -1211,8 +1160,7 @@
                     <h2 class="benefits">Телефони, Таблети & Смарт</h2>
                     <div class="benefits">
                         <div>
-                            <a href="#">30 дни право на връщане<span
-                                    class="bold">|</span></a>
+                            <a href="#">30 дни право на връщане<span class="bold">|</span></a>
                             <div class="dropdown-menu">
                                 <p>Страх те е да пазаруваш онлайн, защото
                                     мислиш, че ако продукта не ти хареса няма да
@@ -1287,17 +1235,13 @@
                         </ul>
                     </div>
                     <div class='technology-bars technology-image'>
-                        <a href="#"><img
-                                src="./assets/images/sections/smartphone.jpg"
-                                alt=""></a>
+                        <a href="#"><img src="./assets/images/sections/smartphone.jpg" alt=""></a>
                     </div>
                 </div>
             </section>
             <!--MOBILE APP-->
             <section id='mobile-app' class="content section-bars">
-                <a href=""><img
-                        src="./assets/images/sections/mobile-app-baner.png"
-                        alt=""></a>
+                <a href=""><img src="./assets/images/sections/mobile-app-baner.png" alt=""></a>
             </section>
             <!--TV BAR-->
             <section id='tv-bar' class="content section-bars">
@@ -1305,8 +1249,7 @@
                     <h2 class="benefits">Тв, Аудио, Фото & Gaming</h2>
                     <div class="benefits">
                         <div>
-                            <a href="#">30 дни право на връщане<span
-                                    class="bold">|</span></a>
+                            <a href="#">30 дни право на връщане<span class="bold">|</span></a>
                             <div class="dropdown-menu">
                                 <p>Страх те е да пазаруваш онлайн, защото
                                     мислиш, че ако продукта не ти хареса няма да
@@ -1377,8 +1320,7 @@
                         </ul>
                     </div>
                     <div class='technology-bars technology-image'>
-                        <a href="#"><img src="./assets/images/sections/tv.jpg"
-                                alt=""></a>
+                        <a href="#"><img src="./assets/images/sections/tv.jpg" alt=""></a>
                     </div>
                 </div>
             </section>
@@ -1399,203 +1341,120 @@
                 </div>
                 <div id="topBrands" class="content">
                     <ul>
-                        <li class="brand-bar"><a href=""><img
-                                    src="./assets/images/top-brands/samsung.png"
-                                    alt=""></a></li>
-                        <li class="brand-bar"><a href=""><img
-                                    src="./assets/images/top-brands/philips.png"
-                                    alt=""></a></li>
-                        <li class="brand-bar"><a href=""><img
-                                    src="./assets/images/top-brands/bosch.png"
-                                    alt=""></a></li>
-                        <li class="brand-bar"><a href=""><img
-                                    src="./assets/images/top-brands/asus.png"
-                                    alt=""></a></li>
-                        <li class="brand-bar"><a href=""><img
-                                    src="./assets/images/top-brands/pampers.png"
-                                    alt=""></a></li>
-                        <li class="brand-bar"><a href=""><img
-                                    src="./assets/images/top-brands/sony.png"
-                                    alt=""></a></li>
-                        <li><a href=""><img
-                                    src="./assets/images/top-brands/apple.png"
-                                    alt=""></a></li>
-                        <li><a href=""><img
-                                    src="./assets/images/top-brands/lego.png"
-                                    alt=""></a></li>
-                        <li><a href=""><img
-                                    src="./assets/images/top-brands/black-and-decker.png"
-                                    alt=""></a></li>
-                        <li><a href=""><img
-                                    src="./assets/images/top-brands/lenovo.png"
-                                    alt=""></a></li>
-                        <li><a href=""><img
-                                    src="./assets/images/top-brands/dell.png"
-                                    alt=""></a></li>
-                        <li><a href=""><img
-                                    src="./assets/images/top-brands/kingston.png"
-                                    alt=""></a></li>
+                        <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/samsung.png" alt=""></a>
+                        </li>
+                        <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/philips.png" alt=""></a>
+                        </li>
+                        <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/bosch.png" alt=""></a>
+                        </li>
+                        <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/asus.png" alt=""></a></li>
+                        <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/pampers.png" alt=""></a>
+                        </li>
+                        <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/sony.png" alt=""></a></li>
+                        <li><a href=""><img src="./assets/images/top-brands/apple.png" alt=""></a></li>
+                        <li><a href=""><img src="./assets/images/top-brands/lego.png" alt=""></a></li>
+                        <li><a href=""><img src="./assets/images/top-brands/black-and-decker.png" alt=""></a></li>
+                        <li><a href=""><img src="./assets/images/top-brands/lenovo.png" alt=""></a></li>
+                        <li><a href=""><img src="./assets/images/top-brands/dell.png" alt=""></a></li>
+                        <li><a href=""><img src="./assets/images/top-brands/kingston.png" alt=""></a></li>
                     </ul>
                 </div>
                 <div id="mobileBrands">
                     <div id="topBrands" class="content">
                         <ul>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/samsung.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/samsung.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/philips.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/philips.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/bosch.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/bosch.png" alt=""></a>
+                            </li>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/asus.png" alt=""></a>
+                            </li>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/hama.png" alt=""></a>
+                            </li>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/allview.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/asus.png"
-                                        alt=""></a></li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/hama.png"
-                                        alt=""></a></li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/allview.png"
-                                        alt=""></a>
-                            </li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/dell.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/allview.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/lenovo.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/nokia.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/lg.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/hp.png"
-                                        alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/dell.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/allview.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/lenovo.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/nokia.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/lg.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/hp.png" alt=""></a></li>
                         </ul>
                     </div>
                 </div>
                 <div id="electronicsBrands">
                     <div id="topBrands" class="content">
                         <ul>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/samsung.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/samsung.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/philips.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/philips.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/sony.png"
-                                        alt=""></a></li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/lg.png"
-                                        alt=""></a></li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/whirlpool.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/sony.png" alt=""></a>
+                            </li>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/lg.png" alt=""></a>
+                            </li>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/whirlpool.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/bosch.png"
-                                        alt=""></a>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/bosch.png" alt=""></a>
                             </li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/nikon.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/canon.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/sharp.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/beko.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/pionner.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/gorenje.png"
-                                        alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/nikon.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/canon.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/sharp.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/beko.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/pionner.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/gorenje.png" alt=""></a></li>
                         </ul>
                     </div>
                 </div>
                 <div id="healthBrands">
                     <div id="topBrands" class="content">
                         <ul>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/loreal.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/loreal.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/nivea.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/nivea.png" alt=""></a>
+                            </li>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/maybelline.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/maybelline.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/calvin_klein.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/calvin_klein.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/gillette.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/gillette.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/scholl.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/scholl.png"
-                                        alt=""></a>
-                            </li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/rimmel.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/givenchy.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/blend-a-med.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/paco-rabanne.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/garnier.png"
-                                        alt=""></a></li>
-                            <li><a href=""><img
-                                        src="./assets/images/top-brands/hugo-boss.png"
-                                        alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/rimmel.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/givenchy.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/blend-a-med.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/paco-rabanne.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/garnier.png" alt=""></a></li>
+                            <li><a href=""><img src="./assets/images/top-brands/hugo-boss.png" alt=""></a></li>
                         </ul>
                     </div>
                 </div>
                 <div id="fashionBrands">
                     <div id="topBrands" class="content">
                         <ul>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/pepe-jeans.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/pepe-jeans.png"
                                         alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/nike.png"
-                                        alt=""></a></li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/puma.png"
-                                        alt=""></a></li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/levis.png"
-                                        alt=""></a>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/nike.png" alt=""></a>
                             </li>
-                            <li class="brand-bar"><a href=""><img
-                                        src="./assets/images/top-brands/zee-lane.png"
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/puma.png" alt=""></a>
+                            </li>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/levis.png" alt=""></a>
+                            </li>
+                            <li class="brand-bar"><a href=""><img src="./assets/images/top-brands/zee-lane.png"
                                         alt=""></a>
                             </li>
                         </ul>
@@ -1666,16 +1525,13 @@
                         </ul>
                     </div>
                     <div class='technology-bars technology-image'>
-                        <a href="#"><img
-                                src="./assets/images/sections/convector.jpg"
-                                alt=""></a>
+                        <a href="#"><img src="./assets/images/sections/convector.jpg" alt=""></a>
                     </div>
                 </div>
             </section>
             <!--BULLETIN-->
             <section id='bulletin' class="content section-bars">
-                <img id='bulettin-image'
-                    src="./assets/images/sections/bulletin.png" alt="">
+                <img id='bulettin-image' src="./assets/images/sections/bulletin.png" alt="">
 
                 <div id='check-bulettin'>
                     <h3>Абонирайте се за бюлетина на eMAG</h3>
@@ -1683,11 +1539,42 @@
                         имам
                         навършени 16 години.</p>
 
-                    <input type="text" name="" class='bulletin-form'
-                        placeholder="Име">
-                    <input type="text" name="" class='bulletin-form'
-                        placeholder="Имейл">
+                    <input type="text" name="" class='bulletin-form' placeholder="Име">
+                    <input type="text" name="" class='bulletin-form' placeholder="Имейл">
                     <button class='bulletin-form'>Абонирам се!</button>
+                </div>
+            </section>
+            <!--FAVOURITES PAGE-->
+            <section id='favouriteItems'>
+                <div class="content section-bars favourites-page">
+                    <div id=favLogin>
+                        <div><img src="./assets/images/logo/userLogo.png" alt=""></div>
+                        <h2>Хей, сега си анонимен user.</h2>
+                        <p>Влез в твоя акаунт или се регистрирай, за да можеш да запазиш любимите си продукти.</p>
+                        <div class='continue'>
+                            <span><i class="fas
+                                                fa-angle-double-right"></i></span>
+                            <strong>Влез в акаунт</strong>
+                        </div>
+                        <div><button id="newAccount">Нов акаунт</button></div>
+                    </div>
+                    <div id='favItems'>
+                        <div id='emptyFav'>
+                            <div>
+                                <img src="./assets/images/icons/fav.png" alt="">
+                                <p>Хмм, няма нито един продукт в твоя списък.</p>
+                                <p>Виж някои препоръки, които могат да те вдъхновят.</p>
+                                <div> <small>Добави в Любими и си направи списъци според твоите предпочитания.</small>
+                                    <small>Можеш да ги споделиш по всяко време с приятели и ако желаеш можеш да запазиш
+                                        продуктите от количката, за да ги закупиш по-късно. <i
+                                            class="fas fa-heart footer-heart"></i></small>
+                                </div>
+
+                                <a href="#home">Виж продукти</a>
+                            </div>
+                        </div>
+                        <div id='fullFav'></div>
+                    </div>
                 </div>
             </section>
             <!--HISTORY SECTION-->
@@ -1721,9 +1608,7 @@
                             eMAG</button>
                     </div>
                     <div id='marketplace-banner'>
-                        <img
-                            src="./assets/images/sections/marketplace-banner.png"
-                            alt="">
+                        <img src="./assets/images/sections/marketplace-banner.png" alt="">
                     </div>
                 </div>
             </section>
@@ -1741,12 +1626,10 @@
                         <button>Изпрати SMS</button>
                     </div>
                     <div id="play-store">
-                        <a href="#"><img
-                                src="./assets/images/icons/google-play-badge.svg"
-                                alt="" class="play-store"></a>
-                        <a href="#"><img
-                                src="./assets/images/icons/apple-store-badge.svg"
-                                alt="" class="play-store"></a>
+                        <a href="#"><img src="./assets/images/icons/google-play-badge.svg" alt=""
+                                class="play-store"></a>
+                        <a href="#"><img src="./assets/images/icons/apple-store-badge.svg" alt=""
+                                class="play-store"></a>
                     </div>
                 </div>
             </section>
@@ -1825,94 +1708,204 @@
                 </div>
             </footer>
         </div>
+    </div>
 
-        <!-- LOGIN AND REGISTER PAGE -->
-        <div id='login' class="login-section">
-            <a href="#home"><img src="./assets/images/logo/emag-logo.svg"
-                    alt="emag-logo" class="logo"></a>
-            <div class="login-box">
-                <div id="loginPage">
-                    <h1 class="loginTitle">Вход</h1>
-                    <form action="" class="user-form">
-                        <label for="loginUsername">Моля въведи потребителско
-                            име</label>
-                        <input type="text" id="loginUsername" required>
-                        <label for="loginPassword">Моля въведи парола</label>
-                        <input type="password" id="loginPassword" required>
-                        <input type="submit" id="loginBtn" value="Продължи">
-                    </form>
-                    <p>Нямаш акаунт? Създай от <a href="#register">тук</a></p>
-                    <div class="social-login">
+    <!-- LOGIN AND REGISTER PAGE -->
+    <div id='login' class="login-section">
+        <a href="#home"><img src="./assets/images/logo/emag-logo.svg" alt="emag-logo" class="logo"></a>
+        <div class="login-box">
+            <div id="loginPage">
+                <h1 class="loginTitle">Вход</h1>
+                <form action="" class="user-form">
+                    <label for="loginUsername">Моля въведи потребителско
+                        име</label>
+                    <input type="text" id="loginUsername" required>
+                    <label for="loginPassword">Моля въведи парола</label>
+                    <input type="password" id="loginPassword" required>
+                    <input type="submit" id="loginBtn" value="Продължи">
+                </form>
+                <p>Нямаш акаунт? Създай от <a href="#register">тук</a></p>
+                <div class="social-login">
+                    <div>
+                        <hr class="line-through">
+                        <p>или</p>
+                        <hr class="line-through">
+                    </div>
+                    <p>използвай своя социален акаунт</p>
+                    <div class="social-buttons-login" id="fb-button">
+                        <i class="fab fa-facebook-f"></i>
+                        <p class="separator">|</p>
+                        <p class="social-title">Facebook</p>
+                    </div>
+                    <div class="social-buttons-login" id="google-button">
+                        <i class="fab fa-google"></i>
+                        <p class="separator">|</p>
+                        <p class="social-title">Google</p>
+                    </div>
+                </div>
+            </div>
+            <div id="registerPage">
+                <h1 class="loginTitle">Регистрация</h1>
+                <form action="" class="user-form">
+                    <label for="names">Моля въведи име и фамилия</label>
+                    <input type="text" id="names" required>
+                    <label for="registerUsername">Моля въведи
+                        потребителско
+                        име</label>
+                    <input type="text" id="regUsername" required>
+                    <label for="regPassword">Моля въведи парола</label>
+                    <input type="password" id="regPassword" required>
+                    <label for="regRePassword">Моля въведи паролата
+                        отново</label>
+                    <input type="password" id="regRePassword" required>
+                    <input type="submit" id="registerBtn" value="Продължи">
+                </form>
+                <p>Вече имаш акаунт? Влез от <a href="#login">тук</a></p>
+            </div>
+        </div>
+        <p class="login-help">Имаш ли нужда от помощ?</p>
+        <p class="login-info">Акаунт на клиент на eMAG.bg<strong> |
+            </strong>Данни с личен
+            характер</p>
+    </div>
+
+    <!-- INFORMATION BANNER -->
+    <div id="success"></div>
+    <div id="error"></div>
+
+    <!-- ERROR PAGE -->
+    <div id="errorPage">
+        <img id="errorPic" src="./assets/images/error-page/authError404.svg" alt="Error:
+                page not found">
+        <h1 id="errorTitle">Опааа...</h1>
+        <h2 id="errorDescription">Не съществува такава страница &#9785;</h2>
+        <p id="errorText">Върни се обратно?</p>
+        <a href="#home"><img class="logo" src="./assets/images/logo/emag-logo.svg" alt="emag-logo"></a>
+    </div>
+    <!--SHOPPING CART PAGE-->
+    <section class="cart-page">
+        <div id='navMenuCart'></div>
+        <div class="content section-bars">
+            <div id="empty-cart">
+                <div>Количката ти е празна</div>
+                <div>Ако имаш акаунт в eMAG моля да влезеш в него, след което ще те препратим към продуктите от
+                    количката
+                    ти.</div>
+                <div><button>Към началната страница</button></div>
+                <div>или може да се върнеш за да продължиш с покупките.</div>
+            </div>
+            <div id="cart-container">
+                <div>
+                    <h1>Количка за пазаруване</h1>
+                    <div class='items-cart'>
+
+                    </div>
+                </div>
+                <div id='informationNav'>
+                    <div id='information-order'>
                         <div>
-                            <hr class="line-through">
-                            <p>или</p>
-                            <hr class="line-through">
+                            <h2>Информация за поръчката</h2>
+                            <div class="products-price">
+                                <span>Всички пордукти:</span>
+                                <div class="total-cart">
+                                    <p id="products-amount"></p>
+                                    <p id='product-pennies'></p>
+                                    <p>лв</p>
+                                </div>
+                            </div>
+                            <div id='delivery-price'>
+                                <span>Такса доставка:</span>
+                                <strong>БЕЗПЛАТНА</strong>
+                            </div>
+                            <div>
+                                <h2>Общо:</h2>
+                                <div class="total-cart">
+                                    <h3 id='cart-amount-price'></h3>
+                                    <h4 id='cart-amount-pennies'></h4>
+                                    <h3>лв</h3>
+                                </div>
+                            </div>
+                            <div class='continue'>
+                                <span><i class="fas
+                                                    fa-angle-double-right"></i></span>
+                                <strong>Продължи</strong>
+                            </div>
                         </div>
-                        <p>използвай своя социален акаунт</p>
-                        <div class="social-buttons-login" id="fb-button">
-                            <i class="fab fa-facebook-f"></i>
-                            <p class="separator">|</p>
-                            <p class="social-title">Facebook</p>
+                    </div>
+                    <div id='voucher'>
+                        <div id='addVoucher'>
+                            <span>Добави ваучер</span>
+                            <i class="fas fa-sort-down" aria-hidden="true"></i>
                         </div>
-                        <div class="social-buttons-login" id="google-button">
-                            <i class="fab fa-google"></i>
-                            <p class="separator">|</p>
-                            <p class="social-title">Google</p>
+                        <div id='addCode'>
+                            <div><input class="inputs-voucher" type="text"></div>
+                            <div><button class="inputs-voucher">Добави код</button></div>
                         </div>
                     </div>
                 </div>
-                <div id="registerPage">
-                    <h1 class="loginTitle">Регистрация</h1>
-                    <form action="" class="user-form">
-                        <label for="names">Моля въведи име и фамилия</label>
-                        <input type="text" id="names" required>
-                        <label for="registerUsername">Моля въведи
-                            потребителско
-                            име</label>
-                        <input type="text" id="regUsername" required>
-                        <label for="regPassword">Моля въведи парола</label>
-                        <input type="password" id="regPassword" required>
-                        <label for="regRePassword">Моля въведи паролата
-                            отново</label>
-                        <input type="password" id="regRePassword" required>
-                        <input type="submit" id="registerBtn" value="Продължи">
-                    </form>
-                    <p>Вече имаш акаунт? Влез от <a href="#login">тук</a></p>
+            </div>
+        </div>
+        <footer id='footer-cart'>
+            <div class="content section-bars">
+                <p class='footer-cart-title'>В eMAG се радваш на:</p>
+                <div class="footer-content">
+                    <div class="footer-options">
+                        <img src="./assets/images/icons/footer-1.png" alt="">
+                        <div>
+                            <p>Проверка на пратката</p>
+                            <small>за продуктите предлагани от eMAG</small>
+                        </div>
+                    </div>
+                    <div class="footer-options">
+                        <img src="./assets/images/icons/footer-2.png" alt="">
+                        <div>
+                            <p>Проследяване на пратката</p>
+                            <small>в твоя акаунт</small>
+                        </div>
+                    </div>
+                    <div class="footer-options">
+                        <img src="./assets/images/icons/footer-1.png" alt="">
+                        <div>
+                            <p>30 дни право на връщане</p>
+                            <small>за продуктите предлагани от eMAG</small>
+                        </div>
+                    </div>
+                    <div class="footer-options">
+                        <img src="./assets/images/icons/footer-2.png" alt="">
+                        <div>
+                            <p>Купуваш сигурно</p>
+                            <small>Всички данни са криптирани за едно по-сигурно пазаруване.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="last-info">
+                    <p class='footer-cart-title'>Може да видиш повече за:</p>
+                    <small>Copyright 2001-2021 Dante International</small>
+                </div>
+                <div class="footer-link">
+                    <div>
+                        <a href="#">Начин на плащане</a>
+                        <a href="#">Начин на доставка</a>
+                        <a href="#">Защитаваме твоите лични данни</a>
+                    </div>
+                    <a href="#">Мобилна версия</a>
                 </div>
             </div>
-            <p class="login-help">Имаш ли нужда от помощ?</p>
-            <p class="login-info">Акаунт на клиент на eMAG.bg<strong> |
-                </strong>Данни с личен
-                характер</p>
-        </div>
+        </footer>
+    </section>
 
-        <!-- INFORMATION BANNER -->
-        <div id="success"></div>
-        <div id="error"></div>
-
-        <!-- ERROR PAGE -->
-        <div id="errorPage">
-            <img id="errorPic" src="./assets/images/error-page/authError404.svg"
-                alt="Error:
-                page not found">
-            <h1 id="errorTitle">Опааа...</h1>
-            <h2 id="errorDescription">Не съществува такава страница &#9785;</h2>
-            <p id="errorText">Върни се обратно?</p>
-            <a href="#home"><img class="logo"
-                    src="./assets/images/logo/emag-logo.svg" alt="emag-logo"></a>
-        </div>
-
-        <!-- javascript -->
-        <script src="./assets/js/allItems.js"></script>
-        <script src="./assets/js/utils.js"></script>
-        <script src="./assets/js/constants.js"></script>
-        <script src="./assets/js/topBrands.js"></script>
-        <script src="./assets/js/renderFavAndCartNav.js"></script>
-        <script src="./assets/js/script.js"></script>
-        <script src="./assets/js/createItem.js"></script>
-        <script src="./assets/js/buttonAnimation.js"></script>
-        <script src="./assets/js/radioButtons.js"></script>
-        <script src="./assets/js/openItem.js"></script>
-    </body>
+    <!-- javascript -->
+    <script src="./assets/js/allItems.js"></script>
+    <script src="./assets/js/utils.js"></script>
+    <script src="./assets/js/constants.js"></script>
+    <script src="./assets/js/topBrands.js"></script>
+    <script src="./assets/js/renderFavAndCartNav.js"></script>
+    <script src="./assets/js/openFavAndCart.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/createItem.js"></script>
+    <script src="./assets/js/buttonAnimation.js"></script>
+    <script src="./assets/js/radioButtons.js"></script>
+    <script src="./assets/js/openItem.js"></script>
+</body>
 
 </html>

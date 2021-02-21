@@ -19,13 +19,13 @@ function renderFavAndCart(favourites, cart) {
             title.className = 'nav-dropdown-title';
             const percentage = Math.floor(100 - 100 * (el.currentPrice / el.regularPrice));
             title.addEventListener('click', () => {
-                // watchedItem(focusSectionItems.watchedItems);
-                openItem(el, percentage);
+                watchedItem(focusSectionItems.watchedItems);
+                openItem(el);
             });
 
             img.addEventListener('click', () => {
-                // watchedItem(focusSectionItems.watchedItems);
-                openItem(el, percentage);
+                watchedItem(focusSectionItems.watchedItems);
+                openItem(el);
             });
 
             const price = utils.createNewElement('p');
@@ -76,12 +76,12 @@ function renderFavAndCart(favourites, cart) {
             title.className = 'nav-dropdown-title';
             const percentage = Math.floor(100 - 100 * (el.currentPrice / el.regularPrice));
             title.addEventListener('click', () => {
-                // watchedItem(focusSectionItems.watchedItems);
+                watchedItem(focusSectionItems.watchedItems);
                 openItem(el, percentage);
             });
 
             img.addEventListener('click', () => {
-                // watchedItem(focusSectionItems.watchedItems);
+                watchedItem(focusSectionItems.watchedItems);
                 openItem(el, percentage);
             });
 

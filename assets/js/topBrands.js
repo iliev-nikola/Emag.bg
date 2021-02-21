@@ -4,7 +4,6 @@ MOBILE_BRANDS.style.display = 'none';
 ELECTRONIC_BRANDS.style.display = 'none';
 HEALTH_BRANDS.style.display = 'none';
 FASHION_BRANDS.style.display = 'none';
-
 for (let i = 0; i < ALL_BRANDS_SECTION.length; i++) {
     ALL_BRANDS_SECTION[i].addEventListener('click', (e) => {
         e.preventDefault();

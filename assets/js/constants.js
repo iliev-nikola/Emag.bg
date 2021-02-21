@@ -102,9 +102,28 @@ const TOP_SECTION = utils.getById('top');
 const BIG_TECHNOLOGIES = utils.getById('big-technologies');
 const BULLETIN = utils.getById('bulletin');
 const OPEN_ITEM = utils.getById('open-item-section');
+const MARKETPLACE_SECTION = document.querySelector('.marketplace');
+const OTHER_CLIENTS_SECTION = document.querySelector('.other-clients');
 
 //RAITING STARS
 const RAITING_STARS = document.getElementsByClassName('stars');
 
 //OPEN ITEM CONTAINER
-let OPEN_ITEM_CONTAINER = utils.getById('open-item-container');
+const OPEN_ITEM_CONTAINER = utils.getById('open-item-container');
+
+//FAVOURITES & SHOPPING CART
+const FAVOURITES_PAGE = utils.getById('favouriteItems');
+const HOME_PAGE_MENU = document.querySelector('.home-page-body');
+const CART_PAGE = document.querySelector('.cart-page');
+const EMPTY_CART = utils.getById('empty-cart');
+const CART_CONTAINER = utils.getById('cart-container');
+const ITEMS_IN_CART = document.querySelector('.items-cart');
+const EMPTY_FAV = utils.getById('emptyFav');
+const FULL_FAV = utils.getById('fullFav');
+const CART_AMOUNT_PRICE = utils.getById('cart-amount-price');
+const PRODUCTS_AMOUNT = utils.getById('products-amount');
+const PRODUCTS_PENNIES = utils.getById('product-pennies');
+const AMOUNT_PENNIES = utils.getById('cart-amount-pennies');
+const ADD_VOUCHER = utils.getById('addVoucher');
+const ADD_CODE = utils.getById('addCode');
+const VOUCHER_CONTAINER = utils.getById('voucher');

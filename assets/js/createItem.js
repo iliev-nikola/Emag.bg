@@ -15,6 +15,7 @@ class Items {
         }
 
         this.watchedItems.push(item);
+
     }
 }
 
@@ -29,6 +30,8 @@ function createItemsCard(array, container) {
     array.forEach(currentItem => {
         const cardContainer = utils.createNewElement('div');
         cardContainer.className = 'items-card';
+        const mainContainer = utils.createNewElement('div');
+        mainContainer.className = 'fav-main-cont';
         const tooltipContainer = utils.createNewElement('div');
         tooltipContainer.className = 'tooltip';
         const addFavourite = utils.createNewElement('i');
@@ -67,16 +70,14 @@ function createItemsCard(array, container) {
         const sup = utils.createNewElement('sup', currentItem.currentPennies);
         const valute = utils.createNewElement('small', 'лв');
         const titleContainer = utils.createNewElement('a');
-        titleContainer.href = '#title';
+        titleContainer.href = '#article';
         const itemTitle = utils.createNewElement('h5', currentItem.title);
         const regular = utils.createNewElement('div');
         regular.className = 'regular-price';
         const regPrice = utils.createNewElement('strong', currentItem.regularPrice);
         regPrice.className = 'line';
         const itemPrice = utils.createNewElement('span', currentItem.currentPrice);
-        const currentPrice = parseFloat(currentItem.currentPrice + '.' + currentItem.currentPennies);
-        const regularPrice = parseFloat(currentItem.regularPrice + '.' + currentItem.regularPennies);
-        const percentage = Math.floor(100 - 100 * (currentPrice / regularPrice));
+        const percentage = utils.calculatingPercentage(currentItem);
         const percentageBar = utils.createNewElement('div', `-${percentage}%`);
         const sale = utils.createNewElement('b', `(-${percentage}%)`);
         percentageBar.className = 'percentage';
@@ -125,53 +126,14 @@ function createItemsCard(array, container) {
             regular.append(sup, valute, sale);
         }
 
-        //ADDING ITEMS IN HISTORY SECTION
-        function watchedItem(array) {
-            WATCHED_CONTAINER.style.display = 'block';
-            WATCHED_ITEMS.innerHTML = '';
-            if (array.length === 12) {
-                array.pop();
-                array.unshift(currentItem.image);
-            } else {
-                array.push(currentItem.image);
-            }
-
-            array = new Set(array);
-            array = Array.from(array);
-            array.forEach(item => {
-                const mainContainer = utils.createNewElement('div');
-                const watchedImage = utils.createNewElement('img');
-                watchedImage.className = 'watched-images';
-                watchedImage.src = item;
-                WATCHED_ITEMS.append(mainContainer);
-                mainContainer.append(watchedImage);
-            });
-        }
-
         titleContainer.addEventListener('click', () => {
-            watchedItem(focusSectionItems.watchedItems);
-            openItem(currentItem, percentage);
-
+            watchedItem(focusSectionItems.watchedItems, currentItem);
+            openItem(currentItem);
         });
 
         imageContainer.addEventListener('click', () => {
-            watchedItem(focusSectionItems.watchedItems);
-            openItem(currentItem, percentage);
-        });
-
-        //DELETE ITEMS FROM HISTORY SECTION
-        DELETE_WATCHED.addEventListener('click', () => {
-            let counterLoader = 0;
-            const intervalLoader = setInterval(() => {
-                counterLoader++;
-                WATCHED_CONTAINER.style.opacity = '0.3';
-                ANIMATION_HISTORY.className = 'loader';
-                if (counterLoader >= 3) {
-                    window.clearInterval(intervalLoader);
-                    ANIMATION_HISTORY.style.display = 'none';
-                    WATCHED_CONTAINER.style.display = 'none';
-                }
-            }, 800);
+            watchedItem(focusSectionItems.watchedItems, currentItem);
+            openItem(currentItem);
         });
     });
 }
@@ -182,5 +144,40 @@ const otherWatched = new Items();
 OTHER_CLIENTS_WATCHED.forEach(item => {
     otherWatched.addProduct(item);
 });
+
+function watchedItem(array, currentItem) {
+    WATCHED_CONTAINER.style.display = 'block';
+    WATCHED_ITEMS.innerHTML = '';
+    if (array.length === 12) {
+        array.pop();
+        array.unshift(currentItem.image);
+    } else {
+        array.push(currentItem.image);
+    }
+
+    array = new Set(array);
+    array = Array.from(array);
+    array.forEach(item => {
+        const mainContainer = utils.createNewElement('div');
+        const watchedImage = utils.createNewElement('img');
+        watchedImage.className = 'watched-images';
+        watchedImage.src = item;
+        WATCHED_ITEMS.append(mainContainer);
+        mainContainer.append(watchedImage);
+    });
+    DELETE_WATCHED.addEventListener('click', () => {
+        let counterLoader = 0;
+        const intervalLoader = setInterval(() => {
+            counterLoader++;
+            WATCHED_CONTAINER.style.opacity = '0.3';
+            ANIMATION_HISTORY.className = 'loader';
+            if (counterLoader >= 3) {
+                window.clearInterval(intervalLoader);
+                ANIMATION_HISTORY.style.display = 'none';
+                WATCHED_CONTAINER.style.display = 'none';
+            }
+        }, 800);
+    });
+}
 
 createItemsCard(otherWatched.allItems, OTHER_WATCHED_CONTAINER);

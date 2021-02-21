@@ -178,6 +178,50 @@ const utils = (function () {
         utils.setUsers(users);
     }
 
+    //CALCULATING PERCENTAGE
+    function calculatingPercentage(currentItem) {
+        const currentPr = parseFloat(currentItem.currentPrice + '.' + currentItem.currentPennies);
+        const regularPr = parseFloat(currentItem.regularPrice + '.' + currentItem.regularPennies);
+        return Math.floor(100 - 100 * (currentPr / regularPr));
+    }
+
+    //HELPER FUNCTION FOR CALCULATING PRICES
+    function calculatingPrices(currentOption, firstPrice, firstPennies) {
+        let totalCurrentPrice = (currentOption * parseFloat(firstPrice + '.' + firstPennies)).toFixed(2).toString().split('.');
+        changeCurrentPrice = totalCurrentPrice[0];
+        changeCurrentPennies = totalCurrentPrice[1];
+    }
+
+    //HELPER FUNCTION FOR CALCULATING AMOUNT
+    function calculateAmount(amount) {
+        let currentAmount = amount.toFixed(2).toString().split('.');
+        CART_AMOUNT_PRICE.innerHTML = currentAmount[0];
+        PRODUCTS_AMOUNT.innerHTML = currentAmount[0];
+        PRODUCTS_PENNIES.innerHTML = currentAmount[1];
+        AMOUNT_PENNIES.innerHTML = currentAmount[1];
+    }
+
+    //CHANGE PRICE WHEN CHANGE COUNT
+    function changePrice(currentOption, currentElement, currentPrice, currentPennies, regularPrice, regularPennies, savePrice, savePennies) {
+        const firstPrice = currentElement.currentPrice;
+        const firstPennies = currentElement.currentPennies;
+        const regPrice = currentElement.regularPrice;
+        const regPennies = currentElement.regularPennies;
+        calculatingPrices(currentOption, firstPrice, firstPennies);
+        currentPrice.innerHTML = changeCurrentPrice;
+        currentPennies.innerHTML = changeCurrentPennies;
+        let currentMoney = eval(`${changeCurrentPrice}.${changeCurrentPennies}`);
+        if (currentElement.regularPrice !== '-') {
+            calculatingPrices(currentOption, regPrice, regPennies);
+            regularPrice.innerHTML = changeCurrentPrice;
+            regularPennies.innerHTML = changeCurrentPennies;
+            let currentRegular = eval(`${changeCurrentPrice}.${changeCurrentPennies}`);
+            let savedMoney = (currentRegular - currentMoney).toFixed(2).toString().split('.');
+            savePrice.innerHTML = savedMoney[0];
+            savePennies.innerHTML = savedMoney[1];
+        }
+    }
+
     return {
         onFocus,
         onFocusOut,
@@ -194,5 +238,8 @@ const utils = (function () {
         removeFromFav,
         addToCart,
         removeFromCart,
+        calculatingPercentage,
+        changePrice,
+        calculateAmount
     }
 })();

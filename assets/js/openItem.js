@@ -1,5 +1,5 @@
 //OPEN AN ITEM
-function openItem(currentItem, percentage) {
+function openItem(currentItem) {
     OPEN_ITEM_CONTAINER.innerHTML = '';
     OPEN_ITEM.style.display = 'block';
     const titleContainer = utils.createNewElement('div');
@@ -67,18 +67,6 @@ function openItem(currentItem, percentage) {
     prices.className = 'prices';
     const regularContainer = utils.createNewElement('div');
     regularContainer.className = 'regular-container-item';
-    if (currentItem.regularPrice !== '-') {
-        const regularPrice = utils.createNewElement('span', currentItem.regularPrice)
-        regularPrice.className = 'regular-price-item';
-        const regularPennies = utils.createNewElement('sup', currentItem.regularPennies);
-        regularPennies.className = 'regular-pennies-item';
-        const lv = utils.createNewElement('span', 'лв.')
-        lv.className = 'lv';
-        const sale = utils.createNewElement('span', `(-${percentage}%)`);
-        sale.className = 'item-sale';
-        regularContainer.append(regularPrice, regularPennies, lv, sale);
-    }
-
     const totalContainer = utils.createNewElement('div');
     totalContainer.className = 'total-container';
     const currentPrice = utils.createNewElement('span', currentItem.currentPrice)
@@ -87,6 +75,18 @@ function openItem(currentItem, percentage) {
     currentPennies.className = 'current-pennies-item';
     const lv = utils.createNewElement('span', 'лв.')
     lv.className = 'lv-item';
+    if (currentItem.regularPrice !== '-') {
+        const regularPrice = utils.createNewElement('span', currentItem.regularPrice)
+        regularPrice.className = 'regular-price-item';
+        const regularPennies = utils.createNewElement('sup', currentItem.regularPennies);
+        regularPennies.className = 'regular-pennies-item';
+        const lv = utils.createNewElement('span', 'лв.')
+        lv.className = 'lv';
+        let percentage = utils.calculatingPercentage(currentItem);
+        const sale = utils.createNewElement('span', `(-${percentage}%)`);
+        sale.className = 'item-sale';
+        regularContainer.append(regularPrice, regularPennies, lv, sale);
+    }
     totalContainer.append(currentPrice, currentPennies, lv);
     const leasing = utils.createNewElement('span');
     const leasingTitle = utils.createNewElement('p', 'Месечни вноски');
@@ -146,4 +146,6 @@ function openItem(currentItem, percentage) {
     addToFavourite.append(favIconContainer, favText);
     favIconContainer.append(favIcon);
     containerImages.append(mainImage, allImgs);
+    currentItem = utils.setItem('obj', currentItem);
 }
+

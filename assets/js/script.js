@@ -122,8 +122,8 @@ const main = (function () {
             favourites = utils.getItem('guest').favourites;
             cart = utils.getItem('guest').cart;
         }
-
         renderFavAndCart(favourites, cart);
+        openFavAndCart(favourites, cart);
     }
 
     // INFO BANNERS
@@ -158,7 +158,6 @@ const main = (function () {
             document.documentElement.scrollTop = 0;
             return;
         }
-
         switch (hash) {
             case 'home':
                 MAIN_SECTION.style.display = 'block';
@@ -169,6 +168,11 @@ const main = (function () {
                 OPTIONS_PANEL.style.display = 'flex';
                 OPEN_ITEM.style.display = 'none';
                 mainSections.map(section => section.style.display = 'block');
+                HOME_PAGE_MENU.style.display = 'block';
+                CART_PAGE.style.display = 'none';
+                FAVOURITES_PAGE.style.display = 'none';
+                MARKETPLACE_SECTION.style.display = 'block';
+                OTHER_CLIENTS_SECTION.style.display = 'block';
                 break;
             case 'login':
                 MAIN_SECTION.style.display = 'none';
@@ -181,6 +185,8 @@ const main = (function () {
                 OPTIONS_PANEL.style.display = 'flex';
                 OPEN_ITEM.style.display = 'none';
                 mainSections.map(section => section.style.display = 'block');
+                CART_PAGE.style.display = 'none';
+                FAVOURITES_PAGE.style.display = 'none';
                 break;
             case 'register':
                 MAIN_SECTION.style.display = 'none';
@@ -193,12 +199,34 @@ const main = (function () {
                 OPTIONS_PANEL.style.display = 'flex';
                 OPEN_ITEM.style.display = 'none';
                 mainSections.map(section => section.style.display = 'block');
+                CART_PAGE.style.display = 'none';
+                FAVOURITES_PAGE.style.display = 'none';
                 break;
-            case 'title':
             case 'article':
                 MAIN_MENU.style.display = 'none';
                 OPTIONS_PANEL.style.display = 'none';
                 mainSections.map(section => section.style.display = 'none');
+                CART_PAGE.style.display = 'none';
+                FAVOURITES_PAGE.style.display = 'none';
+                break;
+            case 'cart':
+                HOME_PAGE_MENU.style.display = 'none';
+                MAIN_MENU.style.display = 'none';
+                OPTIONS_PANEL.style.display = 'none';
+                mainSections.map(section => section.style.display = 'none');
+                CART_PAGE.style.display = 'block';
+                FAVOURITES_PAGE.style.display = 'none';
+                break;
+            case 'favourites':
+                MARKETPLACE_SECTION.style.display = 'none';
+                OTHER_CLIENTS_SECTION.style.display = 'none';
+                MAIN_MENU.style.display = 'none';
+                OPTIONS_PANEL.style.display = 'none';
+                mainSections.map(section => section.style.display = 'none');
+                CART_PAGE.style.display = 'none';
+                FAVOURITES_PAGE.style.display = 'flex';
+                MARKETPLACE_SECTION.style.display = 'none';
+                OTHER_CLIENTS_SECTION.style.display = 'none';
                 break;
             default:
                 MAIN_SECTION.style.display = 'none';
@@ -208,6 +236,8 @@ const main = (function () {
                 MAIN_MENU.style.display = 'none';
                 OPTIONS_PANEL.style.display = 'none';
                 OPEN_ITEM.style.display = 'none';
+                CART_PAGE.style.display = 'none';
+                FAVOURITES_PAGE.style.display = 'none';
         }
 
         document.documentElement.scrollTop = 0;
@@ -254,6 +284,19 @@ const main = (function () {
         location.reload();
         success('Излязохте успешно!');
     });
+
+    //ADD REMISE VOUCHER IN CART
+    ADD_VOUCHER.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (ADD_CODE.style.display === 'block') {
+            ADD_CODE.style.display = 'none';
+            VOUCHER_CONTAINER.style.paddingBottom = '0';
+
+        } else {
+            ADD_CODE.style.display = 'block';
+            VOUCHER_CONTAINER.style.paddingBottom = '20px';
+        }
+    })
 
     return {
         renderHeader,

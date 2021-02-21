@@ -8,7 +8,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/1.jpg','./assets/images/focus-items/1.1.png']
+        'allImages': ['./assets/images/focus-items/1.jpg', './assets/images/focus-items/1.1.png']
     },
     {
         'id': 2,
@@ -18,7 +18,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/2.jpg','./assets/images/focus-items/2.1.png']
+        'allImages': ['./assets/images/focus-items/2.jpg', './assets/images/focus-items/2.1.png']
 
     },
     {
@@ -29,7 +29,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/3.jpg','./assets/images/focus-items/3.1.png']
+        'allImages': ['./assets/images/focus-items/3.jpg', './assets/images/focus-items/3.1.png']
 
     },
     {
@@ -40,7 +40,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/4.jpg','./assets/images/focus-items/4.1.png']
+        'allImages': ['./assets/images/focus-items/4.jpg', './assets/images/focus-items/4.1.png']
 
     }
     ,
@@ -52,7 +52,7 @@ const ALL_FOCUS_ITEMS = [
         'currentPrice': 589,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/focus-items/5.png','./assets/images/focus-items/5.1.png']
+        'allImages': ['./assets/images/focus-items/5.png', './assets/images/focus-items/5.1.png']
 
     },
     {
@@ -63,7 +63,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': 799,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/focus-items/6.jpg','./assets/images/focus-items/6.1.png']
+        'allImages': ['./assets/images/focus-items/6.jpg', './assets/images/focus-items/6.1.png']
 
     },
     {
@@ -74,7 +74,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/7.png','./assets/images/focus-items/7.1.png']
+        'allImages': ['./assets/images/focus-items/7.png', './assets/images/focus-items/7.1.png']
     },
     {
         'id': 8,
@@ -84,7 +84,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/8.png','./assets/images/focus-items/8.1.png']
+        'allImages': ['./assets/images/focus-items/8.png', './assets/images/focus-items/8.1.png']
 
     },
     {
@@ -95,7 +95,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': 599,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/focus-items/9.png','./assets/images/focus-items/9.1.png']
+        'allImages': ['./assets/images/focus-items/9.png', './assets/images/focus-items/9.1.png']
 
     },
     {
@@ -106,7 +106,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/10.png','./assets/images/focus-items/10.1.png']
+        'allImages': ['./assets/images/focus-items/10.png', './assets/images/focus-items/10.1.png']
     },
     {
         'id': 11,
@@ -136,7 +136,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/13.png','./assets/images/focus-items/13.1.png']
+        'allImages': ['./assets/images/focus-items/13.png', './assets/images/focus-items/13.1.png']
 
     },
     {
@@ -147,7 +147,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/14.png','./assets/images/focus-items/14.1.png']
+        'allImages': ['./assets/images/focus-items/14.png', './assets/images/focus-items/14.1.png']
 
     },
     {
@@ -158,7 +158,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': 54,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/focus-items/15.png','./assets/images/focus-items/15.1.png']
+        'allImages': ['./assets/images/focus-items/15.png', './assets/images/focus-items/15.1.png']
 
     },
     {
@@ -169,7 +169,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': 84,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/focus-items/16.png','./assets/images/focus-items/16.1.png']
+        'allImages': ['./assets/images/focus-items/16.png', './assets/images/focus-items/16.1.png']
 
     }
     ,
@@ -181,7 +181,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/focus-items/17.png','./assets/images/focus-items/17.1.png']
+        'allImages': ['./assets/images/focus-items/17.png', './assets/images/focus-items/17.1.png']
 
     },
     {
@@ -192,7 +192,7 @@ const ALL_FOCUS_ITEMS = [
         'regularPrice': 594,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/focus-items/18.png','./assets/images/focus-items/18.1.png']
+        'allImages': ['./assets/images/focus-items/18.png', './assets/images/focus-items/18.1.png']
 
     },
 ]
@@ -206,7 +206,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/other-clients-watched/1.png','./assets/images/other-clients-watched/1.1.png']
+        'allImages': ['./assets/images/other-clients-watched/1.png', './assets/images/other-clients-watched/1.1.png']
 
     },
     {
@@ -217,7 +217,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': 79,
         'currentPennies': '98',
         'regularPennies': '99',
-        'allImages':['./assets/images/other-clients-watched/2.png','./assets/images/other-clients-watched/2.2.png']
+        'allImages': ['./assets/images/other-clients-watched/2.png', './assets/images/other-clients-watched/2.2.png']
 
     },
     {
@@ -228,7 +228,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': 399,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/other-clients-watched/3.png','./assets/images/other-clients-watched/3.3.png']
+        'allImages': ['./assets/images/other-clients-watched/3.png', './assets/images/other-clients-watched/3.3.png']
 
     },
     {
@@ -239,7 +239,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': '-',
         'currentPennies': '98',
         'regularPennies': '-',
-        'allImages':['./assets/images/other-clients-watched/4.png','./assets/images/other-clients-watched/4.1.png']
+        'allImages': ['./assets/images/other-clients-watched/4.png', './assets/images/other-clients-watched/4.1.png']
 
     }
     ,
@@ -251,7 +251,7 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPrice': 2599,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/other-clients-watched/5.png','./assets/images/other-clients-watched/5.1.png']
+        'allImages': ['./assets/images/other-clients-watched/5.png', './assets/images/other-clients-watched/5.1.png']
     },
     {
         'id': 24,
@@ -261,7 +261,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': 149,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/other-clients-watched/6.png','./assets/images/other-clients-watched/6.1.png']
+        'allImages': ['./assets/images/other-clients-watched/6.png', './assets/images/other-clients-watched/6.1.png']
     },
     {
         'id': 25,
@@ -271,7 +271,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': 1049,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/other-clients-watched/7.png','./assets/images/other-clients-watched/7.1.png']
+        'allImages': ['./assets/images/other-clients-watched/7.png', './assets/images/other-clients-watched/7.1.png']
     },
     {
         'id': 26,
@@ -281,7 +281,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/other-clients-watched/8.png','./assets/images/other-clients-watched/8.1.png']
+        'allImages': ['./assets/images/other-clients-watched/8.png', './assets/images/other-clients-watched/8.1.png']
 
     },
     {
@@ -302,7 +302,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages':['./assets/images/focus-items/4.jpg','./assets/images/focus-items/4.1.png']
+        'allImages': ['./assets/images/focus-items/4.jpg', './assets/images/focus-items/4.1.png']
     },
     {
         'id': 29,
@@ -312,7 +312,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': 120,
         'currentPennies': '46',
         'regularPennies': '56',
-        'allImages':['./assets/images/other-clients-watched/11.png','./assets/images/other-clients-watched/11.1.png']
+        'allImages': ['./assets/images/other-clients-watched/11.png', './assets/images/other-clients-watched/11.1.png']
 
     },
     {
@@ -333,7 +333,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': 9,
         'currentPennies': '00',
         'regularPennies': '60',
-        'allImages':['./assets/images/other-clients-watched/13.png','./assets/images/other-clients-watched/13.1.png']
+        'allImages': ['./assets/images/other-clients-watched/13.png', './assets/images/other-clients-watched/13.1.png']
 
     },
     {
@@ -344,7 +344,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/other-clients-watched/14.png','./assets/images/other-clients-watched/14.1.png']
+        'allImages': ['./assets/images/other-clients-watched/14.png', './assets/images/other-clients-watched/14.1.png']
 
     },
     {
@@ -355,7 +355,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': '-',
         'currentPennies': '78',
         'regularPennies': '-',
-        'allImages':['./assets/images/other-clients-watched/15.png','./assets/images/other-clients-watched/15.1.png']
+        'allImages': ['./assets/images/other-clients-watched/15.png', './assets/images/other-clients-watched/15.1.png']
 
     },
     {
@@ -366,7 +366,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/other-clients-watched/16.png','./assets/images/other-clients-watched/16.2.png']
+        'allImages': ['./assets/images/other-clients-watched/16.png', './assets/images/other-clients-watched/16.2.png']
 
     }
     ,
@@ -378,7 +378,7 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/other-clients-watched/17.png','./assets/images/other-clients-watched/17.2.png']
+        'allImages': ['./assets/images/other-clients-watched/17.png', './assets/images/other-clients-watched/17.2.png']
 
     },
     {
@@ -389,6 +389,6 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPrice': '-',
         'currentPennies': '99',
         'regularPennies': '-',
-        'allImages':['./assets/images/other-clients-watched/18.png','./assets/images/other-clients-watched/18.1.png']
+        'allImages': ['./assets/images/other-clients-watched/18.png', './assets/images/other-clients-watched/18.1.png']
     },
 ]
