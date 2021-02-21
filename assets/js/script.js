@@ -13,33 +13,32 @@ const main = (function () {
         utils.setItem('guest', { favourites: [], cart: [] })
     }
 
-    const users = utils.getUsers();
-
     function registerUser(names, username, password, rePasword) {
         if (!names.trim().includes(' ')) {
-            return error('Моля, въведи име и фамилия.');
+            return utils.error('Моля, въведи име и фамилия.');
         }
 
         if (!username.trim()) {
-            return error('Моля, въведи потребителско име.');
+            return utils.error('Моля, въведи потребителско име.');
         }
 
         if (username.trim().length < 4) {
-            return error('Потребителското име трябва да е поне 4 символа.');
+            return utils.error('Потребителското име трябва да е поне 4 символа.');
         }
 
+        const users = utils.getUsers();
         for (const user of users) {
             if (user.username === username) {
-                return error('Потребителското име вече е заето.');
+                return utils.error('Потребителското име вече е заето.');
             }
         }
 
         if (password.length < 5) {
-            return error('Паролата трябва да е поне 5 символа.');
+            return utils.error('Паролата трябва да е поне 5 символа.');
         }
 
         if (password !== rePasword) {
-            return error('Паролите не съвпадат.');
+            return utils.error('Паролите не съвпадат.');
         }
 
         const [firstName, lastName] = names.split(' ');
@@ -58,39 +57,40 @@ const main = (function () {
         REGISTER_USER.value = '';
         REGISTER_PASS.value = '';
         REGISTER_RE_PASS.value = '';
-        success('Успешна регистрация!');
+        utils.success('Успешна регистрация!');
         location.replace('#login');
     }
 
     function loginUser(username, password) {
         if (!username.trim()) {
-            return error('Невалидно потребителско име');
+            return utils.error('Невалидно потребителско име');
         }
 
         if (!password.trim()) {
-            return error('Невалидна парола');
+            return utils.error('Невалидна парола');
         }
 
-        for (const user of users) {
-            if (user.username !== username.trim()) {
-                return error('Невалидно потребителско име.');
-            } else {
-                if (user.password !== password.trim()) {
-                    return error('Невалидна парола.');
-                } else {
-                    utils.login(username.trim());
-                    onLoginSuccess(user.firstName, user.lastName, true);
-                    location.reload();
-                }
-            }
+        const users = utils.getUsers();
+        const hasUser = users.some(u => u.username === username.trim());
+        if (!hasUser) {
+            return utils.error('Невалидно потребителско име.');
         }
+
+        const user = users.filter(u => u.username === username.trim())[0];
+        const hasPassword = user.password === password.trim();
+        if (!hasPassword) {
+            return utils.error('Невалидна парола.');
+        }
+
+        utils.login(username.trim());
+        onLoginSuccess(user.firstName, user.lastName, true);
     }
 
     function onLoginSuccess(firstName, lastName, isLogin) {
         LOGIN_USER.value = '';
         LOGIN_PASS.value = '';
         if (isLogin) {
-            success(`Добре дошъл, ${firstName} ${lastName}!`);
+            utils.success(`Добре дошъл, ${firstName} ${lastName}!`);
         }
 
         renderHeader();
@@ -108,7 +108,7 @@ const main = (function () {
             const currentUser = utils.getUsers().filter(user => user.isLoggedIn)[0];
             const firstLetter = currentUser.firstName[0].toUpperCase();
             const secondLetter = currentUser.lastName[0].toUpperCase();
-            USER_PIC.innerText = firstLetter + secondLetter;
+            USER_PIC.innerHTML = `<p>${firstLetter + secondLetter}</p>`;
             USER_PIC.className = 'logged-user-icon';
             HELLO_MESSAGE.innerText = `Здравей, ${currentUser.firstName} ${currentUser.lastName}`;
             favourites = utils.getUsers().filter(user => user.isLoggedIn)[0].favourites;
@@ -124,23 +124,6 @@ const main = (function () {
         }
         renderFavAndCart(favourites, cart);
         openFavAndCart(favourites, cart);
-    }
-
-    // INFO BANNERS
-    function success(message) {
-        SUCCESS_BANNER.innerText = message;
-        SUCCESS_BANNER.style.display = 'block';
-        setTimeout(() => {
-            SUCCESS_BANNER.style.display = 'none';
-        }, 3000);
-    }
-
-    function error(message) {
-        ERROR_BANNER.innerText = message;
-        ERROR_BANNER.style.display = 'block';
-        setTimeout(() => {
-            ERROR_BANNER.style.display = 'none';
-        }, 3000);
     }
 
     // ROUTER
@@ -282,7 +265,7 @@ const main = (function () {
         utils.logout();
         renderHeader();
         location.reload();
-        success('Излязохте успешно!');
+        utils.success('Излязохте успешно!');
     });
 
     //ADD REMISE VOUCHER IN CART
@@ -299,8 +282,6 @@ const main = (function () {
     })
 
     return {
-        renderHeader,
-        success,
-        error,
+        renderHeader
     }
 })();

@@ -84,18 +84,19 @@ function createItemsCard(array, container) {
         regular.append(regPrice);
         tooltipContainer.addEventListener('click', () => {
             // Adding to favs and render the header
+            debugger
             if (addFavourite.style.color === 'red') {
                 utils.removeFromFav(currentItem);
                 addFavourite.className = 'far fa-heart fav';
                 addFavourite.style.color = '#2196f3';
                 tooltipText.innerText = 'Добави в Любими';
-                main.success('Премахнато от любими');
+                utils.success('Продуктът беше премахнат от любими');
             } else {
                 utils.addToFav(currentItem);
                 addFavourite.className = 'fas fa-heart fav';
                 addFavourite.style.color = 'red';
                 tooltipText.innerText = 'Добавено в Любими';
-                main.success('Добавено в любими');
+                utils.success('Продуктът беше добавен в любими');
             }
 
             main.renderHeader();
@@ -104,7 +105,7 @@ function createItemsCard(array, container) {
         tooltipShoppingCardContainer.addEventListener('click', () => {
             // Adding to cart and render the header
             utils.addToCart(currentItem);
-            main.success('Добавено в количката');
+            utils.success('Продуктът беше добавен в количката');
             main.renderHeader();
         });
 

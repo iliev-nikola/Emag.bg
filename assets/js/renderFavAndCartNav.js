@@ -34,8 +34,17 @@ function renderFavAndCart(favourites, cart) {
             const hiddenOptions = utils.createNewElement('div');
             const addToCartText = utils.createNewElement('p');
             addToCartText.innerHTML = '<i class="fas fa-shopping-cart"></i>Добави в количката';
-            const closeButton = utils.createNewElement('p', 'X');
-            closeButton.className = 'nav-close-button';
+            addToCartText.addEventListener('click', () => {
+                utils.addToCart(el);
+                main.renderHeader();
+            });
+            const closeButton = utils.createNewElement('i');
+            closeButton.className = 'fas fa-times nav-close-button';
+            closeButton.addEventListener('click', () => {
+                utils.removeFromFav(el);
+                main.renderHeader();
+            });
+
             hiddenOptions.append(addToCartText, closeButton);
             hiddenOptions.className = 'hidden-options';
             articleDiv.append(img, title, price, hiddenOptions);
@@ -56,7 +65,8 @@ function renderFavAndCart(favourites, cart) {
     }
 
     if (cart.length) {
-        CART_COUNTER.innerText = cart.length;
+        let count = cart.reduce((acc, curr) => acc + +curr.count, 0);
+        CART_COUNTER.innerText = count;
         CART_COUNTER.style.display = 'block';
         SHOPPING_CART_NAV.style.padding = '0';
         SHOPPING_CART_NAV.style.width = '300px';
@@ -91,11 +101,13 @@ function renderFavAndCart(favourites, cart) {
             price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
             price.className = 'nav-dropdown-price';
             const hiddenOptions = utils.createNewElement('div');
-            const addToCartText = utils.createNewElement('p');
-            addToCartText.innerHTML = '<i class="fas fa-shopping-cart"></i>Добави в количката';
-            const closeButton = utils.createNewElement('p', 'X');
-            closeButton.className = 'nav-close-button';
-            hiddenOptions.append(addToCartText, closeButton);
+            const closeButton = utils.createNewElement('i');
+            closeButton.className = 'fas fa-times nav-close-button';
+            closeButton.addEventListener('click', () => {
+                utils.removeFromCart(el);
+                main.renderHeader();
+            });
+            hiddenOptions.append(closeButton);
             hiddenOptions.className = 'hidden-options';
             articleDiv.append(img, title, count, price, hiddenOptions);
             CART_NAV_CONTAINER.append(articleDiv);
