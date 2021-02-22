@@ -126,11 +126,30 @@ const main = (function () {
         renderFavAndCart(favourites, cart);
     }
 
+    // EVENT HANDLERS FOR CATEGORIES DROPDOWN MENU
+    function onMainMouseOver() {
+        MAIN_MENU.style.display = 'flex';
+    }
+
+    function onMainMouseOut() {
+        MAIN_MENU.style.display = 'none';
+    }
+
+    function onCategoriesMouseOver() {
+        MAIN_MENU.style.display = 'flex';
+        MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
+        MAIN_MENU.addEventListener('mouseout', onMainMouseOut);
+    }
+
     // ROUTER
     const mainSections = [FOCUS_SECTION, MOBILE_SECTION, MOBILE_APP, TV_SECTION, TOP_SECTION, BIG_TECHNOLOGIES, BULLETIN];
     const idArr = ALL_FOCUS_ITEMS.map(el => el.id).concat(OTHER_CLIENTS_WATCHED.map(el => el.id));
     function onHashChange(e) {
         const hash = e.target.location.hash.substring(1);
+        MAIN_MENU.className = 'select-categories content';
+        CATEGORIES_LINK.removeEventListener('mouseover', onCategoriesMouseOver);
+        MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
+        MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
         // change hash with correct article id
         const isCorrectId = idArr.some(el => el === +hash.split('/')[1]);
         if (isCorrectId && hash.includes('article/')) {
@@ -142,6 +161,8 @@ const main = (function () {
             MAIN_MENU.style.display = 'none';
             OPTIONS_PANEL.style.display = 'none';
             mainSections.map(section => section.style.display = 'none');
+            CART_PAGE.style.display = 'none';
+            FAVOURITES_PAGE.style.display = 'none';
             OPEN_ITEM.style.display = 'block'
             document.documentElement.scrollTop = 0;
             return;
@@ -165,56 +186,49 @@ const main = (function () {
                 OTHER_CLIENTS_SECTION.style.display = 'block';
                 break;
             case 'login':
-                MAIN_SECTION.style.display = 'none';
                 LOGIN_SECTION.style.display = 'block';
                 LOGIN_PAGE.style.display = 'block';
-                REGISTER_PAGE.style.display = 'none';
                 document.body.style.backgroundColor = '#f7f7f7';
-                ERROR_PAGE.style.display = 'none';
-                MAIN_MENU.style.display = 'flex';
-                OPTIONS_PANEL.style.display = 'flex';
-                OPEN_ITEM.style.display = 'none';
-                mainSections.map(section => section.style.display = 'block');
+                MAIN_SECTION.style.display = 'none';
+                REGISTER_PAGE.style.display = 'none';
                 CART_PAGE.style.display = 'none';
                 FAVOURITES_PAGE.style.display = 'none';
+                ERROR_PAGE.style.display = 'none';
                 break;
             case 'register':
-                MAIN_SECTION.style.display = 'none';
-                LOGIN_PAGE.style.display = 'none';
                 LOGIN_SECTION.style.display = 'block';
                 REGISTER_PAGE.style.display = 'block';
+                LOGIN_PAGE.style.display = 'none';
                 document.body.style.backgroundColor = '#f7f7f7';
+                MAIN_SECTION.style.display = 'none';
+                CART_PAGE.style.display = 'none';
+                FAVOURITES_PAGE.style.display = 'none';
                 ERROR_PAGE.style.display = 'none';
-                MAIN_MENU.style.display = 'flex';
-                OPTIONS_PANEL.style.display = 'flex';
-                OPEN_ITEM.style.display = 'none';
-                mainSections.map(section => section.style.display = 'block');
-                CART_PAGE.style.display = 'none';
-                FAVOURITES_PAGE.style.display = 'none';
-                break;
-            case 'article':
-                MAIN_MENU.style.display = 'none';
-                OPTIONS_PANEL.style.display = 'none';
-                mainSections.map(section => section.style.display = 'none');
-                CART_PAGE.style.display = 'none';
-                FAVOURITES_PAGE.style.display = 'none';
                 break;
             case 'cart':
+                LOGIN_SECTION.style.display = 'none';
+                MAIN_SECTION.style.display = 'block';
+                CART_PAGE.style.display = 'block';
                 HOME_PAGE_MENU.style.display = 'none';
                 MAIN_MENU.style.display = 'none';
                 OPTIONS_PANEL.style.display = 'none';
                 mainSections.map(section => section.style.display = 'none');
-                CART_PAGE.style.display = 'block';
                 FAVOURITES_PAGE.style.display = 'none';
                 break;
             case 'favourites':
+                MAIN_MENU.className = 'select-categories-dropdown content';
+                CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
+                LOGIN_SECTION.style.display = 'none';
+                MAIN_SECTION.style.display = 'block';
+                OPEN_ITEM.style.display = 'none';
+                HOME_PAGE_MENU.style.display = 'block';
+                FAVOURITES_PAGE.style.display = 'flex';
                 MARKETPLACE_SECTION.style.display = 'none';
                 OTHER_CLIENTS_SECTION.style.display = 'none';
                 MAIN_MENU.style.display = 'none';
                 OPTIONS_PANEL.style.display = 'none';
                 mainSections.map(section => section.style.display = 'none');
                 CART_PAGE.style.display = 'none';
-                FAVOURITES_PAGE.style.display = 'flex';
                 MARKETPLACE_SECTION.style.display = 'none';
                 OTHER_CLIENTS_SECTION.style.display = 'none';
                 break;

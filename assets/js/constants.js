@@ -28,6 +28,7 @@ const REGISTER_RE_PASS = utils.getById('regRePassword');
 const REGISTER_BTN = utils.getById('registerBtn');
 
 // HEADER SECTION
+const HEADER_SECTION = document.querySelector('.header-section');
 const USER_PIC = utils.getById('userPic');
 const PROFILE_NAV = document.querySelector('.profile-nav');
 const GUEST_NAV = document.querySelector('.guest-nav');
@@ -43,50 +44,53 @@ const PROFILE_ICON = document.querySelector('.profile-icon');
 const FAVOURITE_ICON = document.querySelector('.favourite-icon');
 const SHOPPING_CART_ICON = document.querySelector('.shopping-cart');
 
+// NAVIGATION BAR
+const CATEGORIES_LINK = utils.getById('categories');
+
 // INFORMATION BANNERS
 const SUCCESS_BANNER = utils.getById('success');
 const ERROR_BANNER = utils.getById('error');
 
-//BUTONS IN FOCUS-BAR SECTION
+// BUTONS IN FOCUS-BAR SECTION
 const RIGHT_SCROLL = utils.getById('right-scroll');
 const LEFT_SCROLL = utils.getById('left-scroll');
 
-//BUTTONS IN OTHER CLIENTS WATCHED SECTION
+// BUTTONS IN OTHER CLIENTS WATCHED SECTION
 const RIGTH_OTHER_SCROLL = utils.getById('other-right-scroll');
 const LEFT_OTHER_SCROLL = utils.getById('other-left-scroll');
 
-//CONTAINER IN FOCUS-BAR SECTION
+// CONTAINER IN FOCUS-BAR SECTION
 const CARDS_CONTAINER = utils.getById('cards-container');
 const WATCHED_ITEMS = utils.getById('watched-items');
 
-//CONTAINER IN HISTORY SECTION
+// CONTAINER IN HISTORY SECTION
 const WATCHED_CONTAINER = utils.getById('history-section');
 
-//DELETE ITEMS - HISTORY SECTION
+// DELETE ITEMS - HISTORY SECTION
 const DELETE_WATCHED = utils.getById('delete-watched');
 
-//ANIMATION CONTAINER IN HISTORY SECTION
+// ANIMATION CONTAINER IN HISTORY SECTION
 const ANIMATION_HISTORY = utils.getById('animation-history')
 
-//CONTAINER IN OTHER CLIENTS WATCHED SETION
+// CONTAINER IN OTHER CLIENTS WATCHED SETION
 const OTHER_WATCHED_CONTAINER = utils.getById('other-watched-container');
 
-//FOCUS-BAR SECTION
+// FOCUS-BAR SECTION
 const FOCUS_BAR = utils.getById('focus-section');
 
-//RADIO BUTTONS CONTAINER IN FOCUS-BAR SECTION
+// RADIO BUTTONS CONTAINER IN FOCUS-BAR SECTION
 const DOTS_CONTAINER = utils.getById('dots-container');
 
-//RADIO BUTTONS CONTAINER IN OTHER CLIENTS WATCHED
+// RADIO BUTTONS CONTAINER IN OTHER CLIENTS WATCHED
 const DOTS_CONTAINER_OTHER = utils.getById('other-dots-container');
 
-//ALL RADIO BUTTONS IN FOCUS SECTION
+// ALL RADIO BUTTONS IN FOCUS SECTION
 const ALL_RADIO_BUTTONS = document.getElementsByClassName('dots');
 
-//ALL RADIO BUTTONS IN OTHER CLIENTS WATCHED
+// ALL RADIO BUTTONS IN OTHER CLIENTS WATCHED
 const ALL_OTHER_BUTTONS = document.getElementsByClassName('other-dots');
 
-//CONTAINERS IN TOP BRANDS
+// CONTAINERS IN TOP BRANDS
 const TOP_BRANDS = utils.getById("topBrands");
 const MOBILE_BRANDS = utils.getById("mobileBrands");
 const ELECTRONIC_BRANDS = utils.getById("electronicsBrands");
@@ -109,13 +113,13 @@ const OPEN_ITEM = utils.getById('open-item-section');
 const MARKETPLACE_SECTION = document.querySelector('.marketplace');
 const OTHER_CLIENTS_SECTION = document.querySelector('.other-clients');
 
-//RAITING STARS
+// RAITING STARS
 const RAITING_STARS = document.getElementsByClassName('stars');
 
-//OPEN ITEM CONTAINER
+// OPEN ITEM CONTAINER
 const OPEN_ITEM_CONTAINER = utils.getById('open-item-container');
 
-//FAVOURITES & SHOPPING CART
+// FAVOURITES & SHOPPING CART
 const FAVOURITES_PAGE = utils.getById('favouriteItems');
 const HOME_PAGE_MENU = document.querySelector('.home-page-body');
 const CART_PAGE = document.querySelector('.cart-page');

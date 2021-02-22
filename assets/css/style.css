@@ -658,6 +658,16 @@ a[href="#register"]:hover {
   box-shadow: 0px 3px 4px 0px rgba(148, 146, 146, 0.75);
 }
 
+.select-categories-dropdown {
+  position: absolute;
+  display: none;
+  border-top: 0;
+  box-shadow: 0px 3px 4px 0px rgba(148, 146, 146, 0.75);
+  z-index: 5;
+  top: 126px;
+  left: 192px;
+}
+
 .main-slideshow {
   position: relative;
   height: 447px;
