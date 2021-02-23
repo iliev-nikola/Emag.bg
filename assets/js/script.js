@@ -124,6 +124,7 @@ const main = (function () {
         }
 
         renderFavAndCart(favourites, cart);
+        openFavAndCart(favourites, cart);
     }
 
     // EVENT HANDLERS FOR CATEGORIES DROPDOWN MENU

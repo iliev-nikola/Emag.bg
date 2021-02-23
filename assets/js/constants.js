@@ -135,3 +135,4 @@ const AMOUNT_PENNIES = utils.getById('cart-amount-pennies');
 const ADD_VOUCHER = utils.getById('addVoucher');
 const ADD_CODE = utils.getById('addCode');
 const VOUCHER_CONTAINER = utils.getById('voucher');
+const INFORMATION_ORDER = utils.getById('information-order');

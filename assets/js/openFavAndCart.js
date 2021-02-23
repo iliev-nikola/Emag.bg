@@ -2,8 +2,8 @@
 function openFavAndCart(favourites, cart) {
     if (cart.length) {
         EMPTY_CART.style.display = 'none';
-        EMPTY_CART.style.display = 'none';
-        CART_CONTAINER.display = 'block';
+        CART_CONTAINER.style.display = 'flex';
+        ITEMS_IN_CART.style.display='block';
         ITEMS_IN_CART.innerHTML = '';
         let amount = 0;
         const mainContainer = utils.createNewElement('div');
@@ -12,11 +12,14 @@ function openFavAndCart(favourites, cart) {
         cart.forEach(currentElement => {
             const elContainer = utils.createNewElement('div');
             elContainer.className = 'item-cont';
+            const imageContainer = utils.createNewElement('a');
+            imageContainer.href = `#article/${currentElement.id}`;
             const elImage = utils.createNewElement('img');
             elImage.src = currentElement.image;
             const elInformation = utils.createNewElement('div');
             elInformation.className = 'cart-inf';
-            const elTitle = utils.createNewElement('p', currentElement.title);
+            const elTitle = utils.createNewElement('a', currentElement.title);
+            elTitle.href = `#article/${currentElement.id}`;
             elTitle.className = 'cart-title';
             const available = utils.createNewElement('p', 'В наличност: в наличност');
             available.className = 'instock';
@@ -48,7 +51,7 @@ function openFavAndCart(favourites, cart) {
             regularPennies.className = 'regular-pennies-cart';
             let totalSavePrice;
             let totalSavePennies;
-            if (currentElement.regularPrice !== '-') {
+            if (currentElement.regularPrice) {
                 const regularContainer = utils.createNewElement('p');
                 regularContainer.className = 'cart-price';
                 const lv = utils.createNewElement('span', 'лв.')
@@ -71,7 +74,8 @@ function openFavAndCart(favourites, cart) {
             const remove = utils.createNewElement('span', 'Изтрий');
             remove.addEventListener('click', utils.removeFromCart);
             mainContainer.append(elContainer);
-            elContainer.append(elImage, elInformation, numberContainer, pricesContainer);
+            elContainer.append(imageContainer, elInformation, numberContainer, pricesContainer);
+            imageContainer.append(elImage);
             elInformation.append(elTitle, available, buyWith);
             buyWith.append(buyIcon, buyText);
             numberContainer.append(selectNav, numb);
@@ -117,12 +121,14 @@ function openFavAndCart(favourites, cart) {
         // totalPriceContainer.append(totalPrice, totalPennies, totalLv);
 
     } else {
-        CART_CONTAINER.display = 'none';
+        CART_CONTAINER.style.display = 'none';
+        ITEMS_IN_CART.style.display='none';
     }
 
     if (favourites.length) {
         EMPTY_FAV.style.display = 'none';
         FULL_FAV.style.display = 'block';
+        FULL_FAV.innerHTML = '';
         favourites = new Set(favourites);
         favourites = Array.from(favourites);
         favourites.forEach(fav => {
@@ -130,10 +136,13 @@ function openFavAndCart(favourites, cart) {
             favContainer.className = 'fav-container'
             const mainCont = utils.createNewElement('div');
             mainCont.className = 'main-fav-cont';
+            const imageContainer = utils.createNewElement('a');
+            imageContainer.href = `#article/${fav.id}`;
             const favImage = utils.createNewElement('img');
             favImage.src = fav.image;
             favImage.className = 'fav-images';
-            const favTitle = utils.createNewElement('p', fav.title);
+            const favTitle = utils.createNewElement('a', fav.title);
+            favTitle.href = `#article/${fav.id}`;
             favTitle.className = 'fav-p';
             const info = utils.createNewElement('div');
             info.className = 'fav-info';
@@ -143,9 +152,10 @@ function openFavAndCart(favourites, cart) {
             offeredBy.className = 'info-cart';
             FULL_FAV.append(favContainer);
             favContainer.append(mainCont);
-            mainCont.append(favImage, favTitle, info);
+            mainCont.append(imageContainer, favTitle, info);
+            imageContainer.append(favImage);
             info.append(available, offeredBy);
-            if (fav.regularPrice !== '-') {
+            if (fav.regularPrice) {
                 const regularContainer = utils.createNewElement('div');
                 regularContainer.className = 'info-cart';
                 const regularPrice = utils.createNewElement('span', fav.regularPrice);
@@ -183,18 +193,13 @@ function openFavAndCart(favourites, cart) {
             addShoppingCart.append(iconContainer, cartText);
             iconContainer.append(cartIcon);
             deleteContainer.append(deleteIcon, deleteText);
-            favTitle.addEventListener('click', () => {
-                openItem(fav);
-            });
-            favImage.addEventListener('click', () => {
-                openItem(fav);
-            });
         })
     } else {
+        INFORMATION_ORDER.style.display = 'none';
+        VOUCHER_CONTAINER.style.display = 'none';
         EMPTY_FAV.style.display = 'block';
         FULL_FAV.style.display = 'none';
     }
 }
-
 
 

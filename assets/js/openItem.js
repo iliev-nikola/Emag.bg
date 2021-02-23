@@ -75,7 +75,7 @@ function openItem(currentItem) {
     currentPennies.className = 'current-pennies-item';
     const lv = utils.createNewElement('span', 'лв.')
     lv.className = 'lv-item';
-    if (currentItem.regularPrice !== '-') {
+    if (currentItem.regularPrice) {
         const regularPrice = utils.createNewElement('span', currentItem.regularPrice)
         regularPrice.className = 'regular-price-item';
         const regularPennies = utils.createNewElement('sup', currentItem.regularPennies);

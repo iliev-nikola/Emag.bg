@@ -32,7 +32,7 @@ function renderFavAndCart(favourites, cart) {
             price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
             price.className = 'price-dropdown';
             let regularPrice;
-            if (el.regularPrice !== '-') {
+            if (el.regularPrice) {
                 regularPrice = utils.createNewElement('p');
                 regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
                 regularPrice.className = 'regular-price-dropdown';
@@ -109,7 +109,7 @@ function renderFavAndCart(favourites, cart) {
             price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
             price.className = 'price-dropdown';
             let regularPrice;
-            if (el.regularPrice !== '-') {
+            if (el.regularPrice) {
                 regularPrice = utils.createNewElement('p');
                 regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
                 regularPrice.className = 'regular-price-dropdown';
