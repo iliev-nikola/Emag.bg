@@ -258,7 +258,7 @@ a {
 .dropdown-container {
   position: absolute;
   transform: translate(-20%, 53%);
-  z-index: 2;
+  z-index: 6;
 }
 
 .dropdown-menu {
@@ -676,8 +676,11 @@ a[href="#register"]:hover {
   border-top: 0;
   box-shadow: 0px 3px 4px 0px rgba(148, 146, 146, 0.75);
   z-index: 5;
-  top: 126px;
-  left: 192px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .main-slideshow {
@@ -1402,7 +1405,7 @@ footer {
 }
 
 #play-store a:first-child {
-  padding-right: 40px;
+  margin-right: 20px;
 }
 
 /* LOGIN AND REGISTER PAGE */
@@ -1669,7 +1672,7 @@ footer {
 }
 /*ITEMS CARDS*/
 #play-store a:first-child {
-  padding-right: 40px;
+  margin-right: 20px;
 }
 
 #cards-container,
@@ -2596,6 +2599,10 @@ footer {
 /*FAVOURITES PAGE*/
 .favourites-page {
   display: flex;
+}
+
+#favLogin a[href="#register"] {
+  margin-left: 0;
 }
 
 #favouriteItems {
