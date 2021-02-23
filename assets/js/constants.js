@@ -51,7 +51,14 @@ const CATEGORIES_LINK = utils.getById('categories');
 const SUCCESS_BANNER = utils.getById('success');
 const ERROR_BANNER = utils.getById('error');
 
-// BUTONS IN FOCUS-BAR SECTION
+// BUTTONS IN MAIN
+const CHEVRON_RIGHT = utils.getById('chevronRight');
+const CHEVRON_LEFT = utils.getById('chevronLeft');
+const RADIO_MAIN = document.querySelectorAll(".radio-main-view");
+const MAIN_SLIDESHOW = document.querySelector('.main-slideshow');
+const CURRENT_IMAGE = utils.getById('slideImage');
+
+// BUTTONS IN FOCUS-BAR SECTION
 const RIGHT_SCROLL = utils.getById('right-scroll');
 const LEFT_SCROLL = utils.getById('left-scroll');
 
@@ -135,3 +142,4 @@ const AMOUNT_PENNIES = utils.getById('cart-amount-pennies');
 const ADD_VOUCHER = utils.getById('addVoucher');
 const ADD_CODE = utils.getById('addCode');
 const VOUCHER_CONTAINER = utils.getById('voucher');
+const INFORMATION_ORDER = utils.getById('information-order');

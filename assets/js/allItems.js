@@ -5,9 +5,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Смартфон Xiaomi Redmi 9C NFC, Dual SIM, 32GB, 4G, Midnight Gray',
         'image': './assets/images/focus-items/1.jpg',
         'currentPrice': 199,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/1.jpg', './assets/images/focus-items/1.1.png']
     },
     {
@@ -15,9 +15,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Телевизор Star-Light 32DM6700, 32" (81 см), Smart Android, HD, LED, Class A+',
         'image': './assets/images/focus-items/2.jpg',
         'currentPrice': 294,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/2.jpg', './assets/images/focus-items/2.1.png']
 
     },
@@ -26,9 +26,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Пералня Indesit MTWE71252WEE, 7 кг, 1200 об/мин, Клас A+++, MyTime, Fast Cycles, Бял',
         'image': './assets/images/focus-items/3.jpg',
         'currentPrice': 539,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/3.jpg', './assets/images/focus-items/3.1.png']
 
     },
@@ -37,9 +37,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Акумулаторна ударна бормашина 18V 2.0Ah Li-Ion Steinhaus',
         'image': './assets/images/focus-items/4.jpg',
         'currentPrice': 89,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/4.jpg', './assets/images/focus-items/4.1.png']
 
     }
@@ -71,9 +71,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Apple Watch 5, GPS, Cellular, 44mm Space Black Stainless Steel Case with Black Sport Band - S/M & M/L ',
         'image': './assets/images/focus-items/7.png',
         'currentPrice': 1199,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/7.png', './assets/images/focus-items/7.1.png']
     },
     {
@@ -81,9 +81,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Кабел A+ High-Speed HDMI 1.4V, plug-plug, Ethernet, gold-plated, 5 м',
         'image': './assets/images/focus-items/8.png',
         'currentPrice': 9,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/8.png', './assets/images/focus-items/8.1.png']
 
     },
@@ -103,9 +103,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Комплект мивка algranit Alveus Cancan 30, 580x420 мм + Смесител Diana, Бежов',
         'image': './assets/images/focus-items/10.png',
         'currentPrice': 389,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/10.png', './assets/images/focus-items/10.1.png']
     },
     {
@@ -123,9 +123,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Слушалки In-Ear Wraps CSUN-VI5M, Stereo Talk, Оранжев',
         'image': './assets/images/focus-items/12.png',
         'currentPrice': 13,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': null
 
     },
     {
@@ -133,9 +133,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Аудио слушалки A+ SBG5, Bluetooth, Черни',
         'image': './assets/images/focus-items/13.png',
         'currentPrice': 44,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/13.png', './assets/images/focus-items/13.1.png']
 
     },
@@ -144,9 +144,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Ел. четка за зъби Oral B Vitality D100 Sensi Ultra Thin + Travel Case , 1 глава, Бял',
         'image': './assets/images/focus-items/14.png',
         'currentPrice': 39,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/14.png', './assets/images/focus-items/14.1.png']
 
     },
@@ -178,9 +178,9 @@ const ALL_FOCUS_ITEMS = [
         'title': 'Клавиатура Apple Magic за iPad Pro 11" (2020), Layout INT EN, Black',
         'image': './assets/images/focus-items/17.png',
         'currentPrice': 749,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/focus-items/17.png', './assets/images/focus-items/17.1.png']
 
     },
@@ -203,9 +203,9 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Смартфон Apple iPhone 12, 64GB, 5G, Blue',
         'image': './assets/images/other-clients-watched/1.png',
         'currentPrice': 1.699,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/1.png', './assets/images/other-clients-watched/1.1.png']
 
     },
@@ -236,9 +236,9 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Телевизор Samsung 32T4302, 32" (80 см), Smart, HD, LED',
         'image': './assets/images/other-clients-watched/4.png',
         'currentPrice': 419,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '98',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/4.png', './assets/images/other-clients-watched/4.1.png']
 
     }
@@ -278,9 +278,9 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Solid State Drive (SSD) Kingston A2000, 1TB, NVMe, M.2',
         'image': './assets/images/other-clients-watched/8.png',
         'currentPrice': 260,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/8.png', './assets/images/other-clients-watched/8.1.png']
 
     },
@@ -289,9 +289,9 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Телевизор LED Star-Light, 32" (80 см), 32DM3500, HD',
         'image': './assets/images/other-clients-watched/9.png',
         'currentPrice': 229,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-'
+        'regularPennies': null
 
     },
     {
@@ -299,7 +299,7 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Акумулаторна бормашина Steinhaus, PRO-CD18X, 18 V 1.3 Ah Li-Ion, 30Nm, 2 степени 400/1500 об/мин, Бърз патронник 10мм, 13 аксесоара, Пластмасова кутия',
         'image': './assets/images/other-clients-watched/10.png',
         'currentPrice': 62,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
         'regularPennies': '99',
         'allImages': ['./assets/images/focus-items/4.jpg', './assets/images/focus-items/4.1.png']
@@ -320,7 +320,7 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Хладилна витрина Star-Light VFM-211L, 211 л, 160 бутилки, Вентилатор, H 174.7 см, Бяла',
         'image': './assets/images/other-clients-watched/12.png',
         'currentPrice': 704,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
         'regularPennies': '99'
 
@@ -341,9 +341,9 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Телевизор LED Diamant, 32" (80 см), 32HL4300H/A, HD',
         'image': './assets/images/other-clients-watched/14.png',
         'currentPrice': 219,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/14.png', './assets/images/other-clients-watched/14.1.png']
 
     },
@@ -352,9 +352,9 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Телевизор LG 49UN73003LA, 49" (123 см), Smart, 4K Ultra HD, LED',
         'image': './assets/images/other-clients-watched/15.png',
         'currentPrice': 769,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '78',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/15.png', './assets/images/other-clients-watched/15.1.png']
 
     },
@@ -363,9 +363,9 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Solid State Drive (SSD) Kingston A400, 120GB, 2.5", SATA III',
         'image': './assets/images/other-clients-watched/16.png',
         'currentPrice': 44,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/16.png', './assets/images/other-clients-watched/16.2.png']
 
     }
@@ -375,9 +375,9 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Телевизор Samsung 55TU7172, 55" (138 см), Smart, 4K Ultra HD, LED',
         'image': './assets/images/other-clients-watched/17.png',
         'currentPrice': 849,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/17.png', './assets/images/other-clients-watched/17.2.png']
 
     },
@@ -386,9 +386,11 @@ const OTHER_CLIENTS_WATCHED = [
         'title': 'Телевизор Samsung 43TU7172, 43" (108 см), Smart, 4K Ultra HD, LED',
         'image': './assets/images/other-clients-watched/18.png',
         'currentPrice': 649,
-        'regularPrice': '-',
+        'regularPrice': null,
         'currentPennies': '99',
-        'regularPennies': '-',
+        'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/18.png', './assets/images/other-clients-watched/18.1.png']
     },
 ]
+
+const slideImages = ['./assets/images/main-view/1.jpg', './assets/images/main-view/2.jpg', './assets/images/main-view/3.jpg', './assets/images/main-view/4.jpg', './assets/images/main-view/5.jpg', './assets/images/main-view/6.jpg'];

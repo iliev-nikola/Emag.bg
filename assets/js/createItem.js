@@ -114,15 +114,16 @@ function createItemsCard(array, container) {
         cardContainer.append(imageContainer, titleContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer, tooltipShoppingCardContainer);
         tooltipShoppingCardContainer.append(tooltipShoppingCard, addShoppingCard);
         tooltipContainer.append(tooltipText, addFavourite);
-        if (currentItem.regularPrice === '-') {
-            regular.style.visibility = 'hidden';
-            percentageBar.style.display = 'none';
-        } else {
+        if (currentItem.regularPrice) {
             const sub = utils.createNewElement('sub', currentItem.regularPennies);
             sub.style.textDecoration = 'line-through';
             const valute = utils.createNewElement('small', `лв `);
             valute.className = 'line';
             regular.append(sub, valute, sale);
+        } else {
+            regular.innerHTML='-';
+            regular.style.visibility = 'hidden';
+            percentageBar.style.display = 'none';
         }
 
         titleContainer.addEventListener('click', () => {

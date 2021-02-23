@@ -411,6 +411,12 @@ a[href="#register"]:hover {
   text-align: end;
 }
 
+.price-dropdown sup,
+.regular-price-dropdown sup {
+  font-size: 7px;
+  vertical-align: super;
+}
+
 .soon-added-text {
   font-size: 10px;
   color: #005eb8;
@@ -2400,6 +2406,7 @@ footer {
 
 #voucher {
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 #information-order h2 {
@@ -2594,6 +2601,38 @@ footer {
   color: rgb(102, 102, 102);
   font-size: 12px;
   margin-right: 3px;
+}
+
+
+/*EMPTY SHOPPING CART PAGE*/
+#empty-cart {
+  padding-top: 150px;
+  background-image: url("background.png");
+  background-size: cover;
+  height: 300px;
+  text-align: center;
+}
+
+.empty-cart-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.to-home-page {
+  margin-top: 30px;
+}
+
+#toHomePage {
+  background-color: rgb(0, 94, 184);
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 7px 12px;
+ color: rgb(255, 255, 255);
+}
+
+#toHomePage:hover{
+  background-color: #004485;
 }
 
 /*FAVOURITES PAGE*/

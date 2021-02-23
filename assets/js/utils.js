@@ -233,7 +233,7 @@ const utils = (function () {
         currentPrice.innerHTML = changeCurrentPrice;
         currentPennies.innerHTML = changeCurrentPennies;
         let currentMoney = eval(`${changeCurrentPrice}.${changeCurrentPennies}`);
-        if (currentElement.regularPrice !== '-') {
+        if (currentElement.regularPrice) {
             calculatingPrices(currentOption, regPrice, regPennies);
             regularPrice.innerHTML = changeCurrentPrice;
             regularPennies.innerHTML = changeCurrentPennies;
