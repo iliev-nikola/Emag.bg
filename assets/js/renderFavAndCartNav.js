@@ -18,13 +18,14 @@ function renderFavAndCart(favourites, cart) {
             title.href = `#article/${el.id}`;
             title.className = 'nav-dropdown-title';
             title.addEventListener('click', () => {
-                watchedItem(focusSectionItems.watchedItems);
+                watchedItem(focusSectionItems.watchedItems, el);
                 openItem(el);
             });
 
-            img.addEventListener('click', () => {
-                watchedItem(focusSectionItems.watchedItems);
-                openItem(el);
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                watchedItem(focusSectionItems.watchedItems, el);
+                location.replace(`#article/${el.id}`);
             });
 
             const priceDiv = utils.createNewElement('div');
@@ -32,7 +33,7 @@ function renderFavAndCart(favourites, cart) {
             price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
             price.className = 'price-dropdown';
             let regularPrice;
-            if (el.regularPrice !== '-') {
+            if (el.regularPrice) {
                 regularPrice = utils.createNewElement('p');
                 regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
                 regularPrice.className = 'regular-price-dropdown';
@@ -46,6 +47,7 @@ function renderFavAndCart(favourites, cart) {
                 utils.addToCart(el);
                 main.renderHeader();
             });
+
             const closeButton = utils.createNewElement('i');
             closeButton.className = 'fas fa-times nav-close-button';
             closeButton.addEventListener('click', () => {
@@ -93,13 +95,14 @@ function renderFavAndCart(favourites, cart) {
             title.href = `#article/${el.id}`;
             title.className = 'nav-dropdown-title';
             title.addEventListener('click', () => {
-                watchedItem(focusSectionItems.watchedItems);
+                watchedItem(focusSectionItems.watchedItems, el);
                 openItem(el);
             });
 
-            img.addEventListener('click', () => {
-                watchedItem(focusSectionItems.watchedItems);
-                openItem(el);
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                watchedItem(focusSectionItems.watchedItems, el);
+                location.replace(`#article/${el.id}`);
             });
 
             const count = utils.createNewElement('p', 'x' + el.count);
@@ -109,7 +112,7 @@ function renderFavAndCart(favourites, cart) {
             price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
             price.className = 'price-dropdown';
             let regularPrice;
-            if (el.regularPrice !== '-') {
+            if (el.regularPrice) {
                 regularPrice = utils.createNewElement('p');
                 regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
                 regularPrice.className = 'regular-price-dropdown';

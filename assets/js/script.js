@@ -162,12 +162,15 @@ const main = (function () {
             const currentItem = ALL_ITEMS.filter(item => item.id === currentId)[0];
             watchedItem(focusSectionItems.watchedItems, currentItem);
             openItem(currentItem);
+            HOME_PAGE_MENU.style.display = 'block';
+            OPEN_ITEM.style.display = 'block'
+            MARKETPLACE_SECTION.style.display = 'none';
+            OTHER_CLIENTS_SECTION.style.display = 'none';
             MAIN_MENU.style.display = 'none';
             OPTIONS_PANEL.style.display = 'none';
             mainSections.map(section => section.style.display = 'none');
             CART_PAGE.style.display = 'none';
             FAVOURITES_PAGE.style.display = 'none';
-            OPEN_ITEM.style.display = 'block'
             document.documentElement.scrollTop = 0;
             return;
         }
@@ -210,10 +213,11 @@ const main = (function () {
                 ERROR_PAGE.style.display = 'none';
                 break;
             case 'cart':
-                LOGIN_SECTION.style.display = 'none';
                 MAIN_SECTION.style.display = 'block';
                 CART_PAGE.style.display = 'block';
+                LOGIN_SECTION.style.display = 'none';
                 HOME_PAGE_MENU.style.display = 'none';
+                OPEN_ITEM.style.display = 'none';
                 MAIN_MENU.style.display = 'none';
                 OPTIONS_PANEL.style.display = 'none';
                 mainSections.map(section => section.style.display = 'none');
@@ -223,11 +227,11 @@ const main = (function () {
                 MAIN_MENU.className = 'select-categories-dropdown content';
                 CATEGORIES_LINK.className = 'categories-btn-close';
                 CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
-                LOGIN_SECTION.style.display = 'none';
                 MAIN_SECTION.style.display = 'block';
-                OPEN_ITEM.style.display = 'none';
                 HOME_PAGE_MENU.style.display = 'block';
                 FAVOURITES_PAGE.style.display = 'flex';
+                LOGIN_SECTION.style.display = 'none';
+                OPEN_ITEM.style.display = 'none';
                 MARKETPLACE_SECTION.style.display = 'none';
                 OTHER_CLIENTS_SECTION.style.display = 'none';
                 MAIN_MENU.style.display = 'none';
@@ -310,7 +314,8 @@ const main = (function () {
     FAVOURITE_ICON.addEventListener('click', () => {
         location.replace('#favourites');
     });
-    SHOPPING_CART_ICON.addEventListener('click', () => {
+    SHOPPING_CART_ICON.addEventListener('click', (e) => {
+        e.stopImmediatePropagation();
         location.replace('#cart');
     });
     PROFILE_ICON.addEventListener('click', () => {

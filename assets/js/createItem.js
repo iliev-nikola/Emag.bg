@@ -15,7 +15,6 @@ class Items {
         }
 
         this.watchedItems.push(item);
-
     }
 }
 
@@ -165,6 +164,7 @@ function watchedItem(array, currentItem) {
         WATCHED_ITEMS.append(mainContainer);
         mainContainer.append(watchedImage);
     });
+
     DELETE_WATCHED.addEventListener('click', () => {
         let counterLoader = 0;
         const intervalLoader = setInterval(() => {
