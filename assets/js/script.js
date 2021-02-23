@@ -129,14 +129,17 @@ const main = (function () {
     // EVENT HANDLERS FOR CATEGORIES DROPDOWN MENU
     function onMainMouseOver() {
         MAIN_MENU.style.display = 'flex';
+        CATEGORIES_LINK.className = 'categories-btn-open';
     }
 
     function onMainMouseOut() {
         MAIN_MENU.style.display = 'none';
+        CATEGORIES_LINK.className = 'categories-btn-close';
     }
 
     function onCategoriesMouseOver() {
         MAIN_MENU.style.display = 'flex';
+        CATEGORIES_LINK.className = 'categories-btn-open';
         MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.addEventListener('mouseout', onMainMouseOut);
     }
@@ -147,6 +150,7 @@ const main = (function () {
     function onHashChange(e) {
         const hash = e.target.location.hash.substring(1);
         MAIN_MENU.className = 'select-categories content';
+        CATEGORIES_LINK.className = 'categories-btn-open';
         CATEGORIES_LINK.removeEventListener('mouseover', onCategoriesMouseOver);
         MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
@@ -217,6 +221,7 @@ const main = (function () {
                 break;
             case 'favourites':
                 MAIN_MENU.className = 'select-categories-dropdown content';
+                CATEGORIES_LINK.className = 'categories-btn-close';
                 CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
                 LOGIN_SECTION.style.display = 'none';
                 MAIN_SECTION.style.display = 'block';

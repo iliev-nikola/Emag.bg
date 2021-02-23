@@ -601,7 +601,7 @@ a[href="#register"]:hover {
 
 /* CATEGORIES */
 
-#categories {
+#categories.categories-btn-open {
   display: flex;
   font-size: 14px;
   align-items: center;
@@ -612,10 +612,22 @@ a[href="#register"]:hover {
   border-top-right-radius: 5px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-bottom: none;
-  margin-bottom: 0;
+  padding: 0 10px;
+  padding-bottom: 5px;
+  margin: 5px 5px 0 0;
+}
+
+#categories.categories-btn-close {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  color: black;
+  font-weight: 600;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 5px;
   margin-left: 0;
-  padding-bottom: 10px;
 }
 
 .empty-space {
