@@ -71,3 +71,33 @@ function scrollItems(array, rightScroll, leftScroll, container) {
 scrollItems(ALL_FOCUS_ITEMS, RIGHT_SCROLL, LEFT_SCROLL, CARDS_CONTAINER);
 scrollItems(OTHER_CLIENTS_WATCHED, RIGTH_OTHER_SCROLL, LEFT_OTHER_SCROLL, OTHER_WATCHED_CONTAINER);
 
+// SLIDESHOW IMAGES IN MAIN
+let currentSlide = 0;
+function slideShow() {
+    CURRENT_IMAGE.src = slideImages[currentSlide];
+    RADIO_MAIN[currentSlide].checked = true;
+}
+
+setInterval(function () {
+    if (currentSlide === slideImages.length - 1) {
+        currentSlide = -1;
+    }
+    currentSlide++;
+    slideShow();
+}, 6000);
+
+CHEVRON_RIGHT.addEventListener('click', () => {
+    currentSlide++;
+    if (currentSlide === slideImages.length) {
+        currentSlide -= 1;
+    }
+    slideShow();
+});
+
+CHEVRON_LEFT.addEventListener('click', () => {
+    currentSlide--;
+    if (currentSlide <= 0) {
+        currentSlide = 0;
+    }
+    slideShow();
+});
