@@ -29,13 +29,29 @@ function openItem(currentItem) {
     containerImages.className = 'item-images';
     let allImgs = utils.createNewElement('div');
     if (currentItem.allImages) {
+        let firstImg, secondImg;
         for (let i = 0; i < currentItem.allImages.length; i++) {
             let image = utils.createNewElement('img');
-            image.className = 'images-item';
             image.src = currentItem.allImages[i];
+            if (i === 0) {
+                image.className = 'images-item-hover';
+                firstImg = image;
+            } else {
+                image.className = 'images-item';
+                secondImg = image;
+            }
+
             allImgs.append(image);
+            const item = currentItem;
             image.addEventListener('mouseover', () => {
-                mainImage.src = currentItem.allImages[i];
+                mainImage.src = item.allImages[i];
+                if (i === 0) {
+                    firstImg.className = 'images-item-hover';
+                    secondImg.className = 'images-item';
+                } else {
+                    secondImg.className = 'images-item-hover';
+                    firstImg.className = 'images-item';
+                }
             });
         }
     }
@@ -87,12 +103,18 @@ function openItem(currentItem) {
         sale.className = 'item-sale';
         regularContainer.append(regularPrice, regularPennies, lv, sale);
     }
+
     totalContainer.append(currentPrice, currentPennies, lv);
     const leasing = utils.createNewElement('span');
     const leasingTitle = utils.createNewElement('p', 'Месечни вноски');
     const btnContainer = utils.createNewElement('div');
     const addToShoppingCart = utils.createNewElement('div');
     addToShoppingCart.className = 'add-shopping-cart';
+    const item = currentItem;
+    addToShoppingCart.addEventListener('click', () => {
+        utils.addToCart(item);
+        main.renderHeader();
+    });
     const iconContainer = utils.createNewElement('span');
     const cartIcon = utils.createNewElement('i');
     cartIcon.className = 'fas fa-shopping-cart cart';
@@ -100,6 +122,10 @@ function openItem(currentItem) {
     cartText.className = 'cart-text';
     const addToFavourite = utils.createNewElement('div');
     addToFavourite.className = 'add-favourite';
+    addToFavourite.addEventListener('click', () => {
+        utils.addToFav(item);
+        main.renderHeader();
+    });
     const favIconContainer = utils.createNewElement('span');
     const favIcon = utils.createNewElement('i');
     favIcon.className = 'far fa-heart heart';
@@ -148,4 +174,3 @@ function openItem(currentItem) {
     containerImages.append(mainImage, allImgs);
     currentItem = utils.setItem('obj', currentItem);
 }
-

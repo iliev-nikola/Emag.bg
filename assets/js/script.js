@@ -179,6 +179,8 @@ const main = (function () {
         switch (hash) {
             case '':
             case 'home':
+                createItemsCard(focusSectionItems.allItems, CARDS_CONTAINER);
+                createItemsCard(otherWatched.allItems, OTHER_WATCHED_CONTAINER);
                 MAIN_SECTION.style.display = 'block';
                 LOGIN_SECTION.style.display = 'none';
                 document.body.style.backgroundColor = '#e9ebee';
@@ -258,6 +260,7 @@ const main = (function () {
     }
 
     // EVENT LISTENERS
+    // CHECK FOR LOGGED IN USER
     if (utils.isLoggedIn()) {
         let users = utils.getUsers();
         users = users.filter(user => user.isLoggedIn);
@@ -266,9 +269,6 @@ const main = (function () {
     }
 
     window.addEventListener('hashchange', onHashChange);
-    // window.addEventListener('DOMContentLoaded', () => {
-    //     location.replace('#home');
-    // });
     window.addEventListener('DOMContentLoaded', (e) => {
         onHashChange(e);
         renderHeader();

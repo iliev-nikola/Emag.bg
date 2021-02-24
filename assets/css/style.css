@@ -1811,6 +1811,13 @@ footer {
   cursor: pointer;
 }
 
+.shop-tooltip .shop-card {
+  width: 24px;
+  height: auto;
+  right: 6px;
+  top: 27px;
+}
+
 .tooltip .tooltiptext,
 .shop-tooltip .tooltip-shopping-card {
   display: flex;
@@ -2155,11 +2162,21 @@ footer {
   width: 48px;
   height: 48px;
   padding: 5px;
-  margin-right: 5px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.images-item-hover {
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  margin: 3px;
+  cursor: pointer;
+  border: 1px solid rgb(0, 94, 184);
+  border-radius: 3px;
 }
 
 .images-item:hover {
-  cursor: pointer;
   border: 1px solid rgb(0, 94, 184);
   border-radius: 3px;
 }
@@ -2379,6 +2396,10 @@ footer {
   font-size: 12px;
   cursor: pointer;
   padding-left: 4px;
+}
+
+.add-delete-cart {
+  width: max-content;
 }
 
 #product-pennies {
@@ -2603,11 +2624,10 @@ footer {
   margin-right: 3px;
 }
 
-
 /*EMPTY SHOPPING CART PAGE*/
 #empty-cart {
   padding-top: 150px;
-  background-image: url("background.png");
+  background-image: url("../images/cart-page/empty-cart-background.png");
   background-size: cover;
   height: 300px;
   text-align: center;
@@ -2628,10 +2648,10 @@ footer {
   font-size: 14px;
   font-weight: 400;
   padding: 7px 12px;
- color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
-#toHomePage:hover{
+#toHomePage:hover {
   background-color: #004485;
 }
 
@@ -2792,7 +2812,6 @@ footer {
 
 .fav-delete {
   color: rgb(0, 94, 184);
-  cursor: pointer;
 }
 
 .fav-delete i {
@@ -2800,6 +2819,7 @@ footer {
 }
 
 .fav-delete span {
+  cursor: pointer;
   margin-left: 5px;
 }
 

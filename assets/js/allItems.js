@@ -201,93 +201,93 @@ const OTHER_CLIENTS_WATCHED = [
     {
         'id': 19,
         'title': 'Смартфон Apple iPhone 12, 64GB, 5G, Blue',
-        'image': './assets/images/other-clients-watched/1.png',
+        'image': './assets/images/other-clients-watched/19.png',
         'currentPrice': 1.699,
         'regularPrice': null,
         'currentPennies': '99',
         'regularPennies': null,
-        'allImages': ['./assets/images/other-clients-watched/1.png', './assets/images/other-clients-watched/1.1.png']
+        'allImages': ['./assets/images/other-clients-watched/19.png', './assets/images/other-clients-watched/19.1.png']
 
     },
     {
         'id': 20,
         'title': 'Рокля - Костюм На Елза От Замръзналото Кралство, Disney Frozen, 130см, Размер за 6год',
-        'image': './assets/images/other-clients-watched/2.png',
+        'image': './assets/images/other-clients-watched/20.png',
         'currentPrice': 39,
         'regularPrice': 79,
         'currentPennies': '98',
         'regularPennies': '99',
-        'allImages': ['./assets/images/other-clients-watched/2.png', './assets/images/other-clients-watched/2.2.png']
+        'allImages': ['./assets/images/other-clients-watched/20.png', './assets/images/other-clients-watched/20.2.png']
 
     },
     {
         'id': 21,
         'title': 'Комплект Кухненска Мивка с отцедник и смесител Kring, Композитен гранит, 780x440 мм, Дълбочина 170 мм, Обратима, Монтаж на плот, Бял',
-        'image': './assets/images/other-clients-watched/3.png',
+        'image': './assets/images/other-clients-watched/21.png',
         'currentPrice': 299,
         'regularPrice': 399,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages': ['./assets/images/other-clients-watched/3.png', './assets/images/other-clients-watched/3.3.png']
+        'allImages': ['./assets/images/other-clients-watched/21.png', './assets/images/other-clients-watched/21.3.png']
 
     },
     {
         'id': 22,
         'title': 'Телевизор Samsung 32T4302, 32" (80 см), Smart, HD, LED',
-        'image': './assets/images/other-clients-watched/4.png',
+        'image': './assets/images/other-clients-watched/22.png',
         'currentPrice': 419,
         'regularPrice': null,
         'currentPennies': '98',
         'regularPennies': null,
-        'allImages': ['./assets/images/other-clients-watched/4.png', './assets/images/other-clients-watched/4.1.png']
+        'allImages': ['./assets/images/other-clients-watched/22.png', './assets/images/other-clients-watched/22.1.png']
 
     }
     ,
     {
         'id': 23,
         'title': 'Конзола Sony PlayStation 5',
-        'image': './assets/images/other-clients-watched/5.png',
+        'image': './assets/images/other-clients-watched/23.png',
         'regularPrice': 2699,
         'currentPrice': 2599,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages': ['./assets/images/other-clients-watched/5.png', './assets/images/other-clients-watched/5.1.png']
+        'allImages': ['./assets/images/other-clients-watched/23.png', './assets/images/other-clients-watched/23.1.png']
     },
     {
         'id': 24,
         'title': 'Планетарен миксер Daewoo DHM150Y, 1600 W, 10 скорости, 4.5 л. Иноксова купа',
-        'image': './assets/images/other-clients-watched/6.png',
+        'image': './assets/images/other-clients-watched/24.png',
         'currentPrice': 129,
         'regularPrice': 149,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages': ['./assets/images/other-clients-watched/6.png', './assets/images/other-clients-watched/6.1.png']
+        'allImages': ['./assets/images/other-clients-watched/24.png', './assets/images/other-clients-watched/24.1.png']
     },
     {
         'id': 25,
         'title': 'Гардероб Kring Houston, Плъзгащи се врати, Чекмеджета, Цвят дъб / Ефект тъмносив бетон, 200 x 200 x 61 см',
-        'image': './assets/images/other-clients-watched/7.png',
+        'image': './assets/images/other-clients-watched/25.png',
         'currentPrice': 579,
         'regularPrice': 1049,
         'currentPennies': '99',
         'regularPennies': '99',
-        'allImages': ['./assets/images/other-clients-watched/7.png', './assets/images/other-clients-watched/7.1.png']
+        'allImages': ['./assets/images/other-clients-watched/25.png', './assets/images/other-clients-watched/25.1.png']
     },
     {
         'id': 26,
         'title': 'Solid State Drive (SSD) Kingston A2000, 1TB, NVMe, M.2',
-        'image': './assets/images/other-clients-watched/8.png',
+        'image': './assets/images/other-clients-watched/26.png',
         'currentPrice': 260,
         'regularPrice': null,
         'currentPennies': '99',
         'regularPennies': null,
-        'allImages': ['./assets/images/other-clients-watched/8.png', './assets/images/other-clients-watched/8.1.png']
+        'allImages': ['./assets/images/other-clients-watched/26.png', './assets/images/other-clients-watched/26.1.png']
 
     },
     {
         'id': 27,
         'title': 'Телевизор LED Star-Light, 32" (80 см), 32DM3500, HD',
-        'image': './assets/images/other-clients-watched/9.png',
+        'image': './assets/images/other-clients-watched/27.png',
         'currentPrice': 229,
         'regularPrice': null,
         'currentPennies': '99',
@@ -297,7 +297,7 @@ const OTHER_CLIENTS_WATCHED = [
     {
         'id': 28,
         'title': 'Акумулаторна бормашина Steinhaus, PRO-CD18X, 18 V 1.3 Ah Li-Ion, 30Nm, 2 степени 400/1500 об/мин, Бърз патронник 10мм, 13 аксесоара, Пластмасова кутия',
-        'image': './assets/images/other-clients-watched/10.png',
+        'image': './assets/images/other-clients-watched/28.png',
         'currentPrice': 62,
         'regularPrice': null,
         'currentPennies': '99',
@@ -307,18 +307,18 @@ const OTHER_CLIENTS_WATCHED = [
     {
         'id': 29,
         'title': 'Комплект тенджери Madeline Cooking by Heinner, 10 части, Индукция, Инокс',
-        'image': './assets/images/other-clients-watched/11.png',
+        'image': './assets/images/other-clients-watched/29.png',
         'currentPrice': 100,
         'regularPrice': 120,
         'currentPennies': '46',
         'regularPennies': '56',
-        'allImages': ['./assets/images/other-clients-watched/11.png', './assets/images/other-clients-watched/11.1.png']
+        'allImages': ['./assets/images/other-clients-watched/29.png', './assets/images/other-clients-watched/29.1.png']
 
     },
     {
         'id': 30,
         'title': 'Хладилна витрина Star-Light VFM-211L, 211 л, 160 бутилки, Вентилатор, H 174.7 см, Бяла',
-        'image': './assets/images/other-clients-watched/12.png',
+        'image': './assets/images/other-clients-watched/30.png',
         'currentPrice': 704,
         'regularPrice': null,
         'currentPennies': '99',
@@ -328,69 +328,69 @@ const OTHER_CLIENTS_WATCHED = [
     {
         'id': 31,
         'title': 'Защитна маска за лице KN95 - FFP2 - за многократна употреба',
-        'image': './assets/images/other-clients-watched/13.png',
+        'image': './assets/images/other-clients-watched/31.png',
         'currentPrice': 6,
         'regularPrice': 9,
         'currentPennies': '00',
         'regularPennies': '60',
-        'allImages': ['./assets/images/other-clients-watched/13.png', './assets/images/other-clients-watched/13.1.png']
+        'allImages': ['./assets/images/other-clients-watched/31.png', './assets/images/other-clients-watched/13.1.png']
 
     },
     {
         'id': 32,
         'title': 'Телевизор LED Diamant, 32" (80 см), 32HL4300H/A, HD',
-        'image': './assets/images/other-clients-watched/14.png',
+        'image': './assets/images/other-clients-watched/32.png',
         'currentPrice': 219,
         'regularPrice': null,
         'currentPennies': '99',
         'regularPennies': null,
-        'allImages': ['./assets/images/other-clients-watched/14.png', './assets/images/other-clients-watched/14.1.png']
+        'allImages': ['./assets/images/other-clients-watched/32.png', './assets/images/other-clients-watched/14.1.png']
 
     },
     {
         'id': 33,
         'title': 'Телевизор LG 49UN73003LA, 49" (123 см), Smart, 4K Ultra HD, LED',
-        'image': './assets/images/other-clients-watched/15.png',
+        'image': './assets/images/other-clients-watched/33.png',
         'currentPrice': 769,
         'regularPrice': null,
         'currentPennies': '78',
         'regularPennies': null,
-        'allImages': ['./assets/images/other-clients-watched/15.png', './assets/images/other-clients-watched/15.1.png']
+        'allImages': ['./assets/images/other-clients-watched/33.png', './assets/images/other-clients-watched/33.1.png']
 
     },
     {
         'id': 34,
         'title': 'Solid State Drive (SSD) Kingston A400, 120GB, 2.5", SATA III',
-        'image': './assets/images/other-clients-watched/16.png',
+        'image': './assets/images/other-clients-watched/34.png',
         'currentPrice': 44,
         'regularPrice': null,
         'currentPennies': '99',
         'regularPennies': null,
-        'allImages': ['./assets/images/other-clients-watched/16.png', './assets/images/other-clients-watched/16.2.png']
+        'allImages': ['./assets/images/other-clients-watched/34.png', './assets/images/other-clients-watched/34.2.png']
 
     }
     ,
     {
         'id': 35,
         'title': 'Телевизор Samsung 55TU7172, 55" (138 см), Smart, 4K Ultra HD, LED',
-        'image': './assets/images/other-clients-watched/17.png',
+        'image': './assets/images/other-clients-watched/35.png',
         'currentPrice': 849,
         'regularPrice': null,
         'currentPennies': '99',
         'regularPennies': null,
-        'allImages': ['./assets/images/other-clients-watched/17.png', './assets/images/other-clients-watched/17.2.png']
+        'allImages': ['./assets/images/other-clients-watched/35.png', './assets/images/other-clients-watched/35.2.png']
 
     },
     {
         'id': 36,
         'title': 'Телевизор Samsung 43TU7172, 43" (108 см), Smart, 4K Ultra HD, LED',
-        'image': './assets/images/other-clients-watched/18.png',
+        'image': './assets/images/other-clients-watched/36.png',
         'currentPrice': 649,
         'regularPrice': null,
         'currentPennies': '99',
         'regularPennies': null,
-        'allImages': ['./assets/images/other-clients-watched/18.png', './assets/images/other-clients-watched/18.1.png']
+        'allImages': ['./assets/images/other-clients-watched/36.png', './assets/images/other-clients-watched/36.1.png']
     },
-]
+];
 
 const slideImages = ['./assets/images/main-view/1.jpg', './assets/images/main-view/2.jpg', './assets/images/main-view/3.jpg', './assets/images/main-view/4.jpg', './assets/images/main-view/5.jpg', './assets/images/main-view/6.jpg'];
