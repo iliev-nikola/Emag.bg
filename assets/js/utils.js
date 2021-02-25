@@ -31,6 +31,9 @@ const utils = (function () {
         const successBanner = utils.getById('success');
         successBanner.innerText = message;
         successBanner.style.display = 'block';
+        successBanner.addEventListener('click', () => {
+            successBanner.style.display = 'none';
+        });
         setTimeout(() => {
             successBanner.style.display = 'none';
         }, 3000);
@@ -40,6 +43,9 @@ const utils = (function () {
         const errorBanner = utils.getById('error');
         errorBanner.innerText = message;
         errorBanner.style.display = 'block';
+        errorBanner.addEventListener('click', () => {
+            errorBanner.style.display = 'none';
+        });
         setTimeout(() => {
             errorBanner.style.display = 'none';
         }, 3000);
@@ -107,14 +113,23 @@ const utils = (function () {
     function addToFav(article) {
         if (!isLoggedIn()) {
             const guest = getItem('guest');
+            if (guest.favourites.some(el => el.id === article.id)) {
+                return;
+            }
+
             guest.favourites.unshift(article);
             setItem('guest', guest);
+            success('Продуктът беше добавен в любими');
             return;
         }
 
         const users = utils.getUsers();
         users.forEach(user => {
             if (user.isLoggedIn) {
+                if (user.favourites.some(el => el.id === article.id)) {
+                    return;
+                }
+
                 return user.favourites.unshift(article);
             }
         });
@@ -200,21 +215,21 @@ const utils = (function () {
         setUsers(users);
     }
 
-    //CALCULATING PERCENTAGE
+    // CALCULATING PERCENTAGE
     function calculatingPercentage(currentItem) {
         const currentPr = parseFloat(currentItem.currentPrice + '.' + currentItem.currentPennies);
         const regularPr = parseFloat(currentItem.regularPrice + '.' + currentItem.regularPennies);
         return Math.floor(100 - 100 * (currentPr / regularPr));
     }
 
-    //HELPER FUNCTION FOR CALCULATING PRICES
+    // HELPER FUNCTION FOR CALCULATING PRICES
     function calculatingPrices(currentOption, firstPrice, firstPennies) {
         let totalCurrentPrice = (currentOption * parseFloat(firstPrice + '.' + firstPennies)).toFixed(2).toString().split('.');
         changeCurrentPrice = totalCurrentPrice[0];
         changeCurrentPennies = totalCurrentPrice[1];
     }
 
-    //HELPER FUNCTION FOR CALCULATING AMOUNT
+    // HELPER FUNCTION FOR CALCULATING AMOUNT
     function calculateAmount(amount) {
         let currentAmount = amount.toFixed(2).toString().split('.');
         CART_AMOUNT_PRICE.innerHTML = currentAmount[0];
@@ -223,7 +238,7 @@ const utils = (function () {
         AMOUNT_PENNIES.innerHTML = currentAmount[1];
     }
 
-    //CHANGE PRICE WHEN CHANGE COUNT
+    // CHANGE PRICE WHEN CHANGE COUNT
     function changePrice(currentOption, currentElement, currentPrice, currentPennies, regularPrice, regularPennies, savePrice, savePennies) {
         const firstPrice = currentElement.currentPrice;
         const firstPennies = currentElement.currentPennies;
@@ -241,6 +256,50 @@ const utils = (function () {
             let savedMoney = (currentRegular - currentMoney).toFixed(2).toString().split('.');
             savePrice.innerHTML = savedMoney[0];
             savePennies.innerHTML = savedMoney[1];
+        }
+    }
+
+    // MAIN MENU DROPDOWN ON SCROLL
+    function onMainMouseOver() {
+        MAIN_MENU.style.display = 'flex';
+        HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
+        MAIN_MENU.style.visibility = 'visible';
+    }
+
+    function onMainMouseOut() {
+        MAIN_MENU.className = 'select-categories-dropdown scroll content';
+        MAIN_MENU.style.visibility = 'hidden';
+        HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
+    }
+
+    function onSandwichMouseOver() {
+        MAIN_MENU.className = 'select-categories-dropdown scroll content';
+        MAIN_MENU.style.visibility = 'visible';
+        MAIN_MENU.style.display = 'flex';
+        MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
+        MAIN_MENU.addEventListener('mouseout', onMainMouseOut);
+        HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
+    }
+
+    let counter = 0;
+    function onScroll() {
+        if (location.hash !== '#home') return;
+        if (document.documentElement.scrollTop >= 565 && counter === 0) {
+            counter++;
+            NAV_MENU_ONSCROLL.style.display = 'block';
+            HEADER_SANDWICH_BUTTON.style.display = 'block';
+            HEADER_SANDWICH_BUTTON.addEventListener('mouseover', onSandwichMouseOver);
+            HEADER_SECTION.className = 'header-section-scroll';
+        } else if (document.documentElement.scrollTop < 565 && counter === 1) {
+            counter = 0;
+            MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
+            MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
+            MAIN_MENU.style.display = 'flex';
+            MAIN_MENU.style.visibility = 'visible';
+            NAV_MENU_ONSCROLL.style.display = 'none';
+            HEADER_SANDWICH_BUTTON.style.display = 'none';
+            HEADER_SECTION.className = 'header-section';
+            MAIN_MENU.className = 'select-categories content';
         }
     }
 
@@ -264,6 +323,7 @@ const utils = (function () {
         removeFromCart,
         calculatingPercentage,
         changePrice,
-        calculateAmount
+        calculateAmount,
+        onScroll
     }
 })();

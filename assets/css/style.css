@@ -24,6 +24,28 @@ a {
   background-color: white;
 }
 
+.header-section-scroll {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  animation: header-scroll 0.3s forwards;
+}
+
+@keyframes header-scroll {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /* HEADER */
 .header {
   padding: 22px 0;
@@ -31,6 +53,24 @@ a {
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
+
+.header-scroll {
+  padding: 9px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+#header-sandwich-button {
+  font-size: 22px;
+  color: #005eb8;
+  cursor: pointer;
+  margin-left: 10px;
+  display: none;
+  width: 25px;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -151,7 +191,7 @@ a {
   top: -5px;
   left: 12px;
   border-radius: 50%;
-  width: 13%;
+  width: 17%;
   background: linear-gradient(to right, #4a60c1, #3985e0);
   color: white;
   font-size: 12px;
@@ -160,7 +200,7 @@ a {
 
 #cartCounter {
   background: linear-gradient(to right, #cf3f50, #fe2d34);
-  width: 8%;
+  width: 11%;
   top: -3px;
   left: 14px;
 }
@@ -248,7 +288,7 @@ a {
 
 .invisible-filler {
   visibility: hidden;
-  height: 24px;
+  height: 20px;
 }
 
 .profile-icon .invisible-filler {
@@ -687,6 +727,12 @@ a[href="#register"]:hover {
   left: 0;
   right: 0;
   text-align: center;
+}
+
+.scroll {
+  position: sticky;
+  top: 60px;
+  text-align: left;
 }
 
 .main-slideshow {
@@ -1811,6 +1857,13 @@ footer {
   cursor: pointer;
 }
 
+.shop-tooltip .shop-card {
+  width: 24px;
+  height: auto;
+  right: 6px;
+  top: 27px;
+}
+
 .tooltip .tooltiptext,
 .shop-tooltip .tooltip-shopping-card {
   display: flex;
@@ -2163,11 +2216,21 @@ footer {
   width: 48px;
   height: 48px;
   padding: 5px;
-  margin-right: 5px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.images-item-hover {
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  margin: 3px;
+  cursor: pointer;
+  border: 1px solid rgb(0, 94, 184);
+  border-radius: 3px;
 }
 
 .images-item:hover {
-  cursor: pointer;
   border: 1px solid rgb(0, 94, 184);
   border-radius: 3px;
 }
@@ -2389,6 +2452,10 @@ footer {
   padding-left: 4px;
 }
 
+.add-delete-cart {
+  width: max-content;
+}
+
 #product-pennies {
   font-size: 8.2px;
   padding-top: 2px;
@@ -2506,14 +2573,14 @@ footer {
   margin-top: 65px;
 }
 
-#navMenuCart {
+.nav-menu-cart {
   background-image: linear-gradient(
     to right,
-    rgb(255, 29, 37) 5%,
-    rgb(160, 50, 140) 35%,
-    rgb(112, 64, 164) 45%,
-    rgb(67, 89, 199) 55%,
-    rgb(0, 130, 23)
+    #ff1d25 5%,
+    #a0328c 35%,
+    #7040a4 45%,
+    #4359c7 55%,
+    #0082e6 70%
   );
   height: 3px;
 }
@@ -2614,7 +2681,7 @@ footer {
 /*EMPTY SHOPPING CART PAGE*/
 #empty-cart {
   padding-top: 150px;
-  background-image: url("background.png");
+  background-image: url("../images/cart-page/empty-cart-background.png");
   background-size: cover;
   height: 300px;
   text-align: center;
@@ -2799,7 +2866,6 @@ footer {
 
 .fav-delete {
   color: rgb(0, 94, 184);
-  cursor: pointer;
 }
 
 .fav-delete i {
@@ -2807,6 +2873,7 @@ footer {
 }
 
 .fav-delete span {
+  cursor: pointer;
   margin-left: 5px;
 }
 

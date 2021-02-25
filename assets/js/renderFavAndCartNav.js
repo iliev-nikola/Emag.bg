@@ -38,19 +38,22 @@ function renderFavAndCart(favourites, cart) {
                 regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
                 regularPrice.className = 'regular-price-dropdown';
             }
+
             priceDiv.append(price, regularPrice || '');
             priceDiv.className = 'price';
             const hiddenOptions = utils.createNewElement('div');
             const addToCartText = utils.createNewElement('p');
             addToCartText.innerHTML = '<i class="fas fa-shopping-cart"></i>Добави в количката';
-            addToCartText.addEventListener('click', () => {
+            addToCartText.addEventListener('click', (e) => {
+                e.stopPropagation();
                 utils.addToCart(el);
                 main.renderHeader();
             });
 
             const closeButton = utils.createNewElement('i');
             closeButton.className = 'fas fa-times nav-close-button';
-            closeButton.addEventListener('click', () => {
+            closeButton.addEventListener('click', (e) => {
+                e.stopPropagation();
                 utils.removeFromFav(el);
                 main.renderHeader();
             });
@@ -122,7 +125,8 @@ function renderFavAndCart(favourites, cart) {
             const hiddenOptions = utils.createNewElement('div');
             const closeButton = utils.createNewElement('i');
             closeButton.className = 'fas fa-times nav-close-button';
-            closeButton.addEventListener('click', () => {
+            closeButton.addEventListener('click', (e) => {
+                e.stopPropagation();
                 utils.removeFromCart(el);
                 main.renderHeader();
             });

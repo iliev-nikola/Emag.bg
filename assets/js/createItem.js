@@ -19,7 +19,7 @@ class Items {
 }
 
 const focusSectionItems = new Items();
-ALL_FOCUS_ITEMS.forEach(function (item) {
+ALL_FOCUS_ITEMS.forEach(item => {
     focusSectionItems.addProduct(item);
 });
 
@@ -59,8 +59,10 @@ function createItemsCard(array, container) {
         tooltipShoppingCardContainer.className = 'shop-tooltip';
         const tooltipShoppingCard = utils.createNewElement('div', 'Добави в количката');
         tooltipShoppingCard.className = 'tooltip-shopping-card';
-        const addShoppingCard = utils.createNewElement('i');
-        addShoppingCard.className = 'fas fa-shopping-cart shop-card';
+        const addShoppingCard = utils.createNewElement('img');
+        addShoppingCard.src = './assets/images/icons/shopping-cart.png';
+        addShoppingCard.alt = 'shopping-cart-icon';
+        addShoppingCard.className = 'shop-card';
         const imageContainer = utils.createNewElement('a');
         imageContainer.href = `#article/${currentItem.id}`;
         const itemImage = utils.createNewElement('img');
@@ -121,7 +123,7 @@ function createItemsCard(array, container) {
             valute.className = 'line';
             regular.append(sub, valute, sale);
         } else {
-            regular.innerHTML='-';
+            regular.innerHTML = '-';
             regular.style.visibility = 'hidden';
             percentageBar.style.display = 'none';
         }
@@ -157,13 +159,22 @@ function watchedItem(array, currentItem) {
 
     array = new Set(array);
     array = Array.from(array);
-    array.forEach(item => {
+    array.forEach((item, index) => {
         const mainContainer = utils.createNewElement('div');
+        const hrefContainer = utils.createNewElement('a');
+        const findIdPattern = /\d+/g;
+        const id = +item.match(findIdPattern)[0];
+        hrefContainer.href = `#article/${id}`;
         const watchedImage = utils.createNewElement('img');
         watchedImage.className = 'watched-images';
+        if (index === 0) {
+            mainContainer.style.border = '2px solid rgb(0, 94, 184)';
+        }
+
         watchedImage.src = item;
+        hrefContainer.append(watchedImage)
+        mainContainer.append(hrefContainer);
         WATCHED_ITEMS.append(mainContainer);
-        mainContainer.append(watchedImage);
     });
 
     DELETE_WATCHED.addEventListener('click', () => {

@@ -3,7 +3,7 @@ function openFavAndCart(favourites, cart) {
     if (cart.length) {
         EMPTY_CART.style.display = 'none';
         CART_CONTAINER.style.display = 'flex';
-        ITEMS_IN_CART.style.display='block';
+        ITEMS_IN_CART.style.display = 'block';
         ITEMS_IN_CART.innerHTML = '';
         let amount = 0;
         const mainContainer = utils.createNewElement('div');
@@ -68,11 +68,21 @@ function openFavAndCart(favourites, cart) {
                 totalSave.append(totalSavePrice, totalSavePennies, saveLv);
                 pricesContainer.append(regularContainer, save, totalSave);
             }
+
             const addOrRemoveContainer = utils.createNewElement('div');
             addOrRemoveContainer.className = 'add-delete-cart';
             const addToFav = utils.createNewElement('span', 'добави в Любими');
+            addToFav.addEventListener('click', () => {
+                utils.addToFav(currentElement);
+                main.renderHeader();
+            });
+
             const remove = utils.createNewElement('span', 'Изтрий');
-            remove.addEventListener('click', utils.removeFromCart);
+            remove.addEventListener('click', () => {
+                utils.removeFromCart(currentElement);
+                main.renderHeader();
+            });
+
             mainContainer.append(elContainer);
             elContainer.append(imageContainer, elInformation, numberContainer, pricesContainer);
             imageContainer.append(elImage);
@@ -86,6 +96,7 @@ function openFavAndCart(favourites, cart) {
             if (optionLength < 5) {
                 optionLength = 5;
             }
+
             for (let i = 0; i < optionLength; i++) {
                 const option = utils.createNewElement('option', i + 1);
                 if (i + 1 === currentElement.count) {
@@ -94,8 +105,10 @@ function openFavAndCart(favourites, cart) {
                     amount += currentOption * currentAmount;
                     utils.changePrice(currentOption, currentElement, currentPrice, currentPennies, regularPrice, regularPennies, totalSavePrice, totalSavePennies);
                 }
+
                 selectNav.append(option);
             }
+
             let lastOption = selectNav.options.selectedIndex + 1;
             selectNav.addEventListener('change', () => {
                 let currentOption = selectNav.options.selectedIndex + 1;
@@ -107,7 +120,6 @@ function openFavAndCart(favourites, cart) {
             });
 
             utils.calculateAmount(amount);
-
         });
         // const totalPriceContainer = utils.createNewElement('div', 'Всички продукти:');
         // totalPriceContainer.className = 'total-price-container';
@@ -122,7 +134,8 @@ function openFavAndCart(favourites, cart) {
 
     } else {
         CART_CONTAINER.style.display = 'none';
-        ITEMS_IN_CART.style.display='none';
+        ITEMS_IN_CART.style.display = 'none';
+        EMPTY_CART.style.display = 'block';
     }
 
     if (favourites.length) {
@@ -167,6 +180,7 @@ function openFavAndCart(favourites, cart) {
                 info.append(regularContainer);
                 regularContainer.append(regularPrice, regularPennies, regularLv);
             }
+
             const currentContainer = utils.createNewElement('div');
             currentContainer.className = 'info-cart';
             const currentPrice = utils.createNewElement('span', fav.currentPrice);
@@ -175,8 +189,13 @@ function openFavAndCart(favourites, cart) {
             currentPennies.className = 'fav-current-pennies';
             const lv = utils.createNewElement('span', 'лв.')
             lv.className = 'fav-current-lv';
-            let addShoppingCart = utils.createNewElement('div');
+            const addShoppingCart = utils.createNewElement('div');
             addShoppingCart.className = 'add-shopping-cart info-cart';
+            addShoppingCart.addEventListener('click', () => {
+                utils.addToCart(fav);
+                main.renderHeader();
+            });
+
             const iconContainer = utils.createNewElement('span');
             iconContainer.className = 'cart';
             const cartIcon = utils.createNewElement('i');
@@ -188,12 +207,17 @@ function openFavAndCart(favourites, cart) {
             const deleteIcon = utils.createNewElement('i');
             deleteIcon.className = 'fas fa-trash-alt';
             const deleteText = utils.createNewElement('span', 'Изтрий');
+            deleteText.addEventListener('click', () => {
+                utils.removeFromFav(fav);
+                main.renderHeader();
+            });
+
             info.append(currentContainer, addShoppingCart, deleteContainer)
             currentContainer.append(currentPrice, currentPennies, lv);
             addShoppingCart.append(iconContainer, cartText);
             iconContainer.append(cartIcon);
             deleteContainer.append(deleteIcon, deleteText);
-        })
+        });
     } else {
         INFORMATION_ORDER.style.display = 'none';
         VOUCHER_CONTAINER.style.display = 'none';
