@@ -25,7 +25,8 @@
         <div class="main-section">
             <!-- HEADER -->
             <div class="header-section">
-                <header class="header content">
+                <header class="header-scroll content">
+                    <i class="fas fa-bars" id="header-sandwich-button"></i>
                     <a href="#home"><img class="logo"
                             src="./assets/images/logo/emag-logo.svg"
                             alt="emag-logo"></a>
@@ -155,6 +156,7 @@
                         </div>
                     </div>
                 </header>
+                <div class="nav-menu-cart" id="navMenuOnScroll"></div>
             </div>
             <!-- NAVIGATION -->
             <div class="home-page-body">
@@ -1095,17 +1097,26 @@
                         </div>
                     </ul>
                     <div class="main-slideshow">
-                        <img id="slideImage" src="./assets/images/main-view/1.jpg"
+                        <img id="slideImage"
+                            src="./assets/images/main-view/1.jpg"
                             alt="offer-1">
-                        <a href="#" id='chevronLeft' class="fas fa-chevron-left"></a>
-                        <a href="#" id='chevronRight' class="fas fa-chevron-right"></a>
+                        <a href="#" id='chevronLeft' class="fas
+                            fa-chevron-left"></a>
+                        <a href="#" id='chevronRight' class="fas
+                            fa-chevron-right"></a>
                         <div class="radio-buttons">
-                            <input type="radio" name="radio-buttons" value=0 checked class="radio-main-view">
-                            <input type="radio" name="radio-buttons" value=1 class="radio-main-view">
-                            <input type="radio" name="radio-buttons" value=2 class="radio-main-view">
-                            <input type="radio" name="radio-buttons" value=3 class="radio-main-view">
-                            <input type="radio" name="radio-buttons" value=4 class="radio-main-view">
-                            <input type="radio" name="radio-buttons" value=5 class="radio-main-view">
+                            <input type="radio" name="radio-buttons" value=0
+                                checked class="radio-main-view">
+                            <input type="radio" name="radio-buttons" value=1
+                                class="radio-main-view">
+                            <input type="radio" name="radio-buttons" value=2
+                                class="radio-main-view">
+                            <input type="radio" name="radio-buttons" value=3
+                                class="radio-main-view">
+                            <input type="radio" name="radio-buttons" value=4
+                                class="radio-main-view">
+                            <input type="radio" name="radio-buttons" value=5
+                                class="radio-main-view">
                         </div>
                     </div>
                 </main>
@@ -2022,20 +2033,19 @@
         </div>
         <!--SHOPPING CART PAGE-->
         <section class="cart-page">
-            <div id='navMenuCart'></div>
+            <div class="nav-menu-cart"></div>
             <div class="content section-bars empty-cart-page">
                 <div id="empty-cart">
                     <div class="empty-cart-title">Количката ти е празна</div>
                     <div>За да добавиш продукти в количкатата</div>
                     <div>моля да се върнеш в началото</div>
-                    <div class='to-home-page'><a id='toHomePage' href="#home">Към началната страница</a></div>
+                    <div class='to-home-page'><a id='toHomePage' href="#home">Към
+                            началната страница</a></div>
                 </div>
                 <div id="cart-container">
                     <div>
                         <h1>Количка за пазаруване</h1>
-                        <div class='items-cart'>
-    
-                        </div>
+                        <div class='items-cart'></div>
                     </div>
                     <div id='informationNav'>
                         <div id='information-order'>
@@ -2063,7 +2073,7 @@
                                 </div>
                                 <div class='continue'>
                                     <span><i class="fas
-                                                fa-angle-double-right"></i></span>
+                                            fa-angle-double-right"></i></span>
                                     <strong>Продължи</strong>
                                 </div>
                             </div>

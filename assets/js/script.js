@@ -138,11 +138,17 @@ const main = (function () {
         CATEGORIES_LINK.className = 'categories-btn-close';
     }
 
+    function onCategoriesMouseOut() {
+        MAIN_MENU.style.display = 'none';
+        CATEGORIES_LINK.className = 'categories-btn-close';
+    }
+
     function onCategoriesMouseOver() {
         MAIN_MENU.style.display = 'flex';
         CATEGORIES_LINK.className = 'categories-btn-open';
         MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.addEventListener('mouseout', onMainMouseOut);
+        CATEGORIES_LINK.addEventListener('mouseout', onCategoriesMouseOut);
     }
 
     // ROUTER
@@ -153,6 +159,7 @@ const main = (function () {
         MAIN_MENU.className = 'select-categories content';
         CATEGORIES_LINK.className = 'categories-btn-open';
         CATEGORIES_LINK.removeEventListener('mouseover', onCategoriesMouseOver);
+        CATEGORIES_LINK.removeEventListener('mouseout', onCategoriesMouseOut);
         MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
         // change hash with correct article id
@@ -273,14 +280,14 @@ const main = (function () {
         onHashChange(e);
         renderHeader();
     });
+    window.addEventListener('scroll', utils.onScroll);
     SEARCH_INPUT.addEventListener('focus', utils.onFocus);
-    const searchBoxContent = Array.from(SEARCH_BOX_CONTENT.children);
-    // TODO...
-    searchBoxContent.forEach(el => {
-        el.addEventListener('click', (e) => {
-            console.log(e.target.innerText);
-        })
-    });
+    // const searchBoxContent = Array.from(SEARCH_BOX_CONTENT.children);
+    // searchBoxContent.forEach(el => {
+    //     el.addEventListener('click', (e) => {
+    //         console.log(e.target.innerText);
+    //     })
+    // });
     ERROR_TEXT.addEventListener('click', () => {
         history.back();
     });

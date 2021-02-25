@@ -259,6 +259,50 @@ const utils = (function () {
         }
     }
 
+    // MAIN MENU DROPDOWN ON SCROLL
+    function onMainMouseOver() {
+        MAIN_MENU.style.display = 'flex';
+        HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
+        MAIN_MENU.style.visibility = 'visible';
+    }
+
+    function onMainMouseOut() {
+        MAIN_MENU.className = 'select-categories-dropdown scroll content';
+        MAIN_MENU.style.visibility = 'hidden';
+        HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
+    }
+
+    function onSandwichMouseOver() {
+        MAIN_MENU.className = 'select-categories-dropdown scroll content';
+        MAIN_MENU.style.visibility = 'visible';
+        MAIN_MENU.style.display = 'flex';
+        MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
+        MAIN_MENU.addEventListener('mouseout', onMainMouseOut);
+        HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
+    }
+
+    let counter = 0;
+    function onScroll() {
+        if (location.hash !== '#home') return;
+        if (document.documentElement.scrollTop >= 565 && counter === 0) {
+            counter++;
+            NAV_MENU_ONSCROLL.style.display = 'block';
+            HEADER_SANDWICH_BUTTON.style.display = 'block';
+            HEADER_SANDWICH_BUTTON.addEventListener('mouseover', onSandwichMouseOver);
+            HEADER_SECTION.className = 'header-section-scroll';
+        } else if (document.documentElement.scrollTop < 565 && counter === 1) {
+            counter = 0;
+            MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
+            MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
+            MAIN_MENU.style.display = 'flex';
+            MAIN_MENU.style.visibility = 'visible';
+            NAV_MENU_ONSCROLL.style.display = 'none';
+            HEADER_SANDWICH_BUTTON.style.display = 'none';
+            HEADER_SECTION.className = 'header-section';
+            MAIN_MENU.className = 'select-categories content';
+        }
+    }
+
     return {
         onFocus,
         onFocusOut,
@@ -279,6 +323,7 @@ const utils = (function () {
         removeFromCart,
         calculatingPercentage,
         changePrice,
-        calculateAmount
+        calculateAmount,
+        onScroll
     }
 })();
