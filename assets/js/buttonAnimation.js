@@ -108,7 +108,6 @@ setInterval(function () {
         currentSlide = -1;
     }
     currentSlide++;
-    slideShow();
 }, 6000);
 
 CHEVRON_RIGHT.addEventListener('click', () => {

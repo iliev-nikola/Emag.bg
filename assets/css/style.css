@@ -2103,6 +2103,14 @@ footer {
   );
 }
 
+.add-shopping-cart:hover, .continue:hover {
+  background-image: linear-gradient(to right, #3147a8 10%, #206cc7);
+}
+
+.add-favourite:hover, #newAccount:hover {
+  background-color: #ebf5ff;;
+}
+
 .cart-text,
 .fav-text {
   padding: 10px 30px 10px 10px;
@@ -2603,7 +2611,6 @@ footer {
   margin-right: 3px;
 }
 
-
 /*EMPTY SHOPPING CART PAGE*/
 #empty-cart {
   padding-top: 150px;
@@ -2628,10 +2635,10 @@ footer {
   font-size: 14px;
   font-weight: 400;
   padding: 7px 12px;
- color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
-#toHomePage:hover{
+#toHomePage:hover {
   background-color: #004485;
 }
 
