@@ -7,7 +7,8 @@ function openItem(currentItem) {
     const currentTitle = utils.createNewElement('p', currentItem.title);
     const fixedInformation = utils.createNewElement('div');
     fixedInformation.className = 'fixed-info';
-    const currentID = utils.createNewElement('span', currentItem.id);
+    const currentID = utils.createNewElement('span', `Код на продукта: ${currentItem.id}`);
+    currentID.className = 'items-id';
     const social = utils.createNewElement('span');
     const fbBtn = utils.createNewElement('a');
     fbBtn.className = 'fb-btn';
@@ -77,6 +78,26 @@ function openItem(currentItem) {
     const changeBtn = utils.createNewElement('a', 'промени');
     changeBtn.hfre = '#';
     changeBtn.className = 'change';
+    const benefits = utils.createNewElement('div', 'Ползи:');
+    benefits.className = 'delivery benefits-delivery';
+    const giftContainer = utils.createNewElement('div');
+    giftContainer.className = 'benefits-containers';
+    const giftIcon = utils.createNewElement('i');
+    giftIcon.className = 'fas fa-gift';
+    const giftText = utils.createNewElement('span', 'Получавате 9 точки при плащане с еMAG');
+    const cart = utils.createNewElement('div')
+    cart.className = 'benefits-containers';
+    const cartTxt = utils.createNewElement('span', 'карта');
+    const cartLink = utils.createNewElement('a', 'вижте повече');
+    cartLink.href = '#';
+    cartLink.className = 'change';
+    const shipContainer = utils.createNewElement('div');
+    shipContainer.className = 'benefits-containers';
+    const shipIcon = utils.createNewElement('i');
+    shipIcon.className = 'fas fa-box-open';
+    const shipText = utils.createNewElement('span', 'Проверка на пратката');
+    const persText = utils.createNewElement('li', 'Физическо лице: 24 месеца');
+    persText.className = 'benef-strong';
     const prices_container = utils.createNewElement('div');
     prices_container.className = 'prices-container';
     const prices = utils.createNewElement('div');
@@ -105,9 +126,12 @@ function openItem(currentItem) {
     }
 
     totalContainer.append(currentPrice, currentPennies, lv);
+    const availableText = utils.createNewElement('span', 'в наличност');
+    availableText.className = 'available-item';
     const leasing = utils.createNewElement('span');
     const leasingTitle = utils.createNewElement('p', 'Месечни вноски');
     const btnContainer = utils.createNewElement('div');
+    btnContainer.id = 'buttonsContainer';
     const addToShoppingCart = utils.createNewElement('div');
     addToShoppingCart.className = 'add-shopping-cart';
     const item = currentItem;
@@ -122,15 +146,43 @@ function openItem(currentItem) {
     cartText.className = 'cart-text';
     const addToFavourite = utils.createNewElement('div');
     addToFavourite.className = 'add-favourite';
-    addToFavourite.addEventListener('click', () => {
-        utils.addToFav(item);
-        main.renderHeader();
-    });
     const favIconContainer = utils.createNewElement('span');
     const favIcon = utils.createNewElement('i');
     favIcon.className = 'far fa-heart heart';
     const favText = utils.createNewElement('span', 'Добави в любими');
     favText.className = 'fav-text';
+    let favourites;
+    if (utils.isLoggedIn()) {
+        favourites = utils.getUsers().filter(user => user.isLoggedIn)[0].favourites;
+    } else {
+        favourites = utils.getItem('guest').favourites;
+    }
+
+    const isInFav = favourites.some(el => el.id === currentItem.id);
+    if (!isInFav) {
+        favIcon.className = 'far fa-heart heart';
+        favIcon.style.color = '#2196f3';
+    } else {
+        favIcon.className = 'fas fa-heart heart';
+        favIcon.style.color = 'red';
+    }
+
+    addToFavourite.addEventListener('click', () => {
+        if (favIcon.style.color !== 'red') {
+            utils.addToFav(item);
+            favIcon.className = 'fas fa-heart heart';
+            favIcon.style.color = 'red';
+            utils.success('Продуктът беше добавен в любими');
+        }
+        else {
+            utils.removeFromFav(item);
+            favIcon.className = 'far fa-heart heart';
+            favIcon.style.color = '#2196f3';
+            utils.success('Продуктът беше премахнат от любими');
+        }
+
+        main.renderHeader();
+    });
     OPEN_ITEM_CONTAINER.append(titleContainer, mainContainer);
     titleContainer.append(currentTitle, fixedInformation);
     fixedInformation.append(currentID, social);
@@ -159,10 +211,12 @@ function openItem(currentItem) {
             }
         });
     }
-
-    raitingContainer.append(review, delivery, deliveryCity, changeBtn);
+    raitingContainer.append(review, delivery, deliveryCity, changeBtn, benefits, giftContainer, cart, shipContainer, persText);
+    giftContainer.append(giftIcon, giftText);
+    cart.append(cartTxt, cartLink);
+    shipContainer.append(shipIcon, shipText);
     review.append(addReview, line, addQuestion);
-    addItemContainer.append(prices_container, btnContainer);
+    addItemContainer.append(prices_container, availableText, btnContainer);
     prices_container.append(prices, leasing);
     prices.append(regularContainer, totalContainer);
     leasing.append(leasingTitle);
