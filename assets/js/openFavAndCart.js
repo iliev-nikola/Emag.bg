@@ -29,6 +29,7 @@ function openFavAndCart(favourites, cart) {
             buyIcon.className = 'fas fa-arrow-right';
             const buyText = utils.createNewElement('span', 'Купи със');
             const numberContainer = utils.createNewElement('div');
+            numberContainer.className='number-container';
             const selectNav = utils.createNewElement('select');
             selectNav.className = 'select-cart';
             const numb = utils.createNewElement('span', 'бр.');

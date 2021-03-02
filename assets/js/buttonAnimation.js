@@ -98,6 +98,7 @@ scrollItems(OTHER_CLIENTS_WATCHED, RIGTH_OTHER_SCROLL, LEFT_OTHER_SCROLL, OTHER_
 // SLIDESHOW IMAGES IN MAIN
 let radioBtns = Array.from(RADIO_MAIN);
 let currentSlide = 0;
+
 function slideShow() {
     CURRENT_IMAGE.src = slideImages[currentSlide];
     radioBtns[currentSlide].checked = true;

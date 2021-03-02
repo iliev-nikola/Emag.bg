@@ -2127,6 +2127,10 @@ footer {
   height: 20px;
 }
 
+.fb-btn i {
+  padding-right: 3px;
+}
+
 .compare-box {
   background-color: rgb(245, 245, 245);
   border-radius: 3px;
@@ -2137,15 +2141,43 @@ footer {
 
 .fb-btn,
 .compare-box {
-  padding-bottom: 6px;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 6px;
+  padding: 2px 7px;
+  vertical-align: middle;
+}
+
+.compare-box span {
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+.compare-box input {
+  margin: 0;
+  vertical-align: middle;
 }
 
 .items-main-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
+}
+
+.available-item {
+  background-color: #090;
+  padding: 4px 6px;
+  font-size: 10.5px;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.items-id {
+  color: #888;
+  padding-top: 5px;
+  font-size: 12px;
+}
+
+#buttonsContainer {
+  margin-top: 20px;
 }
 
 .container-info {
@@ -2180,6 +2212,11 @@ footer {
   text-decoration: underline;
 }
 
+.prices {
+  border-right: 1px rgb(236, 236, 236) solid;
+  padding-right: 20px;
+}
+
 .lines {
   margin: 0 3px;
 }
@@ -2187,6 +2224,23 @@ footer {
 .delivery {
   color: rgb(153, 153, 153);
   padding-bottom: 10px;
+}
+
+.benefits-delivery {
+  padding: 2px 0;
+}
+
+.benefits-containers {
+  margin: 5px 0;
+}
+
+.benefits-containers span {
+  padding: 0 3px;
+  font-size: 14px;
+}
+
+.benef-strong {
+  margin-left: 40px;
 }
 
 .add-shopping-cart,
@@ -2207,6 +2261,16 @@ footer {
     rgb(74, 96, 193) 10%,
     rgb(57, 133, 224)
   );
+}
+
+.add-shopping-cart:hover,
+.continue:hover {
+  background-image: linear-gradient(to right, #3147a8 10%, #206cc7);
+}
+
+.add-favourite:hover,
+#newAccount:hover {
+  background-color: #ebf5ff;
 }
 
 .cart-text,
@@ -2314,6 +2378,7 @@ footer {
 .prices-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .item-sale {
@@ -2374,6 +2439,7 @@ footer {
 
 .item-cont {
   display: flex;
+  justify-content: space-between;
   width: 810px;
   background-color: rgb(255, 255, 255);
   box-shadow: rgb(187, 198, 204) 1px 1px 2px 0px;
@@ -2382,6 +2448,11 @@ footer {
   margin: 0 auto;
   border-radius: 5px;
   margin-bottom: 20px;
+}
+
+.number-container {
+  display: flex;
+  align-items: baseline;
 }
 
 .main-cart-container {
@@ -2979,4 +3050,29 @@ footer {
 
 .fav-lefter {
   transform: translate(-30%, 53%);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
