@@ -29,8 +29,16 @@ const utils = (function () {
 
     function success(message) {
         const successBanner = utils.getById('success');
-        successBanner.innerText = message;
-        successBanner.style.display = 'block';
+        if (message.includes('любими')) {
+            successBanner.innerHTML = `<i class="far fa-heart"></i><p>${message}</p>`;
+        } else if (message.includes('количка')) {
+            // successBanner.innerHTML = `<i class="fas fa-shopping-cart"></i><p>${message}</p>`;
+            successBanner.innerHTML = `<img src="./assets/images/icons/shopping-cart-white.png"></img><p>${message}</p>`;
+        } else {
+            successBanner.innerHTML = message;
+        }
+
+        successBanner.style.display = 'flex';
         successBanner.addEventListener('click', () => {
             successBanner.style.display = 'none';
         });
@@ -259,7 +267,7 @@ const utils = (function () {
         }
     }
 
-    // MAIN MENU DROPDOWN ON SCROLL
+    // MAIN MENU DROPDOWN ON SCROLL IN HOME PAGE
     function onMainMouseOver() {
         MAIN_MENU.style.display = 'flex';
         HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
@@ -283,15 +291,20 @@ const utils = (function () {
 
     let counter = 0;
     function onScroll() {
-        if (location.hash !== '#home') return;
+        if (location.hash !== '#home' && location.hash) return;
         if (document.documentElement.scrollTop >= 565 && counter === 0) {
             counter++;
+            HEADER.className = 'header-scroll content';
             NAV_MENU_ONSCROLL.style.display = 'block';
             HEADER_SANDWICH_BUTTON.style.display = 'block';
             HEADER_SANDWICH_BUTTON.addEventListener('mouseover', onSandwichMouseOver);
             HEADER_SECTION.className = 'header-section-scroll';
+            SEARCH_BAR.style.width = '490px';
+            FAVOURITE_COUNTER.style.width = '18%';
+            CART_COUNTER.style.width = '11.5%';
         } else if (document.documentElement.scrollTop < 565 && counter === 1) {
             counter = 0;
+            HEADER.className = 'header content';
             MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
             MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
             MAIN_MENU.style.display = 'flex';
@@ -299,6 +312,9 @@ const utils = (function () {
             NAV_MENU_ONSCROLL.style.display = 'none';
             HEADER_SANDWICH_BUTTON.style.display = 'none';
             HEADER_SECTION.className = 'header-section';
+            SEARCH_BAR.style.width = '558px';
+            FAVOURITE_COUNTER.style.width = '13%';
+            CART_COUNTER.style.width = '8%';
             MAIN_MENU.className = 'select-categories content';
         }
     }

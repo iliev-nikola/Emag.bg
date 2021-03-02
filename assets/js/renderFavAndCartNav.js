@@ -4,10 +4,14 @@ function renderFavAndCart(favourites, cart) {
         FAVOURITE_COUNTER.style.display = 'block';
         FAVOURITE_NAV_CONTAINER.style.padding = '0';
         FAVOURITE_NAV_CONTAINER.style.width = '300px';
-        FAVOURITE_NAV_CONTAINER.innerHTML = '';
+        FAVOURITE_NAV_CONTAINER.innerHTML = `<img src="./assets/images/icons/triangle-outline-variant.png"
+        class="triangle">`;
         const soonAddedText = utils.createNewElement('p', 'НАСКОРО ДОБАВЕНИ');
+        const mainDiv = document.createElement('div');
+        mainDiv.className = 'dropdown-overflow';
         soonAddedText.className = 'soon-added-text';
-        FAVOURITE_NAV_CONTAINER.append(soonAddedText);
+        mainDiv.append(soonAddedText);
+        FAVOURITE_NAV_CONTAINER.append(mainDiv);
         favourites.forEach(el => {
             const articleDiv = utils.createNewElement('div');
             articleDiv.className = 'nav-dropdown-item';
@@ -61,7 +65,7 @@ function renderFavAndCart(favourites, cart) {
             hiddenOptions.append(addToCartText, closeButton);
             hiddenOptions.className = 'hidden-options';
             articleDiv.append(img, title, priceDiv, hiddenOptions);
-            FAVOURITE_NAV_CONTAINER.append(articleDiv);
+            mainDiv.append(articleDiv);
         });
 
         const goToFavsDiv = utils.createNewElement('div');
@@ -69,10 +73,15 @@ function renderFavAndCart(favourites, cart) {
         goToFavsText.href = '#favourites';
         goToFavsDiv.className = 'go-to-favs';
         goToFavsDiv.append(goToFavsText);
-        FAVOURITE_NAV_CONTAINER.append(goToFavsDiv);
+        mainDiv.append(goToFavsDiv);
     } else {
         FAVOURITE_NAV_CONTAINER.style.padding = '10px';
-        FAVOURITE_NAV_CONTAINER.innerHTML = '<p>Нямаш любими продукти</p>';
+        FAVOURITE_NAV_CONTAINER.innerHTML = `<img src="./assets/images/icons/triangle-outline-variant.png"
+        class="triangle">`;
+        const mainDiv = document.createElement('div');
+        mainDiv.className = 'dropdown-overflow';
+        mainDiv.innerHTML += '<p>Нямаш любими продукти</p>';
+        FAVOURITE_NAV_CONTAINER.append(mainDiv);
         FAVOURITE_NAV_CONTAINER.style.width = '180px';
         FAVOURITE_COUNTER.style.display = 'none';
     }
@@ -83,10 +92,14 @@ function renderFavAndCart(favourites, cart) {
         CART_COUNTER.style.display = 'block';
         SHOPPING_CART_NAV.style.padding = '0';
         SHOPPING_CART_NAV.style.width = '300px';
-        CART_NAV_CONTAINER.innerHTML = '';
+        CART_NAV_CONTAINER.innerHTML = `<img src="./assets/images/icons/triangle-outline-variant.png"
+        class="triangle">`;
         const soonAddedText = utils.createNewElement('p', 'НАСКОРО ДОБАВЕНИ');
         soonAddedText.className = 'soon-added-text';
-        CART_NAV_CONTAINER.append(soonAddedText);
+        const mainDiv = document.createElement('div');
+        mainDiv.className = 'dropdown-overflow';
+        mainDiv.append(soonAddedText);
+        CART_NAV_CONTAINER.append(mainDiv);
         let totalPrice = 0;
         cart.forEach(el => {
             const articleDiv = utils.createNewElement('div');
@@ -133,20 +146,22 @@ function renderFavAndCart(favourites, cart) {
             hiddenOptions.append(closeButton);
             hiddenOptions.className = 'hidden-options';
             articleDiv.append(img, title, count, priceDiv, hiddenOptions);
-            CART_NAV_CONTAINER.append(articleDiv);
+            mainDiv.append(articleDiv);
             totalPrice += eval(`${el.currentPrice}.${el.currentPennies}`) * el.count;
         });
 
         const totalText = utils.createNewElement('div');
         totalText.className = 'total-cart-text';
         const span = utils.createNewElement('span', 'ОБЩО:');
-        const p = utils.createNewElement('p', `${cart.length} ${cart.length > 1 ? 'продукти' : 'продукт'}`);
-        const price = utils.createNewElement('span', totalPrice + 'лв.');
+        const p = utils.createNewElement('p', `${cart.length} ${cart.length > 1 ? 'продукта' : 'продукт'}`);
+        const price = utils.createNewElement('span', totalPrice.toFixed(2) + 'лв.');
         totalText.append(span, p, price);
-        CART_NAV_CONTAINER.append(totalText);
+        mainDiv.append(totalText);
         SHOPPING_CART_BTN.style.padding = '10px';
     } else {
-        CART_NAV_CONTAINER.innerHTML = '<p>Нямаш нито един продукт в количката</p>';
+        CART_NAV_CONTAINER.innerHTML = `<img src="./assets/images/icons/triangle-outline-variant.png"
+        class="triangle">`;
+        CART_NAV_CONTAINER.innerHTML += '<p>Нямаш нито един продукт в количката</p>';
         SHOPPING_CART_NAV.style.width = '230px';
         SHOPPING_CART_NAV.style.padding = '10px';
         CART_COUNTER.style.display = 'none';

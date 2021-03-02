@@ -170,6 +170,13 @@ const main = (function () {
             const currentItem = ALL_ITEMS.filter(item => item.id === currentId)[0];
             watchedItem(focusSectionItems.watchedItems, currentItem);
             openItem(currentItem);
+            HEADER.className = 'header content';
+            HEADER_SECTION.className = 'header-section';
+            NAV_MENU_ONSCROLL.style.display = 'none';
+            HEADER_SANDWICH_BUTTON.style.display = 'none';
+            SEARCH_BAR.style.width = '558px';
+            FAVOURITE_COUNTER.style.width = '13%';
+            CART_COUNTER.style.width = '8%';
             HOME_PAGE_MENU.style.display = 'block';
             OPEN_ITEM.style.display = 'block'
             MARKETPLACE_SECTION.style.display = 'none';
@@ -232,6 +239,7 @@ const main = (function () {
                 OPTIONS_PANEL.style.display = 'none';
                 mainSections.map(section => section.style.display = 'none');
                 FAVOURITES_PAGE.style.display = 'none';
+                // make sandwich router here
                 break;
             case 'favourites':
                 MAIN_MENU.className = 'select-categories-dropdown content';
@@ -282,12 +290,6 @@ const main = (function () {
     });
     window.addEventListener('scroll', utils.onScroll);
     SEARCH_INPUT.addEventListener('focus', utils.onFocus);
-    // const searchBoxContent = Array.from(SEARCH_BOX_CONTENT.children);
-    // searchBoxContent.forEach(el => {
-    //     el.addEventListener('click', (e) => {
-    //         console.log(e.target.innerText);
-    //     })
-    // });
     ERROR_TEXT.addEventListener('click', () => {
         history.back();
     });

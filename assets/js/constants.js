@@ -29,6 +29,7 @@ const REGISTER_BTN = utils.getById('registerBtn');
 
 // HEADER SECTION
 const HEADER_SECTION = document.querySelector('.header-section');
+const HEADER = document.querySelector('.header-section > header');
 const USER_PIC = utils.getById('userPic');
 const PROFILE_NAV = document.querySelector('.profile-nav');
 const GUEST_NAV = document.querySelector('.guest-nav');
