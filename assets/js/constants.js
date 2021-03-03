@@ -50,6 +50,7 @@ const HEADER_SANDWICH_BUTTON = utils.getById('header-sandwich-button');
 // NAVIGATION BAR
 const CATEGORIES_LINK = utils.getById('categories');
 const NAV_MENU_ONSCROLL = utils.getById('navMenuOnScroll');
+const NAV_BAR = document.querySelector('.nav-bar');
 
 // INFORMATION BANNERS
 const SUCCESS_BANNER = utils.getById('success');

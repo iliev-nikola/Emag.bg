@@ -127,14 +127,17 @@ const main = (function () {
         openFavAndCart(favourites, cart);
     }
 
-    // EVENT HANDLERS FOR CATEGORIES DROPDOWN MENU
+    // EVENT HANDLERS FOR CATEGORIES DROPDOWN MENU ONLY FOR FAVOURITES SECTION
     function onMainMouseOver() {
         MAIN_MENU.style.display = 'flex';
+        HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
         CATEGORIES_LINK.className = 'categories-btn-open';
     }
 
     function onMainMouseOut() {
+        MAIN_MENU.className = 'select-categories-dropdown content';
         MAIN_MENU.style.display = 'none';
+        HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
         CATEGORIES_LINK.className = 'categories-btn-close';
     }
 
@@ -156,13 +159,13 @@ const main = (function () {
     const idArr = ALL_FOCUS_ITEMS.map(el => el.id).concat(OTHER_CLIENTS_WATCHED.map(el => el.id));
     function onHashChange(e) {
         const hash = e.target.location.hash.substring(1);
-        MAIN_MENU.className = 'select-categories content';
-        CATEGORIES_LINK.className = 'categories-btn-open';
-        CATEGORIES_LINK.removeEventListener('mouseover', onCategoriesMouseOver);
-        CATEGORIES_LINK.removeEventListener('mouseout', onCategoriesMouseOut);
         MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
+        CATEGORIES_LINK.removeEventListener('mouseover', onCategoriesMouseOver);
+        CATEGORIES_LINK.removeEventListener('mouseout', onCategoriesMouseOut);
         // change hash with correct article id
+        utils.sandwichHeaderOff('home');
+        NAV_BAR.style.display = 'block';
         const isCorrectId = idArr.some(el => el === +hash.split('/')[1]);
         if (isCorrectId && hash.includes('article/')) {
             const currentId = +hash.split('/')[1];
@@ -170,13 +173,9 @@ const main = (function () {
             const currentItem = ALL_ITEMS.filter(item => item.id === currentId)[0];
             watchedItem(focusSectionItems.watchedItems, currentItem);
             openItem(currentItem);
-            HEADER.className = 'header content';
-            HEADER_SECTION.className = 'header-section';
-            NAV_MENU_ONSCROLL.style.display = 'none';
-            HEADER_SANDWICH_BUTTON.style.display = 'none';
-            SEARCH_BAR.style.width = '558px';
-            FAVOURITE_COUNTER.style.width = '13%';
-            CART_COUNTER.style.width = '8%';
+            utils.sandwichHeaderOff();
+            CATEGORIES_LINK.className = 'categories-btn-close';
+            CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
             HOME_PAGE_MENU.style.display = 'block';
             OPEN_ITEM.style.display = 'block'
             MARKETPLACE_SECTION.style.display = 'none';
@@ -233,26 +232,27 @@ const main = (function () {
                 MAIN_SECTION.style.display = 'block';
                 CART_PAGE.style.display = 'block';
                 LOGIN_SECTION.style.display = 'none';
-                HOME_PAGE_MENU.style.display = 'none';
+                OTHER_CLIENTS_SECTION.style.display = 'none';
+                NAV_BAR.style.display = 'none';
+                HOME_PAGE_MENU.style.display = 'block';
                 OPEN_ITEM.style.display = 'none';
                 MAIN_MENU.style.display = 'none';
                 OPTIONS_PANEL.style.display = 'none';
                 mainSections.map(section => section.style.display = 'none');
                 FAVOURITES_PAGE.style.display = 'none';
-                // make sandwich router here
                 break;
             case 'favourites':
-                MAIN_MENU.className = 'select-categories-dropdown content';
+                utils.sandwichHeaderOff();
                 CATEGORIES_LINK.className = 'categories-btn-close';
                 CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
                 MAIN_SECTION.style.display = 'block';
                 HOME_PAGE_MENU.style.display = 'block';
                 FAVOURITES_PAGE.style.display = 'flex';
+                MAIN_MENU.style.display = 'none';
                 LOGIN_SECTION.style.display = 'none';
                 OPEN_ITEM.style.display = 'none';
                 MARKETPLACE_SECTION.style.display = 'none';
                 OTHER_CLIENTS_SECTION.style.display = 'none';
-                MAIN_MENU.style.display = 'none';
                 OPTIONS_PANEL.style.display = 'none';
                 mainSections.map(section => section.style.display = 'none');
                 CART_PAGE.style.display = 'none';

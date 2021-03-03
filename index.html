@@ -1864,6 +1864,129 @@
                         </div>
                     </div>
                 </section>
+                <!-- SHOPPING CART PAGE -->
+                <section class="cart-page">
+                    <div class="nav-menu-cart"></div>
+                    <div class="content section-bars empty-cart-page">
+                        <div id="empty-cart">
+                            <div class="empty-cart-title">Количката ти е празна</div>
+                            <div>За да добавиш продукти в количкатата</div>
+                            <div>моля да се върнеш в началото</div>
+                            <div class='to-home-page'><a id='toHomePage'
+                                    href="#home">Към
+                                    началната страница</a></div>
+                        </div>
+                        <div id="cart-container">
+                            <div>
+                                <h1>Количка за пазаруване</h1>
+                                <div class='items-cart'></div>
+                            </div>
+                            <div id='informationNav'>
+                                <div id='information-order'>
+                                    <div>
+                                        <h2>Информация за поръчката</h2>
+                                        <div class="products-price">
+                                            <span>Всички пордукти:</span>
+                                            <div class="total-cart">
+                                                <p id="products-amount"></p>
+                                                <p id='product-pennies'></p>
+                                                <p>лв</p>
+                                            </div>
+                                        </div>
+                                        <div id='delivery-price'>
+                                            <span>Такса доставка:</span>
+                                            <strong>БЕЗПЛАТНА</strong>
+                                        </div>
+                                        <div>
+                                            <h2>Общо:</h2>
+                                            <div class="total-cart">
+                                                <h3 id='cart-amount-price'></h3>
+                                                <h4 id='cart-amount-pennies'></h4>
+                                                <h3>лв</h3>
+                                            </div>
+                                        </div>
+                                        <div class='continue'>
+                                            <span><i class="fas
+                                                    fa-angle-double-right"></i></span>
+                                            <strong>Продължи</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id='voucher'>
+                                    <div id='addVoucher'>
+                                        <span>Добави ваучер</span>
+                                        <i class="fas fa-sort-down"
+                                            aria-hidden="true"></i>
+                                    </div>
+                                    <div id='addCode'>
+                                        <div><input class="inputs-voucher"
+                                                type="text"></div>
+                                        <div><button class="inputs-voucher">Добави
+                                                код</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer id='footer-cart'>
+                        <div class="content section-bars">
+                            <p class='footer-cart-title'>В eMAG се радваш на:</p>
+                            <div class="footer-content">
+                                <div class="footer-options">
+                                    <img
+                                        src="./assets/images/icons/footer-1.png"
+                                        alt="">
+                                    <div>
+                                        <p>Проверка на пратката</p>
+                                        <small>за продуктите предлагани от eMAG</small>
+                                    </div>
+                                </div>
+                                <div class="footer-options">
+                                    <img
+                                        src="./assets/images/icons/footer-2.png"
+                                        alt="">
+                                    <div>
+                                        <p>Проследяване на пратката</p>
+                                        <small>в твоя акаунт</small>
+                                    </div>
+                                </div>
+                                <div class="footer-options">
+                                    <img
+                                        src="./assets/images/icons/footer-1.png"
+                                        alt="">
+                                    <div>
+                                        <p>30 дни право на връщане</p>
+                                        <small>за продуктите предлагани от eMAG</small>
+                                    </div>
+                                </div>
+                                <div class="footer-options">
+                                    <img
+                                        src="./assets/images/icons/footer-2.png"
+                                        alt="">
+                                    <div>
+                                        <p>Купуваш сигурно</p>
+                                        <small>Всички данни са криптирани за
+                                            едно
+                                            по-сигурно пазаруване.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="last-info">
+                                <p class='footer-cart-title'>Може да видиш
+                                    повече за:</p>
+                                <small>Copyright 2001-2021 Dante International</small>
+                            </div>
+                            <div class="footer-link">
+                                <div>
+                                    <a href="#">Начин на плащане</a>
+                                    <a href="#">Начин на доставка</a>
+                                    <a href="#">Защитаваме твоите лични данни</a>
+                                </div>
+                                <a href="#">Мобилна версия</a>
+                            </div>
+                        </div>
+                    </footer>
+                </section>
                 <!--HISTORY SECTION-->
                 <section id='history-section' class="content section-bars">
                     <div class="history-nav">
@@ -2085,119 +2208,6 @@
             <a href="#home"><img class="logo"
                     src="./assets/images/logo/emag-logo.svg" alt="emag-logo"></a>
         </div>
-        <!--SHOPPING CART PAGE-->
-        <section class="cart-page">
-            <div class="nav-menu-cart"></div>
-            <div class="content section-bars empty-cart-page">
-                <div id="empty-cart">
-                    <div class="empty-cart-title">Количката ти е празна</div>
-                    <div>За да добавиш продукти в количкатата</div>
-                    <div>моля да се върнеш в началото</div>
-                    <div class='to-home-page'><a id='toHomePage' href="#home">Към
-                            началната страница</a></div>
-                </div>
-                <div id="cart-container">
-                    <div>
-                        <h1>Количка за пазаруване</h1>
-                        <div class='items-cart'></div>
-                    </div>
-                    <div id='informationNav'>
-                        <div id='information-order'>
-                            <div>
-                                <h2>Информация за поръчката</h2>
-                                <div class="products-price">
-                                    <span>Всички пордукти:</span>
-                                    <div class="total-cart">
-                                        <p id="products-amount"></p>
-                                        <p id='product-pennies'></p>
-                                        <p>лв</p>
-                                    </div>
-                                </div>
-                                <div id='delivery-price'>
-                                    <span>Такса доставка:</span>
-                                    <strong>БЕЗПЛАТНА</strong>
-                                </div>
-                                <div>
-                                    <h2>Общо:</h2>
-                                    <div class="total-cart">
-                                        <h3 id='cart-amount-price'></h3>
-                                        <h4 id='cart-amount-pennies'></h4>
-                                        <h3>лв</h3>
-                                    </div>
-                                </div>
-                                <div class='continue'>
-                                    <span><i class="fas
-                                            fa-angle-double-right"></i></span>
-                                    <strong>Продължи</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div id='voucher'>
-                            <div id='addVoucher'>
-                                <span>Добави ваучер</span>
-                                <i class="fas fa-sort-down" aria-hidden="true"></i>
-                            </div>
-                            <div id='addCode'>
-                                <div><input class="inputs-voucher" type="text"></div>
-                                <div><button class="inputs-voucher">Добави код</button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer id='footer-cart'>
-                <div class="content section-bars">
-                    <p class='footer-cart-title'>В eMAG се радваш на:</p>
-                    <div class="footer-content">
-                        <div class="footer-options">
-                            <img src="./assets/images/icons/footer-1.png"
-                                alt="">
-                            <div>
-                                <p>Проверка на пратката</p>
-                                <small>за продуктите предлагани от eMAG</small>
-                            </div>
-                        </div>
-                        <div class="footer-options">
-                            <img src="./assets/images/icons/footer-2.png"
-                                alt="">
-                            <div>
-                                <p>Проследяване на пратката</p>
-                                <small>в твоя акаунт</small>
-                            </div>
-                        </div>
-                        <div class="footer-options">
-                            <img src="./assets/images/icons/footer-1.png"
-                                alt="">
-                            <div>
-                                <p>30 дни право на връщане</p>
-                                <small>за продуктите предлагани от eMAG</small>
-                            </div>
-                        </div>
-                        <div class="footer-options">
-                            <img src="./assets/images/icons/footer-2.png"
-                                alt="">
-                            <div>
-                                <p>Купуваш сигурно</p>
-                                <small>Всички данни са криптирани за едно
-                                    по-сигурно пазаруване.</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="last-info">
-                        <p class='footer-cart-title'>Може да видиш повече за:</p>
-                        <small>Copyright 2001-2021 Dante International</small>
-                    </div>
-                    <div class="footer-link">
-                        <div>
-                            <a href="#">Начин на плащане</a>
-                            <a href="#">Начин на доставка</a>
-                            <a href="#">Защитаваме твоите лични данни</a>
-                        </div>
-                        <a href="#">Мобилна версия</a>
-                    </div>
-                </div>
-            </footer>
-        </section>
 
         <!-- javascript -->
         <script src="./assets/js/allItems.js"></script>

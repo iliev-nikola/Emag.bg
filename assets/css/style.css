@@ -692,9 +692,9 @@ a[href="#register"]:hover {
 .white-space {
   position: absolute;
   top: 0px;
-  right: -2px;
+  right: -1px;
   z-index: 5;
-  width: 3px;
+  width: 4px;
   height: 34px;
   background: white;
   display: none;
@@ -814,13 +814,13 @@ a[href="#register"]:hover {
   position: absolute;
   display: none;
   top: 0;
-  width: 959px;
+  width: 961px;
   height: 100%;
   left: 239px;
   z-index: 3;
   background-color: white;
   justify-content: space-between;
-  border-left: 2px solid rgba(128, 128, 128, 0.527);
+  box-shadow: -1px 0px 4px -1px rgba(158, 158, 158, 0.452);
 }
 
 .category-menu:hover {

@@ -269,15 +269,29 @@ const utils = (function () {
 
     // MAIN MENU DROPDOWN ON SCROLL IN HOME PAGE
     function onMainMouseOver() {
-        MAIN_MENU.style.display = 'flex';
         HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
         MAIN_MENU.style.visibility = 'visible';
+        CATEGORIES_LINK.className = 'categories-btn-open';
     }
 
     function onMainMouseOut() {
         MAIN_MENU.className = 'select-categories-dropdown scroll content';
         MAIN_MENU.style.visibility = 'hidden';
         HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
+        CATEGORIES_LINK.className = 'categories-btn-close';
+    }
+
+    function onCategoriesMouseOut() {
+        MAIN_MENU.style.visibility = 'hidden';
+        CATEGORIES_LINK.className = 'categories-btn-close';
+    }
+
+    function onCategoriesMouseOver() {
+        MAIN_MENU.style.visibility = 'visible';
+        CATEGORIES_LINK.className = 'categories-btn-open';
+        MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
+        MAIN_MENU.addEventListener('mouseout', onMainMouseOut);
+        CATEGORIES_LINK.addEventListener('mouseout', onCategoriesMouseOut);
     }
 
     function onSandwichMouseOver() {
@@ -289,36 +303,52 @@ const utils = (function () {
         HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
     }
 
-    let counter = 0;
-    function onScroll() {
-        if (location.hash !== '#home' && location.hash) return;
-        if (document.documentElement.scrollTop >= 565 && counter === 0) {
-            counter++;
-            HEADER.className = 'header-scroll content';
-            NAV_MENU_ONSCROLL.style.display = 'block';
-            HEADER_SANDWICH_BUTTON.style.display = 'block';
-            HEADER_SANDWICH_BUTTON.addEventListener('mouseover', onSandwichMouseOver);
-            HEADER_SECTION.className = 'header-section-scroll';
-            SEARCH_BAR.style.width = '490px';
-            FAVOURITE_COUNTER.style.width = '18%';
-            CART_COUNTER.style.width = '11.5%';
-        } else if (document.documentElement.scrollTop < 565 && counter === 1) {
-            counter = 0;
-            HEADER.className = 'header content';
-            MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
-            MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
-            MAIN_MENU.style.display = 'flex';
-            MAIN_MENU.style.visibility = 'visible';
-            NAV_MENU_ONSCROLL.style.display = 'none';
-            HEADER_SANDWICH_BUTTON.style.display = 'none';
-            HEADER_SECTION.className = 'header-section';
-            SEARCH_BAR.style.width = '558px';
-            FAVOURITE_COUNTER.style.width = '13%';
-            CART_COUNTER.style.width = '8%';
-            MAIN_MENU.className = 'select-categories content';
-        }
+    function sandwichHeaderOn() {
+        HEADER.className = 'header-scroll content';
+        NAV_MENU_ONSCROLL.style.display = 'block';
+        HEADER_SANDWICH_BUTTON.style.display = 'block';
+        HEADER_SANDWICH_BUTTON.addEventListener('mouseover', onSandwichMouseOver);
+        HEADER_SECTION.className = 'header-section-scroll';
+        SEARCH_BAR.style.width = '490px';
+        FAVOURITE_COUNTER.style.width = '18%';
+        CART_COUNTER.style.width = '11.5%';
     }
 
+    function sandwichHeaderOff(home) {
+        MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
+        MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
+        CATEGORIES_LINK.removeEventListener('mouseover', onCategoriesMouseOver);
+        CATEGORIES_LINK.removeEventListener('mouseout', onCategoriesMouseOut);
+        HEADER.className = 'header content';
+        if (home) {
+            CATEGORIES_LINK.className = 'categories-btn-open';
+            MAIN_MENU.style.display = 'flex';
+            MAIN_MENU.style.visibility = 'visible';
+        }
+        MAIN_MENU.className = 'select-categories content';
+        NAV_MENU_ONSCROLL.style.display = 'none';
+        HEADER_SANDWICH_BUTTON.style.display = 'none';
+        HEADER_SECTION.className = 'header-section';
+        SEARCH_BAR.style.width = '558px';
+        FAVOURITE_COUNTER.style.width = '13%';
+        CART_COUNTER.style.width = '8%';
+    }
+
+    let counter = 0;
+    function onScroll() {
+        if (document.documentElement.scrollTop >= 565 && counter === 0) {
+            counter++;
+            sandwichHeaderOn();
+        } else if (document.documentElement.scrollTop < 565 && counter === 1) {
+            counter = 0;
+            if (location.hash === '#home') {
+                sandwichHeaderOff('home');
+            } else {
+                sandwichHeaderOff();
+                MAIN_MENU.style.display = 'none';
+            }
+        }
+    }
 
     return {
         onFocus,
@@ -341,6 +371,12 @@ const utils = (function () {
         calculatingPercentage,
         changePrice,
         calculateAmount,
+        // onMainMouseOver,
+        // onMainMouseOut,
+        // onCategoriesMouseOver,
+        // onCategoriesMouseOut,
+        sandwichHeaderOn,
+        sandwichHeaderOff,
         onScroll
     }
 })();
