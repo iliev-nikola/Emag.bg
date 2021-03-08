@@ -1,4 +1,3 @@
-//OPEN AN ITEM
 function openItem(currentItem) {
     OPEN_ITEM_CONTAINER.innerHTML = '';
     OPEN_ITEM.style.display = 'block';
@@ -136,8 +135,8 @@ function openItem(currentItem) {
     addToShoppingCart.className = 'add-shopping-cart';
     const item = currentItem;
     addToShoppingCart.addEventListener('click', () => {
-        utils.addToCart(item);
-        main.renderHeader();
+        userModel.addToCart(item);
+        renderHeader();
     });
     const iconContainer = utils.createNewElement('span');
     const cartIcon = utils.createNewElement('i');
@@ -152,10 +151,10 @@ function openItem(currentItem) {
     const favText = utils.createNewElement('span', 'Добави в любими');
     favText.className = 'fav-text';
     let favourites;
-    if (utils.isLoggedIn()) {
-        favourites = utils.getUsers().filter(user => user.isLoggedIn)[0].favourites;
+    if (userModel.isLoggedIn()) {
+        favourites = userModel.getUsers().find(user => user.isLoggedIn).favourites;
     } else {
-        favourites = utils.getItem('guest').favourites;
+        favourites = userModel.getItem('guest').favourites;
     }
 
     const isInFav = favourites.some(el => el.id === currentItem.id);
@@ -169,20 +168,21 @@ function openItem(currentItem) {
 
     addToFavourite.addEventListener('click', () => {
         if (favIcon.style.color !== 'red') {
-            utils.addToFav(item);
+            userModel.addToFav(item);
             favIcon.className = 'fas fa-heart heart';
             favIcon.style.color = 'red';
             utils.success('Продуктът беше добавен в любими');
         }
         else {
-            utils.removeFromFav(item);
+            userModel.removeFromFav(item);
             favIcon.className = 'far fa-heart heart';
             favIcon.style.color = '#2196f3';
             utils.success('Продуктът беше премахнат от любими');
         }
 
-        main.renderHeader();
+        renderHeader();
     });
+
     OPEN_ITEM_CONTAINER.append(titleContainer, mainContainer);
     titleContainer.append(currentTitle, fixedInformation);
     fixedInformation.append(currentID, social);
@@ -210,5 +210,5 @@ function openItem(currentItem) {
     addToFavourite.append(favIconContainer, favText);
     favIconContainer.append(favIcon);
     containerImages.append(mainImage, allImgs);
-    currentItem = utils.setItem('obj', currentItem);
+    currentItem = userModel.setItem('obj', currentItem);
 }

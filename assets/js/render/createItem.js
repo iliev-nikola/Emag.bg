@@ -1,28 +1,3 @@
-//TEMPLATE FOR ADDING ITEMS => may be this is not necessery
-class Items {
-    constructor() {
-        this.allItems = [];
-        this.watchedItems = [];
-    }
-
-    addProduct(item) {
-        this.allItems.push(item);
-    }
-
-    addWatched(item) {
-        if (this.watchedItems.length === 3) {
-            this.watchedItems.shift();
-        }
-
-        this.watchedItems.push(item);
-    }
-}
-
-const focusSectionItems = new Items();
-ALL_FOCUS_ITEMS.forEach(item => {
-    focusSectionItems.addProduct(item);
-});
-
 //CREATING ITEMS
 function createItemsCard(array, container) {
     container.innerHTML = '';
@@ -38,10 +13,10 @@ function createItemsCard(array, container) {
         const tooltipText = utils.createNewElement('div', 'Добави в любими');
         tooltipText.className = 'tooltiptext';
         let favourites;
-        if (utils.isLoggedIn()) {
-            favourites = utils.getUsers().filter(user => user.isLoggedIn)[0].favourites;
+        if (userModel.isLoggedIn()) {
+            favourites = userModel.getUsers().filter(user => user.isLoggedIn)[0].favourites;
         } else {
-            favourites = utils.getItem('guest').favourites;
+            favourites = userModel.getItem('guest').favourites;
         }
 
         const isInFav = favourites.some(el => el.id === currentItem.id);
@@ -86,27 +61,28 @@ function createItemsCard(array, container) {
         tooltipContainer.addEventListener('click', () => {
             // Adding to favs and render the header
             if (addFavourite.style.color === 'red') {
-                utils.removeFromFav(currentItem);
+                userModel.removeFromFav(currentItem);
                 addFavourite.className = 'far fa-heart fav';
                 addFavourite.style.color = '#2196f3';
                 tooltipText.innerText = 'Добави в Любими';
                 utils.success('Продуктът беше премахнат от любими');
             } else {
-                utils.addToFav(currentItem);
+                userModel.addToFav(currentItem);
                 addFavourite.className = 'fas fa-heart fav';
                 addFavourite.style.color = 'red';
                 tooltipText.innerText = 'Добавено в Любими';
                 utils.success('Продуктът беше добавен в любими');
             }
 
-            main.renderHeader();
+            renderHeader();
         });
 
         tooltipShoppingCardContainer.addEventListener('click', () => {
             // Adding to cart and render the header
-            utils.addToCart(currentItem);
-            main.renderHeader();
+            userModel.addToCart(currentItem);
+            renderHeader();
         });
+
         const raitingContainer = utils.createNewElement('div');
         let currentRaiting = currentItem.raiting;
         utils.rating(currentRaiting, raitingContainer);
@@ -129,28 +105,35 @@ function createItemsCard(array, container) {
             percentageBar.style.display = 'none';
         }
 
-        titleContainer.addEventListener('click', onItemClick);
-        imageContainer.addEventListener('click', onItemClick);
+        titleContainer.addEventListener('click', () => {
+            userModel.watchItem(currentItem);
+            watchedItem(userModel.getWatched(), currentItem);
+            openItem(currentItem);
+        });
+        imageContainer.addEventListener('click', () => {
+            userModel.watchItem(currentItem);
+            watchedItem(userModel.getWatched(), currentItem);
+            openItem(currentItem);
+        });
+        // titleContainer.addEventListener('click', onItemClick, currentItem);
+        // imageContainer.addEventListener('click', onItemClick, currentItem);
     });
 }
 
-function onItemClick() {
-    watchedItem(userModel.getWatched(), currentItem);
-    userModel.watchItem(currentItem);
-    openItem(currentItem);
-}
+// function onItemClick(currentItem) {
+//     debugger
+//     userModel.watchItem(currentItem);
+//     watchedItem(userModel.getWatched(), currentItem);
+//     openItem(currentItem);
+// }
 
 //ITEMS IN FOCUS-BAR SECTION
-createItemsCard(focusSectionItems.allItems, CARDS_CONTAINER);
+createItemsCard(ALL_FOCUS_ITEMS, CARDS_CONTAINER);
 
 //ITEMS IN OTHER-CLIENTS-WATCHED
-// maybe this is not necessery also...
-const otherWatched = new Items();
-OTHER_CLIENTS_WATCHED.forEach(item => {
-    otherWatched.addProduct(item);
-});
-
 function watchedItem(array, currentItem) {
+    debugger
+    array = array.map(el => el.image);
     WATCHED_CONTAINER.style.display = 'block';
     WATCHED_ITEMS.innerHTML = '';
     if (array.length === 12) {
@@ -179,22 +162,8 @@ function watchedItem(array, currentItem) {
         mainContainer.append(hrefContainer);
         WATCHED_ITEMS.append(mainContainer);
     });
-
-    DELETE_WATCHED.addEventListener('click', () => {
-        let counterLoader = 0;
-        const intervalLoader = setInterval(() => {
-            counterLoader++;
-            WATCHED_CONTAINER.style.opacity = '0.3';
-            ANIMATION_HISTORY.className = 'loader';
-            if (counterLoader >= 3) {
-                window.clearInterval(intervalLoader);
-                ANIMATION_HISTORY.style.display = 'none';
-                WATCHED_CONTAINER.style.display = 'none';
-            }
-        }, 800);
-    });
 }
 
-createItemsCard(otherWatched.allItems, OTHER_WATCHED_CONTAINER);
-const ITEMS_IN_CATEGORY_PAGE = [...otherWatched.allItems, ...focusSectionItems.allItems];
+createItemsCard(OTHER_CLIENTS_WATCHED, OTHER_WATCHED_CONTAINER);
+const ITEMS_IN_CATEGORY_PAGE = [...OTHER_CLIENTS_WATCHED, ...ALL_FOCUS_ITEMS];
 createItemsCard(ITEMS_IN_CATEGORY_PAGE, ALL_ITEMS_CONTAINER);

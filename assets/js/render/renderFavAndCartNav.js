@@ -22,13 +22,13 @@ function renderFavAndCart(favourites, cart) {
             title.href = `#article/${el.id}`;
             title.className = 'nav-dropdown-title';
             title.addEventListener('click', () => {
-                watchedItem(focusSectionItems.watchedItems, el);
+                watchedItem(userModel.getWatched(), el);
                 openItem(el);
             });
 
             img.addEventListener('click', (e) => {
                 e.stopPropagation();
-                watchedItem(focusSectionItems.watchedItems, el);
+                watchedItem(userModel.getWatched(), el);
                 location.replace(`#article/${el.id}`);
             });
 
@@ -50,16 +50,16 @@ function renderFavAndCart(favourites, cart) {
             addToCartText.innerHTML = '<i class="fas fa-shopping-cart"></i>Добави в количката';
             addToCartText.addEventListener('click', (e) => {
                 e.stopPropagation();
-                utils.addToCart(el);
-                main.renderHeader();
+                userModel.addToCart(el);
+                renderHeader();
             });
 
             const closeButton = utils.createNewElement('i');
             closeButton.className = 'fas fa-times nav-close-button';
             closeButton.addEventListener('click', (e) => {
                 e.stopPropagation();
-                utils.removeFromFav(el);
-                main.renderHeader();
+                userModel.removeFromFav(el);
+                renderHeader();
             });
 
             hiddenOptions.append(addToCartText, closeButton);
@@ -111,13 +111,13 @@ function renderFavAndCart(favourites, cart) {
             title.href = `#article/${el.id}`;
             title.className = 'nav-dropdown-title';
             title.addEventListener('click', () => {
-                watchedItem(focusSectionItems.watchedItems, el);
+                watchedItem(userModel.getWatched(), el);
                 openItem(el);
             });
 
             img.addEventListener('click', (e) => {
                 e.stopPropagation();
-                watchedItem(focusSectionItems.watchedItems, el);
+                watchedItem(userModel.getWatched(), el);
                 location.replace(`#article/${el.id}`);
             });
 
@@ -140,8 +140,8 @@ function renderFavAndCart(favourites, cart) {
             closeButton.className = 'fas fa-times nav-close-button';
             closeButton.addEventListener('click', (e) => {
                 e.stopPropagation();
-                utils.removeFromCart(el);
-                main.renderHeader();
+                userModel.removeFromCart(el);
+                renderHeader();
             });
             hiddenOptions.append(closeButton);
             hiddenOptions.className = 'hidden-options';

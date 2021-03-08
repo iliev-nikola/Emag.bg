@@ -122,23 +122,12 @@ function openFavAndCart(favourites, cart) {
 
             utils.calculateAmount(amount);
         });
-        // const totalPriceContainer = utils.createNewElement('div', 'Всички продукти:');
-        // totalPriceContainer.className = 'total-price-container';
-        // let totalPrice = utils.createNewElement('span');
-        // totalPrice.className = 'cart-total-price';
-        // let totalPennies = utils.createNewElement('span');
-        // totalPennies.className = 'total-pennies-cart';
-        // const totalLv = utils.createNewElement('span', 'лв.')
-        // totalLv.className = 'total-lv-cart';
-        // mainContainer.append(totalPriceContainer);
-        // totalPriceContainer.append(totalPrice, totalPennies, totalLv);
-
     } else {
         CART_CONTAINER.style.display = 'none';
         ITEMS_IN_CART.style.display = 'none';
         EMPTY_CART.style.display = 'block';
     }
-    
+
     if (favourites.length) {
         EMPTY_FAV.style.display = 'none';
         FULL_FAV.style.display = 'block';
@@ -226,5 +215,3 @@ function openFavAndCart(favourites, cart) {
         FULL_FAV.style.display = 'none';
     }
 }
-
-
