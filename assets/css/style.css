@@ -411,13 +411,6 @@ a[href="#register"]:hover {
   display: inline;
 }
 
-/* .favourite-nav,
-.shopping-cart-nav {
-  width: 180px;
-  max-height: 300px;
-  overflow: auto;
-} */
-
 .dropdown-overflow {
   overflow: auto;
   max-height: 300px;
@@ -499,6 +492,7 @@ a[href="#register"]:hover {
 .shopping-cart-nav {
   width: 230px;
   position: relative;
+  top: -5px;
 }
 
 .shopping-cart-nav > p:first-of-type {
@@ -763,6 +757,16 @@ a[href="#register"]:hover {
   left: 0;
   right: 0;
   text-align: center;
+  /* animation: fff 0.2s both; */
+}
+
+@keyframes fff {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .scroll {
@@ -811,6 +815,7 @@ a[href="#register"]:hover {
 }
 
 .category-menu {
+  text-align: left;
   position: absolute;
   display: none;
   top: 0;

@@ -166,12 +166,13 @@ const utils = (function () {
     }
 
     function addToCart(article) {
+        let limitReach = false;
         if (!isLoggedIn()) {
             const guest = getItem('guest');
             if (guest.cart.some(el => el.id === article.id)) {
                 guest.cart.forEach(el => {
                     if (el.id === article.id) {
-                        if (el.count === 5) return;
+                        if (el.count === 5) return limitReach = true;
                         return el.count = el.count + 1 || 1;
                     }
                 });
@@ -203,7 +204,7 @@ const utils = (function () {
             setUsers(users);
         }
 
-        success('Продуктът беше добавен в количката');
+        if (!limitReach) success('Продуктът беше добавен в количката');
     }
 
     function removeFromCart(article) {
@@ -341,7 +342,7 @@ const utils = (function () {
             sandwichHeaderOn();
         } else if (document.documentElement.scrollTop < 565 && counter === 1) {
             counter = 0;
-            if (location.hash === '#home') {
+            if (location.hash === '#home' || !location.hash) {
                 sandwichHeaderOff('home');
             } else {
                 sandwichHeaderOff();

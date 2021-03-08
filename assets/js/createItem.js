@@ -105,7 +105,7 @@ function createItemsCard(array, container) {
         tooltipShoppingCardContainer.addEventListener('click', () => {
             // Adding to cart and render the header
             utils.addToCart(currentItem);
-            utils.success('Продуктът беше добавен в количката');
+            // utils.success('Продуктът беше добавен в количката');
             main.renderHeader();
         });
         const raitingContainer = utils.createNewElement('div');
