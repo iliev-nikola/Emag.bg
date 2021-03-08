@@ -105,11 +105,19 @@ function slideShow() {
 }
 
 setInterval(function () {
-    if (currentSlide === slideImages.length - 1) {
-        currentSlide = -1;
-    }
+    if (currentSlide === slideImages.length-1) {
+        currentSlide=5;
+        let back = setInterval(function () {
+            currentSlide--;
+            if (currentSlide == 0) {
+                clearInterval(back);
+            }
+            slideShow();
+        }, 100);
+    } 
     currentSlide++;
     slideShow();
+    
 }, 6000);
 
 CHEVRON_RIGHT.addEventListener('click', () => {
@@ -134,6 +142,7 @@ radioBtns.forEach(radio => {
         slideShow();
     });
 });
+
 
 
 

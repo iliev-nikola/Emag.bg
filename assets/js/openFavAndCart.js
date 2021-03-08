@@ -138,7 +138,7 @@ function openFavAndCart(favourites, cart) {
         ITEMS_IN_CART.style.display = 'none';
         EMPTY_CART.style.display = 'block';
     }
-
+    
     if (favourites.length) {
         EMPTY_FAV.style.display = 'none';
         FULL_FAV.style.display = 'block';

@@ -108,12 +108,14 @@ function createItemsCard(array, container) {
             utils.success('Продуктът беше добавен в количката');
             main.renderHeader();
         });
-
+        const raitingContainer = utils.createNewElement('div');
+        let currentRaiting = currentItem.raiting;
+        utils.rating(currentRaiting, raitingContainer);
         itemPrice.append(sup, valute);
         container.append(cardContainer);
         imageContainer.append(itemImage);
         titleContainer.append(itemTitle);
-        cardContainer.append(imageContainer, titleContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer, tooltipShoppingCardContainer);
+        cardContainer.append(imageContainer, titleContainer, raitingContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer, tooltipShoppingCardContainer);
         tooltipShoppingCardContainer.append(tooltipShoppingCard, addShoppingCard);
         tooltipContainer.append(tooltipText, addFavourite);
         if (currentItem.regularPrice) {
@@ -193,3 +195,5 @@ function watchedItem(array, currentItem) {
 }
 
 createItemsCard(otherWatched.allItems, OTHER_WATCHED_CONTAINER);
+const ITEMS_IN_CATEGORY_PAGE = [...otherWatched.allItems, ...focusSectionItems.allItems];
+createItemsCard(ITEMS_IN_CATEGORY_PAGE, ALL_ITEMS_CONTAINER);

@@ -148,3 +148,9 @@ const ADD_VOUCHER = utils.getById('addVoucher');
 const ADD_CODE = utils.getById('addCode');
 const VOUCHER_CONTAINER = utils.getById('voucher');
 const INFORMATION_ORDER = utils.getById('information-order');
+
+//CATEGORIES PAGE
+const ALL_ITEMS_CONTAINER = utils.getById('allProducts');
+const ALL_COLL = document.getElementsByClassName("collapse");
+const FIRST_CHEVRON = utils.getById('chevronOne');
+const SECOND_CHEVRON = utils.getById('chevronTwo');

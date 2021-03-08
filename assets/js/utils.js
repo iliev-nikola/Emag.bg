@@ -350,6 +350,19 @@ const utils = (function () {
         }
     }
 
+    //RATING
+    function rating(itemRating, container) {
+        for (let i = 0; i < 5; i++) {
+            const star = utils.createNewElement('i');
+            star.className = 'fas fa-star stars';
+            if (itemRating > 0) {
+                star.className += ' actives';
+            }
+            itemRating--;
+            container.append(star);
+        }
+    }
+
     return {
         onFocus,
         onFocusOut,
@@ -377,6 +390,7 @@ const utils = (function () {
         // onCategoriesMouseOut,
         sandwichHeaderOn,
         sandwichHeaderOff,
-        onScroll
+        onScroll,
+        rating
     }
 })();
