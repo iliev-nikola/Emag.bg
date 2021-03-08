@@ -346,6 +346,21 @@ const main = (function () {
         location.replace('#cart');
     });
 
+    for (let i = 0; i < ALL_COLL.length; i++) {
+        ALL_COLL[i].addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                FIRST_CHEVRON.className = 'fas fa-chevron-down';
+                SECOND_CHEVRON.className = 'fas fa-chevron-down';
+            } else {
+                content.style.display = "block";
+                FIRST_CHEVRON.className = 'fas fa-chevron-up';
+                SECOND_CHEVRON.className = 'fas fa-chevron-up';
+            }
+        });
+    }
+
     return {
         renderHeader
     }

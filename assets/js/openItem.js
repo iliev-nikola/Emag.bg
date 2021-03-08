@@ -76,7 +76,7 @@ function openItem(currentItem) {
     delivery.className = 'delivery';
     const deliveryCity = utils.createNewElement('div', `Ще се достави в: София-град(Столична)`);
     const changeBtn = utils.createNewElement('a', 'промени');
-    changeBtn.hfre = '#';
+    changeBtn.href = '#';
     changeBtn.className = 'change';
     const benefits = utils.createNewElement('div', 'Ползи:');
     benefits.className = 'delivery benefits-delivery';
@@ -193,24 +193,8 @@ function openItem(currentItem) {
     containerInformation.append(itemInformation, addItemContainer);
     itemInformation.append(raitingContainer);
     raitingContainer.append(textClient);
-    for (let i = 0; i < 5; i++) {
-        const star = utils.createNewElement('i');
-        star.className = 'fas fa-star stars';
-        raitingContainer.append(star);
-        let currentIndex;
-        star.addEventListener('click', () => {
-            currentIndex = i;
-            for (let i = 0; i < RAITING_STARS.length; i++) {
-                if (i <= currentIndex) {
-                    RAITING_STARS[i].classList.remove('inactives');
-                    RAITING_STARS[i].classList.add('actives');
-                } else {
-                    RAITING_STARS[i].classList.remove('actives');
-                    RAITING_STARS[i].classList.add('inactives');
-                }
-            }
-        });
-    }
+    let currentRaiting = currentItem.raiting;
+    utils.rating(currentRaiting, raitingContainer);
     raitingContainer.append(review, delivery, deliveryCity, changeBtn, benefits, giftContainer, cart, shipContainer, persText);
     giftContainer.append(giftIcon, giftText);
     cart.append(cartTxt, cartLink);
