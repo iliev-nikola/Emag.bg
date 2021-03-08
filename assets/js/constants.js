@@ -124,6 +124,8 @@ const BULLETIN = utils.getById('bulletin');
 const OPEN_ITEM = utils.getById('open-item-section');
 const MARKETPLACE_SECTION = document.querySelector('.marketplace');
 const OTHER_CLIENTS_SECTION = document.querySelector('.other-clients');
+const APP_EMAG = document.querySelector('.app-emag');
+const FOOTER = document.querySelector('.footer-nav');
 
 // RAITING STARS
 const RAITING_STARS = document.getElementsByClassName('stars');

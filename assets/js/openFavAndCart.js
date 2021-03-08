@@ -29,7 +29,7 @@ function openFavAndCart(favourites, cart) {
             buyIcon.className = 'fas fa-arrow-right';
             const buyText = utils.createNewElement('span', 'Купи със');
             const numberContainer = utils.createNewElement('div');
-            numberContainer.className='number-container';
+            numberContainer.className = 'number-container';
             const selectNav = utils.createNewElement('select');
             selectNav.className = 'select-cart';
             const numb = utils.createNewElement('span', 'бр.');
@@ -220,9 +220,9 @@ function openFavAndCart(favourites, cart) {
             deleteContainer.append(deleteIcon, deleteText);
         });
     } else {
+        EMPTY_FAV.style.display = 'block';
         INFORMATION_ORDER.style.display = 'none';
         VOUCHER_CONTAINER.style.display = 'none';
-        EMPTY_FAV.style.display = 'block';
         FULL_FAV.style.display = 'none';
     }
 }

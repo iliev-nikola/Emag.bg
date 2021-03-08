@@ -1,4 +1,4 @@
-//TEMPLATE FOR ADDING ITEMS
+//TEMPLATE FOR ADDING ITEMS => may be this is not necessery
 class Items {
     constructor() {
         this.allItems = [];
@@ -105,7 +105,6 @@ function createItemsCard(array, container) {
         tooltipShoppingCardContainer.addEventListener('click', () => {
             // Adding to cart and render the header
             utils.addToCart(currentItem);
-            // utils.success('Продуктът беше добавен в количката');
             main.renderHeader();
         });
 
@@ -128,20 +127,22 @@ function createItemsCard(array, container) {
             percentageBar.style.display = 'none';
         }
 
-        titleContainer.addEventListener('click', () => {
-            watchedItem(focusSectionItems.watchedItems, currentItem);
-            openItem(currentItem);
-        });
-
-        imageContainer.addEventListener('click', () => {
-            watchedItem(focusSectionItems.watchedItems, currentItem);
-            openItem(currentItem);
-        });
+        titleContainer.addEventListener('click', onItemClick);
+        imageContainer.addEventListener('click', onItemClick);
     });
 }
+
+function onItemClick() {
+    watchedItem(userModel.getWatched(), currentItem);
+    userModel.watchItem(currentItem);
+    openItem(currentItem);
+}
+
 //ITEMS IN FOCUS-BAR SECTION
 createItemsCard(focusSectionItems.allItems, CARDS_CONTAINER);
+
 //ITEMS IN OTHER-CLIENTS-WATCHED
+// maybe this is not necessery also...
 const otherWatched = new Items();
 OTHER_CLIENTS_WATCHED.forEach(item => {
     otherWatched.addProduct(item);

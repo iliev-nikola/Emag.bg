@@ -100,11 +100,16 @@ const main = (function () {
         document.documentElement.scrollTop = 0;
     }
 
+    function goToLoginPage() {
+        location.replace('#login');
+    }
+
     // RENDERING
     function renderHeader() {
         let favourites, cart;
         if (utils.isLoggedIn()) {
             // IF LOGGED IN USER
+            PROFILE_ICON.removeEventListener('click', goToLoginPage);
             const currentUser = utils.getUsers().filter(user => user.isLoggedIn)[0];
             const firstLetter = currentUser.firstName[0].toUpperCase();
             const secondLetter = currentUser.lastName[0].toUpperCase();
@@ -115,6 +120,7 @@ const main = (function () {
             cart = utils.getUsers().filter(user => user.isLoggedIn)[0].cart;
         } else {
             // IF GUEST USER
+            PROFILE_ICON.addEventListener('click', goToLoginPage);
             PROFILE_NAV.classList.remove('checked');
             GUEST_NAV.classList.add('checked');
             USER_PIC.innerHTML = `<i class="far fa-user">`;
@@ -152,11 +158,13 @@ const main = (function () {
         MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.addEventListener('mouseout', onMainMouseOut);
         CATEGORIES_LINK.addEventListener('mouseout', onCategoriesMouseOut);
+        window.addEventListener('scroll', utils.hideMainWhenScroll);
     }
 
     // ROUTER
     const mainSections = [FOCUS_SECTION, MOBILE_SECTION, MOBILE_APP, TV_SECTION, TOP_SECTION, BIG_TECHNOLOGIES, BULLETIN];
-    const idArr = ALL_FOCUS_ITEMS.map(el => el.id).concat(OTHER_CLIENTS_WATCHED.map(el => el.id));
+    // const idArr = ALL_FOCUS_ITEMS.map(el => el.id).concat(OTHER_CLIENTS_WATCHED.map(el => el.id));
+    const idArr = ALL_FOCUS_ITEMS.concat(OTHER_CLIENTS_WATCHED).map(el => el.id);
     function onHashChange(e) {
         const hash = e.target.location.hash.substring(1);
         MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
@@ -166,6 +174,10 @@ const main = (function () {
         // change hash with correct article id
         utils.sandwichHeaderOff('home');
         NAV_BAR.style.display = 'block';
+        WATCHED_CONTAINER.style.display = 'block';
+        APP_EMAG.style.display = 'block';
+        MARKETPLACE_SECTION.style.display = 'block';
+        FOOTER.style.display = 'flex';
         const isCorrectId = idArr.some(el => el === +hash.split('/')[1]);
         if (isCorrectId && hash.includes('article/')) {
             const currentId = +hash.split('/')[1];
@@ -235,6 +247,10 @@ const main = (function () {
                 OTHER_CLIENTS_SECTION.style.display = 'none';
                 NAV_BAR.style.display = 'none';
                 HOME_PAGE_MENU.style.display = 'block';
+                WATCHED_CONTAINER.style.display = 'none';
+                FOOTER.style.display = 'none';
+                APP_EMAG.style.display = 'none';
+                MARKETPLACE_SECTION.style.display = 'none';
                 OPEN_ITEM.style.display = 'none';
                 MAIN_MENU.style.display = 'none';
                 OPTIONS_PANEL.style.display = 'none';
@@ -276,10 +292,10 @@ const main = (function () {
 
     // EVENT LISTENERS
     // CHECK FOR LOGGED IN USER
-    if (utils.isLoggedIn()) {
-        let users = utils.getUsers();
-        users = users.filter(user => user.isLoggedIn);
-        const [firstName, lastName] = [users[0].firstName, users[0].lastName];
+    if (userModel.isLoggedIn()) {
+        let currentUser = utils.getUsers();
+        currentUser = currentUser.find(user => user.isLoggedIn);
+        const [firstName, lastName] = [currentUser.firstName, currentUser.lastName];
         onLoginSuccess(firstName, lastName);
     }
 
@@ -295,17 +311,18 @@ const main = (function () {
     });
     REGISTER_BTN.addEventListener('click', (e) => {
         e.preventDefault();
-        registerUser(NAMES.value, REGISTER_USER.value, REGISTER_PASS.value, REGISTER_RE_PASS.value);
+        userModel.registerUser(NAMES.value, REGISTER_USER.value, REGISTER_PASS.value, REGISTER_RE_PASS.value);
+        // registerUser(NAMES.value, REGISTER_USER.value, REGISTER_PASS.value, REGISTER_RE_PASS.value);
     });
     LOGIN_BTN.addEventListener('click', (e) => {
         e.preventDefault();
-        loginUser(LOGIN_USER.value, LOGIN_PASS.value);
+        userModel.loginUser(LOGIN_USER.value, LOGIN_PASS.value);
+        // loginUser(LOGIN_USER.value, LOGIN_PASS.value);
     });
     LOGOUT_BTN.addEventListener('click', () => {
-        utils.logout();
-        renderHeader();
-        location.reload();
-        utils.success('Излязохте успешно!');
+        userModel.logoutUser();
+        // utils.logout();
+        location.reload()
     });
 
     // ADD REMISE VOUCHER IN CART
@@ -327,9 +344,6 @@ const main = (function () {
     SHOPPING_CART_ICON.addEventListener('click', (e) => {
         e.stopImmediatePropagation();
         location.replace('#cart');
-    });
-    PROFILE_ICON.addEventListener('click', () => {
-        location.replace('#login');
     });
 
     return {

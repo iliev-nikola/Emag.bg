@@ -269,6 +269,12 @@ const utils = (function () {
     }
 
     // MAIN MENU DROPDOWN ON SCROLL IN HOME PAGE
+    function hideMainWhenScroll() {
+        MAIN_MENU.style.display = 'none';
+        CATEGORIES_LINK.className = 'categories-btn-close';
+        window.removeEventListener('scroll', hideMainWhenScroll);
+    }
+
     function onMainMouseOver() {
         HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
         MAIN_MENU.style.visibility = 'visible';
@@ -282,19 +288,6 @@ const utils = (function () {
         CATEGORIES_LINK.className = 'categories-btn-close';
     }
 
-    function onCategoriesMouseOut() {
-        MAIN_MENU.style.visibility = 'hidden';
-        CATEGORIES_LINK.className = 'categories-btn-close';
-    }
-
-    function onCategoriesMouseOver() {
-        MAIN_MENU.style.visibility = 'visible';
-        CATEGORIES_LINK.className = 'categories-btn-open';
-        MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
-        MAIN_MENU.addEventListener('mouseout', onMainMouseOut);
-        CATEGORIES_LINK.addEventListener('mouseout', onCategoriesMouseOut);
-    }
-
     function onSandwichMouseOver() {
         MAIN_MENU.className = 'select-categories-dropdown scroll content';
         MAIN_MENU.style.visibility = 'visible';
@@ -305,6 +298,7 @@ const utils = (function () {
     }
 
     function sandwichHeaderOn() {
+        HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
         HEADER.className = 'header-scroll content';
         NAV_MENU_ONSCROLL.style.display = 'block';
         HEADER_SANDWICH_BUTTON.style.display = 'block';
@@ -318,8 +312,6 @@ const utils = (function () {
     function sandwichHeaderOff(home) {
         MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
-        CATEGORIES_LINK.removeEventListener('mouseover', onCategoriesMouseOver);
-        CATEGORIES_LINK.removeEventListener('mouseout', onCategoriesMouseOut);
         HEADER.className = 'header content';
         if (home) {
             CATEGORIES_LINK.className = 'categories-btn-open';
@@ -372,10 +364,7 @@ const utils = (function () {
         calculatingPercentage,
         changePrice,
         calculateAmount,
-        // onMainMouseOver,
-        // onMainMouseOut,
-        // onCategoriesMouseOver,
-        // onCategoriesMouseOut,
+        hideMainWhenScroll,
         sandwichHeaderOn,
         sandwichHeaderOff,
         onScroll
