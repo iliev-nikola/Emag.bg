@@ -4,4 +4,4 @@
 - Pattern: MVC
 - Languages: Vanilla JS, HTML & CSS
 - Storage: Browser's Local Storage
-- Contributors: Nikola Iliev, Marina Damyanova
+- Contributors: [Nikola Iliev](https://github.com/iliev-nikola "Nikola Iliev") & [Marina Damyanova](https://github.com/mtdamyanova "Marina Damyanova")
