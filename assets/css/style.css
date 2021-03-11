@@ -1709,7 +1709,11 @@ footer {
 }
 
 #success {
-  background-color: #0082e6;
+  background-color: #2491e4;
+}
+
+#error {
+  background-color: #ff1e26;
 }
 
 #success > i,
@@ -1723,10 +1727,6 @@ footer {
 #error > img {
   width: 28px;
   padding-right: 10px;
-}
-
-#error {
-  background-color: #ff1e26;
 }
 
 @keyframes info {
@@ -3137,7 +3137,7 @@ footer {
   height: 109px;
 }
 
-.coll-prices{
+.coll-prices {
   display: flex;
   flex-direction: column;
 }

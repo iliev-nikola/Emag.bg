@@ -93,6 +93,7 @@
         APP_EMAG.style.display = 'block';
         MARKETPLACE_SECTION.style.display = 'block';
         FOOTER.style.display = 'flex';
+        CATEGORY_SECTION.style.display = 'none';
         const isCorrectId = idArr.some(el => el === +hash.split('/')[1]);
         if (isCorrectId && hash.includes('article/')) {
             const currentId = +hash.split('/')[1];
@@ -119,8 +120,6 @@
         switch (hash) {
             case '':
             case 'home':
-                // createItemsCard(ALL_FOCUS_ITEMS, CARDS_CONTAINER);
-                // createItemsCard(OTHER_CLIENTS_WATCHED, OTHER_WATCHED_CONTAINER);
                 MAIN_SECTION.style.display = 'block';
                 LOGIN_SECTION.style.display = 'none';
                 document.body.style.backgroundColor = '#e9ebee';
@@ -190,6 +189,30 @@
                 MARKETPLACE_SECTION.style.display = 'none';
                 OTHER_CLIENTS_SECTION.style.display = 'none';
                 break;
+            case 'categories':
+                CATEGORY_SECTION.style.display = 'block';
+                utils.sandwichHeaderOff();
+                CATEGORIES_LINK.className = 'categories-btn-close';
+                CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
+                MAIN_SECTION.style.display = 'block';
+                HOME_PAGE_MENU.style.display = 'block';
+                OTHER_CLIENTS_SECTION.style.display = 'block';
+                MOBILE_SECTION.style.display = 'block';
+                MOBILE_APP.style.display = 'block';
+                TV_SECTION.style.display = 'block';
+                TOP_SECTION.style.display = 'block';
+                BIG_TECHNOLOGIES.style.display = 'block';
+                BULLETIN.style.display = 'block';
+                FOCUS_SECTION.style.display = 'none';
+                FAVOURITES_PAGE.style.display = 'none';
+                MAIN_MENU.style.display = 'none';
+                LOGIN_SECTION.style.display = 'none';
+                OPEN_ITEM.style.display = 'none';
+                MARKETPLACE_SECTION.style.display = 'none';
+                OPTIONS_PANEL.style.display = 'none';
+                CART_PAGE.style.display = 'none';
+                MARKETPLACE_SECTION.style.display = 'none';
+                break;
             default:
                 MAIN_SECTION.style.display = 'none';
                 LOGIN_SECTION.style.display = 'none';
@@ -214,16 +237,20 @@
         onLoginSuccess(firstName, lastName);
     }
 
-    window.addEventListener('hashchange', onHashChange);
-    window.addEventListener('DOMContentLoaded', (e) => {
-        onHashChange(e);
-        renderHeader();
+    MAIN_MENU.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.tagName !== 'DIV') {
+            location.replace('#categories');
+            document.documentElement.scrollTop = 0;
+        }
     });
-    window.addEventListener('scroll', utils.onScroll);
+
     SEARCH_INPUT.addEventListener('focus', utils.onFocus);
     ERROR_TEXT.addEventListener('click', () => {
         history.back();
     });
+
+    // LOGIN & REGISTER
     REGISTER_BTN.addEventListener('click', (e) => {
         e.preventDefault();
         userModel.registerUser(NAMES.value, REGISTER_USER.value, REGISTER_PASS.value, REGISTER_RE_PASS.value);
@@ -257,4 +284,12 @@
         e.stopImmediatePropagation();
         location.replace('#cart');
     });
+
+    // MAIN
+    window.addEventListener('hashchange', onHashChange);
+    window.addEventListener('DOMContentLoaded', (e) => {
+        onHashChange(e);
+        renderHeader();
+    });
+    window.addEventListener('scroll', utils.onScroll);
 })();

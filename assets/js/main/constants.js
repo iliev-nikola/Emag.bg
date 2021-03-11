@@ -2,16 +2,16 @@
 const BODY = document.body;
 
 // SEARCH BAR
-const SEARCH_BOX = document.querySelector('.searchbox');
-const SEARCH_BOX_CONTENT = document.querySelector('.searchbox-content');
-const SEARCH_BAR = document.querySelector('.search-bar');
+const SEARCH_BOX = utils.querySelect('.searchbox');
+const SEARCH_BOX_CONTENT = utils.querySelect('.searchbox-content');
+const SEARCH_BAR = utils.querySelect('.search-bar');
 const SEARCH_INPUT = utils.getById('search')
 const SEARCH_FORM = utils.getById('searchForm');
 const SUBMIT_BUTTON = utils.getById('submitBtn');
 
 // ROUTER
-const MAIN_SECTION = document.querySelector('.main-section');
-const LOGIN_SECTION = document.querySelector('.login-section');
+const MAIN_SECTION = utils.querySelect('.main-section');
+const LOGIN_SECTION = utils.querySelect('.login-section');
 const LOGIN_PAGE = utils.getById('loginPage');
 const REGISTER_PAGE = utils.getById('registerPage');
 const ERROR_PAGE = utils.getById('errorPage');
@@ -28,29 +28,29 @@ const REGISTER_RE_PASS = utils.getById('regRePassword');
 const REGISTER_BTN = utils.getById('registerBtn');
 
 // HEADER SECTION
-const HEADER_SECTION = document.querySelector('.header-section');
-const HEADER = document.querySelector('.header-section > header');
+const HEADER_SECTION = utils.querySelect('.header-section');
+const HEADER = utils.querySelect('.header-section > header');
 const USER_PIC = utils.getById('userPic');
-const PROFILE_NAV = document.querySelector('.profile-nav');
-const GUEST_NAV = document.querySelector('.guest-nav');
+const PROFILE_NAV = utils.querySelect('.profile-nav');
+const GUEST_NAV = utils.querySelect('.guest-nav');
 const HELLO_MESSAGE = utils.getById('helloMessage');
 const LOGOUT_BTN = utils.getById('logoutBtn');
-const FAVOURITE_NAV_CONTAINER = document.querySelector('.favourite-nav');
+const FAVOURITE_NAV_CONTAINER = utils.querySelect('.favourite-nav');
 const FAVOURITE_COUNTER = utils.getById('favCounter');
-const CART_NAV_CONTAINER = document.querySelector('.cart-nav-container');
+const CART_NAV_CONTAINER = utils.querySelect('.cart-nav-container');
 const CART_COUNTER = utils.getById('cartCounter');
-const SHOPPING_CART_NAV = document.querySelector('.shopping-cart-nav');
+const SHOPPING_CART_NAV = utils.querySelect('.shopping-cart-nav');
 const SHOPPING_CART_BTN = utils.getById('sh-cart-btn');
-const PROFILE_ICON = document.querySelector('.profile-icon');
-const FAVOURITE_ICON = document.querySelector('.favourite-icon');
-const SHOPPING_CART_ICON = document.querySelector('.shopping-cart');
+const PROFILE_ICON = utils.querySelect('.profile-icon');
+const FAVOURITE_ICON = utils.querySelect('.favourite-icon');
+const SHOPPING_CART_ICON = utils.querySelect('.shopping-cart');
 const HEADER_SANDWICH_BUTTON = utils.getById('header-sandwich-button');
 
 
 // NAVIGATION BAR
 const CATEGORIES_LINK = utils.getById('categories');
 const NAV_MENU_ONSCROLL = utils.getById('navMenuOnScroll');
-const NAV_BAR = document.querySelector('.nav-bar');
+const NAV_BAR = utils.querySelect('.nav-bar');
 
 // INFORMATION BANNERS
 const SUCCESS_BANNER = utils.getById('success');
@@ -60,7 +60,7 @@ const ERROR_BANNER = utils.getById('error');
 const CHEVRON_RIGHT = utils.getById('chevronRight');
 const CHEVRON_LEFT = utils.getById('chevronLeft');
 const RADIO_MAIN = document.querySelectorAll(".radio-main-view");
-const MAIN_SLIDESHOW = document.querySelector('.main-slideshow');
+const MAIN_SLIDESHOW = utils.querySelect('.main-slideshow');
 const CURRENT_IMAGE = utils.getById('slideImage');
 
 // BUTTONS IN FOCUS-BAR SECTION
@@ -122,10 +122,10 @@ const TOP_SECTION = utils.getById('top');
 const BIG_TECHNOLOGIES = utils.getById('big-technologies');
 const BULLETIN = utils.getById('bulletin');
 const OPEN_ITEM = utils.getById('open-item-section');
-const MARKETPLACE_SECTION = document.querySelector('.marketplace');
-const OTHER_CLIENTS_SECTION = document.querySelector('.other-clients');
-const APP_EMAG = document.querySelector('.app-emag');
-const FOOTER = document.querySelector('.footer-nav');
+const MARKETPLACE_SECTION = utils.querySelect('.marketplace');
+const OTHER_CLIENTS_SECTION = utils.querySelect('.other-clients');
+const APP_EMAG = utils.querySelect('.app-emag');
+const FOOTER = utils.querySelect('.footer-nav');
 
 // RAITING STARS
 const RAITING_STARS = document.getElementsByClassName('stars');
@@ -135,11 +135,11 @@ const OPEN_ITEM_CONTAINER = utils.getById('open-item-container');
 
 // FAVOURITES & SHOPPING CART
 const FAVOURITES_PAGE = utils.getById('favouriteItems');
-const HOME_PAGE_MENU = document.querySelector('.home-page-body');
-const CART_PAGE = document.querySelector('.cart-page');
+const HOME_PAGE_MENU = utils.querySelect('.home-page-body');
+const CART_PAGE = utils.querySelect('.cart-page');
 const EMPTY_CART = utils.getById('empty-cart');
 const CART_CONTAINER = utils.getById('cart-container');
-const ITEMS_IN_CART = document.querySelector('.items-cart');
+const ITEMS_IN_CART = utils.querySelect('.items-cart');
 const EMPTY_FAV = utils.getById('emptyFav');
 const FULL_FAV = utils.getById('fullFav');
 const CART_AMOUNT_PRICE = utils.getById('cart-amount-price');
@@ -152,6 +152,7 @@ const VOUCHER_CONTAINER = utils.getById('voucher');
 const INFORMATION_ORDER = utils.getById('information-order');
 
 //CATEGORIES PAGE
+const CATEGORY_SECTION = utils.getById('categorySection');
 const ALL_ITEMS_CONTAINER = utils.getById('allProducts');
 const ALL_COLL = document.getElementsByClassName("collapse");
 const FIRST_CHEVRON = utils.getById('chevronOne');

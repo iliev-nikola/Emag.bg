@@ -115,24 +115,14 @@ function createItemsCard(array, container) {
             watchedItem(userModel.getWatched(), currentItem);
             openItem(currentItem);
         });
-        // titleContainer.addEventListener('click', onItemClick, currentItem);
-        // imageContainer.addEventListener('click', onItemClick, currentItem);
     });
 }
-
-// function onItemClick(currentItem) {
-//     debugger
-//     userModel.watchItem(currentItem);
-//     watchedItem(userModel.getWatched(), currentItem);
-//     openItem(currentItem);
-// }
 
 //ITEMS IN FOCUS-BAR SECTION
 createItemsCard(ALL_FOCUS_ITEMS, CARDS_CONTAINER);
 
 //ITEMS IN OTHER-CLIENTS-WATCHED
 function watchedItem(array, currentItem) {
-    debugger
     array = array.map(el => el.image);
     WATCHED_CONTAINER.style.display = 'block';
     WATCHED_ITEMS.innerHTML = '';

@@ -27,6 +27,10 @@ const utils = (function () {
         return document.getElementById(id);
     }
 
+    function querySelect(param) {
+        return document.querySelector(param);
+    }
+
     function goToLoginPage() {
         location.replace('#login');
     }
@@ -72,164 +76,6 @@ const utils = (function () {
 
         return element;
     }
-
-    // RENDER FUNCTIONS
-
-
-    // LOGIN & LOGOUT
-    // function isLoggedIn() {
-    //     return JSON.parse(localStorage.getItem('isLoggedIn'));
-    // }
-
-    // function login(username) {
-    //     const users = utils.getUsers();
-    //     users.forEach(user => {
-    //         if (user.username === username) {
-    //             user.isLoggedIn = true;
-    //             return;
-    //         }
-    //     });
-
-    //     utils.setUsers(users);
-    //     localStorage.setItem('isLoggedIn', true);
-    // }
-
-    // function logout() {
-    //     const users = utils.getUsers();
-    //     users.forEach(user => {
-    //         if (user.isLoggedIn) {
-    //             user.isLoggedIn = false;
-    //             return;
-    //         }
-    //     });
-
-    //     utils.setUsers(users);
-    //     localStorage.setItem('isLoggedIn', false);
-    // }
-
-    // LOCAL STORAGE
-    // function getUsers() {
-    //     return JSON.parse(localStorage.getItem('users'));
-    // }
-
-    // function setUsers(users) {
-    //     localStorage.setItem('users', JSON.stringify(users));
-    // }
-
-    // function getItem(item) {
-    //     return JSON.parse(localStorage.getItem(item));
-    // }
-
-    // function setItem(key, value) {
-    //     localStorage.setItem(key, JSON.stringify(value));
-    // }
-
-    // ADD & REMOVE TO/FROM FAVOURITES & CART
-    // function addToFav(article) {
-    //     if (!isLoggedIn()) {
-    //         const guest = getItem('guest');
-    //         if (guest.favourites.some(el => el.id === article.id)) {
-    //             return;
-    //         }
-
-    //         guest.favourites.unshift(article);
-    //         setItem('guest', guest);
-    //         success('Продуктът беше добавен в любими');
-    //         return;
-    //     }
-
-    //     const users = utils.getUsers();
-    //     users.forEach(user => {
-    //         if (user.isLoggedIn) {
-    //             if (user.favourites.some(el => el.id === article.id)) {
-    //                 return;
-    //             }
-
-    //             return user.favourites.unshift(article);
-    //         }
-    //     });
-
-    //     setUsers(users);
-    //     success('Продуктът беше добавен в любими');
-    // }
-
-    // function removeFromFav(article) {
-    //     if (!isLoggedIn()) {
-    //         const guest = getItem('guest');
-    //         guest.favourites = guest.favourites.filter(el => el.id !== article.id);
-    //         setItem('guest', guest);
-    //         return;
-    //     }
-
-    //     let users = utils.getUsers();
-    //     users.forEach(user => {
-    //         if (user.isLoggedIn) {
-    //             return user.favourites = user.favourites.filter(el => el.id !== article.id);
-    //         }
-    //     });
-
-    //     setUsers(users);
-    //     success('Продуктът беше премахнат от любими');
-    // }
-
-    // function addToCart(article) {
-    //     let limitReach = false;
-    //     if (!isLoggedIn()) {
-    //         const guest = getItem('guest');
-    //         if (guest.cart.some(el => el.id === article.id)) {
-    //             guest.cart.forEach(el => {
-    //                 if (el.id === article.id) {
-    //                     if (el.count === 5) return limitReach = true;
-    //                     return el.count = el.count + 1 || 1;
-    //                 }
-    //             });
-    //         } else {
-    //             article.count = 1;
-    //             guest.cart.push(article);
-    //         }
-
-    //         setItem('guest', guest);
-    //     } else {
-    //         const users = getUsers();
-    //         users.forEach(user => {
-    //             if (user.isLoggedIn) {
-    //                 if (user.cart.some(el => el.id === article.id)) {
-    //                     user.cart.forEach(el => {
-    //                         if (el.id === article.id) {
-    //                             return el.count = el.count + 1 || 1;
-    //                         }
-    //                     });
-    //                 } else {
-    //                     article.count = 1;
-    //                     user.cart.push(article);
-    //                 }
-
-    //                 return;
-    //             }
-    //         });
-
-    //         setUsers(users);
-    //     }
-
-    //     if (!limitReach) success('Продуктът беше добавен в количката');
-    // }
-
-    // function removeFromCart(article) {
-    //     if (!isLoggedIn()) {
-    //         const guest = getItem('guest');
-    //         guest.cart = guest.cart.filter(el => el.id !== article.id);
-    //         return setItem('guest', guest);
-    //     }
-
-    //     let users = utils.getUsers();
-    //     users.forEach(user => {
-    //         if (user.isLoggedIn) {
-    //             return user.cart = user.cart.filter(el => el.id !== article.id);
-    //         }
-    //     });
-
-    //     setUsers(users);
-    // }
 
     // CALCULATING PERCENTAGE
     function calculatingPercentage(currentItem) {
@@ -367,6 +213,7 @@ const utils = (function () {
         onFocus,
         onFocusOut,
         getById,
+        querySelect,
         goToLoginPage,
         success,
         error,

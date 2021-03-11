@@ -88,9 +88,9 @@
                                 <p class="line"></p>
                                 <ul>
                                     <li><a href="#">Моят акаунт</a></li>
-                                    <li><a href="#">Моите поръчки</a></li>
+                                    <li><a href="#cart">Моите поръчки</a></li>
                                     <li><a href="#">Моите карти</a></li>
-                                    <li><a href="#">Любими</a></li>
+                                    <li><a href="#favourites">Любими</a></li>
                                     <li><a href="#">Карта eMAG Fibank</a></li>
                                     <li><a href="#">Ваучер за отстъпка</a></li>
                                     <li><a href="#">Моите ревюта</a></li>
@@ -195,7 +195,8 @@
                         </li>
                         <div class="category-menu">
                             <div class="first-column">
-                                <a href="#"><span>Мобилни телефони и аксесоари</span></a>
+                                <a href="#categories"><span>Мобилни телефони и
+                                        аксесоари</span></a>
                                 <a href="#">Мобилни телефони</a>
                                 <a href="#">Калъфи за мобилни телефони</a>
                                 <a href="#">Зашитни фолиа за мобилни телефони</a>
@@ -1458,7 +1459,8 @@
 
                         <div>
                             <div id='searchContainer'>
-                                <input type="text" name="" id="searchItem">
+                                <input type="text" name="" id="searchItem"
+                                    placeholder="Търси по име">
                                 <select name="" id="">
                                     <option value="">Име</option>
                                     <option value="">Цена възх.</option>
@@ -2354,9 +2356,11 @@
                     <form action="" class="user-form">
                         <label for="loginUsername">Моля въведи потребителско
                             име</label>
-                        <input type="text" id="loginUsername" required>
+                        <input type="text" id="loginUsername" required
+                            autocomplete="username">
                         <label for="loginPassword">Моля въведи парола</label>
-                        <input type="password" id="loginPassword" required>
+                        <input type="password" id="loginPassword" required
+                            autocomplete="current-password">
                         <input type="submit" id="loginBtn" value="Продължи">
                     </form>
                     <p>Нямаш акаунт? Създай от <a href="#register">тук</a></p>
@@ -2387,12 +2391,15 @@
                         <label for="registerUsername">Моля въведи
                             потребителско
                             име</label>
-                        <input type="text" id="regUsername" required>
+                        <input type="text" id="regUsername" required
+                            autocomplete="username">
                         <label for="regPassword">Моля въведи парола</label>
-                        <input type="password" id="regPassword" required>
+                        <input type="password" id="regPassword" required
+                            autocomplete="new-password">
                         <label for="regRePassword">Моля въведи паролата
                             отново</label>
-                        <input type="password" id="regRePassword" required>
+                        <input type="password" id="regRePassword" required
+                            autocomplete="new-password">
                         <input type="submit" id="registerBtn" value="Продължи">
                     </form>
                     <p>Вече имаш акаунт? Влез от <a href="#login">тук</a></p>
