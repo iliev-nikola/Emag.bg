@@ -188,6 +188,14 @@
                 CART_PAGE.style.display = 'none';
                 MARKETPLACE_SECTION.style.display = 'none';
                 OTHER_CLIENTS_SECTION.style.display = 'none';
+                if (userModel.isLoggedIn()) {
+                    FAV_LOGIN.style.display = 'none';
+                    FAV_IS_LOGGIN.style.display = 'block';
+                } else {
+                    FAV_LOGIN.style.display = 'block';
+                    FAV_IS_LOGGIN.style.display = 'none';
+                }
+
                 break;
             case 'categories':
                 CATEGORY_SECTION.style.display = 'block';

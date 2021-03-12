@@ -2844,7 +2844,8 @@ footer {
   display: none;
 }
 
-#favLogin {
+#favLogin,
+#favLoggedIn {
   background-color: rgb(255, 255, 255);
   border-radius: 3px;
   padding: 10px 20px;
@@ -3001,6 +3002,31 @@ footer {
 
 .fav-delete span:hover {
   text-decoration: underline;
+}
+
+.fav-options {
+  border-bottom: 1px #f4f8fb solid;
+  padding: 10px 0;
+  width: 185px;
+  text-align: start;
+  color: rgb(0, 94, 184);
+  font-weight: 600;
+}
+
+.fav-options a:hover {
+  color: #00376c;
+  text-decoration: underline;
+}
+
+.fav-options p {
+  text-align: center;
+  padding: 40px 0;
+  margin-left: 30px;
+  width: 130px;
+  background-color: #2196f3;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  font-size: 32px;
 }
 
 #emptyFav {

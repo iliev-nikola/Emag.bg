@@ -150,6 +150,9 @@ const ADD_VOUCHER = utils.getById('addVoucher');
 const ADD_CODE = utils.getById('addCode');
 const VOUCHER_CONTAINER = utils.getById('voucher');
 const INFORMATION_ORDER = utils.getById('information-order');
+const FAV_LOGIN = utils.getById('favLogin');
+const FAV_IS_LOGGIN = utils.getById('favLoggedIn');
+const FAV_PIC = utils.getById('favPic');
 
 //CATEGORIES PAGE
 const CATEGORY_SECTION = utils.getById('categorySection');

@@ -21,6 +21,7 @@ function renderHeader() {
         const firstLetter = currentUser.firstName[0].toUpperCase();
         const secondLetter = currentUser.lastName[0].toUpperCase();
         USER_PIC.innerHTML = `<p>${firstLetter + secondLetter}</p>`;
+        FAV_PIC.innerText = firstLetter + secondLetter;
         USER_PIC.className = 'logged-user-icon';
         HELLO_MESSAGE.innerText = `Здравей, ${currentUser.firstName} ${currentUser.lastName}`;
         favourites = currentUser.favourites;
