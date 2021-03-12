@@ -293,6 +293,13 @@
         location.replace('#cart');
     });
 
+    // ON SEARCH AND FILTER IN CATEGORY PAGE
+    CATEGORY_FILTERS.addEventListener('change', (e) => {
+        filter.onlyOneCheckbox(e.target);
+    })
+    SEARCH_CATEGORY_ITEM
+    SORT_BY
+
     // MAIN
     window.addEventListener('hashchange', onHashChange);
     window.addEventListener('DOMContentLoaded', (e) => {
