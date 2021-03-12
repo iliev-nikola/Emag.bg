@@ -4,6 +4,8 @@ function openFavAndCart(favourites, cart) {
         EMPTY_CART.style.display = 'none';
         CART_CONTAINER.style.display = 'flex';
         ITEMS_IN_CART.style.display = 'block';
+        INFORMATION_ORDER.style.display = 'block';
+        VOUCHER_CONTAINER.style.display = 'block';
         ITEMS_IN_CART.innerHTML = '';
         let amount = 0;
         const mainContainer = utils.createNewElement('div');
@@ -74,14 +76,14 @@ function openFavAndCart(favourites, cart) {
             addOrRemoveContainer.className = 'add-delete-cart';
             const addToFav = utils.createNewElement('span', 'добави в Любими');
             addToFav.addEventListener('click', () => {
-                utils.addToFav(currentElement);
-                main.renderHeader();
+                userModel.addToFav(currentElement);
+                renderHeader();
             });
 
             const remove = utils.createNewElement('span', 'Изтрий');
             remove.addEventListener('click', () => {
-                utils.removeFromCart(currentElement);
-                main.renderHeader();
+                userModel.removeFromCart(currentElement);
+                renderHeader();
             });
 
             mainContainer.append(elContainer);
@@ -125,6 +127,8 @@ function openFavAndCart(favourites, cart) {
     } else {
         CART_CONTAINER.style.display = 'none';
         ITEMS_IN_CART.style.display = 'none';
+        INFORMATION_ORDER.style.display = 'none';
+        VOUCHER_CONTAINER.style.display = 'none';
         EMPTY_CART.style.display = 'block';
     }
 
@@ -182,8 +186,8 @@ function openFavAndCart(favourites, cart) {
             const addShoppingCart = utils.createNewElement('div');
             addShoppingCart.className = 'add-shopping-cart info-cart';
             addShoppingCart.addEventListener('click', () => {
-                utils.addToCart(fav);
-                main.renderHeader();
+                userModel.addToCart(fav);
+                renderHeader();
             });
 
             const iconContainer = utils.createNewElement('span');
@@ -198,8 +202,8 @@ function openFavAndCart(favourites, cart) {
             deleteIcon.className = 'fas fa-trash-alt';
             const deleteText = utils.createNewElement('span', 'Изтрий');
             deleteText.addEventListener('click', () => {
-                utils.removeFromFav(fav);
-                main.renderHeader();
+                userModel.removeFromFav(fav);
+                renderHeader();
             });
 
             info.append(currentContainer, addShoppingCart, deleteContainer)
@@ -210,8 +214,6 @@ function openFavAndCart(favourites, cart) {
         });
     } else {
         EMPTY_FAV.style.display = 'block';
-        INFORMATION_ORDER.style.display = 'none';
-        VOUCHER_CONTAINER.style.display = 'none';
         FULL_FAV.style.display = 'none';
     }
 }

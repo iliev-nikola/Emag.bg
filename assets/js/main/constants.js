@@ -153,6 +153,7 @@ const INFORMATION_ORDER = utils.getById('information-order');
 const FAV_LOGIN = utils.getById('favLogin');
 const FAV_IS_LOGGIN = utils.getById('favLoggedIn');
 const FAV_PIC = utils.getById('favPic');
+const INFORMATION_CART = utils.getById('informationNav');
 
 //CATEGORIES PAGE
 const CATEGORY_SECTION = utils.getById('categorySection');
