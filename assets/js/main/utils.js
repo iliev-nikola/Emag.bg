@@ -67,6 +67,19 @@ const utils = (function () {
         }, 3000);
     }
 
+    function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+            const effect = () => {
+                timeout = null;
+                return func.apply(this, args);
+            };
+
+            clearTimeout(timeout);
+            timeout = setTimeout(effect, wait);
+        };
+    };
+
     //CREATE NEW HTML ELEMENT
     function createNewElement(type, text) {
         const element = document.createElement(type);
@@ -212,6 +225,7 @@ const utils = (function () {
     return {
         onFocus,
         onFocusOut,
+        debounce,
         getById,
         querySelect,
         goToLoginPage,

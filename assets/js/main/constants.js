@@ -162,3 +162,4 @@ const ALL_COLL = document.getElementsByClassName("collapse");
 const CATEGORY_FILTERS = utils.getById('categoryFilters');
 const SEARCH_CATEGORY_ITEM = utils.getById('searchCategoryItem');
 const SORT_BY = utils.getById('sortBy');
+const CLEAR_FILTERS_BUTTON = utils.getById('clearFilters');

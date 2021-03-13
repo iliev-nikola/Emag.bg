@@ -788,6 +788,7 @@ a[href="#register"]:hover {
   line-height: 450px;
   width: 40px;
   text-align: center;
+  cursor: pointer;
 }
 
 .main-slideshow .fa-chevron-left {
@@ -3107,6 +3108,10 @@ footer {
 #categorySection div.content {
   display: flex;
   justify-content: space-between;
+}
+
+#clearFilters {
+  visibility: hidden;
 }
 
 #allProducts {

@@ -246,7 +246,8 @@
 
     MAIN_MENU.addEventListener('click', (e) => {
         e.preventDefault();
-        if (e.target.tagName !== 'DIV') {
+        const tagName = e.target.tagName
+        if (tagName !== 'DIV' && tagName !== 'I' && tagName !== 'INPUT') {
             location.replace('#categories');
             document.documentElement.scrollTop = 0;
         }
@@ -294,9 +295,19 @@
     // ON SEARCH AND FILTER IN CATEGORY PAGE
     CATEGORY_FILTERS.addEventListener('change', (e) => {
         filter.onlyOneCheckbox(e.target);
-    })
-    SEARCH_CATEGORY_ITEM
-    SORT_BY
+        filter.checkTheCheckboxes();
+        createItemsCard(filter.filterArticles(), ALL_ITEMS_CONTAINER);
+    });
+    SEARCH_CATEGORY_ITEM.addEventListener('input', utils.debounce(function () {
+        createItemsCard(filter.filterArticles(), ALL_ITEMS_CONTAINER);
+    }, 500));
+    SORT_BY.addEventListener('change', () => {
+        createItemsCard(filter.filterArticles(), ALL_ITEMS_CONTAINER);
+    });
+    CLEAR_FILTERS_BUTTON.addEventListener('click', () => {
+        filter.clearCheckboxes();
+        createItemsCard(filter.filterArticles(), ALL_ITEMS_CONTAINER);
+    });
 
     // MAIN
     window.addEventListener('hashchange', onHashChange);
