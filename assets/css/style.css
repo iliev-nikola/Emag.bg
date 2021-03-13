@@ -2689,6 +2689,7 @@ footer {
 }
 
 #addCode {
+  display: block;
   text-align: center;
 }
 

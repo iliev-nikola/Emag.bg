@@ -33,14 +33,13 @@
         for (let i = 0; i < ALL_COLL.length; i++) {
             ALL_COLL[i].addEventListener("click", function () {
                 const content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                    FIRST_CHEVRON.className = 'fas fa-chevron-down';
-                    SECOND_CHEVRON.className = 'fas fa-chevron-down';
-                } else {
+                let currentChevron = ALL_COLL[i].lastElementChild;
+                if (content.style.display === "none") {
                     content.style.display = "block";
-                    FIRST_CHEVRON.className = 'fas fa-chevron-up';
-                    SECOND_CHEVRON.className = 'fas fa-chevron-up';
+                    currentChevron.className = 'fas fa-chevron-up';
+                } else {
+                    content.style.display = "none";
+                    currentChevron.className = 'fas fa-chevron-down';
                 }
             });
         }
@@ -272,17 +271,6 @@
         location.reload()
     });
 
-    // ADD REMISE VOUCHER IN CART
-    ADD_VOUCHER.addEventListener('click', () => {
-        if (ADD_CODE.style.display === 'block') {
-            ADD_CODE.style.display = 'none';
-            VOUCHER_CONTAINER.style.paddingBottom = '0';
-        } else {
-            ADD_CODE.style.display = 'block';
-            VOUCHER_CONTAINER.style.paddingBottom = '20px';
-        }
-    });
-
     // ON CLICK ON HEADER NAV ICONS
     FAVOURITE_ICON.addEventListener('click', () => {
         location.replace('#favourites');
@@ -290,6 +278,17 @@
     SHOPPING_CART_ICON.addEventListener('click', (e) => {
         e.stopImmediatePropagation();
         location.replace('#cart');
+    });
+
+    // ADD REMISE VOUCHER IN CART
+    ADD_VOUCHER.addEventListener('click', () => {
+        if (ADD_CODE.style.display === 'none') {
+            ADD_CODE.style.display = 'block';
+            VOUCHER_CONTAINER.style.paddingBottom = '20px';
+        } else {
+            ADD_CODE.style.display = 'none';
+            VOUCHER_CONTAINER.style.paddingBottom = '0';
+        }
     });
 
     // ON SEARCH AND FILTER IN CATEGORY PAGE
@@ -306,4 +305,5 @@
         renderHeader();
     });
     window.addEventListener('scroll', utils.onScroll);
+
 })();
