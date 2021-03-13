@@ -2182,6 +2182,23 @@ footer {
   font-size: 12px;
 }
 
+.slide {
+  position: relative;
+  left: -1000px;
+  animation: slide 0.4s forwards;
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+.wrapper:hover .slide {
+  transition: 0.02s;
+  left: 0;
+}
+
 #buttonsContainer {
   margin-top: 20px;
 }

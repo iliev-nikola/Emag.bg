@@ -273,8 +273,7 @@
     });
 
     // ADD REMISE VOUCHER IN CART
-    ADD_VOUCHER.addEventListener('click', (e) => {
-        e.preventDefault();
+    ADD_VOUCHER.addEventListener('click', () => {
         if (ADD_CODE.style.display === 'block') {
             ADD_CODE.style.display = 'none';
             VOUCHER_CONTAINER.style.paddingBottom = '0';

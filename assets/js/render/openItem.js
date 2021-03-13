@@ -44,14 +44,19 @@ function openItem(currentItem) {
             allImgs.append(image);
             const item = currentItem;
             image.addEventListener('mouseover', () => {
+                mainImage.className += ' slide';
                 mainImage.src = item.allImages[i];
                 if (i === 0) {
-                    firstImg.className = 'images-item-hover';
-                    secondImg.className = 'images-item';
+                    firstImg.className = 'images-item-hover wrapper';
+                    secondImg.className = 'images-item wrapper';
                 } else {
-                    secondImg.className = 'images-item-hover';
-                    firstImg.className = 'images-item';
+                    secondImg.className = 'images-item-hover wrapper';
+                    firstImg.className = 'images-item wrapper';
                 }
+            });
+
+            image.addEventListener('mouseout', () => {
+                mainImage.classList.remove('slide');
             });
         }
     }
