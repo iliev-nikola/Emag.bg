@@ -59,6 +59,8 @@ function renderFavAndCart(favourites, cart) {
             closeButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 userModel.removeFromFav(el);
+                createItemsCard(ALL_FOCUS_ITEMS, CARDS_CONTAINER);
+                createItemsCard(OTHER_CLIENTS_WATCHED, OTHER_WATCHED_CONTAINER);
                 renderHeader();
             });
 

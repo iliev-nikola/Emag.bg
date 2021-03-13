@@ -34,6 +34,9 @@ function openFavAndCart(favourites, cart) {
             numberContainer.className = 'number-container';
             const selectNav = utils.createNewElement('select');
             selectNav.className = 'select-cart';
+            selectNav.addEventListener('change', (e) => {
+                userModel.changeAmount(currentElement, +e.target.value);
+            });
             const numb = utils.createNewElement('span', 'бр.');
             numb.className = 'numb';
             const pricesContainer = utils.createNewElement('div');
@@ -83,6 +86,8 @@ function openFavAndCart(favourites, cart) {
             const remove = utils.createNewElement('span', 'Изтрий');
             remove.addEventListener('click', () => {
                 userModel.removeFromCart(currentElement);
+                createItemsCard(ALL_FOCUS_ITEMS, CARDS_CONTAINER);
+                createItemsCard(OTHER_CLIENTS_WATCHED, OTHER_WATCHED_CONTAINER);
                 renderHeader();
             });
 

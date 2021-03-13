@@ -47,22 +47,7 @@
 
     // DELETING ALL WATCHED ITEMS IN HISTORY SECTION WHEN BUTTON CLICK
     DELETE_WATCHED.addEventListener('click', () => {
-        if (!userModel.isLoggedIn()) {
-            const guest = this.getItem('guest');
-            guest.watched = [];
-            userModel.setItem('guest', guest);
-        } else {
-            const users = userModel.getUsers();
-            users.forEach(user => {
-                if (user.isLoggedIn) {
-                    user.watched = [];
-                    return;
-                }
-            });
-
-            userModel.setUsers(users);
-        }
-
+        userModel.removeWatched();
         let counterLoader = 0;
         const intervalLoader = setInterval(() => {
             counterLoader++;
@@ -72,6 +57,7 @@
                 window.clearInterval(intervalLoader);
                 ANIMATION_HISTORY.style.display = 'none';
                 WATCHED_CONTAINER.style.display = 'none';
+                WATCHED_CONTAINER.style.opacity = '1';
             }
         }, 800);
     });
@@ -119,74 +105,35 @@
         switch (hash) {
             case '':
             case 'home':
-                MAIN_SECTION.style.display = 'block';
-                LOGIN_SECTION.style.display = 'none';
-                document.body.style.backgroundColor = '#e9ebee';
-                ERROR_PAGE.style.display = 'none';
-                MAIN_MENU.style.display = 'flex';
-                OPTIONS_PANEL.style.display = 'flex';
-                OPEN_ITEM.style.display = 'none';
+                utils.display('block', MAIN_SECTION, HOME_PAGE_MENU, MARKETPLACE_SECTION, OTHER_CLIENTS_SECTION);
+                utils.display('flex', MAIN_MENU, OPTIONS_PANEL);
+                utils.display('none', LOGIN_SECTION, ERROR_PAGE, OPEN_ITEM, CART_PAGE, FAVOURITES_PAGE);
                 mainSections.map(section => section.style.display = 'block');
-                HOME_PAGE_MENU.style.display = 'block';
-                CART_PAGE.style.display = 'none';
-                FAVOURITES_PAGE.style.display = 'none';
-                MARKETPLACE_SECTION.style.display = 'block';
-                OTHER_CLIENTS_SECTION.style.display = 'block';
+                document.body.style.backgroundColor = '#e9ebee';
                 break;
             case 'login':
-                LOGIN_SECTION.style.display = 'block';
-                LOGIN_PAGE.style.display = 'block';
+                utils.display('block', LOGIN_SECTION, LOGIN_PAGE);
+                utils.display('none', MAIN_SECTION, REGISTER_PAGE, CART_PAGE, FAVOURITES_PAGE, ERROR_PAGE);
                 document.body.style.backgroundColor = '#f7f7f7';
-                MAIN_SECTION.style.display = 'none';
-                REGISTER_PAGE.style.display = 'none';
-                CART_PAGE.style.display = 'none';
-                FAVOURITES_PAGE.style.display = 'none';
-                ERROR_PAGE.style.display = 'none';
                 break;
             case 'register':
-                LOGIN_SECTION.style.display = 'block';
-                REGISTER_PAGE.style.display = 'block';
-                LOGIN_PAGE.style.display = 'none';
+                utils.display('block', LOGIN_SECTION, REGISTER_PAGE);
+                utils.display('none', MAIN_SECTION, LOGIN_PAGE, CART_PAGE, FAVOURITES_PAGE, ERROR_PAGE);
                 document.body.style.backgroundColor = '#f7f7f7';
-                MAIN_SECTION.style.display = 'none';
-                CART_PAGE.style.display = 'none';
-                FAVOURITES_PAGE.style.display = 'none';
-                ERROR_PAGE.style.display = 'none';
                 break;
             case 'cart':
-                MAIN_SECTION.style.display = 'block';
-                CART_PAGE.style.display = 'block';
-                LOGIN_SECTION.style.display = 'none';
-                OTHER_CLIENTS_SECTION.style.display = 'none';
-                NAV_BAR.style.display = 'none';
-                HOME_PAGE_MENU.style.display = 'block';
-                WATCHED_CONTAINER.style.display = 'none';
-                FOOTER.style.display = 'none';
-                APP_EMAG.style.display = 'none';
-                MARKETPLACE_SECTION.style.display = 'none';
-                OPEN_ITEM.style.display = 'none';
-                MAIN_MENU.style.display = 'none';
-                OPTIONS_PANEL.style.display = 'none';
+                utils.display('block', MAIN_SECTION, CART_PAGE, HOME_PAGE_MENU);
+                utils.display('none', MAIN_MENU, LOGIN_SECTION, OPEN_ITEM, MARKETPLACE_SECTION, OTHER_CLIENTS_SECTION, OPTIONS_PANEL, NAV_BAR, WATCHED_CONTAINER, FOOTER, APP_EMAG, FAVOURITES_PAGE);
                 mainSections.map(section => section.style.display = 'none');
-                FAVOURITES_PAGE.style.display = 'none';
                 break;
             case 'favourites':
                 utils.sandwichHeaderOff();
                 CATEGORIES_LINK.className = 'categories-btn-close';
                 CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
-                MAIN_SECTION.style.display = 'block';
-                HOME_PAGE_MENU.style.display = 'block';
-                FAVOURITES_PAGE.style.display = 'flex';
-                MAIN_MENU.style.display = 'none';
-                LOGIN_SECTION.style.display = 'none';
-                OPEN_ITEM.style.display = 'none';
-                MARKETPLACE_SECTION.style.display = 'none';
-                OTHER_CLIENTS_SECTION.style.display = 'none';
-                OPTIONS_PANEL.style.display = 'none';
+                utils.display('block', MAIN_SECTION, HOME_PAGE_MENU);
+                utils.display('flex', FAVOURITES_PAGE);
+                utils.display('none', MAIN_MENU, LOGIN_SECTION, OPEN_ITEM, MARKETPLACE_SECTION, OTHER_CLIENTS_SECTION, OPTIONS_PANEL, CART_PAGE);
                 mainSections.map(section => section.style.display = 'none');
-                CART_PAGE.style.display = 'none';
-                MARKETPLACE_SECTION.style.display = 'none';
-                OTHER_CLIENTS_SECTION.style.display = 'none';
                 if (userModel.isLoggedIn()) {
                     FAV_LOGIN.style.display = 'none';
                     FAV_IS_LOGGIN.style.display = 'block';
@@ -197,39 +144,16 @@
 
                 break;
             case 'categories':
-                CATEGORY_SECTION.style.display = 'block';
                 utils.sandwichHeaderOff();
                 CATEGORIES_LINK.className = 'categories-btn-close';
                 CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
-                MAIN_SECTION.style.display = 'block';
-                HOME_PAGE_MENU.style.display = 'block';
-                OTHER_CLIENTS_SECTION.style.display = 'block';
-                MOBILE_SECTION.style.display = 'block';
-                MOBILE_APP.style.display = 'block';
-                TV_SECTION.style.display = 'block';
-                TOP_SECTION.style.display = 'block';
-                BIG_TECHNOLOGIES.style.display = 'block';
-                BULLETIN.style.display = 'block';
-                FOCUS_SECTION.style.display = 'none';
-                FAVOURITES_PAGE.style.display = 'none';
-                MAIN_MENU.style.display = 'none';
-                LOGIN_SECTION.style.display = 'none';
-                OPEN_ITEM.style.display = 'none';
-                MARKETPLACE_SECTION.style.display = 'none';
-                OPTIONS_PANEL.style.display = 'none';
-                CART_PAGE.style.display = 'none';
-                MARKETPLACE_SECTION.style.display = 'none';
+                utils.display('block', CATEGORY_SECTION, MAIN_SECTION, HOME_PAGE_MENU, OTHER_CLIENTS_SECTION, MOBILE_SECTION, MOBILE_APP, TV_SECTION, TOP_SECTION, BIG_TECHNOLOGIES, BULLETIN);
+                utils.display('none', FOCUS_SECTION, FAVOURITES_PAGE, MAIN_MENU, LOGIN_SECTION, OPEN_ITEM, MARKETPLACE_SECTION, OPTIONS_PANEL, CART_PAGE);
                 break;
             default:
-                MAIN_SECTION.style.display = 'none';
-                LOGIN_SECTION.style.display = 'none';
-                ERROR_PAGE.style.display = 'block';
+                utils.display('block', ERROR_PAGE);
+                utils.display('none', MAIN_SECTION, LOGIN_SECTION, MAIN_MENU, OPTIONS_PANEL, OPEN_ITEM, CART_PAGE, FAVOURITES_PAGE);
                 mainSections.map(section => section.style.display = 'none');
-                MAIN_MENU.style.display = 'none';
-                OPTIONS_PANEL.style.display = 'none';
-                OPEN_ITEM.style.display = 'none';
-                CART_PAGE.style.display = 'none';
-                FAVOURITES_PAGE.style.display = 'none';
         }
 
         document.documentElement.scrollTop = 0;
@@ -247,7 +171,7 @@
     MAIN_MENU.addEventListener('click', (e) => {
         e.preventDefault();
         const tagName = e.target.tagName
-        if (tagName !== 'DIV' && tagName !== 'I' && tagName !== 'INPUT') {
+        if (tagName !== 'DIV' && tagName !== 'I' && tagName !== 'INPUT' && tagName !== 'IMG') {
             location.replace('#categories');
             document.documentElement.scrollTop = 0;
         }
@@ -316,5 +240,4 @@
         renderHeader();
     });
     window.addEventListener('scroll', utils.onScroll);
-
 })();

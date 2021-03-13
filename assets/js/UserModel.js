@@ -218,6 +218,20 @@ const userModel = (function () {
             }
         }
 
+        changeAmount(item, count) {
+            if (!this.isLoggedIn()) {
+                const guest = this.getItem('guest');
+                const article = guest.cart.find(el => el.id === item.id);
+                article.count = count;
+                this.setItem('guest', guest);
+            } else {
+                const currentUser = this.users.find(user => user.isLoggedIn);
+                const article = currentUser.cart.find(el => el.id === item.id);
+                article.count = count;
+                this.setUsers(this.users);
+            }
+        }
+
         // WATCHED ITEMS
         watchItem(article) {
             if (!this.isLoggedIn()) {
@@ -246,6 +260,18 @@ const userModel = (function () {
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
                 return currentUser.watched;
+            }
+        }
+
+        removeWatched() {
+            if (!this.isLoggedIn()) {
+                const guest = this.getItem('guest');
+                guest.watched = [];
+                this.setItem('guest', guest);
+            } else {
+                const currentUser = this.users.find(user => user.isLoggedIn);
+                currentUser.watched = [];
+                this.setItem('users', this.users);
             }
         }
 

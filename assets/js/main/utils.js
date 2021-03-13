@@ -23,6 +23,10 @@ const utils = (function () {
     }
 
     // HELPER FUNCTIONS
+    function display(display, ...args) {
+        [...args].forEach(el => el.style.display = display);
+    }
+
     function getById(id) {
         return document.getElementById(id);
     }
@@ -225,6 +229,7 @@ const utils = (function () {
     return {
         onFocus,
         onFocusOut,
+        display,
         debounce,
         getById,
         querySelect,
