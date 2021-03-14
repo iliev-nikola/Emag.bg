@@ -24,23 +24,27 @@
         <!-- MAIN SECTION -->
         <div class="main-section">
             <!-- HEADER -->
-            <div class="header-section">
-                <header class="header content">
-                    <i class="fas fa-bars" id="header-sandwich-button"></i>
+            <div class="main-bckgr header-section">
+                <header class="position-relative display-flex justify-between
+                    header content">
+                    <i class="cursor fas fa-bars hidden"
+                        id="header-sandwich-button"></i>
                     <a href="#home"><img class="logo"
                             src="./assets/images/logo/emag-logo.svg"
                             alt="emag-logo"></a>
-                    <div class="search-bar">
-                        <form action="" id="searchForm" autocomplete="off">
+                    <div class="position-relative search-bar display-flex">
+                        <form action="" id="searchForm" class="display-flex"
+                            autocomplete="off">
                             <input type="search" id="search"
                                 placeholder="Какво търсиш днес?">
-                            <div class="search-bar-buttons">
-                                <button type="submit" id="submitBtn"><i
-                                        class="fas
+                            <div class="search-bar-buttons display-flex">
+                                <button type="submit" id="submitBtn"
+                                    class="cursor"><i class="fas
                                         fa-search"></i></button>
                             </div>
                         </form>
-                        <div class="searchbox">
+                        <div class="position-absolute main-bckgr searchbox
+                            hidden">
                             <hr class="line">
                             <p>Популярни търсения в eMAG</p>
                             <ul class="searchbox-content">
@@ -73,38 +77,54 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="profile-icon">
+                    <div class="position-relative cursor profile-icon
+                        display-flex justify-between">
                         <span id="userPic" class="guest-user-icon"><i class="far
                                 fa-user"></i></span>
                         <p>Моят акаунт</p>
                         <i class="fas fa-sort-down"></i>
-                        <div class="dropdown-container">
+                        <div class="position-absolute dropdown-container">
                             <div class="invisible-filler"></div>
-                            <div class="profile-nav dropdown-menu">
+                            <div class="hidden profile-nav main-bckgr
+                                dropdown-menu">
                                 <img
                                     src="./assets/images/icons/triangle-outline-variant.png"
                                     class="triangle">
                                 <p id="helloMessage">Здравей, Никола Илиев</p>
                                 <p class="line"></p>
                                 <ul>
-                                    <li><a href="#">Моят акаунт</a></li>
-                                    <li><a href="#cart">Моите поръчки</a></li>
-                                    <li><a href="#">Моите карти</a></li>
-                                    <li><a href="#favourites">Любими</a></li>
-                                    <li><a href="#">Карта eMAG Fibank</a></li>
-                                    <li><a href="#">Ваучер за отстъпка</a></li>
-                                    <li><a href="#">Моите ревюта</a></li>
-                                    <li><a href="#">Моите гаранции</a></li>
-                                    <li><a href="#">Върнати продукти</a></li>
-                                    <li><a href="#">Сервиз</a></li>
-                                    <li><a href="#">Лични данни</a></li>
-                                    <li><a href="#">Настройки за сигурност</a></li>
-                                    <li><a href="#">Моите абонаменти</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Моят
+                                            акаунт</a></li>
+                                    <li class="fs-12 cursor"><a href="#cart">Моите
+                                            поръчки</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Моите
+                                            карти</a></li>
+                                    <li class="fs-12 cursor"><a
+                                            href="#favourites">Любими</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Карта
+                                            eMAG Fibank</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Ваучер
+                                            за отстъпка</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Моите
+                                            ревюта</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Моите
+                                            гаранции</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Върнати
+                                            продукти</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Сервиз</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Лични
+                                            данни</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Настройки
+                                            за сигурност</a></li>
+                                    <li class="fs-12 cursor"><a href="#">Моите
+                                            абонаменти</a></li>
                                     <p class="line"></p>
-                                    <li id="logoutBtn"><a href="#home">Изход</a></li>
+                                    <li id="logoutBtn" class="fs-12 cursor"><a
+                                            href="#home">Изход</a></li>
                                 </ul>
                             </div>
-                            <div class="checked guest-nav dropdown-menu">
+                            <div class="hidden checked fs-12 guest-nav
+                                main-bckgr dropdown-menu">
                                 <img
                                     src="./assets/images/icons/triangle-outline-variant.png"
                                     class="triangle">
@@ -114,7 +134,7 @@
                                         предимствата!</p>
                                 </div>
                                 <div>
-                                    <div class="shopping-cart-btn">
+                                    <div class="cursor shopping-cart-btn">
                                         <a href="#login"><i class="fas
                                                 fa-angle-double-right"></i>
                                             <p>влез в акаунт</p>
@@ -125,32 +145,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="favourite-icon">
-                        <p id="favCounter"></p>
+                    <div class="position-relative favourite-icon display-flex
+                        justify-between cursor">
+                        <p id="favCounter" class="position-absolute fs-12
+                            hidden"></p>
                         <i class="far fa-heart"></i>
                         <p>Любими</p>
                         <i class="fas fa-sort-down"></i>
-                        <div class="dropdown-container fav-lefter">
+                        <div class="position-absolute dropdown-container
+                            fav-lefter">
                             <div class="invisible-filler"></div>
-                            <div class="favourite-nav dropdown-menu">
+                            <div class="hidden fs-12 favourite-nav main-bckgr
+                                dropdown-menu main-align">
                                 <p>Нямаш любими продукти</p>
                             </div>
                         </div>
                     </div>
-                    <div class="shopping-cart">
-                        <p id="cartCounter"></p>
+                    <div class="position-relative shopping-cart display-flex
+                        justify-between cursor">
+                        <p id="cartCounter" class="position-absolute fs-12
+                            hidden"></p>
                         <img src="./assets/images/icons/shopping-cart.png"
                             alt="shopping-cart" class="shopping-cart-icon">
                         <p>Моята количка</p>
                         <i class="fas fa-sort-down"></i>
-                        <div class="dropdown-container">
+                        <div class="position-absolute dropdown-container">
                             <div class="invisible-filler"></div>
-                            <div class="shopping-cart-nav dropdown-menu">
-                                <div class="cart-nav-container">
+                            <div
+                                class="hidden position-relative fs-12
+                                shopping-cart-nav main-bckgr dropdown-menu
+                                main-align">
+                                <div class="cart-nav-container justify-between">
                                     <p>Нямаш нито един продукт в количката</p>
                                 </div>
-                                <div id="sh-cart-btn">
-                                    <div class="shopping-cart-btn">
+                                <div id="sh-cart-btn" class="main-bckgr">
+                                    <div class="cursor shopping-cart-btn">
                                         <a href="#cart"><i class="fas
                                                 fa-angle-double-right"></i>
                                             <p>Виж
@@ -162,39 +191,45 @@
                         </div>
                     </div>
                 </header>
-                <div class="nav-menu-cart" id="navMenuOnScroll"></div>
+                <div class="nav-menu-cart hidden" id="navMenuOnScroll"></div>
             </div>
             <!-- NAVIGATION -->
             <div class="home-page-body">
                 <nav class="nav-bar">
-                    <div class="nav-container content">
-                        <a id="categories" class="categories-btn-close"
-                            href="#"><i class="fas fa-bars"></i>
+                    <div class="nav-container content display-flex
+                        justify-between">
+                        <a id="categories" class="fw-600 fs-12 display-flex
+                            main-bckgr categories-btn-close" href="#"><i
+                                class="fas fa-bars"></i>
                             <p>Категории</p>
                         </a>
-                        <a href="#">Оферта на деня</a>
-                        <a href="#">БЛОГ</a>
-                        <a href="#">Седмична ПРОМОЦИЯ</a>
-                        <a href="#">Ваучер за подарък</a>
-                        <a href="#">eCREDIT</a>
-                        <a href="#">Стани eMAG търговец</a>
+                        <a class="fs-12" href="#">Оферта на деня</a>
+                        <a class="fs-12" href="#">БЛОГ</a>
+                        <a class="fs-12" href="#">Седмична ПРОМОЦИЯ</a>
+                        <a class="fs-12" href="#">Ваучер за подарък</a>
+                        <a class="fs-12" href="#">eCREDIT</a>
+                        <a class="fs-12" href="#">Стани eMAG търговец</a>
                         <div class="empty-space"></div>
-                        <a href="#"><i class="fas fa-headset"></i>eMAG инфо</a>
+                        <a class="fs-12" href="#"><i class="fas fa-headset"></i>eMAG
+                            инфо</a>
                     </div>
                 </nav>
                 <!-- CATEGORIES -->
-                <main id="main" class="select-categories content">
-                    <ul class="categories-menu">
-                        <li><a href="#"><img
+                <main id="main" class="position-relative select-categories
+                    content display-flex">
+                    <ul class="main-bckgr categories-menu">
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/mobile-phone.svg"
                                     alt="gsm-icon">
                                 <p>Телефони,
                                     Таблети & Лаптопи</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#categories"><span>Мобилни телефони и
                                         аксесоари</span></a>
                                 <a href="#">Мобилни телефони</a>
@@ -210,7 +245,7 @@
                                 <a href="#">Външни батерии за мобилни телефони</a>
                                 <a href="#">Карти памет</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>Таблети и аксесоари</span></a>
                                 <a href="#">Таблети</a>
                                 <a href="#">Калъфи за таблети</a>
@@ -228,7 +263,7 @@
                                 <a href="#">Памети за лаптопи</a>
                                 <a href="#">Хард дискове за лаптопи</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#">Охладителни подложки</a>
                                 <a href="#">Зарядни устройства за лаптоп</a>
                                 <a href="#">Батерии за лаптоп</a>
@@ -242,24 +277,27 @@
                                 <a href="#">VR очила</a>
                                 <a href="#">Smart home решения и сензори</a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/1.jpg"
                                     alt="gsm-ad" class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/computer-mouse.svg"
                                     alt="computer-icon">
                                 <p>Компютри &
                                     Периферия</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Настолни компютри & Монитори</span></a>
                                 <a href="#">Настолни компютри</a>
                                 <a href="#">LCD & LED Монитори</a>
@@ -277,7 +315,7 @@
                                 <a href="#">IT аксесоари</a>
                                 <a href="#">Звукови платки</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>Софтуер</span></a>
                                 <a href="#">Office & Desktop приложения</a>
                                 <a href="#">Операционни системи</a>
@@ -295,7 +333,7 @@
                                 <a href="#">Уеб камери</a>
                                 <a href="#">Графични таблети</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#"><span>Принтери и скенери</span></a>
                                 <a href="#">Лазерни принтери</a>
                                 <a href="#">Мастиленоструйни принтери</a>
@@ -312,25 +350,28 @@
                                 <br>
                                 <a href="#"><span>Сървъри и UPS-и</span></a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/2.jpg"
                                     alt="computer-ad" class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/camera.svg"
                                     alt="photo-icon">
                                 <p>ТВ,
                                     Аудио &
                                     Фото</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Телевизори & аксесоари</span></a>
                                 <a href="#">Телевизори</a>
                                 <a href="#">Samsung</a>
@@ -349,7 +390,7 @@
                                 <a href="#">Стойки</a>
                                 <a href="#">Кабели и адаптери</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>Видео проетори & екрани</span></a>
                                 <br>
                                 <a href="#"><span>Системи за домашно кино &
@@ -368,7 +409,7 @@
                                 <a href="#">Аудио слушалки</a>
                                 <a href="#">Диктофони</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#"><span>E-book четци</span></a>
                                 <br>
                                 <a href="#"><span>Дронове</span></a>
@@ -386,23 +427,26 @@
                                 <a href="#"><span>Фото и Видео аксесоари</span></a>
                                 <a href="#">Обективи</a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/3.jpg"
                                     alt="tv-ad" class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/gamepad.svg"
                                     alt="gaming-icon">
                                 <p>Gaming</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Гейминг конзоли</span></a>
                                 <a href="#">Playstation</a>
                                 <a href="#">Xbox</a>
@@ -419,7 +463,7 @@
                                 <br>
                                 <a href="#"><span>Гейминг столове</span></a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>Игри за конзола & Компютър</span></a>
                                 <a href="#">Игри за PlayStation 4</a>
                                 <a href="#">Игри за Xbox One</a>
@@ -438,7 +482,7 @@
                                 <a href="#">LENOVO</a>
                                 <a href="#">MSI</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#">SERIOUX</a>
                                 <a href="#">Разопаковани Настолни Gaming
                                     компютри</a>
@@ -457,24 +501,27 @@
                                 <a href="#">ASUS</a>
                                 <a href="#">DELL</a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/4.jpg"
                                     alt="gaming-ad" class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/washing-machine.svg"
                                     alt="big-machines-icon">
                                 <p>Големи
                                     електроуреди</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Хладилна техника</span></a>
                                 <a href="#">Хладилници</a>
                                 <a href="#">Хладилници с фризер</a>
@@ -492,7 +539,7 @@
                                 <a href="#"><span>Уреди за вграждане</span></a>
                                 <a href="#">Перилни машини за вграждане</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#">Съдомиялни за вграждане</a>
                                 <a href="#">Хладилници за вграждане</a>
                                 <a href="#">Фурни за вграждане</a>
@@ -510,7 +557,7 @@
                                         отопление</span></a>
                                 <a href="#">Климатици</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#">Електрически конвектори</a>
                                 <a href="#">Вентилаторни печки</a>
                                 <a href="#">Бойлери</a>
@@ -527,25 +574,28 @@
                                 <a href="#"><span>Brand shop Dyson</span> <span
                                         class="red-label">НОВО</span></a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/5.jpg"
                                     alt="big-machines-ad"
                                     class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/mixer.svg"
                                     alt="small-machines-icon">
                                 <p>Малки
                                     електроуреди</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Прахосмукачки и ютии</span></a>
                                 <a href="#">Прахосмукачки</a>
                                 <a href="#">Ютии и парогенератори</a>
@@ -562,7 +612,7 @@
                                 <a href="#">Сокоизтисквачки</a>
                                 <a href="#">Електрически кани</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>Кухненски уреди</span></a>
                                 <a href="#">Електрически скари</a>
                                 <a href="#">Фритюрници</a>
@@ -580,7 +630,7 @@
                                 <a href="#">Уреди за приготвяне на десерти</a>
                                 <a href="#">Уреди за вакуумиране</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#">Уреди за сушене и готвене на пара</a>
                                 <br>
                                 <a href="#"><span>Избери тип прахосмукачка</span></a>
@@ -595,24 +645,27 @@
                                 <a href="#">Еспресо машини</a>
                                 <a href="#">С капсули</a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/6.jpg"
                                     alt="small-machines-ad"
                                     class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/tshirt.svg"
                                     alt="fashion-icon">
                                 <p>Мода</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>ЖЕНИ</span></a>
                                 <a href="#">За НЕЯ: Избрани брандове</a>
                                 <br>
@@ -631,7 +684,7 @@
                                 <a href="#">Дамски якета и елеци</a>
                                 <a href="#">Дамски панталони</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>МЪЖЕ</span></a>
                                 <a href="#">За НЕГО: Избрани брандове</a>
                                 <br>
@@ -650,7 +703,7 @@
                                 <a href="#">Мъжки якета и елеци</a>
                                 <a href="#">Мъжки панталони</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#"><span>ДЕЦА</span></a>
                                 <br>
                                 <a href="#"><span>ЧАСОВНИЦИ</span></a>
@@ -671,25 +724,28 @@
                                 <a href="#">Fossil</a>
                                 <a href="#">Casio</a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/7.jpg"
                                     alt="fashion-ad" class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/mirror.svg"
                                     alt="health-icon">
                                 <p>Здраве
                                     и
                                     красота</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Уреди & Аксесоари за лична
                                         грижа</span></a>
                                 <a href="#">Епилатори</a>
@@ -706,7 +762,7 @@
                                 <a href="#">Аксесоари за електрически
                                     самобръсначки</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#">Комплекти за бръснене и подстригване</a>
                                 <br>
                                 <a href="#"><span>Устна хигиена</span></a>
@@ -723,7 +779,7 @@
                                 <a href="#">Аксесоари за грим</a>
                                 <a href="#">Уреди за маникюр и педикюр</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#"><span>Здраве & Wellness</span></a>
                                 <a href="#">Термометри</a>
                                 <a href="#">Кантари</a>
@@ -740,25 +796,28 @@
                                     подстригване</a>
                                 <a href="#">Класически самобръсначки</a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/8.jpg"
                                     alt="health-ad" class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/armchair.svg"
                                     alt="house-icon">
                                 <p>Дом,
                                     градина
                                     & Petshop</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Мебели & Матраци</span></a>
                                 <a href="#">Офис столове</a>
                                 <a href="#">Всекидневна и бар столове</a>
@@ -777,7 +836,7 @@
                                 <a href="#">Кърпи</a>
                                 <a href="#">Халати за баня</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>Градински мебели</span></a>
                                 <a href="#">Комплекти градински мебели</a>
                                 <a href="#">Градински столове и шезлонги</a>
@@ -795,7 +854,7 @@
                                 <br>
                                 <a href="#"><span>Почистване и поддръжка</span></a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#"><span>Перилни препарати</span></a>
                                 <a href="#">Омекотители</a>
                                 <a href="#">Почистващи препарати за съдове</a>
@@ -814,7 +873,7 @@
                                         любимци</span></a>
                                 <a href="#">Храна за кучета</a>
                             </div>
-                            <div class="fourth-column">
+                            <div class="display-flex fourth-column">
                                 <a href="#">Храна за котки</a>
                                 <a href="#">Храна за птици и гризачи</a>
                                 <a href="#">Храна за риби и влечуги</a>
@@ -828,17 +887,19 @@
                                 <a href="#">Кътове за игра за домашни любимци</a>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/teddy-bear.svg"
                                     alt="toys-icon">
                                 <p>Играчки
                                     &
                                     Детски артикули</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Пелени и мокри кърпички</span></a>
                                 <a href="#">Pampers</a>
                                 <a href="#">Puffies</a>
@@ -857,7 +918,7 @@
                                 <a href="#">Матраци, чаршафи и текстил</a>
                                 <a href="#">Бебефони</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>Столчета и хранене</span></a>
                                 <a href="#">Столчета за хранене</a>
                                 <a href="#">Стерилизатори и нагреватели</a>
@@ -874,7 +935,7 @@
                                 <a href="#"><span>Майчинство и бременност</span></a>
                                 <a href="#">Помпи за кърма</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#">Козметика и аксесоари за кърмене</a>
                                 <br>
                                 <a href="#"><span>Детски дрехи и обувки</span></a>
@@ -892,7 +953,7 @@
                                 <a href="#">Детски работилници и маси</a>
                                 <a href="#">Колички за игра</a>
                             </div>
-                            <div class="fourth-column">
+                            <div class="display-flex fourth-column">
                                 <a href="#">Пъзели</a>
                                 <br>
                                 <a href="#"><span>Игри на открито</span></a>
@@ -911,17 +972,19 @@
                                 <a href="#"><span>Хоби играчки</span></a>
                             </div>
                         </div>
-                        <li><a href="#"><img
+                        <li class="position-relative"><a href="#"><img
                                     src="./assets/images/icons/ping-pong.svg"
                                     alt="sport-icon">
                                 <p>Спорт
                                     &
                                     свободно време</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Фитнес и хранителни добавки</span></a>
                                 <a href="#">Велоергометри</a>
                                 <a href="#">Бягащи пътеки</a>
@@ -938,7 +1001,7 @@
                                 <br>
                                 <a href="#"><span>Отборни спортове</span></a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>Куфари & пътни чанти</span></a>
                                 <a href="#">Куфари</a>
                                 <a href="#">Пътни чанти</a>
@@ -958,7 +1021,7 @@
                                 <br>
                                 <a href="#"><span>Зимни спортове</span></a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#"><span>Велосипеди, екипировка и
                                         аксесоари</span></a>
                                 <a href="#">Велосипеди</a>
@@ -977,24 +1040,28 @@
                                 <a href="#">Спортни тениски</a>
                                 <a href="#">Спортни панталони</a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/9.jpg"
                                     alt="sport-ad" class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
-                        <li><a href="#"><img src="./assets/images/icons/car.svg"
+                        <li class="position-relative"><a href="#"><img
+                                    src="./assets/images/icons/car.svg"
                                     alt="car-icon">
                                 <p>Авто
                                     &
                                     Направи си сам</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Автомобилни гуми</span></a>
                                 <br>
                                 <a href="#"><span>Авто електроника</span></a>
@@ -1012,7 +1079,7 @@
                                 <a href="#">Авто-стойка за велосипед</a>
                                 <a href="#">Моторни масла</a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#"><span>Електрически превозни средства</span></a>
                                 <br>
                                 <a href="#"><span>АТВ и УТВ</span></a>
@@ -1030,7 +1097,7 @@
                                 <a href="#">Смесители</a>
                                 <a href="#">Огледала и мебели за баня</a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#">Строителни материали</a>
                                 <a href="#">Бетонобъркачки и колички</a>
                                 <a href="#">Бои и Мазилки</a>
@@ -1047,11 +1114,12 @@
                                 <br>
                                 <a href="#"><span>Осветление & Електроматериали</span></a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/10.jpg"
                                     alt="auto-ad" class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
@@ -1061,10 +1129,12 @@
                                 <p>Книги, Офис
                                     & Храни</p>
                             </a>
-                            <div class="white-space"></div>
+                            <div class="position-absolute main-bckgr white-space
+                                hidden"></div>
                         </li>
-                        <div class="category-menu">
-                            <div class="first-column">
+                        <div class="position-absolute main-bckgr category-menu
+                            hidden">
+                            <div class="display-flex first-column">
                                 <a href="#"><span>Книги</span></a>
                                 <br>
                                 <a href="#"><span>Музика</span></a>
@@ -1083,7 +1153,7 @@
                                 <br>
                                 <a href="#"><span>Идеи за подаръци</span></a>
                             </div>
-                            <div class="second-column">
+                            <div class="display-flex second-column">
                                 <a href="#">Монети и инвестиционно злато</a>
                                 <br>
                                 <a href="#"><span>Храни</span></a>
@@ -1100,7 +1170,7 @@
                                 <br>
                                 <a href="#"><span>Напитки</span></a>
                             </div>
-                            <div class="third-column">
+                            <div class="display-flex third-column">
                                 <a href="#">Минерална вода</a>
                                 <a href="#">Газирани напитки</a>
                                 <a href="#">Натурални сокове</a>
@@ -1119,23 +1189,26 @@
                                 <a href="#">Капсули</a>
                                 <a href="#">Зелен и черен чай</a>
                             </div>
-                            <div class="fourth-column-baner">
+                            <div class="position-relative fourth-column-baner">
                                 <img src="./assets/images/categories-ads/11.jpg"
                                     alt="office-ad" class="categories-banner">
-                                <div class="close-ad-btn">
-                                    <i class="fas fa-times"></i>
+                                <div class="position-absolute main-bckgr
+                                    close-ad-btn">
+                                    <i class="fas fa-times cursor"></i>
                                 </div>
                             </div>
                         </div>
                     </ul>
-                    <div class="main-slideshow">
+                    <div class="position-relative main-slideshow">
                         <img id="slideImage"
                             src="./assets/images/main-view/1.jpg" alt="offer-1">
                         <i id='chevronLeft' class="fas
-                            fa-chevron-left"></i>
+                            fa-chevron-left main-align cursor
+                            position-absolute"></i>
                         <i id='chevronRight' class="fas
-                            fa-chevron-right"></i>
-                        <div class="radio-buttons">
+                            fa-chevron-right main-align cursor
+                            position-absolute"></i>
+                        <div class="position-absolute radio-buttons">
                             <input type="radio" name="radio-buttons" value=0
                                 checked class="radio-main-view">
                             <input type="radio" name="radio-buttons" value=1
@@ -1152,31 +1225,35 @@
                     </div>
                 </main>
                 <!-- OPTIONS PANEL -->
-                <div id='optionsPanel' class="options-panel content">
-                    <div>
+                <div id='optionsPanel' class="position-relative display-flex
+                    main-bckgr options-panel content">
+                    <div class="position-relative">
                         <a href="#">
                             <img src="./assets/images/icons/1.png" alt="">
-                            <p>еМАG кредитна карта от Fibank</p>
+                            <p class="fw-600">еМАG кредитна карта от Fibank</p>
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="hidden position-absolute main-bckgr
+                            dropdown-menu">
                             <img
                                 src="./assets/images/icons/triangle-outline-variant.png"
-                                class="triangle-info">
+                                class="position-absolute triangle-info">
                             <p>Пазарувай и се възползвай от предимствата на
                                 кредитна
                                 карта от eMAG и Fibank.</p>
                             <a href="#">Прочети повече</a>
                         </div>
                     </div>
-                    <div>
+                    <div class="position-relative">
                         <a href="#">
                             <img src="./assets/images/icons/2.png" alt="">
-                            <p>Доставка на пратката до твоята врата</p>
+                            <p class="fw-600">Доставка на пратката до твоята
+                                врата</p>
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="hidden position-absolute main-bckgr
+                            dropdown-menu">
                             <img
                                 src="./assets/images/icons/triangle-outline-variant.png"
-                                class="triangle-info">
+                                class="position-absolute triangle-info">
                             <p>За целта получателят следва да посочи етажа, до
                                 който
                                 продуктите следва да бъдат доставени в полето за
@@ -1187,15 +1264,16 @@
                             <a href="#">Прочети повече</a>
                         </div>
                     </div>
-                    <div>
+                    <div class="position-relative">
                         <a href="#">
                             <img src="./assets/images/icons/3.png" alt="">
-                            <p>Проверка на пратката при доставка</p>
+                            <p class="fw-600">Проверка на пратката при доставка</p>
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="hidden position-absolute main-bckgr
+                            dropdown-menu">
                             <img
                                 src="./assets/images/icons/triangle-outline-variant.png"
-                                class="triangle-info">
+                                class="position-absolute triangle-info">
                             <p>Знаеш какво си поръчал! При доставка на пратката
                                 поискай
                                 на куриера да го отвориш, за да провериш, че
@@ -1207,15 +1285,17 @@
                             <a href="#">Прочети повече</a>
                         </div>
                     </div>
-                    <div>
+                    <div class="position-relative">
                         <a href="#">
                             <img src="./assets/images/icons/4.png" alt="">
-                            <p>Проследяване на пратката в реално време</p>
+                            <p class="fw-600">Проследяване на пратката в реално
+                                време</p>
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="hidden position-absolute main-bckgr
+                            dropdown-menu">
                             <img
                                 src="./assets/images/icons/triangle-outline-variant.png"
-                                class="triangle-info">
+                                class="position-absolute triangle-info">
                             <p>Целият процес по доставката на твоята поръчка
                                 може да
                                 бъде следен в твоя акаунт и в реално време може
@@ -1225,15 +1305,16 @@
                             <a href="#">Прочети повече</a>
                         </div>
                     </div>
-                    <div>
+                    <div class="position-relative">
                         <a href="#">
                             <img src="./assets/images/icons/5.png" alt="">
-                            <p>30 дни право на безплатно връщане</p>
+                            <p class="fw-600">30 дни право на безплатно връщане</p>
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="hidden position-absolute main-bckgr
+                            dropdown-menu">
                             <img
                                 src="./assets/images/icons/triangle-outline-variant.png"
-                                class="triangle-info">
+                                class="position-absolute triangle-info">
                             <p>Страх те е да пазаруваш онлайн, защото мислиш, че
                                 ако
                                 продукта не ти хареса няма да можеш да го
@@ -1248,40 +1329,50 @@
                     </div>
                 </div>
                 <!--FOCUS BAR-->
-                <section id='focus-section' class="focus-section focus-bar">
-                    <button id='left-scroll' class="fas fa-chevron-left
-                        arrow-buttons"></button>
+                <section id='focus-section' class="position-relative
+                    focus-section focus-bar">
+                    <button id='left-scroll' class="hidden fas fa-chevron-left
+                        position-absolute arrow-buttons cursor"></button>
                     <div class='content'>
-                        <div id='focus-main'>
+                        <div id='focus-main' class="display-flex">
                             <img src="./assets/images/sections/focus.png" alt=""
                                 id="focus-image">
                             <div>
-                                <button id='section-button'>виж тук</button>
+                                <button id='section-button' class="cursor
+                                    main-bckgr main-align">виж тук</button>
                             </div>
                         </div>
 
                         <div id='navbar-sections'>
                             <ul>
-                                <li><a href="#"><span>Мобилни устройства & IT</span></a></li>
-                                <li><a href="#"><span>ТВ и Електроника</span></a></li>
-                                <li><a href="#"><span>Големи и малки
+                                <li><a class="display-flex main-bckgr fw-600"
+                                        href="#"><span>Мобилни устройства &
+                                            IT</span></a></li>
+                                <li><a class="display-flex main-bckgr fw-600"
+                                        href="#"><span>ТВ и Електроника</span></a>
+                                </li>
+                                <li><a class="display-flex main-bckgr fw-600"
+                                        href="#"><span>Големи и малки
                                             електроуреди</span></a></li>
-                                <li><a href="#"><span>Електроинструмен санитария
+                                <li><a class="display-flex main-bckgr fw-600"
+                                        href="#"><span>Електроинструмен
+                                            санитария
                                             и
                                             осветление</span></a></li>
-                                <li><a href="#"><span>Авто</span></a></li>
+                                <li><a class="display-flex main-bckgr fw-600"
+                                        href="#"><span>Авто</span></a></li>
                             </ul>
                         </div>
-                        <div class="scroll-menu">
-                            <div id="cards-container"></div>
-                            <div id='dots-container'></div>
+                        <div class="position-relative scroll-menu">
+                            <div id="cards-container" class="position-relative"></div>
+                            <div id='dots-container' class="main-align"></div>
                         </div>
                     </div>
                     <button id='right-scroll' class="fas fa-chevron-right
-                        arrow-buttons"></button>
+                        position-absolute arrow-buttons"></button>
                 </section>
                 <!-- OPEN ITEM SECTION -->
-                <section id='open-item-section'>
+                <section id='open-item-section' class="hidden">
                     <div id='open-item-container' class="content section-bars"></div>
                 </section>
                 <!--CATEGORIES PAGE-->
@@ -1289,17 +1380,21 @@
                     <div id='springImg'></div>
                     <div class="content section-bars">
                         <div id="categoryFilters">
-                            <div class="collapse-content filter"
-                                id="clearFilters"><span>Изчисти
+                            <div class="main-bckgr collapse-content display-flex
+                                justify-between filter" id="clearFilters">
+                                <span>Изчисти
                                     филтрите</span>
-                                <i style='color: red;' class="fas fa-times"></i>
+                                <i style='color: red;' class="fas fa-times
+                                    cursor"></i>
                             </div>
                             <div>
-                                <div class="collapse filter"><span>Производител</span>
+                                <div class="main-bckgr collapse display-flex
+                                    justify-between cursor filter">
+                                    <span>Производител</span>
                                     <i class="fas
                                         fa-chevron-up"></i>
                                 </div>
-                                <div class="collapse-content">
+                                <div class="main-bckgr collapse-content">
                                     <div>
                                         <input type="checkbox" id="apple"
                                             name="manufacturer">
@@ -1363,10 +1458,11 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="collapse filter"><span>Рейтинг</span>
+                                <div class="main-bckgr collapse display-flex
+                                    justify-between filter"><span>Рейтинг</span>
                                     <i class="fas fa-chevron-up"></i>
                                 </div>
-                                <div class="collapse-content">
+                                <div class="main-bckgr collapse-content">
                                     <div>
                                         <input type="checkbox" id="fiveStars"
                                             name="rating">
@@ -1419,17 +1515,19 @@
                                                 actives"></i><i class="fas
                                                 fa-star"></i><i class="fas
                                                 fa-star"></i><i class="fas
-                                                fa-star"></i><i
-                                                class="fas fa-star"></i></label>
+                                                fa-star"></i><i class="fas
+                                                fa-star"></i></label>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <div class="collapse filter"><span>Цена</span>
+                                <div class="main-bckgr collapse display-flex
+                                    justify-between filter"><span>Цена</span>
                                     <i class="fas
                                         fa-chevron-up"></i>
                                 </div>
-                                <div class="collapse-content coll-prices">
+                                <div class="main-bckgr collapse-content
+                                    display-flex coll-prices">
                                     <div>
                                         <input type="checkbox" id="1to50"
                                             name="price">
@@ -1485,10 +1583,12 @@
 
 
                         <div>
-                            <div id='searchContainer'>
-                                <input type="text" id="searchCategoryItem"
-                                    placeholder="Търси по име...">
-                                <select id="sortBy">
+                            <div id='searchContainer' class="display-flex
+                                justify-between">
+                                <input class="fs-12" type="text"
+                                    id="searchCategoryItem" placeholder="Търси
+                                    по име...">
+                                <select id="sortBy" class="fs-12">
                                     <option value="" disabled selected>Сортирай
                                         по...</option>
                                     <option value="name">Име</option>
@@ -1497,35 +1597,41 @@
                                     <option value="discount">Отстъпка %</option>
                                 </select>
                             </div>
-                            <div id='allProducts'></div>
+                            <div id='allProducts' class="display-flex"></div>
                         </div>
                     </div>
                 </section>
                 <!--OTHER CLIENTS WATCHED-->
-                <section class="content section-bars other-clients">
-                    <button id='other-left-scroll' class="fas fa-chevron-left
-                        arrow-buttons"></button>
+                <section class="position-relative content section-bars
+                    other-clients">
+                    <button id='other-left-scroll' class="hidden fas
+                        fa-chevron-left
+                        position-absolute arrow-buttons cursor"></button>
                     <h2 class="benefits">Други потребители са разгледали и</h2>
-                    <div class="scroll-menu">
-                        <div id="other-watched-container" class="">
+                    <div class="position-relative scroll-menu">
+                        <div id="other-watched-container"
+                            class="position-relative">
                         </div>
-                        <div id='other-dots-container'></div>
+                        <div id='other-dots-container' class="position-relative
+                            main-align"></div>
                     </div>
                     <button id='other-right-scroll' class="fas
-                        fa-chevron-right arrow-buttons"></button>
+                        fa-chevron-right position-absolute arrow-buttons
+                        cursor"></button>
                 </section>
                 <!--MOBILE BAR-->
                 <section id='mobile-bar' class="content section-bars">
-                    <div class="category">
+                    <div class="display-flex justify-between category">
                         <h2 class="benefits">Телефони, Таблети & Смарт</h2>
                         <div class="benefits">
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">30 дни право на връщане<span
                                         class="bold">|</span></a>
-                                <div class="dropdown-menu">
+                                <div class="hidden position-absolute main-bckgr
+                                    dropdown-menu">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>Страх те е да пазаруваш онлайн, защото
                                         мислиш, че ако продукта не ти хареса
                                         няма да
@@ -1537,24 +1643,26 @@
                                     <a href="#">Прочети още</a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">eCredit<span>|</span></a>
-                                <div class="dropdown-menu dropdown-lefter">
+                                <div class="hidden position-absolute main-bckgr
+                                    dropdown-menu dropdown-lefter">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>Плати на вноски, чрез eCredit. Бързо,
                                         лесно и
                                         удобно онлайн.</p>
                                     <a href="#">Прочети още</a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">Проверка на пратката<span>|</span></a>
-                                <div class="dropdown-menu">
+                                <div class="hidden position-absolute main-bckgr
+                                    dropdown-menu">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>Увери се, че получаваш това, което си
                                         поръчал! Можеш да поискаш от куриера да
                                         отвориш пратката, преди да платиш.
@@ -1563,12 +1671,13 @@
                                     <a href="#">Прочети още</a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">Удължена гаранция</a>
-                                <div class="dropdown-menu">
+                                <div class="hidden position-absolute main-bckgr
+                                    dropdown-menu">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>В eMAG имаш възможност за удължаване
                                         периода
                                         на гаранцията с една или две години!</p>
@@ -1577,7 +1686,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content technology-bars">
+                    <div class="content display-flex technology-bars">
                         <div class='technology-nav'>
                             <ul>
                                 <li class='a-title'><a href="#">Мобилни телефони
@@ -1602,7 +1711,8 @@
                                 <li class='a-type'><a href="#">Фитнес гривни</a></li>
                             </ul>
                         </div>
-                        <div class='technology-bars technology-menu'>
+                        <div class='display-flex main-bckgr technology-bars
+                            technology-menu'>
                             <ul>
                                 <li><a href="#">Телефони Samsung</a></li>
                                 <li><a href="#">Телефони Huawei</a></li>
@@ -1613,7 +1723,8 @@
                                 <li><a href="#">Smartwatch</a></li>
                             </ul>
                         </div>
-                        <div class='technology-bars technology-image'>
+                        <div class='display-flex technology-bars
+                            technology-image'>
                             <a href="#"><img
                                     src="./assets/images/sections/smartphone.jpg"
                                     alt=""></a>
@@ -1628,16 +1739,17 @@
                 </section>
                 <!--TV BAR-->
                 <section id='tv-bar' class="content section-bars">
-                    <div class="category">
+                    <div class="display-flex justify-between category">
                         <h2 class="benefits">Тв, Аудио, Фото & Gaming</h2>
                         <div class="benefits">
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">30 дни право на връщане<span
                                         class="bold">|</span></a>
-                                <div class="dropdown-menu">
+                                <div class="hidden position-absolute main-bckgr
+                                    dropdown-menu">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>Страх те е да пазаруваш онлайн, защото
                                         мислиш, че ако продукта не ти хареса
                                         няма да
@@ -1649,24 +1761,26 @@
                                     <a href="#">Прочети още</a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">eCredit<span>|</span></a>
-                                <div class="dropdown-menu dropdown-lefter">
+                                <div class="hidden position-absolute main-bckgr
+                                    dropdown-menu dropdown-lefter">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>Плати на вноски, чрез eCredit. Бързо,
                                         лесно и
                                         удобно онлайн.</p>
                                     <a href="#">Прочети още</a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">Проверка на пратката<span>|</span></a>
-                                <div class="dropdown-menu">
+                                <div class="hidden position-absolute main-bckgr
+                                    dropdown-menu">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>Увери се, че получаваш това, което си
                                         поръчал! Можеш да поискаш от куриера да
                                         отвориш пратката, преди да платиш.
@@ -1675,12 +1789,13 @@
                                     <a href="#">Прочети още</a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">Удължена гаранция</a>
-                                <div class="dropdown-menu">
+                                <div class="hidden position-absolute main-bckgr
+                                    dropdown-menu">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>В eMAG имаш възможност за удължаване
                                         периода
                                         на гаранцията с една или две години!</p>
@@ -1689,7 +1804,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content technology-bars">
+                    <div class="content display-flex technology-bars">
                         <div class='technology-nav'>
                             <ul>
                                 <li class='a-title'><a href="#">Телевизори &
@@ -1711,7 +1826,8 @@
                                 <li class='a-title'><a href="#">Конзоли & игри</a></li>
                             </ul>
                         </div>
-                        <div class='technology-bars technology-menu'>
+                        <div class='display-flex main-bckgr technology-bars
+                            technology-menu'>
                             <ul>
                                 <li><a href="#">Телевизори</a></li>
                                 <li><a href="#">Саундбар</a></li>
@@ -1721,7 +1837,8 @@
                                 <li><a href="#">Гейминг столове</a></li>
                             </ul>
                         </div>
-                        <div class='technology-bars technology-image'>
+                        <div class='display-flex technology-bars
+                            technology-image'>
                             <a href="#"><img
                                     src="./assets/images/sections/tv.jpg"
                                     alt=""></a>
@@ -1731,7 +1848,7 @@
                 <!--TOP BRANDS-->
                 <section id='top' class="content section-bars">
                     <h2 id="title-brand">Топ брандове</h2>
-                    <div class="top-brands">
+                    <div class="main-bckgr top-brands">
                         <ul>
                             <li><a class='brands' id='most-popular' href="#"><span>Най-популярните</span></a></li>
                             <li><a class='brands' href="#"><span>IT & Мобилни
@@ -1961,27 +2078,28 @@
                 </section>
                 <!--BIG TECHNOLOGIES-->
                 <section id='big-technologies' class="content section-bars">
-                    <div class="category">
+                    <div class="display-flex justify-between category">
                         <h2 class="benefits"> Големи екектроуреди</h2>
                         <div class="benefits">
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">eCredit <span>|</span></a>
-                                <div class="dropdown-menu dropdown-lefter">
+                                <div class="hidden position-relative main-bckgr
+                                    dropdown-menu dropdown-lefter">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>Плати на вноски, чрез eCredit. Бързо,
                                         лесно и
                                         удобно онлайн.</p>
                                     <a href="#">Прочети още</a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">Проверка на пратката<span>|</span></a>
-                                <div class="dropdown-menu">
+                                <div class="hidden main-bckgr dropdown-menu">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>Увери се, че получаваш това, което си
                                         поръчал! Можеш да поискаш от куриера да
                                         отвориш пратката, преди да платиш.
@@ -1990,12 +2108,12 @@
                                     <a href="#">Прочети още</a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="position-relative">
                                 <a href="#">Удължена гаранция</a>
-                                <div class="dropdown-menu">
+                                <div class="hidden main-bckgr dropdown-menu">
                                     <img
                                         src="./assets/images/icons/triangle-outline-variant.png"
-                                        class="triangle-info">
+                                        class="position-absolute triangle-info">
                                     <p>В eMAG имаш възможност за удължаване
                                         периода
                                         на гаранцията с една или две години!</p>
@@ -2004,7 +2122,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="content technology-bars">
+                    <div class="content display-flex technology-bars">
                         <div class='technology-nav'>
                             <ul>
                                 <li class='a-title'><a href="#">Хладилна техника</a></li>
@@ -2024,7 +2142,8 @@
                                         системи</a></li>
                             </ul>
                         </div>
-                        <div class='technology-bars technology-menu'>
+                        <div class='display-flex main-bckgr technology-bars
+                            technology-menu'>
                             <ul>
                                 <li><a href="#">Хладилници с фризер</a></li>
                                 <li><a href="#">Перални със сушилня</a></li>
@@ -2033,7 +2152,8 @@
                                 <li><a href="#">Вентилаторни печки</a></li>
                             </ul>
                         </div>
-                        <div class='technology-bars technology-image'>
+                        <div class='display-flex technology-bars
+                            technology-image'>
                             <a href="#"><img
                                     src="./assets/images/sections/convector.jpg"
                                     alt=""></a>
@@ -2042,73 +2162,83 @@
                 </section>
                 <!--BULLETIN-->
                 <section id='bulletin' class="content section-bars">
-                    <img id='bulettin-image'
+                    <img id='bulettin-image' class="position-absolute"
                         src="./assets/images/sections/bulletin.png" alt="">
 
                     <div id='check-bulettin'>
-                        <h3>Абонирайте се за бюлетина на eMAG</h3>
+                        <h3 class="fw-600">Абонирайте се за бюлетина на eMAG</h3>
                         <p>С абонирането си на този бюлетин потвърждавам, че
                             имам
                             навършени 16 години.</p>
 
-                        <input type="text" name="" class='bulletin-form'
-                            placeholder="Име">
-                        <input type="text" name="" class='bulletin-form'
-                            placeholder="Имейл">
-                        <button class='bulletin-form'>Абонирам се!</button>
+                        <input type="text" name="" class='fs-12 cursor
+                            bulletin-form' placeholder="Име">
+                        <input type="text" name="" class='fs-12 cursor
+                            bulletin-form' placeholder="Имейл">
+                        <button class='fs-12 bulletin-form'>Абонирам се!</button>
                     </div>
                 </section>
                 <!--FAVOURITES PAGE-->
-                <section id='favouriteItems'>
-                    <div class="content section-bars favourites-page">
-                        <div id=favLogin>
+                <section id='favouriteItems' class="hidden">
+                    <div class="content section-bars display-flex
+                        favourites-page">
+                        <div id="favLogin" class="main-bckgr main-align">
                             <div><img src="./assets/images/logo/userLogo.png"
                                     alt=""></div>
                             <h2>Хей, сега си анонимен user.</h2>
                             <p>Влез в твоя акаунт или се регистрирай, за да
                                 можеш да запазиш любимите си продукти.</p>
                             <a href="#login">
-                                <div class='continue'>
+                                <div class='display-flex continue cursor'>
                                     <span><i class="fas
                                             fa-angle-double-right"></i></span>
-                                    <strong>Влез в акаунт</strong>
+                                    <strong class="fw-600">Влез в акаунт</strong>
                                 </div>
                             </a>
                             <a href="#register">
                                 <div>
-                                    <button id="newAccount">Нов акаунт</button>
+                                    <button id="newAccount" class="main-bckgr">Нов
+                                        акаунт</button>
                                 </div>
                             </a>
                         </div>
-                        <div id='favLoggedIn'>
+                        <div id='favLoggedIn' class="main-bckgr main-align">
                             <ul>
                                 <li class="fav-options">
                                     <p id='favPic'></p>
                                 </li>
-                                <li class="fav-options"><a href="">Моят акаунт</a></li>
-                                <li class="fav-options"><a href="#cart">Моите
+                                <li class="fw-600 fav-options"><a href="">Моят
+                                        акаунт</a></li>
+                                <li class="fw-600 fav-options"><a href="#cart">Моите
                                         поръчки</a></li>
-                                <li class="fav-options"><a href="">Моите карти</a></li>
-                                <li class="fav-options"><a href="#favourites">Любими</a></li>
-                                <li class="fav-options"><a href="">Карта eMAG
+                                <li class="fw-600 fav-options"><a href="">Моите
+                                        карти</a></li>
+                                <li class="fw-600 fav-options"><a
+                                        href="#favourites">Любими</a></li>
+                                <li class="fw-600 fav-options"><a href="">Карта
+                                        eMAG
                                         Fibank</a></li>
-                                <li class="fav-options"><a href="">Ваучер за
+                                <li class="fw-600 fav-options"><a href="">Ваучер
+                                        за
                                         отстъпка</a></li>
-                                <li class="fav-options"><a href="">Моите ревюта</a></li>
-                                <li class="fav-options"><a href="">Моите
+                                <li class="fw-600 fav-options"><a href="">Моите
+                                        ревюта</a></li>
+                                <li class="fw-600 fav-options"><a href="">Моите
                                         гаранции</a></li>
-                                <li class="fav-options"><a href="">Върнати
+                                <li class="fw-600 fav-options"><a href="">Върнати
                                         продукти</a></li>
-                                <li class="fav-options"><a href="">Сервиз</a></li>
-                                <li class="fav-options"><a href="">Лични данни</a></li>
-                                <li class="fav-options"><a href="">Настройки за
+                                <li class="fw-600 fav-options"><a href="">Сервиз</a></li>
+                                <li class="fw-600 fav-options"><a href="">Лични
+                                        данни</a></li>
+                                <li class="fw-600 fav-options"><a href="">Настройки
+                                        за
                                         сигурност</a></li>
-                                <li class="fav-options"><a href="">Моите
+                                <li class="fw-600 fav-options"><a href="">Моите
                                         абонаменти</a></li>
                             </ul>
                         </div>
                         <div id='favItems'>
-                            <div id='emptyFav'>
+                            <div id='emptyFav' class="main-bckgr main-align">
                                 <div>
                                     <img src="./assets/images/icons/fav.png"
                                         alt="">
@@ -2135,10 +2265,10 @@
                     </div>
                 </section>
                 <!-- SHOPPING CART PAGE -->
-                <section class="cart-page">
+                <section class="hidden main-bckgr cart-page">
                     <div class="nav-menu-cart"></div>
                     <div class="content section-bars empty-cart-page">
-                        <div id="empty-cart">
+                        <div id="empty-cart" class="main-align">
                             <div class="empty-cart-title">Количката ти е празна</div>
                             <div>За да добавиш продукти в количкатата</div>
                             <div>моля да се върнеш в началото</div>
@@ -2146,111 +2276,125 @@
                                     href="#home">Към
                                     началната страница</a></div>
                         </div>
-                        <div id="cart-container">
+                        <div id="cart-container" class="display-flex
+                            justify-between">
                             <div>
                                 <h1>Количка за пазаруване</h1>
-                                <div class='items-cart'></div>
+                                <div class='main-bckgr items-cart'></div>
                             </div>
                             <div id='informationNav'>
-                                <div id='information-order'>
+                                <div id='information-order' class="main-bckgr">
                                     <div>
                                         <h2>Информация за поръчката</h2>
-                                        <div class="products-price">
+                                        <div class="display-flex justify-between
+                                            products-price">
                                             <span>Всички пордукти:</span>
-                                            <div class="total-cart">
+                                            <div class="display-flex
+                                                total-cart">
                                                 <p id="products-amount"></p>
                                                 <p id='product-pennies'></p>
                                                 <p>лв</p>
                                             </div>
                                         </div>
-                                        <div id='delivery-price'>
+                                        <div id='delivery-price'
+                                            class="display-flex
+                                            justify-between">
                                             <span>Такса доставка:</span>
                                             <strong>БЕЗПЛАТНА</strong>
                                         </div>
                                         <div>
                                             <h2>Общо:</h2>
-                                            <div class="total-cart">
+                                            <div class="display-flex
+                                                total-cart">
                                                 <h3 id='cart-amount-price'></h3>
                                                 <h4 id='cart-amount-pennies'></h4>
                                                 <h3>лв</h3>
                                             </div>
                                         </div>
-                                        <div class='continue'>
+                                        <div class='display-flex continue
+                                            cursor'>
                                             <span><i class="fas
                                                     fa-angle-double-right"></i></span>
-                                            <strong>Продължи</strong>
+                                            <strong class="fw-600">Продължи</strong>
                                         </div>
                                     </div>
                                 </div>
-                                <div id='voucher'>
-                                    <div id='addVoucher'>
+                                <div id='voucher' class="main-bckgr">
+                                    <div id='addVoucher' class="cursor
+                                        display-flex justify-between">
                                         <span>Добави ваучер</span>
                                         <i class="fas fa-sort-down"
                                             aria-hidden="true"></i>
                                     </div>
-                                    <div id='addCode'>
-                                        <div><input class="inputs-voucher"
-                                                type="text"></div>
-                                        <div><button class="inputs-voucher">Добави
+                                    <div id='addCode' class="main-align">
+                                        <div><input class="main-bckgr
+                                                inputs-voucher" type="text"></div>
+                                        <div><button class="main-bckgr
+                                                inputs-voucher">Добави
                                                 код</button></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <footer id='footer-cart'>
+                    <footer id='footer-cart' class="main-bckgr">
                         <div class="content section-bars">
                             <p class='footer-cart-title'>В eMAG се радваш на:</p>
-                            <div class="footer-content">
-                                <div class="footer-options">
+                            <div class="display-flex footer-content">
+                                <div class="display-flex footer-options">
                                     <img
                                         src="./assets/images/icons/footer-1.png"
                                         alt="">
                                     <div>
                                         <p>Проверка на пратката</p>
-                                        <small>за продуктите предлагани от eMAG</small>
+                                        <small class="fs-12">за продуктите
+                                            предлагани от eMAG</small>
                                     </div>
                                 </div>
-                                <div class="footer-options">
+                                <div class="display-flex footer-options">
                                     <img
                                         src="./assets/images/icons/footer-2.png"
                                         alt="">
                                     <div>
                                         <p>Проследяване на пратката</p>
-                                        <small>в твоя акаунт</small>
+                                        <small class="fs-12">в твоя акаунт</small>
                                     </div>
                                 </div>
-                                <div class="footer-options">
+                                <div class="display-flex footer-options">
                                     <img
                                         src="./assets/images/icons/footer-1.png"
                                         alt="">
                                     <div>
                                         <p>30 дни право на връщане</p>
-                                        <small>за продуктите предлагани от eMAG</small>
+                                        <small class="fs-12">за продуктите
+                                            предлагани от eMAG</small>
                                     </div>
                                 </div>
-                                <div class="footer-options">
+                                <div class="display-flex footer-options">
                                     <img
                                         src="./assets/images/icons/footer-2.png"
                                         alt="">
                                     <div>
                                         <p>Купуваш сигурно</p>
-                                        <small>Всички данни са криптирани за
+                                        <small class="fs-12">Всички данни са
+                                            криптирани за
                                             едно
                                             по-сигурно пазаруване.</small>
                                     </div>
                                 </div>
                             </div>
-                            <div class="last-info">
+                            <div class="display-flex justify-between last-info">
                                 <p class='footer-cart-title'>Може да видиш
                                     повече за:</p>
-                                <small>Copyright 2001-2021 Dante International</small>
+                                <small class="fs-12">Copyright 2001-2021 Dante
+                                    International</small>
                             </div>
                             <div class="footer-link">
                                 <div>
-                                    <a href="#">Начин на плащане</a>
-                                    <a href="#">Начин на доставка</a>
-                                    <a href="#">Защитаваме твоите лични данни</a>
+                                    <a class="fs-12" href="#">Начин на плащане</a>
+                                    <a class="fs-12" href="#">Начин на доставка</a>
+                                    <a class="fs-12" href="#">Защитаваме твоите
+                                        лични данни</a>
                                 </div>
                                 <a href="#">Мобилна версия</a>
                             </div>
@@ -2258,24 +2402,29 @@
                     </footer>
                 </section>
                 <!--HISTORY SECTION-->
-                <section id='history-section' class="content section-bars">
+                <section id='history-section' class="hidden position-relative
+                    content section-bars">
                     <div class="history-nav">
                         <h2>Твоята история на навигиране</h2>
-                        <div id='animation-container'>
-                            <div id='animation-history'></div>
+                        <div id='animation-container' class="display-flex">
+                            <div id='animation-history'
+                                class="position-absolute"></div>
                         </div>
-                        <div id="watched-items">
+                        <div id="watched-items" class="display-flex">
                         </div>
-                        <div id='watched-text'>
+                        <div id='watched-text' class="display-flex
+                            justify-between">
                             <p>Други потребители са гледали и:</p>
-                            <p id='delete-watched'>Изтрий историята за
+                            <p id='delete-watched' class="cursor">Изтрий
+                                историята за
                                 навигиране...</p>
                         </div>
                     </div>
                 </section>
                 <!--MARKETPLACE-->
-                <section class="content section-bars marketplace">
-                    <div class="marketplace-nav">
+                <section class="position-relative content section-bars
+                    marketplace">
+                    <div class="position-relative marketplace-nav">
                         <h2>Разширете бизнеса си!</h2>
                         <ul>
                             <li>Бърз достъп до <strong>хиляди клиенти дневно</strong></li>
@@ -2285,10 +2434,11 @@
                                 успешни продажби</li>
                         </ul>
                         <div>
-                            <button id='btn-marketplace'>Искам да продавам в
+                            <button id='btn-marketplace' class="cursor">Искам да
+                                продавам в
                                 eMAG</button>
                         </div>
-                        <div id='marketplace-banner'>
+                        <div id='marketplace-banner' class="position-absolute">
                             <img
                                 src="./assets/images/sections/marketplace-banner.png"
                                 alt="">
@@ -2296,19 +2446,20 @@
                     </div>
                 </section>
                 <!--APP EMAG-->
-                <section class="section-bars app-emag">
-                    <div class="content" id="app-emag">
+                <section class="section-bars main-bckgr app-emag">
+                    <div class="content display-flex" id="app-emag">
                         <div class="app-bars">
                             <strong>Свали приложението на eMAG</strong>
                             <p>Попълни телефонния си номер и ще ти изпратим линк
                                 за
                                 сваляне на приложението.</p>
                         </div>
-                        <div id='send-message' class="app-bars">
+                        <div id='send-message' class="display-flex app-bars
+                            cursor">
                             <input type="text" placeholder="08XXXXXXXX">
                             <button>Изпрати SMS</button>
                         </div>
-                        <div id="play-store">
+                        <div id="play-store" class="display-flex">
                             <a
                                 href="http://play.google.com/store/apps/details?id=bg.emag.android"
                                 target="_blank">
@@ -2327,21 +2478,21 @@
                 </section>
                 <!--FOOTER-->
                 <footer>
-                    <div class="content footer-nav">
+                    <div class="content display-flex footer-nav">
                         <div>
                             <ul>
                                 <li class="footer-title"><a href="#">Услуги</a></li>
-                                <li class="footer-category"><a href="#">Проверка
+                                <li class="fs-12 footer-category"><a href="#">Проверка
                                         на
                                         пратката</a></li>
-                                <li class="footer-category"><a href="#">30
+                                <li class="fs-12 footer-category"><a href="#">30
                                         дни
                                         право
                                         на връщане</a></li>
-                                <li class="footer-category"><a href="#">Гаранция
+                                <li class="fs-12 footer-category"><a href="#">Гаранция
                                         и
                                         сервиз</a></li>
-                                <li class="footer-category"><a href="#">Плащане
+                                <li class="fs-12 footer-category"><a href="#">Плащане
                                         на
                                         вноски, чрез eCREDIT</a></li>
                             </ul>
@@ -2351,17 +2502,17 @@
                                 <li class="footer-title"><a href="#">Поръчки
                                         и
                                         доставка</a></li>
-                                <li class="footer-category"><a href="#">Моят
+                                <li class="fs-12 footer-category"><a href="#">Моят
                                         акаунт</a></li>
-                                <li class="footer-category"><a href="#">Как
+                                <li class="fs-12 footer-category"><a href="#">Как
                                         да
                                         поръчам онлайн</a></li>
-                                <li class="footer-category"><a href="#">Доставка
+                                <li class="fs-12 footer-category"><a href="#">Доставка
                                         на
                                         поръчките</a></li>
-                                <li class="footer-category"><a href="#">Често
+                                <li class="fs-12 footer-category"><a href="#">Често
                                         задавани въпроси</a></li>
-                                <li class="footer-category"><a href="#">Блог</a></li>
+                                <li class="fs-12 footer-category"><a href="#">Блог</a></li>
                             </ul>
                         </div>
                         <div>
@@ -2369,30 +2520,30 @@
                                 <li class="footer-title"><a href="#">Връзка
                                         с
                                         нас</a></li>
-                                <li class="footer-category"><a href="#">Контакт</a></li>
-                                <li class="footer-category"><a href="#">Формуляр
+                                <li class="fs-12 footer-category"><a href="#">Контакт</a></li>
+                                <li class="fs-12 footer-category"><a href="#">Формуляр
                                         поправка на продукт</a></li>
-                                <li class="footer-category"><a href="#">Формуляр
+                                <li class="fs-12 footer-category"><a href="#">Формуляр
                                         връщане на продукт</a></li>
-                                <li class="footer-category"><a href="#">Формуляр
+                                <li class="fs-12 footer-category"><a href="#">Формуляр
                                         въпроси и рекламации</a></li>
                             </ul>
                         </div>
                         <div>
                             <ul>
                                 <li class="footer-title"><a href="#">eMAG.bg</a></li>
-                                <li class="footer-category"><a href="#">Политика
+                                <li class="fs-12 footer-category"><a href="#">Политика
                                         за
                                         използване на бисквитки</a></li>
-                                <li class="footer-category"><a href="#">Условия
+                                <li class="fs-12 footer-category"><a href="#">Условия
                                         за
                                         ползване - актуализиране</a></li>
-                                <li class="footer-category"><a href="#">Лични
+                                <li class="fs-12 footer-category"><a href="#">Лични
                                         данни</a></li>
-                                <li class="footer-category"><a href="#">Платформа
+                                <li class="fs-12 footer-category"><a href="#">Платформа
                                         за
                                         OPC</a></li>
-                                <li class="footer-category"><a href="#">BLACK
+                                <li class="fs-12 footer-category"><a href="#">BLACK
                                         FRIDAY</a></li>
                             </ul>
                         </div>
@@ -2403,24 +2554,27 @@
         </div>
 
         <!-- LOGIN AND REGISTER PAGE -->
-        <div id='login' class="login-section">
+        <div id='login' class="hidden login-section main-align">
             <a href="#home"><img src="./assets/images/logo/emag-logo.svg"
                     alt="emag-logo" class="logo"></a>
-            <div class="login-box">
+            <div class="main-bckgr login-box">
                 <div id="loginPage">
                     <h1 class="loginTitle">Вход</h1>
-                    <form action="" class="user-form">
-                        <label for="loginUsername">Моля въведи потребителско
+                    <form action="" class="display-flex user-form main-align">
+                        <label class="fw-600" for="loginUsername">Моля въведи
+                            потребителско
                             име</label>
                         <input type="text" id="loginUsername" required
                             autocomplete="username">
-                        <label for="loginPassword">Моля въведи парола</label>
+                        <label class="fw-600" for="loginPassword">Моля въведи
+                            парола</label>
                         <input type="password" id="loginPassword" required
                             autocomplete="current-password">
-                        <input type="submit" id="loginBtn" value="Продължи">
+                        <input type="submit" id="loginBtn" class="cursor"
+                            value="Продължи">
                     </form>
                     <p>Нямаш акаунт? Създай от <a href="#register">тук</a></p>
-                    <div class="social-login">
+                    <div class="position-relative social-login">
                         <div>
                             <hr class="line-through">
                             <p>или</p>
@@ -2428,14 +2582,15 @@
                         </div>
                         <p>използвай своя социален акаунт</p>
                         <a href="https://facebook.com" target="_blank"><div
-                                class="social-buttons-login"
-                                id="fb-button">
+                                class="display-flex fw-600 cursor
+                                social-buttons-login cursor" id="fb-button">
                                 <i class="fab fa-facebook-f"></i>
                                 <p class="separator">|</p>
                                 <p class="social-title">Facebook</p>
                             </div></a>
                         <a href="https://myaccount.google.com/" target="_blank"><div
-                                class="social-buttons-login" id="google-button">
+                                class="display-flex fw-600 cursor
+                                social-buttons-login" id="google-button">
                                 <i class="fab fa-google"></i>
                                 <p class="separator">|</p>
                                 <p class="social-title">Google</p>
@@ -2444,43 +2599,49 @@
                 </div>
                 <div id="registerPage">
                     <h1 class="loginTitle">Регистрация</h1>
-                    <form action="" class="user-form">
-                        <label for="names">Моля въведи име и фамилия</label>
+                    <form action="" class="display-flex user-form">
+                        <label class="fw-600" for="names">Моля въведи име и
+                            фамилия</label>
                         <input type="text" id="names" required>
-                        <label for="registerUsername">Моля въведи
+                        <label class="fw-600" for="registerUsername">Моля въведи
                             потребителско
                             име</label>
                         <input type="text" id="regUsername" required
                             autocomplete="username">
-                        <label for="regPassword">Моля въведи парола</label>
+                        <label class="fw-600" for="regPassword">Моля въведи
+                            парола</label>
                         <input type="password" id="regPassword" required
                             autocomplete="new-password">
-                        <label for="regRePassword">Моля въведи паролата
+                        <label class="fw-600" for="regRePassword">Моля въведи
+                            паролата
                             отново</label>
                         <input type="password" id="regRePassword" required
                             autocomplete="new-password">
-                        <input type="submit" id="registerBtn" value="Продължи">
+                        <input type="submit" id="registerBtn" class="cursor"
+                            value="Продължи">
                     </form>
                     <p>Вече имаш акаунт? Влез от <a href="#login">тук</a></p>
                 </div>
             </div>
-            <p class="login-help">Имаш ли нужда от помощ?</p>
-            <p class="login-info">Акаунт на клиент на eMAG.bg<strong> |
+            <p class="login-help cursor fw-600">Имаш ли нужда от помощ?</p>
+            <p class="login-info cursor fw-600">Акаунт на клиент на eMAG.bg<strong>
+                    |
                 </strong>Данни с личен
                 характер</p>
         </div>
 
         <!-- INFORMATION BANNER -->
-        <div id="success"></div>
-        <div id="error"></div>
+        <div id="success" class="fw-600 hidden"></div>
+        <div id="error" class="fw-600 hidden"></div>
 
         <!-- ERROR PAGE -->
-        <div id="errorPage">
+        <div id="errorPage" class="hidden main-align">
             <img id="errorPic" src="./assets/images/error-page/authError404.svg"
                 alt="Error:
                 page not found">
-            <h1 id="errorTitle">Опааа...</h1>
-            <h2 id="errorDescription">Не съществува такава страница &#9785;</h2>
+            <h1 id="errorTitle" class="fw-600">Опааа...</h1>
+            <h2 id="errorDescription" class="fw-600">Не съществува такава
+                страница &#9785;</h2>
             <p id="errorText">Върни се обратно?</p>
             <a href="#home"><img class="logo"
                     src="./assets/images/logo/emag-logo.svg" alt="emag-logo"></a>

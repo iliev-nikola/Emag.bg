@@ -5,27 +5,27 @@ function openItem(currentItem) {
     titleContainer.className = 'title-article';
     const currentTitle = utils.createNewElement('p', currentItem.title);
     const fixedInformation = utils.createNewElement('div');
-    fixedInformation.className = 'fixed-info';
+    fixedInformation.className = 'display-flex justify-between fixed-info';
     const currentID = utils.createNewElement('span', `Код на продукта: ${currentItem.id}`);
-    currentID.className = 'items-id';
+    currentID.className = 'fs-12 items-id';
     const social = utils.createNewElement('span');
     const fbBtn = utils.createNewElement('a');
-    fbBtn.className = 'fb-btn';
+    fbBtn.className = 'fs-12 fb-btn';
     fbBtn.href = '#';
     const fbIcon = utils.createNewElement('i');
     fbIcon.className = 'fab fa-facebook-f';
     const fbTitle = utils.createNewElement('span', 'Сподели');
     const compareBox = utils.createNewElement('span');
-    compareBox.className = 'compare-box';
+    compareBox.className = 'fs-12 compare-box';
     const check = utils.createNewElement('input');
     check.type = 'checkbox';
     const text = utils.createNewElement('span', 'Сравни');
     const mainContainer = utils.createNewElement('div');
-    mainContainer.className = 'items-main-container';
+    mainContainer.className = 'display-flex justify-between items-main-container';
     const containerImages = utils.createNewElement('div');
     let mainImage = utils.createNewElement('img');
     mainImage.src = currentItem.image;
-    mainImage.className = 'main-image-item';
+    mainImage.className = 'cursor main-image-item';
     containerImages.className = 'item-images';
     let allImgs = utils.createNewElement('div');
     if (currentItem.allImages) {
@@ -34,10 +34,10 @@ function openItem(currentItem) {
             let image = utils.createNewElement('img');
             image.src = currentItem.allImages[i];
             if (i === 0) {
-                image.className = 'images-item-hover';
+                image.className = 'images-item-hover cursor';
                 firstImg = image;
             } else {
-                image.className = 'images-item';
+                image.className = 'images-item cursor';
                 secondImg = image;
             }
 
@@ -47,11 +47,11 @@ function openItem(currentItem) {
                 mainImage.className += ' slide';
                 mainImage.src = item.allImages[i];
                 if (i === 0) {
-                    firstImg.className = 'images-item-hover wrapper';
-                    secondImg.className = 'images-item wrapper';
+                    firstImg.className = 'images-item-hover wrapper cursor';
+                    secondImg.className = 'images-item wrapper cursor';
                 } else {
-                    secondImg.className = 'images-item-hover wrapper';
-                    firstImg.className = 'images-item wrapper';
+                    secondImg.className = 'images-item-hover wrapper cursor';
+                    firstImg.className = 'images-item wrapper cursor';
                 }
             });
 
@@ -62,7 +62,7 @@ function openItem(currentItem) {
     }
 
     const containerInformation = utils.createNewElement('div');
-    containerInformation.className = 'container-info';
+    containerInformation.className = 'display-flex justify-between container-info';
     const itemInformation = utils.createNewElement('div');
     const addItemContainer = utils.createNewElement('div');
     addItemContainer.className = 'add-item-in';
@@ -103,24 +103,24 @@ function openItem(currentItem) {
     const persText = utils.createNewElement('li', 'Физическо лице: 24 месеца');
     persText.className = 'benef-strong';
     const prices_container = utils.createNewElement('div');
-    prices_container.className = 'prices-container';
+    prices_container.className = 'display-flex justify-between prices-container';
     const prices = utils.createNewElement('div');
     prices.className = 'prices';
     const regularContainer = utils.createNewElement('div');
-    regularContainer.className = 'regular-container-item';
+    regularContainer.className = 'fw-600 position-relative regular-container-item';
     const totalContainer = utils.createNewElement('div');
-    totalContainer.className = 'total-container';
+    totalContainer.className = 'position-relative total-container';
     const currentPrice = utils.createNewElement('span', currentItem.currentPrice)
-    currentPrice.className = 'current-price-item';
+    currentPrice.className = 'fw-600 current-price-item';
     const currentPennies = utils.createNewElement('sup', currentItem.currentPennies);
-    currentPennies.className = 'current-pennies-item';
+    currentPennies.className = 'fw-600 position-absolute current-pennies-item';
     const lv = utils.createNewElement('span', 'лв.')
-    lv.className = 'lv-item';
+    lv.className = 'fw-600 lv-item';
     if (currentItem.regularPrice) {
         const regularPrice = utils.createNewElement('span', currentItem.regularPrice)
         regularPrice.className = 'regular-price-item';
         const regularPennies = utils.createNewElement('sup', currentItem.regularPennies);
-        regularPennies.className = 'regular-pennies-item';
+        regularPennies.className = 'position-absolute regular-pennies-item';
         const lv = utils.createNewElement('span', 'лв.')
         lv.className = 'lv';
         let percentage = utils.calculatingPercentage(currentItem);
@@ -137,7 +137,7 @@ function openItem(currentItem) {
     const btnContainer = utils.createNewElement('div');
     btnContainer.id = 'buttonsContainer';
     const addToShoppingCart = utils.createNewElement('div');
-    addToShoppingCart.className = 'add-shopping-cart';
+    addToShoppingCart.className = 'display-flex add-shopping-cart';
     const item = currentItem;
     addToShoppingCart.addEventListener('click', () => {
         userModel.addToCart(item);
@@ -149,7 +149,7 @@ function openItem(currentItem) {
     const cartText = utils.createNewElement('span', 'Добави в количката');
     cartText.className = 'cart-text';
     const addToFavourite = utils.createNewElement('div');
-    addToFavourite.className = 'add-favourite';
+    addToFavourite.className = 'display-flex add-favourite main-align';
     const favIconContainer = utils.createNewElement('span');
     const favIcon = utils.createNewElement('i');
     favIcon.className = 'far fa-heart heart';

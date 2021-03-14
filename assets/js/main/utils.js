@@ -54,9 +54,9 @@ const utils = (function () {
             successBanner.style.display = 'none';
         });
 
-        // setTimeout(() => {
-        //     successBanner.style.display = 'none';
-        // }, 3000);
+        setTimeout(() => {
+            successBanner.style.display = 'none';
+        }, 3000);
     }
 
     function error(message) {
@@ -66,9 +66,10 @@ const utils = (function () {
         errorBanner.addEventListener('click', () => {
             errorBanner.style.display = 'none';
         });
-        // setTimeout(() => {
-        //     errorBanner.style.display = 'none';
-        // }, 3000);
+
+        setTimeout(() => {
+            errorBanner.style.display = 'none';
+        }, 3000);
     }
 
     function debounce(func, wait) {
@@ -141,25 +142,25 @@ const utils = (function () {
     // MAIN MENU DROPDOWN ON SCROLL IN HOME PAGE
     function hideMainWhenScroll() {
         MAIN_MENU.style.display = 'none';
-        CATEGORIES_LINK.className = 'categories-btn-close';
+        CATEGORIES_LINK.className = 'fw-600 fs-12 display-flex main-bckgr categories-btn-close';
         window.removeEventListener('scroll', hideMainWhenScroll);
     }
 
     function onMainMouseOver() {
         HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
         MAIN_MENU.style.visibility = 'visible';
-        CATEGORIES_LINK.className = 'categories-btn-open';
+        CATEGORIES_LINK.className = 'fw-600 display-flex main-bckgr categories-btn-open';
     }
 
     function onMainMouseOut() {
-        MAIN_MENU.className = 'select-categories-dropdown scroll content';
+        MAIN_MENU.className = 'position-absolute select-categories-dropdown scroll content';
         MAIN_MENU.style.visibility = 'hidden';
         HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
-        CATEGORIES_LINK.className = 'categories-btn-close';
+        CATEGORIES_LINK.className = 'fw-600 fs-12 display-flex main-bckgr categories-btn-close';
     }
 
     function onSandwichMouseOver() {
-        MAIN_MENU.className = 'select-categories-dropdown scroll content';
+        MAIN_MENU.className = 'position-absolute select-categories-dropdown scroll content';
         MAIN_MENU.style.visibility = 'visible';
         MAIN_MENU.style.display = 'flex';
         MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
@@ -169,11 +170,11 @@ const utils = (function () {
 
     function sandwichHeaderOn() {
         HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
-        HEADER.className = 'header-scroll content';
+        HEADER.className = 'position-relative display-flex justify-between header-scroll content';
         NAV_MENU_ONSCROLL.style.display = 'block';
         HEADER_SANDWICH_BUTTON.style.display = 'block';
         HEADER_SANDWICH_BUTTON.addEventListener('mouseover', onSandwichMouseOver);
-        HEADER_SECTION.className = 'header-section-scroll';
+        HEADER_SECTION.className = 'main-bckgr main-align header-section-scroll';
         SEARCH_BAR.style.width = '490px';
         FAVOURITE_COUNTER.style.width = '18%';
         CART_COUNTER.style.width = '11.5%';
@@ -182,16 +183,16 @@ const utils = (function () {
     function sandwichHeaderOff(home) {
         MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
-        HEADER.className = 'header content';
+        HEADER.className = 'position-relative display-flex justify-between main-backg header content';
         if (home) {
-            CATEGORIES_LINK.className = 'categories-btn-open';
+            CATEGORIES_LINK.className = 'fw-600 display-flex main-bckgr categories-btn-open';
             MAIN_MENU.style.display = 'flex';
             MAIN_MENU.style.visibility = 'visible';
         }
-        MAIN_MENU.className = 'select-categories content';
+        MAIN_MENU.className = 'position-relative select-categories content';
         NAV_MENU_ONSCROLL.style.display = 'none';
         HEADER_SANDWICH_BUTTON.style.display = 'none';
-        HEADER_SECTION.className = 'header-section';
+        HEADER_SECTION.className = 'display-flex main-bckgr header-section';
         SEARCH_BAR.style.width = '558px';
         FAVOURITE_COUNTER.style.width = '13%';
         CART_COUNTER.style.width = '8%';

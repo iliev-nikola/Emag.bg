@@ -142,6 +142,7 @@ CHEVRON_LEFT.addEventListener('click', () => {
 radioBtns.forEach(radio => {
     radio.addEventListener('click', () => {
         currentSlide = +radio.value;
+        radio.checked = true;
         slideShow();
     });
 });

@@ -13,7 +13,7 @@ function openFavAndCart(favourites, cart) {
         ITEMS_IN_CART.append(mainContainer);
         cart.forEach(currentElement => {
             const elContainer = utils.createNewElement('div');
-            elContainer.className = 'item-cont';
+            elContainer.className = 'display-flex justify-between main-bckgr item-cont';
             const imageContainer = utils.createNewElement('a');
             imageContainer.href = `#article/${currentElement.id}`;
             const elImage = utils.createNewElement('img');
@@ -22,16 +22,17 @@ function openFavAndCart(favourites, cart) {
             elInformation.className = 'cart-inf';
             const elTitle = utils.createNewElement('a', currentElement.title);
             elTitle.href = `#article/${currentElement.id}`;
-            elTitle.className = 'cart-title';
+            elTitle.className = 'cursor cart-title';
             const available = utils.createNewElement('p', 'В наличност: в наличност');
-            available.className = 'instock';
+            available.className = 'fs-12 instock';
             const buyWith = utils.createNewElement('div');
             buyWith.className = 'buy-with';
             const buyIcon = utils.createNewElement('i');
             buyIcon.className = 'fas fa-arrow-right';
             const buyText = utils.createNewElement('span', 'Купи със');
+            buyText.className = 'fw-600 cursor';
             const numberContainer = utils.createNewElement('div');
-            numberContainer.className = 'number-container';
+            numberContainer.className = 'display-flex number-container';
             const selectNav = utils.createNewElement('select');
             selectNav.className = 'select-cart';
             selectNav.addEventListener('change', (e) => {
@@ -39,35 +40,35 @@ function openFavAndCart(favourites, cart) {
                 renderHeader();
             });
             const numb = utils.createNewElement('span', 'бр.');
-            numb.className = 'numb';
+            numb.className = 'fs-12 numb';
             const pricesContainer = utils.createNewElement('div');
             pricesContainer.className = 'prices-cart';
             const currentContainer = utils.createNewElement('div');
-            currentContainer.className = 'cart-price';
+            currentContainer.className = 'position-relative display-flex cart-price';
             const currentPrice = utils.createNewElement('span');
             currentPrice.className = 'cart-current-price';
             const currentPennies = utils.createNewElement('span');
-            currentPennies.className = 'current-pennies-cart';
+            currentPennies.className = 'fs-12 current-pennies-cart';
             const lv = utils.createNewElement('span', 'лв.')
             lv.className = 'current-lv-cart';
             pricesContainer.append(currentContainer);
             currentContainer.append(currentPrice, currentPennies, lv);
             const regularPrice = utils.createNewElement('span')
-            regularPrice.className = 'cart-regular-price';
+            regularPrice.className = 'fs-12 cart-regular-price';
             const regularPennies = utils.createNewElement('span');
-            regularPennies.className = 'regular-pennies-cart';
+            regularPennies.className = 'fs-12 regular-pennies-cart';
             let totalSavePrice;
             let totalSavePennies;
             if (currentElement.regularPrice) {
                 const regularContainer = utils.createNewElement('p');
-                regularContainer.className = 'cart-price';
+                regularContainer.className = 'position-relative display-flex cart-price';
                 const lv = utils.createNewElement('span', 'лв.')
-                lv.className = 'regular-lv-cart';
+                lv.className = 'fs-12 regular-lv-cart';
                 regularContainer.append(regularPrice, regularPennies, lv);
                 const save = utils.createNewElement('p', 'Спестяваш:');
-                save.className = 'cart-price';
+                save.className = 'position-relative display-flex cart-price';
                 let totalSave = utils.createNewElement('div');
-                totalSave.className = 'cart-price save-cart';
+                totalSave.className = 'position-relative display-flex fs-12 cart-price save-cart';
                 totalSavePrice = utils.createNewElement('span');
                 totalSavePennies = utils.createNewElement('span');
                 totalSavePennies.className = 'save-pennies';
@@ -79,6 +80,7 @@ function openFavAndCart(favourites, cart) {
             const addOrRemoveContainer = utils.createNewElement('div');
             addOrRemoveContainer.className = 'add-delete-cart';
             const addToFav = utils.createNewElement('span');
+            addToFav.className = 'fs-12 cursor';
             if (userModel.getFavourites().some(el => el.id === currentElement.id)) {
                 addToFav.innerHTML = 'премахни от Любими';
                 addToFav.addEventListener('click', () => {
@@ -94,6 +96,7 @@ function openFavAndCart(favourites, cart) {
             }
 
             const remove = utils.createNewElement('span', 'Изтрий');
+            remove.className = 'fs-12 cursor';
             remove.addEventListener('click', () => {
                 userModel.removeFromCart(currentElement);
                 createItemsCard(ALL_FOCUS_ITEMS, CARDS_CONTAINER);
@@ -155,9 +158,9 @@ function openFavAndCart(favourites, cart) {
         favourites = Array.from(favourites);
         favourites.forEach(fav => {
             const favContainer = utils.createNewElement('div');
-            favContainer.className = 'fav-container'
+            favContainer.className = 'main-bckgr fav-container'
             const mainCont = utils.createNewElement('div');
-            mainCont.className = 'main-fav-cont';
+            mainCont.className = 'display-flex main-fav-cont';
             const imageContainer = utils.createNewElement('a');
             imageContainer.href = `#article/${fav.id}`;
             const favImage = utils.createNewElement('img');
@@ -165,13 +168,13 @@ function openFavAndCart(favourites, cart) {
             favImage.className = 'fav-images';
             const favTitle = utils.createNewElement('a', fav.title);
             favTitle.href = `#article/${fav.id}`;
-            favTitle.className = 'fav-p';
+            favTitle.className = 'fw-600 fav-p';
             const info = utils.createNewElement('div');
             info.className = 'fav-info';
             const available = utils.createNewElement('p', 'в наличност');
-            available.className = 'info-cart fav-available';
+            available.className = 'display-flex info-cart fav-available';
             const offeredBy = utils.createNewElement('p', `Предлаган от: eMAG`);
-            offeredBy.className = 'info-cart';
+            offeredBy.className = 'display-flex info-cart';
             FULL_FAV.append(favContainer);
             favContainer.append(mainCont);
             mainCont.append(imageContainer, favTitle, info);
@@ -179,27 +182,27 @@ function openFavAndCart(favourites, cart) {
             info.append(available, offeredBy);
             if (fav.regularPrice) {
                 const regularContainer = utils.createNewElement('div');
-                regularContainer.className = 'info-cart';
+                regularContainer.className = 'display-flex info-cart';
                 const regularPrice = utils.createNewElement('span', fav.regularPrice);
-                regularPrice.className = 'fav-regular-price';
+                regularPrice.className = 'fw-600 fav-regular-price';
                 const regularPennies = utils.createNewElement('span', fav.regularPennies);
-                regularPennies.className = 'fav-regular-pennies';
+                regularPennies.className = 'fw-600 fav-regular-pennies';
                 const regularLv = utils.createNewElement('span', 'лв.')
-                regularLv.className = 'fav-regular-lv';
+                regularLv.className = 'fw-600 fav-regular-lv';
                 info.append(regularContainer);
                 regularContainer.append(regularPrice, regularPennies, regularLv);
             }
 
             const currentContainer = utils.createNewElement('div');
-            currentContainer.className = 'info-cart';
+            currentContainer.className = 'display-flex info-cart';
             const currentPrice = utils.createNewElement('span', fav.currentPrice);
-            currentPrice.className = 'fav-current-price';
+            currentPrice.className = 'fw-600 fav-current-price';
             const currentPennies = utils.createNewElement('span', fav.currentPennies);
-            currentPennies.className = 'fav-current-pennies';
+            currentPennies.className = 'fw-600 fav-current-pennies';
             const lv = utils.createNewElement('span', 'лв.')
-            lv.className = 'fav-current-lv';
+            lv.className = 'fw-600 fav-current-lv';
             const addShoppingCart = utils.createNewElement('div');
-            addShoppingCart.className = 'add-shopping-cart info-cart';
+            addShoppingCart.className = 'fs-12 add-shopping-cart display-flex info-cart main-align';
             addShoppingCart.addEventListener('click', () => {
                 userModel.addToCart(fav);
                 renderHeader();
@@ -212,7 +215,7 @@ function openFavAndCart(favourites, cart) {
             const cartText = utils.createNewElement('span', 'Добави в количката');
             cartText.className = 'cart-text';
             const deleteContainer = utils.createNewElement('div');
-            deleteContainer.className = 'info-cart fav-delete';
+            deleteContainer.className = 'display-flex info-cart fav-delete';
             const deleteIcon = utils.createNewElement('i');
             deleteIcon.className = 'fas fa-trash-alt';
             const deleteText = utils.createNewElement('span', 'Изтрий');
