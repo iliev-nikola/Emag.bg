@@ -8,7 +8,7 @@
     }
 
     function onMainMouseOut() {
-        MAIN_MENU.className = 'hidden position-relative select-categories-dropdown content';
+        MAIN_MENU.className = 'hidden display-flex position-relative select-categories-dropdown content';
         MAIN_MENU.style.display = 'none';
         HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
         CATEGORIES_LINK.className = 'fw-600 fs-12 display-flex main-bckgr categories-btn-close';
@@ -227,10 +227,9 @@
 
     // MAIN
     window.addEventListener('hashchange', onHashChange);
-    window.addEventListener('DOMContentLoaded', onHashChange);
-    // window.addEventListener('DOMContentLoaded', (e) => {
-    //     onHashChange(e);
-    //     renderHeader();
-    // });
+    window.addEventListener('DOMContentLoaded', (e) => {
+        onHashChange(e);
+        renderHeader();
+    });
     window.addEventListener('scroll', utils.onScroll);
 })();

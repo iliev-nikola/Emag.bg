@@ -136,6 +136,7 @@ function openItem(currentItem) {
     const leasingTitle = utils.createNewElement('p', 'Месечни вноски');
     const btnContainer = utils.createNewElement('div');
     btnContainer.id = 'buttonsContainer';
+    btnContainer.className='mt-20';
     const addToShoppingCart = utils.createNewElement('div');
     addToShoppingCart.className = 'display-flex add-shopping-cart';
     const item = currentItem;

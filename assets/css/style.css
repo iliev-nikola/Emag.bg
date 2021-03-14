@@ -42,6 +42,10 @@ body {
   position: absolute;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -369,6 +373,7 @@ a {
 }
 
 .guest-nav {
+  margin-top: -10px;
   width: 300px;
   text-align: left;
   margin-top: 12px;
@@ -761,6 +766,7 @@ a[href="#register"]:hover {
 }
 
 .category-menu {
+  position: absolute;
   text-align: left;
   top: 0;
   width: 961px;
@@ -1081,7 +1087,6 @@ a[href="#register"]:hover {
     #4359c7 55%,
     #0082e6 70%
   );
-  margin-top: 20px;
   height: 168px;
 }
 
@@ -1190,7 +1195,6 @@ footer {
 }
 
 #btn-marketplace {
-  margin-top: 20px;
   width: 315px;
   border: 2px solid rgb(235, 52, 36);
   border-radius: 24px;
@@ -1277,7 +1281,6 @@ footer {
 /*APP EMAG*/
 
 .app-emag {
-  margin-top: 20px;
   padding: 0;
   padding: 15px 0px;
 }
@@ -1804,6 +1807,7 @@ footer {
 }
 
 #left-scroll {
+  display: none;
   left: 135px;
 }
 
@@ -1812,6 +1816,7 @@ footer {
 }
 
 #other-left-scroll {
+  display: none;
   left: -55px;
   top: 47%;
 }
@@ -1980,10 +1985,6 @@ footer {
 .wrapper:hover .slide {
   transition: 0.02s;
   left: 0;
-}
-
-#buttonsContainer {
-  margin-top: 20px;
 }
 
 .container-info p {
@@ -2554,7 +2555,6 @@ footer {
 
 #favLogin h2 {
   font-size: 21px;
-  margin-top: 20px;
   margin-bottom: 10px;
 }
 
