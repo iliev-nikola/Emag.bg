@@ -3,15 +3,15 @@ function createItemsCard(array, container) {
     container.innerHTML = '';
     array.forEach(currentItem => {
         const cardContainer = utils.createNewElement('div');
-        cardContainer.className = 'items-card';
+        cardContainer.className = 'position-relative main-bckgr items-card main-align';
         const mainContainer = utils.createNewElement('div');
         mainContainer.className = 'fav-main-cont';
         const tooltipContainer = utils.createNewElement('div');
-        tooltipContainer.className = 'tooltip';
+        tooltipContainer.className = 'position-absolute cursor tooltip';
         const addFavourite = utils.createNewElement('i');
         addFavourite.className = 'far fa-heart fav';
         const tooltipText = utils.createNewElement('div', 'Добави в любими');
-        tooltipText.className = 'tooltiptext';
+        tooltipText.className = 'position-absolute display-flex tooltiptext main-align';
         let favourites;
         if (userModel.isLoggedIn()) {
             favourites = userModel.getUsers().filter(user => user.isLoggedIn)[0].favourites;
@@ -31,32 +31,35 @@ function createItemsCard(array, container) {
         }
 
         const tooltipShoppingCardContainer = utils.createNewElement('div');
-        tooltipShoppingCardContainer.className = 'shop-tooltip';
+        tooltipShoppingCardContainer.className = 'cursor shop-tooltip';
         const tooltipShoppingCard = utils.createNewElement('div', 'Добави в количката');
-        tooltipShoppingCard.className = 'tooltip-shopping-card';
+        tooltipShoppingCard.className = 'position-absolute display-flex tooltip-shopping-card main-align';
         const addShoppingCard = utils.createNewElement('img');
         addShoppingCard.src = './assets/images/icons/shopping-cart.png';
         addShoppingCard.alt = 'shopping-cart-icon';
-        addShoppingCard.className = 'shop-card';
+        addShoppingCard.className = 'position-absolute cursor shop-card';
         const imageContainer = utils.createNewElement('a');
         imageContainer.href = `#article/${currentItem.id}`;
         const itemImage = utils.createNewElement('img');
         itemImage.className = 'item-image';
         itemImage.src = currentItem.image;
         const sup = utils.createNewElement('sup', currentItem.currentPennies);
+        sup.className = 'position-absolute';
         const valute = utils.createNewElement('small', 'лв');
         const titleContainer = utils.createNewElement('a');
         titleContainer.href = `#article/${currentItem.id}`;
         const itemTitle = utils.createNewElement('h5', currentItem.title);
+        itemTitle.className = 'fw-600';
         const regular = utils.createNewElement('div');
         regular.className = 'regular-price';
         const regPrice = utils.createNewElement('strong', currentItem.regularPrice);
-        regPrice.className = 'line';
+        regPrice.className = 'main-bckgr line';
         const itemPrice = utils.createNewElement('span', currentItem.currentPrice);
+        itemPrice.className = 'fw-600 position-absolute';
         const percentage = utils.calculatingPercentage(currentItem);
         const percentageBar = utils.createNewElement('div', `-${percentage}%`);
         const sale = utils.createNewElement('b', `(-${percentage}%)`);
-        percentageBar.className = 'percentage';
+        percentageBar.className = 'position-absolute display-flex percentage';
         regular.append(regPrice);
         tooltipContainer.addEventListener('click', () => {
             // Adding to favs and render the header
@@ -96,8 +99,9 @@ function createItemsCard(array, container) {
         if (currentItem.regularPrice) {
             const sub = utils.createNewElement('sub', currentItem.regularPennies);
             sub.style.textDecoration = 'line-through';
+            sub.className = 'position-absolute';
             const valute = utils.createNewElement('small', `лв `);
-            valute.className = 'line';
+            valute.className = 'main-bckgr line';
             regular.append(sub, valute, sale);
         } else {
             regular.innerHTML = '-';

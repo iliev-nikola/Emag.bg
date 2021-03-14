@@ -102,6 +102,8 @@ let currentSlide = 0;
 function slideShow() {
     CURRENT_IMAGE.src = slideImages[currentSlide];
     radioBtns[currentSlide].checked = true;
+    console.log(currentSlide);
+    console.log(radioBtns[currentSlide].value);
 }
 
 setInterval(function () {
@@ -139,6 +141,7 @@ CHEVRON_LEFT.addEventListener('click', () => {
 radioBtns.forEach(radio => {
     radio.addEventListener('click', () => {
         currentSlide = radio.value;
+        radio.checked=true;
         slideShow();
     });
 });
