@@ -36,6 +36,7 @@ function openFavAndCart(favourites, cart) {
             selectNav.className = 'select-cart';
             selectNav.addEventListener('change', (e) => {
                 userModel.changeAmount(currentElement, +e.target.value);
+                renderHeader();
             });
             const numb = utils.createNewElement('span', 'бр.');
             numb.className = 'numb';
@@ -77,11 +78,20 @@ function openFavAndCart(favourites, cart) {
 
             const addOrRemoveContainer = utils.createNewElement('div');
             addOrRemoveContainer.className = 'add-delete-cart';
-            const addToFav = utils.createNewElement('span', 'добави в Любими');
-            addToFav.addEventListener('click', () => {
-                userModel.addToFav(currentElement);
-                renderHeader();
-            });
+            const addToFav = utils.createNewElement('span');
+            if (userModel.getFavourites().some(el => el.id === currentElement.id)) {
+                addToFav.innerHTML = 'премахни от Любими';
+                addToFav.addEventListener('click', () => {
+                    userModel.removeFromFav(currentElement);
+                    renderHeader();
+                });
+            } else {
+                addToFav.innerHTML = 'добави в Любими';
+                addToFav.addEventListener('click', () => {
+                    userModel.addToFav(currentElement);
+                    renderHeader();
+                });
+            }
 
             const remove = utils.createNewElement('span', 'Изтрий');
             remove.addEventListener('click', () => {

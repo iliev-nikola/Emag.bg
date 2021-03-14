@@ -100,6 +100,9 @@ const radioBtns = Array.from(RADIO_MAIN);
 let currentSlide = 0;
 
 function slideShow() {
+    if (currentSlide > 5) {
+        currentSlide = 0;
+    }
     CURRENT_IMAGE.src = slideImages[currentSlide];
     radioBtns[currentSlide].checked = true;
 }
@@ -138,7 +141,7 @@ CHEVRON_LEFT.addEventListener('click', () => {
 
 radioBtns.forEach(radio => {
     radio.addEventListener('click', () => {
-        currentSlide = radio.value;
+        currentSlide = +radio.value;
         slideShow();
     });
 });

@@ -59,9 +59,10 @@ const ERROR_BANNER = utils.getById('error');
 // BUTTONS IN MAIN
 const CHEVRON_RIGHT = utils.getById('chevronRight');
 const CHEVRON_LEFT = utils.getById('chevronLeft');
-const RADIO_MAIN = document.querySelectorAll(".radio-main-view");
+const RADIO_MAIN = document.querySelectorAll('.radio-main-view');
 const MAIN_SLIDESHOW = utils.querySelect('.main-slideshow');
 const CURRENT_IMAGE = utils.getById('slideImage');
+const rad = utils.querySelect('.radio-buttons');
 
 // BUTTONS IN FOCUS-BAR SECTION
 const RIGHT_SCROLL = utils.getById('right-scroll');

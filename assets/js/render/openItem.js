@@ -153,7 +153,7 @@ function openItem(currentItem) {
     const favIconContainer = utils.createNewElement('span');
     const favIcon = utils.createNewElement('i');
     favIcon.className = 'far fa-heart heart';
-    const favText = utils.createNewElement('span', 'Добави в любими');
+    const favText = utils.createNewElement('span');
     favText.className = 'fav-text';
     let favourites;
     if (userModel.isLoggedIn()) {
@@ -166,9 +166,11 @@ function openItem(currentItem) {
     if (!isInFav) {
         favIcon.className = 'far fa-heart heart';
         favIcon.style.color = '#2196f3';
+        favText.innerHTML = 'Добави в любими';
     } else {
         favIcon.className = 'fas fa-heart heart';
         favIcon.style.color = 'red';
+        favText.innerHTML = 'Добавено в любими';
     }
 
     addToFavourite.addEventListener('click', () => {
@@ -177,12 +179,14 @@ function openItem(currentItem) {
             favIcon.className = 'fas fa-heart heart';
             favIcon.style.color = 'red';
             utils.success('Продуктът беше добавен в любими');
+            favText.innerHTML = 'Добавено в любими';
         }
         else {
             userModel.removeFromFav(item);
             favIcon.className = 'far fa-heart heart';
             favIcon.style.color = '#2196f3';
             utils.success('Продуктът беше премахнат от любими');
+            favText.innerHTML = 'Добави в любими';
         }
 
         renderHeader();

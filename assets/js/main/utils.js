@@ -44,7 +44,6 @@ const utils = (function () {
         if (message.includes('любими')) {
             successBanner.innerHTML = `<i class="far fa-heart"></i><p>${message}</p>`;
         } else if (message.includes('количка')) {
-            // successBanner.innerHTML = `<i class="fas fa-shopping-cart"></i><p>${message}</p>`;
             successBanner.innerHTML = `<img src="./assets/images/icons/shopping-cart-white.png"></img><p>${message}</p>`;
         } else {
             successBanner.innerHTML = message;
@@ -54,21 +53,22 @@ const utils = (function () {
         successBanner.addEventListener('click', () => {
             successBanner.style.display = 'none';
         });
-        setTimeout(() => {
-            successBanner.style.display = 'none';
-        }, 3000);
+
+        // setTimeout(() => {
+        //     successBanner.style.display = 'none';
+        // }, 3000);
     }
 
     function error(message) {
         const errorBanner = utils.getById('error');
-        errorBanner.innerText = message;
+        errorBanner.innerHTML = `<p>${message}</p>`;
         errorBanner.style.display = 'block';
         errorBanner.addEventListener('click', () => {
             errorBanner.style.display = 'none';
         });
-        setTimeout(() => {
-            errorBanner.style.display = 'none';
-        }, 3000);
+        // setTimeout(() => {
+        //     errorBanner.style.display = 'none';
+        // }, 3000);
     }
 
     function debounce(func, wait) {

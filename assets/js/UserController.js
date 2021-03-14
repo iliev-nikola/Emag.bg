@@ -65,20 +65,18 @@
     // ROUTER
     const mainSections = [FOCUS_SECTION, MOBILE_SECTION, MOBILE_APP, TV_SECTION, TOP_SECTION, BIG_TECHNOLOGIES, BULLETIN];
     const idArr = ALL_FOCUS_ITEMS.concat(OTHER_CLIENTS_WATCHED).map(el => el.id);
-    function onHashChange(e) {
-        const hash = e.target.location.hash.substring(1);
+    function onHashChange() {
+        const hash = location.hash.substring(1);
         MAIN_MENU.removeEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.removeEventListener('mouseout', onMainMouseOut);
         CATEGORIES_LINK.removeEventListener('mouseover', onCategoriesMouseOver);
         CATEGORIES_LINK.removeEventListener('mouseout', onCategoriesMouseOut);
+        window.removeEventListener('scroll', utils.hideMainWhenScroll);
         // change hash with correct article id
         utils.sandwichHeaderOff('home');
-        NAV_BAR.style.display = 'block';
-        WATCHED_CONTAINER.style.display = 'block';
-        APP_EMAG.style.display = 'block';
-        MARKETPLACE_SECTION.style.display = 'block';
-        FOOTER.style.display = 'flex';
-        CATEGORY_SECTION.style.display = 'none';
+        utils.display('block', NAV_BAR, WATCHED_CONTAINER, APP_EMAG, MARKETPLACE_SECTION);
+        utils.display('flex', FOOTER);
+        utils.display('none', CATEGORY_SECTION);
         const isCorrectId = idArr.some(el => el === +hash.split('/')[1]);
         if (isCorrectId && hash.includes('article/')) {
             const currentId = +hash.split('/')[1];
@@ -87,17 +85,11 @@
             watchedItem(userModel.getWatched(), currentItem);
             openItem(currentItem);
             utils.sandwichHeaderOff();
+            utils.display('block', HOME_PAGE_MENU, OPEN_ITEM);
+            utils.display('none', MARKETPLACE_SECTION, OTHER_CLIENTS_SECTION, MAIN_MENU, OPTIONS_PANEL, CART_PAGE, FAVOURITES_PAGE);
+            mainSections.map(section => section.style.display = 'none');
             CATEGORIES_LINK.className = 'categories-btn-close';
             CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
-            HOME_PAGE_MENU.style.display = 'block';
-            OPEN_ITEM.style.display = 'block'
-            MARKETPLACE_SECTION.style.display = 'none';
-            OTHER_CLIENTS_SECTION.style.display = 'none';
-            MAIN_MENU.style.display = 'none';
-            OPTIONS_PANEL.style.display = 'none';
-            mainSections.map(section => section.style.display = 'none');
-            CART_PAGE.style.display = 'none';
-            FAVOURITES_PAGE.style.display = 'none';
             document.documentElement.scrollTop = 0;
             return;
         }
@@ -169,12 +161,11 @@
     }
 
     MAIN_MENU.addEventListener('click', (e) => {
-        e.preventDefault();
         const tagName = e.target.tagName
-        if (tagName !== 'DIV' && tagName !== 'I' && tagName !== 'INPUT' && tagName !== 'IMG') {
-            location.replace('#categories');
-            document.documentElement.scrollTop = 0;
-        }
+        if (tagName === 'DIV' || tagName === 'I' || tagName === 'INPUT' || tagName === 'IMG') return;
+        e.preventDefault();
+        location.replace('#categories');
+        document.documentElement.scrollTop = 0;
     });
 
     SEARCH_INPUT.addEventListener('focus', utils.onFocus);
@@ -235,9 +226,10 @@
 
     // MAIN
     window.addEventListener('hashchange', onHashChange);
-    window.addEventListener('DOMContentLoaded', (e) => {
-        onHashChange(e);
-        renderHeader();
-    });
+    window.addEventListener('DOMContentLoaded', onHashChange);
+    // window.addEventListener('DOMContentLoaded', (e) => {
+    //     onHashChange(e);
+    //     renderHeader();
+    // });
     window.addEventListener('scroll', utils.onScroll);
 })();
