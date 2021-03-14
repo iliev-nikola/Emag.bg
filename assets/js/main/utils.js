@@ -40,35 +40,37 @@ const utils = (function () {
     }
 
     function success(message) {
-        const successBanner = utils.getById('success');
-        if (message.includes('любими')) {
-            successBanner.innerHTML = `<i class="far fa-heart"></i><p>${message}</p>`;
+        if (message.includes('добавен в любими')) {
+            SUCCESS_BANNER.innerHTML = `<i class="fas fa-heart"></i><p>${message}</p>`;
+            SUCCESS_BANNER.children[0].style.color = 'red';
+        } else if (message.includes('премахнат от любими')) {
+            SUCCESS_BANNER.innerHTML = `<i class="far fa-heart"></i><p>${message}</p>`;
+            SUCCESS_BANNER.children[0].style.color = '#2196f3';
         } else if (message.includes('количка')) {
-            successBanner.innerHTML = `<img src="./assets/images/icons/shopping-cart-white.png"></img><p>${message}</p>`;
+            SUCCESS_BANNER.innerHTML = `<img src="./assets/images/icons/shopping-cart-white.png"></img><p>${message}</p>`;
         } else {
-            successBanner.innerHTML = message;
+            SUCCESS_BANNER.innerHTML = message;
         }
 
-        successBanner.style.display = 'flex';
-        successBanner.addEventListener('click', () => {
-            successBanner.style.display = 'none';
+        SUCCESS_BANNER.style.display = 'flex';
+        SUCCESS_BANNER.addEventListener('click', () => {
+            SUCCESS_BANNER.style.display = 'none';
         });
 
         setTimeout(() => {
-            successBanner.style.display = 'none';
+            SUCCESS_BANNER.style.display = 'none';
         }, 3000);
     }
 
     function error(message) {
-        const errorBanner = utils.getById('error');
-        errorBanner.innerHTML = `<p>${message}</p>`;
-        errorBanner.style.display = 'block';
-        errorBanner.addEventListener('click', () => {
-            errorBanner.style.display = 'none';
+        ERROR_BANNER.innerHTML = `<p>${message}</p>`;
+        ERROR_BANNER.style.display = 'block';
+        ERROR_BANNER.addEventListener('click', () => {
+            ERROR_BANNER.style.display = 'none';
         });
 
         setTimeout(() => {
-            errorBanner.style.display = 'none';
+            ERROR_BANNER.style.display = 'none';
         }, 3000);
     }
 

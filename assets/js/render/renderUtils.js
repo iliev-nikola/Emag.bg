@@ -3,12 +3,12 @@ function onLoginSuccess(firstName, lastName, isLogin) {
     LOGIN_PASS.value = '';
     if (isLogin) {
         utils.success(`Добре дошъл, ${firstName} ${lastName}!`);
+        location.replace('#home');
     }
 
     renderHeader();
     PROFILE_NAV.classList.add('checked');
     GUEST_NAV.classList.remove('checked');
-    location.replace('#home');
     document.documentElement.scrollTop = 0;
 }
 
