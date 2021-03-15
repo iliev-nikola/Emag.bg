@@ -155,14 +155,14 @@ const utils = (function () {
     }
 
     function onMainMouseOut() {
-        MAIN_MENU.className = 'position-absolute select-categories-dropdown scroll content';
+        MAIN_MENU.className = 'select-categories-dropdown scroll content';
         MAIN_MENU.style.visibility = 'hidden';
         HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
         CATEGORIES_LINK.className = 'display-flex main-bckgr categories-btn-close';
     }
 
     function onSandwichMouseOver() {
-        MAIN_MENU.className = 'position-absolute select-categories-dropdown scroll content';
+        MAIN_MENU.className = 'select-categories-dropdown scroll content';
         MAIN_MENU.style.visibility = 'visible';
         MAIN_MENU.style.display = 'flex';
         MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
@@ -190,8 +190,10 @@ const utils = (function () {
             CATEGORIES_LINK.className = 'display-flex main-bckgr categories-btn-open';
             MAIN_MENU.style.display = 'flex';
             MAIN_MENU.style.visibility = 'visible';
+            MAIN_MENU.className = 'select-categories content';
+        } else {
+            MAIN_MENU.className = 'select-categories-dropdown content';
         }
-        MAIN_MENU.className = 'position-relative select-categories content';
         NAV_MENU_ONSCROLL.style.display = 'none';
         HEADER_SANDWICH_BUTTON.style.display = 'none';
         HEADER_SECTION.className = 'main-bckgr header-section';

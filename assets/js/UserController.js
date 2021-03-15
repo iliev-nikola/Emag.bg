@@ -8,7 +8,7 @@
     }
 
     function onMainMouseOut() {
-        MAIN_MENU.className = 'position-absolute hidden display-flex select-categories-dropdown content';
+        MAIN_MENU.className = 'hidden display-flex select-categories-dropdown content';
         MAIN_MENU.style.display = 'none';
         HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
         CATEGORIES_LINK.className = 'fw-600 display-flex main-bckgr categories-btn-close';
