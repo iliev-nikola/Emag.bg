@@ -88,7 +88,6 @@
             utils.display('block', HOME_PAGE_MENU, OPEN_ITEM);
             utils.display('none', MARKETPLACE_SECTION, OTHER_CLIENTS_SECTION, MAIN_MENU, OPTIONS_PANEL, CART_PAGE, FAVOURITES_PAGE);
             mainSections.map(section => section.style.display = 'none');
-            // CATEGORIES_LINK.className = 'categories-btn-close';
             CATEGORIES_LINK.className = 'fw-600 display-flex main-bckgr categories-btn-close';
             CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
             document.documentElement.scrollTop = 0;

@@ -11,7 +11,7 @@ const filter = (function () {
     }
 
     function filterArticles() {
-        let filtered = ITEMS_IN_CATEGORY_PAGE;
+        let filtered = ALL_ARTICLES;
         manufacturer.forEach(checkbox => {
             if (checkbox.checked) {
                 const value = checkbox.nextElementSibling.innerHTML;

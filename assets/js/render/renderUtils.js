@@ -13,7 +13,8 @@ function onLoginSuccess(firstName, lastName, isLogin) {
 }
 
 function renderHeader() {
-    let favourites, cart;
+    const favourites = userModel.getFavourites();
+    const cart = userModel.getCart();
     if (userModel.isLoggedIn()) {
         // IF LOGGED IN USER
         PROFILE_ICON.removeEventListener('click', utils.goToLoginPage);
@@ -24,8 +25,6 @@ function renderHeader() {
         FAV_PIC.innerText = firstLetter + secondLetter;
         USER_PIC.className = 'logged-user-icon';
         HELLO_MESSAGE.innerText = `Здравей, ${currentUser.firstName} ${currentUser.lastName}`;
-        favourites = currentUser.favourites;
-        cart = currentUser.cart;
     } else {
         // IF GUEST USER
         PROFILE_ICON.addEventListener('click', utils.goToLoginPage);
@@ -33,8 +32,6 @@ function renderHeader() {
         GUEST_NAV.classList.add('checked');
         USER_PIC.innerHTML = `<i class="far fa-user">`;
         USER_PIC.className = 'guest-user-icon';
-        favourites = userModel.getItem('guest').favourites;
-        cart = userModel.getItem('guest').cart;
     }
 
     renderFavAndCart(favourites, cart);

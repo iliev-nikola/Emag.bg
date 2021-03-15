@@ -85,7 +85,29 @@ const utils = (function () {
             clearTimeout(timeout);
             timeout = setTimeout(effect, wait);
         };
-    };
+    }
+
+    function getArticle(id) {
+        return ALL_ARTICLES.find(el => el.id === id);
+    }
+
+    function getArticles(arr) {
+        const output = [];
+        if (typeof arr[0] === 'object') {
+            arr.forEach(el => {
+                const article = getArticle(el.id);
+                article.count = el.count || 1;
+                output.push(article);
+            });
+        } else {
+            arr.forEach(el => {
+                const article = getArticle(el);
+                output.push(article);
+            });
+        }
+
+        return output;
+    }
 
     //CREATE NEW HTML ELEMENT
     function createNewElement(type, text) {
@@ -243,6 +265,8 @@ const utils = (function () {
         sandwichHeaderOn,
         sandwichHeaderOff,
         onScroll,
-        rating
+        rating,
+        getArticle,
+        getArticles
     }
 })();

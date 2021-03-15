@@ -11,15 +11,9 @@ function createItemsCard(array, container) {
         const addFavourite = utils.createNewElement('i');
         addFavourite.className = 'far fa-heart fav';
         const tooltipText = utils.createNewElement('div', 'Добави в любими');
-        tooltipText.className = 'color-white position-absolute display-flex fs-11 tooltiptext main-align';
-        let favourites;
-        if (userModel.isLoggedIn()) {
-            favourites = userModel.getUsers().filter(user => user.isLoggedIn)[0].favourites;
-        } else {
-            favourites = userModel.getItem('guest').favourites;
-        }
+        tooltipText.className = 'color-white position-absolute display-flex tooltiptext main-align';
 
-        const isInFav = favourites.some(el => el.id === currentItem.id);
+        const isInFav = userModel.getFavourites().some(el => el.id === currentItem.id);
         if (!isInFav) {
             addFavourite.className = 'far fa-heart fav';
             addFavourite.style.color = '#2196f3';
@@ -67,13 +61,13 @@ function createItemsCard(array, container) {
         tooltipContainer.addEventListener('click', () => {
             // Adding to favs and render the header
             if (addFavourite.style.color === 'red') {
-                userModel.removeFromFav(currentItem);
+                userModel.removeFromFav(currentItem.id);
                 addFavourite.className = 'far fa-heart fav';
                 addFavourite.style.color = '#2196f3';
                 tooltipText.innerText = 'Добави в Любими';
                 utils.success('Продуктът беше премахнат от любими');
             } else {
-                userModel.addToFav(currentItem);
+                userModel.addToFav(currentItem.id);
                 addFavourite.className = 'fas fa-heart fav';
                 addFavourite.style.color = 'red';
                 tooltipText.innerText = 'Добавено в Любими';
@@ -85,18 +79,18 @@ function createItemsCard(array, container) {
 
         tooltipShoppingCardContainer.addEventListener('click', () => {
             // Adding to cart and render the header
-            userModel.addToCart(currentItem);
+            userModel.addToCart(currentItem.id);
             renderHeader();
         });
 
-        const raitingContainer = utils.createNewElement('div');
-        let currentRaiting = currentItem.rating;
-        utils.rating(currentRaiting, raitingContainer);
+        const ratingContainer = utils.createNewElement('div');
+        let currentRating = currentItem.rating;
+        utils.rating(currentRating, ratingContainer);
         itemPrice.append(sup, valute);
         container.append(cardContainer);
         imageContainer.append(itemImage);
         titleContainer.append(itemTitle);
-        cardContainer.append(imageContainer, titleContainer, raitingContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer, tooltipShoppingCardContainer);
+        cardContainer.append(imageContainer, titleContainer, ratingContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer, tooltipShoppingCardContainer);
         tooltipShoppingCardContainer.append(tooltipShoppingCard, addShoppingCard);
         tooltipContainer.append(tooltipText, addFavourite);
         if (currentItem.regularPrice) {
@@ -117,12 +111,12 @@ function createItemsCard(array, container) {
         }
 
         titleContainer.addEventListener('click', () => {
-            userModel.watchItem(currentItem);
+            userModel.watchItem(currentItem.id);
             watchedItem(userModel.getWatched(), currentItem);
             openItem(currentItem);
         });
         imageContainer.addEventListener('click', () => {
-            userModel.watchItem(currentItem);
+            userModel.watchItem(currentItem.id);
             watchedItem(userModel.getWatched(), currentItem);
             openItem(currentItem);
         });
@@ -166,5 +160,4 @@ function watchedItem(array, currentItem) {
 }
 
 createItemsCard(OTHER_CLIENTS_WATCHED, OTHER_WATCHED_CONTAINER);
-const ITEMS_IN_CATEGORY_PAGE = [...OTHER_CLIENTS_WATCHED, ...ALL_FOCUS_ITEMS];
-createItemsCard(ITEMS_IN_CATEGORY_PAGE, ALL_ITEMS_CONTAINER);
+createItemsCard(ALL_ARTICLES, ALL_ITEMS_CONTAINER);
