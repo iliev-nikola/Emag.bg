@@ -8,15 +8,15 @@
     }
 
     function onMainMouseOut() {
-        MAIN_MENU.className = 'hidden display-flex position-relative select-categories-dropdown content';
+        MAIN_MENU.className = 'position-absolute hidden display-flex select-categories-dropdown content';
         MAIN_MENU.style.display = 'none';
         HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
-        CATEGORIES_LINK.className = 'fw-600 fs-12 display-flex main-bckgr categories-btn-close';
+        CATEGORIES_LINK.className = 'fw-600 display-flex main-bckgr categories-btn-close';
     }
 
     function onCategoriesMouseOut() {
         MAIN_MENU.style.display = 'none';
-        CATEGORIES_LINK.className = 'fw-600 fs-12 display-flex main-bckgr categories-btn-close';
+        CATEGORIES_LINK.className = 'fw-600 display-flex main-bckgr categories-btn-close';
     }
 
     function onCategoriesMouseOver() {
@@ -89,7 +89,7 @@
             utils.display('none', MARKETPLACE_SECTION, OTHER_CLIENTS_SECTION, MAIN_MENU, OPTIONS_PANEL, CART_PAGE, FAVOURITES_PAGE);
             mainSections.map(section => section.style.display = 'none');
             // CATEGORIES_LINK.className = 'categories-btn-close';
-            CATEGORIES_LINK.className = 'fw-600 fs-12 display-flex main-bckgr categories-btn-close';
+            CATEGORIES_LINK.className = 'fw-600 display-flex main-bckgr categories-btn-close';
             CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
             document.documentElement.scrollTop = 0;
             return;
@@ -121,7 +121,7 @@
                 break;
             case 'favourites':
                 utils.sandwichHeaderOff();
-                CATEGORIES_LINK.className = 'fw-600 fs-12 display-flex main-bckgr categories-btn-close';
+                CATEGORIES_LINK.className = 'fw-600 display-flex main-bckgr categories-btn-close';
                 CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
                 utils.display('block', MAIN_SECTION, HOME_PAGE_MENU);
                 utils.display('flex', FAVOURITES_PAGE);
@@ -138,7 +138,7 @@
                 break;
             case 'categories':
                 utils.sandwichHeaderOff();
-                CATEGORIES_LINK.className = 'fw-600 fs-12 display-flex main-bckgr categories-btn-close';
+                CATEGORIES_LINK.className = 'fw-600 display-flex main-bckgr categories-btn-close';
                 CATEGORIES_LINK.addEventListener('mouseover', onCategoriesMouseOver);
                 utils.display('block', CATEGORY_SECTION, MAIN_SECTION, HOME_PAGE_MENU, OTHER_CLIENTS_SECTION, MOBILE_SECTION, MOBILE_APP, TV_SECTION, TOP_SECTION, BIG_TECHNOLOGIES, BULLETIN);
                 utils.display('none', FOCUS_SECTION, FAVOURITES_PAGE, MAIN_MENU, LOGIN_SECTION, OPEN_ITEM, MARKETPLACE_SECTION, OPTIONS_PANEL, CART_PAGE);

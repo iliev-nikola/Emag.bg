@@ -155,14 +155,14 @@ const utils = (function () {
     }
 
     function onMainMouseOut() {
-        MAIN_MENU.className = 'position-relative select-categories-dropdown scroll content';
+        MAIN_MENU.className = 'position-absolute select-categories-dropdown scroll content';
         MAIN_MENU.style.visibility = 'hidden';
         HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
         CATEGORIES_LINK.className = 'display-flex main-bckgr categories-btn-close';
     }
 
     function onSandwichMouseOver() {
-        MAIN_MENU.className = 'position-relative select-categories-dropdown scroll content';
+        MAIN_MENU.className = 'position-absolute select-categories-dropdown scroll content';
         MAIN_MENU.style.visibility = 'visible';
         MAIN_MENU.style.display = 'flex';
         MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
