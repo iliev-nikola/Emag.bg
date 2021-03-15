@@ -179,7 +179,9 @@ const utils = (function () {
         HEADER_SECTION.className = 'main-bckgr header-section-scroll';
         SEARCH_BAR.style.width = '490px';
         FAVOURITE_COUNTER.style.width = '18%';
+        FAVOURITE_COUNTER.style.textAlign = 'center';
         CART_COUNTER.style.width = '11.5%';
+        CART_COUNTER.style.textAlign = 'center';
     }
 
     function sandwichHeaderOff(home) {
@@ -199,7 +201,9 @@ const utils = (function () {
         HEADER_SECTION.className = 'main-bckgr header-section';
         SEARCH_BAR.style.width = '558px';
         FAVOURITE_COUNTER.style.width = '13%';
+        FAVOURITE_COUNTER.style.textAlign = 'left';
         CART_COUNTER.style.width = '8%';
+        CART_COUNTER.style.textAlign = 'left';
     }
 
     let counter = 0;
