@@ -29,7 +29,7 @@ function createItemsCard(array, container) {
             addFavourite.style.color = 'red';
             tooltipText.innerText = 'Добавено в Любими';
         }
-
+        const currentPr = currentItem.currentPrice.split('.');
         const tooltipShoppingCardContainer = utils.createNewElement('div');
         tooltipShoppingCardContainer.className = 'cursor shop-tooltip';
         const tooltipShoppingCard = utils.createNewElement('div', 'Добави в количката');
@@ -43,7 +43,7 @@ function createItemsCard(array, container) {
         const itemImage = utils.createNewElement('img');
         itemImage.className = 'mb-20 item-image';
         itemImage.src = currentItem.image;
-        const sup = utils.createNewElement('sup', currentItem.currentPennies);
+        const sup = utils.createNewElement('sup', currentPr[1]);
         sup.className = 'position-absolute fs-10';
         const valute = utils.createNewElement('small', 'лв');
         const titleContainer = utils.createNewElement('a');
@@ -52,13 +52,16 @@ function createItemsCard(array, container) {
         itemTitle.className = 'fw-600';
         const regular = utils.createNewElement('div');
         regular.className = 'main-bckgr mb-10 regular-price fs-12';
-        const regPrice = utils.createNewElement('strong', currentItem.regularPrice);
+        const regPrice = utils.createNewElement('strong');
         regPrice.className = 'main-bckgr line';
-        const itemPrice = utils.createNewElement('span', currentItem.currentPrice);
+        const itemPrice = utils.createNewElement('span', currentPr[0]);
         itemPrice.className = 'fw-600 position-absolute';
-        const percentage = utils.calculatingPercentage(currentItem);
-        const percentageBar = utils.createNewElement('div', `-${percentage}%`);
-        const sale = utils.createNewElement('b', `(-${percentage}%)`);
+        // const percentage = utils.calculatingPercentage(currentItem);
+        const percentageBar = utils.createNewElement('div');
+        if (currentItem.discount !== 0) {
+            percentageBar.innerHTML = `-${currentItem.discount}%`;
+        }
+        const sale = utils.createNewElement('b', `(-${currentItem.discount}%)`);
         percentageBar.className = 'position-absolute display-flex fw-400 fs-13 color-white percentage rounded-3';
         regular.append(regPrice);
         tooltipContainer.addEventListener('click', () => {
@@ -97,7 +100,11 @@ function createItemsCard(array, container) {
         tooltipShoppingCardContainer.append(tooltipShoppingCard, addShoppingCard);
         tooltipContainer.append(tooltipText, addFavourite);
         if (currentItem.regularPrice) {
-            const sub = utils.createNewElement('sub', currentItem.regularPennies);
+            const sub = utils.createNewElement('sub');
+            let regularPr = currentItem.regularPrice;
+            regularPr = regularPr.split('.');
+            regPrice.innerHTML = regularPr[0];
+            sub.innerHTML = regularPr[1];
             sub.style.textDecoration = 'line-through';
             sub.className = 'position-absolute';
             const valute = utils.createNewElement('small', `лв `);

@@ -66,7 +66,7 @@ function openItem(currentItem) {
     const itemInformation = utils.createNewElement('div');
     const addItemContainer = utils.createNewElement('div');
     addItemContainer.className = 'add-item-in';
-    const raitingContainer = utils.createNewElement('div');
+    const ratingContainer = utils.createNewElement('div');
     const textClient = utils.createNewElement('p', 'Оценка от клиенти:');
     const review = utils.createNewElement('div');
     review.className = 'mb-20 cursor review clr-bl-94';
@@ -110,21 +110,22 @@ function openItem(currentItem) {
     regularContainer.className = 'fw-600 position-relative regular-container-item';
     const totalContainer = utils.createNewElement('div');
     totalContainer.className = 'position-relative total-container';
-    const currentPrice = utils.createNewElement('span', currentItem.currentPrice)
+    const currPr = currentItem.currentPrice.split('.');
+    const currentPrice = utils.createNewElement('span', currPr[0])
     currentPrice.className = 'fw-600 current-price-item';
-    const currentPennies = utils.createNewElement('sup', currentItem.currentPennies);
+    const currentPennies = utils.createNewElement('sup', currPr[1]);
     currentPennies.className = 'fw-600 position-absolute current-pennies-item';
     const lv = utils.createNewElement('span', 'лв.')
     lv.className = 'fw-600 lv-item';
     if (currentItem.regularPrice) {
-        const regularPrice = utils.createNewElement('span', currentItem.regularPrice)
+        const regPr = currentItem.regularPrice.split('.');
+        const regularPrice = utils.createNewElement('span', regPr[0])
         regularPrice.className = 'regular-price-item';
-        const regularPennies = utils.createNewElement('sup', currentItem.regularPennies);
+        const regularPennies = utils.createNewElement('sup', regPr[1]);
         regularPennies.className = 'position-absolute regular-pennies-item';
         const lv = utils.createNewElement('span', 'лв.')
         lv.className = 'lv';
-        let percentage = utils.calculatingPercentage(currentItem);
-        const sale = utils.createNewElement('span', `(-${percentage}%)`);
+        const sale = utils.createNewElement('span', `(-${currentItem.discount}%)`);
         sale.className = 'item-sale';
         regularContainer.append(regularPrice, regularPennies, lv, sale);
     }
@@ -201,11 +202,11 @@ function openItem(currentItem) {
     compareBox.append(check, text);
     mainContainer.append(containerImages, containerInformation);
     containerInformation.append(itemInformation, addItemContainer);
-    itemInformation.append(raitingContainer);
-    raitingContainer.append(textClient);
-    let currentRaiting = currentItem.raiting;
-    utils.rating(currentRaiting, raitingContainer);
-    raitingContainer.append(review, delivery, deliveryCity, changeBtn, benefits, giftContainer, cart, shipContainer, persText);
+    itemInformation.append(ratingContainer);
+    ratingContainer.append(textClient);
+    let currentRating = currentItem.rating;
+    utils.rating(currentRating, ratingContainer);
+    ratingContainer.append(review, delivery, deliveryCity, changeBtn, benefits, giftContainer, cart, shipContainer, persText);
     giftContainer.append(giftIcon, giftText);
     cart.append(cartTxt, cartLink);
     shipContainer.append(shipIcon, shipText);

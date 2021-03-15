@@ -34,12 +34,14 @@ function renderFavAndCart(favourites, cart) {
 
             const priceDiv = utils.createNewElement('div');
             const price = utils.createNewElement('p');
-            price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
+            const currentPr = el.currentPrice.split('.');
+            price.innerHTML = `${currentPr[0]}<sup>${currentPr[1]}</sup>лв.`;
             price.className = 'fw-600 price-dropdown color-bl-1';
             let regularPrice;
             if (el.regularPrice) {
+                const regPr = el.regularPrice.split('.');
                 regularPrice = utils.createNewElement('p');
-                regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
+                regularPrice.innerHTML = `${regPr[0]}<sup>${regPr[1]}</sup>лв.`;
                 regularPrice.className = 'regular-price-dropdown color-bl-1';
             }
 
@@ -127,12 +129,14 @@ function renderFavAndCart(favourites, cart) {
             count.className = 'cart-items-count';
             const priceDiv = utils.createNewElement('div');
             const price = utils.createNewElement('p');
-            price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
+            const currentPr = el.currentPrice.split('.');
+            price.innerHTML = `${currentPr[0]}<sup>${currentPr[1]}</sup>лв.`;
             price.className = 'fw-600 price-dropdown color-bl-1';
             let regularPrice;
             if (el.regularPrice) {
+                const regPr = el.regularPrice.split('.');
                 regularPrice = utils.createNewElement('p');
-                regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
+                regularPrice.innerHTML = `${regPr[0]}<sup>${regPr[1]}</sup>лв.`;
                 regularPrice.className = 'regular-price-dropdown color-bl-1';
             }
             priceDiv.append(price, regularPrice || '');
@@ -149,7 +153,7 @@ function renderFavAndCart(favourites, cart) {
             hiddenOptions.className = 'position-absolute display-flex hidden-options';
             articleDiv.append(img, title, count, priceDiv, hiddenOptions);
             mainDiv.append(articleDiv);
-            totalPrice += eval(`${el.currentPrice}.${el.currentPennies}`) * el.count;
+            totalPrice += eval(`${currentPr[0]}.${currentPr[1]}`) * el.count;
         });
 
         const totalText = utils.createNewElement('div');

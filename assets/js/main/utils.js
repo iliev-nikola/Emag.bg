@@ -97,16 +97,9 @@ const utils = (function () {
         return element;
     }
 
-    // CALCULATING PERCENTAGE
-    function calculatingPercentage(currentItem) {
-        const currentPr = parseFloat(currentItem.currentPrice + '.' + currentItem.currentPennies);
-        const regularPr = parseFloat(currentItem.regularPrice + '.' + currentItem.regularPennies);
-        return Math.floor(100 - 100 * (currentPr / regularPr));
-    }
-
     // HELPER FUNCTION FOR CALCULATING PRICES
-    function calculatingPrices(currentOption, firstPrice, firstPennies) {
-        let totalCurrentPrice = (currentOption * parseFloat(firstPrice + '.' + firstPennies)).toFixed(2).toString().split('.');
+    function calculatingPrices(currentOption, firstPrice) {
+        let totalCurrentPrice = (currentOption * parseFloat(firstPrice)).toFixed(2).toString().split('.');
         changeCurrentPrice = totalCurrentPrice[0];
         changeCurrentPennies = totalCurrentPrice[1];
     }
@@ -123,15 +116,13 @@ const utils = (function () {
     // CHANGE PRICE WHEN CHANGE COUNT
     function changePrice(currentOption, currentElement, currentPrice, currentPennies, regularPrice, regularPennies, savePrice, savePennies) {
         const firstPrice = currentElement.currentPrice;
-        const firstPennies = currentElement.currentPennies;
         const regPrice = currentElement.regularPrice;
-        const regPennies = currentElement.regularPennies;
-        calculatingPrices(currentOption, firstPrice, firstPennies);
+        calculatingPrices(currentOption, firstPrice);
         currentPrice.innerHTML = changeCurrentPrice;
         currentPennies.innerHTML = changeCurrentPennies;
         let currentMoney = eval(`${changeCurrentPrice}.${changeCurrentPennies}`);
         if (currentElement.regularPrice) {
-            calculatingPrices(currentOption, regPrice, regPennies);
+            calculatingPrices(currentOption, regPrice);
             regularPrice.innerHTML = changeCurrentPrice;
             regularPennies.innerHTML = changeCurrentPennies;
             let currentRegular = eval(`${changeCurrentPrice}.${changeCurrentPennies}`);
@@ -246,7 +237,6 @@ const utils = (function () {
         success,
         error,
         createNewElement,
-        calculatingPercentage,
         changePrice,
         calculateAmount,
         hideMainWhenScroll,
