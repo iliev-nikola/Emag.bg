@@ -69,7 +69,7 @@ function openItem(currentItem) {
     const raitingContainer = utils.createNewElement('div');
     const textClient = utils.createNewElement('p', 'Оценка от клиенти:');
     const review = utils.createNewElement('div');
-    review.className = 'mb-20 cursor review';
+    review.className = 'mb-20 cursor review clr-bl-94';
     const addReview = utils.createNewElement('a', 'Добави ревю');
     addReview.href = '#';
     const line = utils.createNewElement('span', '|');
@@ -81,7 +81,7 @@ function openItem(currentItem) {
     const deliveryCity = utils.createNewElement('div', `Ще се достави в: София-град(Столична)`);
     const changeBtn = utils.createNewElement('a', 'промени');
     changeBtn.href = '#';
-    changeBtn.className = 'mb-20 cursor change';
+    changeBtn.className = 'mb-20 cursor change clr-bl-94';
     const benefits = utils.createNewElement('div', 'Ползи:');
     benefits.className = 'delivery benefits-delivery';
     const giftContainer = utils.createNewElement('div');
@@ -94,7 +94,7 @@ function openItem(currentItem) {
     const cartTxt = utils.createNewElement('span', 'карта');
     const cartLink = utils.createNewElement('a', 'вижте повече');
     cartLink.href = '#';
-    cartLink.className = 'change';
+    cartLink.className = 'change clr-bl-94';
     const shipContainer = utils.createNewElement('div');
     shipContainer.className = 'benefits-containers';
     const shipIcon = utils.createNewElement('i');
@@ -131,7 +131,7 @@ function openItem(currentItem) {
 
     totalContainer.append(currentPrice, currentPennies, lv);
     const availableText = utils.createNewElement('span', 'в наличност');
-    availableText.className = 'main-bckgr fw-700 rounded-3 available-item';
+    availableText.className = 'main-bckgr fw-700 rounded-3 available-item fs-10';
     const leasing = utils.createNewElement('span');
     const leasingTitle = utils.createNewElement('p', 'Месечни вноски');
     const btnContainer = utils.createNewElement('div');
@@ -150,7 +150,7 @@ function openItem(currentItem) {
     const cartText = utils.createNewElement('span', 'Добави в количката');
     cartText.className = 'cart-text';
     const addToFavourite = utils.createNewElement('div');
-    addToFavourite.className = 'display-flex mb-10 cursor fw-400 rounded-4 add-favourite main-align color-white';
+    addToFavourite.className = 'display-flex mb-10 cursor fw-400 rounded-4 add-favourite clr-bl-94 main-align color-white';
     const favIconContainer = utils.createNewElement('span');
     const favIcon = utils.createNewElement('i');
     favIcon.className = 'far fa-heart heart';
