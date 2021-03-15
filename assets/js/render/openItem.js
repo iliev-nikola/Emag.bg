@@ -2,26 +2,26 @@ function openItem(currentItem) {
     OPEN_ITEM_CONTAINER.innerHTML = '';
     OPEN_ITEM.style.display = 'block';
     const titleContainer = utils.createNewElement('div');
-    titleContainer.className = 'title-article';
+    titleContainer.className = 'fw-400 title-article';
     const currentTitle = utils.createNewElement('p', currentItem.title);
     const fixedInformation = utils.createNewElement('div');
-    fixedInformation.className = 'display-flex justify-between fixed-info';
+    fixedInformation.className = 'display-flex justify-between mb-10 fixed-info';
     const currentID = utils.createNewElement('span', `Код на продукта: ${currentItem.id}`);
     currentID.className = 'fs-12 items-id';
     const social = utils.createNewElement('span');
     const fbBtn = utils.createNewElement('a');
-    fbBtn.className = 'fs-12 fb-btn';
+    fbBtn.className = 'fs-12 color-white rounded-3 fb-btn';
     fbBtn.href = '#';
     const fbIcon = utils.createNewElement('i');
     fbIcon.className = 'fab fa-facebook-f';
     const fbTitle = utils.createNewElement('span', 'Сподели');
     const compareBox = utils.createNewElement('span');
-    compareBox.className = 'fs-12 compare-box';
+    compareBox.className = 'fs-12 rounded-3 compare-box';
     const check = utils.createNewElement('input');
     check.type = 'checkbox';
     const text = utils.createNewElement('span', 'Сравни');
     const mainContainer = utils.createNewElement('div');
-    mainContainer.className = 'display-flex justify-between items-main-container';
+    mainContainer.className = 'display-flex justify-between mt-10';
     const containerImages = utils.createNewElement('div');
     let mainImage = utils.createNewElement('img');
     mainImage.src = currentItem.image;
@@ -34,7 +34,7 @@ function openItem(currentItem) {
             let image = utils.createNewElement('img');
             image.src = currentItem.allImages[i];
             if (i === 0) {
-                image.className = 'images-item-hover cursor';
+                image.className = 'images-item-hover cursor rounded-3';
                 firstImg = image;
             } else {
                 image.className = 'images-item cursor';
@@ -47,10 +47,10 @@ function openItem(currentItem) {
                 mainImage.className += ' slide';
                 mainImage.src = item.allImages[i];
                 if (i === 0) {
-                    firstImg.className = 'images-item-hover wrapper cursor';
+                    firstImg.className = 'images-item-hover wrapper cursor rounded-3';
                     secondImg.className = 'images-item wrapper cursor';
                 } else {
-                    secondImg.className = 'images-item-hover wrapper cursor';
+                    secondImg.className = 'images-item-hover wrapper cursor rounded-3';
                     firstImg.className = 'images-item wrapper cursor';
                 }
             });
@@ -62,14 +62,14 @@ function openItem(currentItem) {
     }
 
     const containerInformation = utils.createNewElement('div');
-    containerInformation.className = 'display-flex justify-between container-info';
+    containerInformation.className = 'display-flex justify-between fs-13 container-info';
     const itemInformation = utils.createNewElement('div');
     const addItemContainer = utils.createNewElement('div');
     addItemContainer.className = 'add-item-in';
     const raitingContainer = utils.createNewElement('div');
     const textClient = utils.createNewElement('p', 'Оценка от клиенти:');
     const review = utils.createNewElement('div');
-    review.className = 'review';
+    review.className = 'mb-20 cursor review';
     const addReview = utils.createNewElement('a', 'Добави ревю');
     addReview.href = '#';
     const line = utils.createNewElement('span', '|');
@@ -81,7 +81,7 @@ function openItem(currentItem) {
     const deliveryCity = utils.createNewElement('div', `Ще се достави в: София-град(Столична)`);
     const changeBtn = utils.createNewElement('a', 'промени');
     changeBtn.href = '#';
-    changeBtn.className = 'change';
+    changeBtn.className = 'mb-20 cursor change';
     const benefits = utils.createNewElement('div', 'Ползи:');
     benefits.className = 'delivery benefits-delivery';
     const giftContainer = utils.createNewElement('div');
@@ -103,7 +103,7 @@ function openItem(currentItem) {
     const persText = utils.createNewElement('li', 'Физическо лице: 24 месеца');
     persText.className = 'benef-strong';
     const prices_container = utils.createNewElement('div');
-    prices_container.className = 'display-flex justify-between prices-container';
+    prices_container.className = 'display-flex mb-10 justify-between prices-container';
     const prices = utils.createNewElement('div');
     prices.className = 'prices';
     const regularContainer = utils.createNewElement('div');
@@ -131,14 +131,14 @@ function openItem(currentItem) {
 
     totalContainer.append(currentPrice, currentPennies, lv);
     const availableText = utils.createNewElement('span', 'в наличност');
-    availableText.className = 'available-item';
+    availableText.className = 'main-bckgr fw-700 rounded-3 available-item';
     const leasing = utils.createNewElement('span');
     const leasingTitle = utils.createNewElement('p', 'Месечни вноски');
     const btnContainer = utils.createNewElement('div');
     btnContainer.id = 'buttonsContainer';
-    btnContainer.className='mt-20';
+    btnContainer.className = 'mt-20';
     const addToShoppingCart = utils.createNewElement('div');
-    addToShoppingCart.className = 'display-flex add-shopping-cart';
+    addToShoppingCart.className = 'display-flex mb-10 cursor fw-400 rounded-4 add-shopping-cart color-white';
     const item = currentItem;
     addToShoppingCart.addEventListener('click', () => {
         userModel.addToCart(item);
@@ -150,12 +150,12 @@ function openItem(currentItem) {
     const cartText = utils.createNewElement('span', 'Добави в количката');
     cartText.className = 'cart-text';
     const addToFavourite = utils.createNewElement('div');
-    addToFavourite.className = 'display-flex add-favourite main-align';
+    addToFavourite.className = 'display-flex mb-10 cursor fw-400 rounded-4 add-favourite main-align color-white';
     const favIconContainer = utils.createNewElement('span');
     const favIcon = utils.createNewElement('i');
     favIcon.className = 'far fa-heart heart';
     const favText = utils.createNewElement('span');
-    favText.className = 'fav-text';
+    favText.className = 'm-auto fav-text';
     let favourites;
     if (userModel.isLoggedIn()) {
         favourites = userModel.getUsers().find(user => user.isLoggedIn).favourites;

@@ -23,19 +23,19 @@ const filter = (function () {
             if (checkbox.checked) {
                 switch (checkbox.id) {
                     case 'fiveStars':
-                        filtered = filtered.filter(article => article.raiting === 5);
+                        filtered = filtered.filter(article => article.rating === 5);
                         break;
                     case 'fourStars':
-                        filtered = filtered.filter(article => article.raiting === 4);
+                        filtered = filtered.filter(article => article.rating === 4);
                         break;
                     case 'threeStars':
-                        filtered = filtered.filter(article => article.raiting === 3);
+                        filtered = filtered.filter(article => article.rating === 3);
                         break;
                     case 'twoStars':
-                        filtered = filtered.filter(article => article.raiting === 2);
+                        filtered = filtered.filter(article => article.rating === 2);
                         break;
                     case 'oneStar':
-                        filtered = filtered.filter(article => article.raiting === 1);
+                        filtered = filtered.filter(article => article.rating === 1);
                         break;
                 }
             }

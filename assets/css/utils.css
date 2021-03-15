@@ -1,0 +1,107 @@
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #222;
+  background-color: #e9ebee;
+}
+
+.rounded-4 {
+  border-radius: 4px;
+}
+
+.rounded-3 {
+  border-radius: 3px;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+.fs-13 {
+  font-size: 13px;
+}
+
+.main-bckgr {
+  background-color: white;
+}
+
+.main-align {
+  text-align: center;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.color-white {
+  color: white;
+}
+
+.color-bl-1 {
+  color: #005eb8;
+}
+
+.hidden {
+  display: none;
+}
+
+.m-auto {
+  margin: 0 auto;
+}
+
+.content {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.displ-inl-bl {
+  display: inline-block;
+}

@@ -48,7 +48,7 @@ function createDots(array, container) {
         dot.type = 'radio';
         if (container.id === 'dots-container') {
             dot.name = 'dots-container';
-            dot.className = 'dots';
+            dot.className = 'dots mt-10 mb-20';
         } else {
             dot.name = 'other-dots-container';
             dot.className = 'other-dots';

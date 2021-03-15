@@ -3,7 +3,7 @@ function createItemsCard(array, container) {
     container.innerHTML = '';
     array.forEach(currentItem => {
         const cardContainer = utils.createNewElement('div');
-        cardContainer.className = 'position-relative main-bckgr items-card main-align';
+        cardContainer.className = 'position-relative main-bckgr items-card main-align displ-inl-bl';
         const mainContainer = utils.createNewElement('div');
         mainContainer.className = 'fav-main-cont';
         const tooltipContainer = utils.createNewElement('div');
@@ -11,7 +11,7 @@ function createItemsCard(array, container) {
         const addFavourite = utils.createNewElement('i');
         addFavourite.className = 'far fa-heart fav';
         const tooltipText = utils.createNewElement('div', 'Добави в любими');
-        tooltipText.className = 'position-absolute display-flex tooltiptext main-align';
+        tooltipText.className = 'color-white position-absolute display-flex tooltiptext main-align';
         let favourites;
         if (userModel.isLoggedIn()) {
             favourites = userModel.getUsers().filter(user => user.isLoggedIn)[0].favourites;
@@ -33,7 +33,7 @@ function createItemsCard(array, container) {
         const tooltipShoppingCardContainer = utils.createNewElement('div');
         tooltipShoppingCardContainer.className = 'cursor shop-tooltip';
         const tooltipShoppingCard = utils.createNewElement('div', 'Добави в количката');
-        tooltipShoppingCard.className = 'position-absolute display-flex tooltip-shopping-card main-align';
+        tooltipShoppingCard.className = 'color-white position-absolute display-flex tooltip-shopping-card main-align';
         const addShoppingCard = utils.createNewElement('img');
         addShoppingCard.src = './assets/images/icons/shopping-cart.png';
         addShoppingCard.alt = 'shopping-cart-icon';
@@ -41,7 +41,7 @@ function createItemsCard(array, container) {
         const imageContainer = utils.createNewElement('a');
         imageContainer.href = `#article/${currentItem.id}`;
         const itemImage = utils.createNewElement('img');
-        itemImage.className = 'item-image';
+        itemImage.className = 'mb-20 item-image';
         itemImage.src = currentItem.image;
         const sup = utils.createNewElement('sup', currentItem.currentPennies);
         sup.className = 'position-absolute';
@@ -51,7 +51,7 @@ function createItemsCard(array, container) {
         const itemTitle = utils.createNewElement('h5', currentItem.title);
         itemTitle.className = 'fw-600';
         const regular = utils.createNewElement('div');
-        regular.className = 'regular-price';
+        regular.className = 'main-bckgr mb-10 regular-price';
         const regPrice = utils.createNewElement('strong', currentItem.regularPrice);
         regPrice.className = 'main-bckgr line';
         const itemPrice = utils.createNewElement('span', currentItem.currentPrice);
@@ -59,7 +59,7 @@ function createItemsCard(array, container) {
         const percentage = utils.calculatingPercentage(currentItem);
         const percentageBar = utils.createNewElement('div', `-${percentage}%`);
         const sale = utils.createNewElement('b', `(-${percentage}%)`);
-        percentageBar.className = 'position-absolute display-flex percentage';
+        percentageBar.className = 'position-absolute display-flex fw-400 fs-13 color-white percentage rounded-3';
         regular.append(regPrice);
         tooltipContainer.addEventListener('click', () => {
             // Adding to favs and render the header
@@ -87,7 +87,7 @@ function createItemsCard(array, container) {
         });
 
         const raitingContainer = utils.createNewElement('div');
-        let currentRaiting = currentItem.raiting;
+        let currentRaiting = currentItem.rating;
         utils.rating(currentRaiting, raitingContainer);
         itemPrice.append(sup, valute);
         container.append(cardContainer);

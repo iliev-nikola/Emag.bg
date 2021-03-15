@@ -9,7 +9,7 @@ function renderFavAndCart(favourites, cart) {
         const soonAddedText = utils.createNewElement('p', 'НАСКОРО ДОБАВЕНИ');
         const mainDiv = document.createElement('div');
         mainDiv.className = 'dropdown-overflow';
-        soonAddedText.className = 'soon-added-text';
+        soonAddedText.className = 'soon-added-text color-bl-1';
         mainDiv.append(soonAddedText);
         FAVOURITE_NAV_CONTAINER.append(mainDiv);
         favourites.forEach(el => {
@@ -35,12 +35,12 @@ function renderFavAndCart(favourites, cart) {
             const priceDiv = utils.createNewElement('div');
             const price = utils.createNewElement('p');
             price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
-            price.className = 'fw-600 price-dropdown';
+            price.className = 'fw-600 price-dropdown color-bl-1';
             let regularPrice;
             if (el.regularPrice) {
                 regularPrice = utils.createNewElement('p');
                 regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
-                regularPrice.className = 'regular-price-dropdown';
+                regularPrice.className = 'regular-price-dropdown color-bl-1';
             }
 
             priceDiv.append(price, regularPrice || '');
@@ -65,7 +65,7 @@ function renderFavAndCart(favourites, cart) {
             });
 
             hiddenOptions.append(addToCartText, closeButton);
-            hiddenOptions.className = 'position-absolute hidden-options';
+            hiddenOptions.className = 'position-absolute display-flex hidden-options';
             articleDiv.append(img, title, priceDiv, hiddenOptions);
             mainDiv.append(articleDiv);
         });
@@ -73,7 +73,7 @@ function renderFavAndCart(favourites, cart) {
         const goToFavsDiv = utils.createNewElement('div');
         const goToFavsText = utils.createNewElement('a', '>> Виж всички любими продукти');
         goToFavsText.href = '#favourites';
-        goToFavsDiv.className = 'fs-12 go-to-favs';
+        goToFavsDiv.className = 'fs-12 main-bckgr go-to-favs color-bl-1';
         goToFavsDiv.append(goToFavsText);
         mainDiv.append(goToFavsDiv);
     } else {
@@ -97,7 +97,7 @@ function renderFavAndCart(favourites, cart) {
         CART_NAV_CONTAINER.innerHTML = `<img src="./assets/images/icons/triangle-outline-variant.png"
         class="position-absolute triangle">`;
         const soonAddedText = utils.createNewElement('p', 'НАСКОРО ДОБАВЕНИ');
-        soonAddedText.className = 'soon-added-text';
+        soonAddedText.className = 'soon-added-text color-bl-1';
         const mainDiv = document.createElement('div');
         mainDiv.className = 'dropdown-overflow';
         mainDiv.append(soonAddedText);
@@ -128,12 +128,12 @@ function renderFavAndCart(favourites, cart) {
             const priceDiv = utils.createNewElement('div');
             const price = utils.createNewElement('p');
             price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
-            price.className = 'fw-600 price-dropdown';
+            price.className = 'fw-600 price-dropdown color-bl-1';
             let regularPrice;
             if (el.regularPrice) {
                 regularPrice = utils.createNewElement('p');
                 regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
-                regularPrice.className = 'regular-price-dropdown';
+                regularPrice.className = 'regular-price-dropdown color-bl-1';
             }
             priceDiv.append(price, regularPrice || '');
             priceDiv.className = 'price';
@@ -146,7 +146,7 @@ function renderFavAndCart(favourites, cart) {
                 renderHeader();
             });
             hiddenOptions.append(closeButton);
-            hiddenOptions.className = 'position-absolute hidden-options';
+            hiddenOptions.className = 'position-absolute display-flex hidden-options';
             articleDiv.append(img, title, count, priceDiv, hiddenOptions);
             mainDiv.append(articleDiv);
             totalPrice += eval(`${el.currentPrice}.${el.currentPennies}`) * el.count;
@@ -155,8 +155,10 @@ function renderFavAndCart(favourites, cart) {
         const totalText = utils.createNewElement('div');
         totalText.className = 'total-cart-text';
         const span = utils.createNewElement('span', 'ОБЩО:');
+        span.className = 'fw-bold';
         const p = utils.createNewElement('p', `${cart.length} ${cart.length > 1 ? 'продукта' : 'продукт'}`);
         const price = utils.createNewElement('span', totalPrice.toFixed(2) + 'лв.');
+        price.className = 'fw-bold';
         totalText.append(span, p, price);
         mainDiv.append(totalText);
         SHOPPING_CART_BTN.style.padding = '10px';
