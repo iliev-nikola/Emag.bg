@@ -84,13 +84,13 @@ function openFavAndCart(favourites, cart) {
             if (userModel.getFavourites().some(el => el.id === currentElement.id)) {
                 addToFav.innerHTML = 'премахни от Любими';
                 addToFav.addEventListener('click', () => {
-                    userModel.removeFromFav(currentElement);
+                    userModel.removeFromFav(currentElement.id);
                     renderHeader();
                 });
             } else {
                 addToFav.innerHTML = 'добави в Любими';
                 addToFav.addEventListener('click', () => {
-                    userModel.addToFav(currentElement);
+                    userModel.addToFav(currentElement.id);
                     renderHeader();
                 });
             }
@@ -204,7 +204,7 @@ function openFavAndCart(favourites, cart) {
             const addShoppingCart = utils.createNewElement('div');
             addShoppingCart.className = 'color-white fs-12 rounded-4 add-shopping-cart display-flex info-cart main-align';
             addShoppingCart.addEventListener('click', () => {
-                userModel.addToCart(fav);
+                userModel.addToCart(fav.id);
                 renderHeader();
             });
 

@@ -474,3 +474,4 @@ const OTHER_CLIENTS_WATCHED = [
 ];
 
 const slideImages = ['./assets/images/main-view/1.jpg', './assets/images/main-view/2.jpg', './assets/images/main-view/3.jpg', './assets/images/main-view/4.jpg', './assets/images/main-view/5.jpg', './assets/images/main-view/6.jpg'];
+const ALL_ARTICLES = [...OTHER_CLIENTS_WATCHED, ...ALL_FOCUS_ITEMS];

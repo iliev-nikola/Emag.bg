@@ -50,7 +50,7 @@ function renderFavAndCart(favourites, cart) {
             addToCartText.innerHTML = '<i class="fas fa-shopping-cart"></i>Добави в количката';
             addToCartText.addEventListener('click', (e) => {
                 e.stopPropagation();
-                userModel.addToCart(el);
+                userModel.addToCart(el.id);
                 renderHeader();
             });
 
@@ -58,7 +58,7 @@ function renderFavAndCart(favourites, cart) {
             closeButton.className = 'fas fa-times nav-close-button';
             closeButton.addEventListener('click', (e) => {
                 e.stopPropagation();
-                userModel.removeFromFav(el);
+                userModel.removeFromFav(el.id);
                 createItemsCard(ALL_FOCUS_ITEMS, CARDS_CONTAINER);
                 createItemsCard(OTHER_CLIENTS_WATCHED, OTHER_WATCHED_CONTAINER);
                 renderHeader();
@@ -142,7 +142,7 @@ function renderFavAndCart(favourites, cart) {
             closeButton.className = 'fas fa-times nav-close-button';
             closeButton.addEventListener('click', (e) => {
                 e.stopPropagation();
-                userModel.removeFromCart(el);
+                userModel.removeFromCart(el.id);
                 renderHeader();
             });
             hiddenOptions.append(closeButton);

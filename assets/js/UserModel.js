@@ -113,36 +113,36 @@ const userModel = (function () {
         }
 
         // FAVOURITES ITEMS
-        addToFav(article) {
+        addToFav(id) {
             if (!this.isLoggedIn()) {
                 const guest = this.getItem('guest');
-                if (guest.favourites.some(el => el.id === article.id)) {
+                if (guest.favourites.some(el => el === id)) {
                     return;
                 }
 
-                guest.favourites.unshift(article);
+                guest.favourites.unshift(id);
                 this.setItem('guest', guest);
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
-                if (currentUser.favourites.some(el => el.id === article.id)) {
+                if (currentUser.favourites.some(el => el === id)) {
                     return;
                 }
 
-                currentUser.favourites.unshift(article);
+                currentUser.favourites.unshift(id);
                 this.setUsers(this.users);
             }
 
             utils.success('Продуктът беше добавен в любими');
         }
 
-        removeFromFav(article) {
+        removeFromFav(id) {
             if (!this.isLoggedIn()) {
                 const guest = this.getItem('guest');
-                guest.favourites = guest.favourites.filter(el => el.id !== article.id);
+                guest.favourites = guest.favourites.filter(el => el !== id);
                 this.setItem('guest', guest);
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
-                currentUser.favourites = currentUser.favourites.filter(el => el.id !== article.id);
+                currentUser.favourites = currentUser.favourites.filter(el => el !== id);
                 this.setUsers(this.users);
             }
 
@@ -152,103 +152,96 @@ const userModel = (function () {
         getFavourites() {
             if (!this.isLoggedIn()) {
                 const guest = this.getItem('guest');
-                return guest.favourites;
+                return utils.getArticles(guest.favourites);
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
-                return currentUser.favourites;
+                return utils.getArticles(currentUser.favourites);
             }
         }
 
         // SHOPPING CART ITEMS
-        addToCart(article) {
+        addToCart(id) {
             let limitReach = false;
+            const article = utils.getArticle(id);
             if (!this.isLoggedIn()) {
                 const guest = this.getItem('guest');
-                if (guest.cart.some(el => el.id === article.id)) {
-                    guest.cart.forEach(el => {
-                        if (el.id === article.id) {
-                            if (el.count === 5) return limitReach = true;
-                            return el.count = el.count + 1 || 1;
-                        }
-                    });
+                if (article.id === id) {
+                    if (article.count === 5) limitReach = true;
+                    article.count = article.count + 1 || 1;
                 } else {
                     article.count = 1;
-                    guest.cart.push(article);
                 }
 
+                guest.cart.push({ id: article.id, count: article.count });
                 this.setItem('guest', guest);
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
-                if (currentUser.cart.some(el => el.id === article.id)) {
-                    currentUser.cart.forEach(el => {
-                        if (el.id === article.id) {
-                            return el.count = el.count + 1 || 1;
-                        }
-                    });
+                if (article.id === id) {
+                    article.count = article.count + 1 || 1;
                 } else {
                     article.count = 1;
-                    currentUser.cart.push(article);
                 }
 
+                currentUser.cart.push({ id: article.id, count: article.count });
                 this.setUsers(this.users);
             }
 
             if (!limitReach) utils.success('Продуктът беше добавен в количката');
         }
 
-        removeFromCart(article) {
+        removeFromCart(id) {
             if (!this.isLoggedIn()) {
                 const guest = this.getItem('guest');
-                guest.cart = guest.cart.filter(el => el.id !== article.id);
+                guest.cart = guest.cart.filter(el => el.id !== id);
                 this.setItem('guest', guest);
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
-                currentUser.cart = currentUser.cart.filter(el => el.id !== article.id);
+                currentUser.cart = currentUser.cart.filter(el => el.id !== id);
                 this.setUsers(this.users);
             }
         }
 
         getCart() {
             if (!this.isLoggedIn()) {
-                const guest = getItem('guest');
-                return guest.cart;
+                const guest = this.getItem('guest');
+                return utils.getArticles(guest.cart);
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
-                return currentUser.cart;
+                return utils.getArticles(currentUser.cart);
             }
         }
 
-        changeAmount(item, count) {
+        changeAmount(id, count) {
             if (!this.isLoggedIn()) {
                 const guest = this.getItem('guest');
-                const article = guest.cart.find(el => el.id === item.id);
+                const article = guest.cart.find(el => el.id === id);
                 article.count = count;
                 this.setItem('guest', guest);
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
-                const article = currentUser.cart.find(el => el.id === item.id);
+                const article = currentUser.cart.find(el => el.id === id);
                 article.count = count;
                 this.setUsers(this.users);
             }
         }
 
         // WATCHED ITEMS
-        watchItem(article) {
+        watchItem(id) {
             if (!this.isLoggedIn()) {
                 const guest = this.getItem('guest');
-                if (guest.watched.some(el => el.id === article.id)) {
+                if (guest.watched.some(el => el.id === id)) {
                     return;
                 }
 
-                guest.watched.unshift(article);
+                guest.watched.unshift(id);
                 this.setItem('guest', guest);
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
-                if (currentUser.watched.some(el => el.id === article.id)) {
+                if (currentUser.watched.some(el => el.id === id)) {
                     return;
                 }
 
-                currentUser.watched.unshift(article);
+                currentUser.watched.unshift(id);
                 this.setUsers(this.users);
             }
         }
@@ -256,10 +249,10 @@ const userModel = (function () {
         getWatched() {
             if (!this.isLoggedIn()) {
                 const guest = this.getItem('guest');
-                return guest.watched;
+                return utils.getArticles(guest.watched);
             } else {
                 const currentUser = this.users.find(user => user.isLoggedIn);
-                return currentUser.watched;
+                return utils.getArticles(currentUser.watched);
             }
         }
 

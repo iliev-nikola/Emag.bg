@@ -141,7 +141,7 @@ function openItem(currentItem) {
     addToShoppingCart.className = 'display-flex mb-10 cursor fw-400 rounded-4 add-shopping-cart color-white';
     const item = currentItem;
     addToShoppingCart.addEventListener('click', () => {
-        userModel.addToCart(item);
+        userModel.addToCart(item.id);
         renderHeader();
     });
     const iconContainer = utils.createNewElement('span');
@@ -176,14 +176,14 @@ function openItem(currentItem) {
 
     addToFavourite.addEventListener('click', () => {
         if (favIcon.style.color !== 'red') {
-            userModel.addToFav(item);
+            userModel.addToFav(item.id);
             favIcon.className = 'fas fa-heart heart';
             favIcon.style.color = 'red';
             utils.success('Продуктът беше добавен в любими');
             favText.innerHTML = 'Добавено в любими';
         }
         else {
-            userModel.removeFromFav(item);
+            userModel.removeFromFav(item.id);
             favIcon.className = 'far fa-heart heart';
             favIcon.style.color = '#2196f3';
             utils.success('Продуктът беше премахнат от любими');
@@ -220,5 +220,4 @@ function openItem(currentItem) {
     addToFavourite.append(favIconContainer, favText);
     favIconContainer.append(favIcon);
     containerImages.append(mainImage, allImgs);
-    currentItem = userModel.setItem('obj', currentItem);
 }
