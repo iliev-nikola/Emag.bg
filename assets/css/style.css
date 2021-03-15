@@ -565,7 +565,7 @@ a[href="#register"]:hover {
 }
 
 #categories.categories-btn-close {
-  font-size: 13px;
+  font-size: 14px;
   align-items: center;
   color: black;
   border-radius: 5px;
@@ -589,7 +589,8 @@ a[href="#register"]:hover {
 .categories-menu li > a {
   display: flex;
   align-items: center;
-  padding: 7.5px 10px;
+  padding: 8px 10px;
+  font-size: 13px;
 }
 
 .categories-menu li:last-of-type .white-space {

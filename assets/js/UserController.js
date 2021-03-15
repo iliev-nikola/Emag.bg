@@ -208,7 +208,7 @@
         }
     });
 
-    // ON SEARCH AND FILTER IN CATEGORY PAGE
+    // ON SEARCH, SORT AND FILTER IN CATEGORY PAGE
     CATEGORY_FILTERS.addEventListener('change', (e) => {
         filter.onlyOneCheckbox(e.target);
         filter.checkTheCheckboxes();

@@ -10,7 +10,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/1.jpg', './assets/images/focus-items/1.1.png'],
         'rating': 5,
-        'manufacturer': 'Xiaomi'
+        'manufacturer': 'Xiaomi',
+        'discount': 0
     },
     {
         'id': 2,
@@ -22,7 +23,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/2.jpg', './assets/images/focus-items/2.1.png'],
         'rating': 3,
-        'manufacturer': 'Star-Light'
+        'manufacturer': 'Star-Light',
+        'discount': 0
     },
     {
         'id': 3,
@@ -34,7 +36,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/3.jpg', './assets/images/focus-items/3.1.png'],
         'rating': 2,
-        'manufacturer': 'Indesit'
+        'manufacturer': 'Indesit',
+        'discount': 0
     },
     {
         'id': 4,
@@ -46,7 +49,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/4.jpg', './assets/images/focus-items/4.1.png'],
         'rating': 4,
-        'manufacturer': 'Steinhaus'
+        'manufacturer': 'Steinhaus',
+        'discount': 0
     }
     ,
     {
@@ -85,7 +89,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/7.png', './assets/images/focus-items/7.1.png'],
         'rating': 5,
-        'manufacturer': 'Apple'
+        'manufacturer': 'Apple',
+        'discount': 0
     },
     {
         'id': 8,
@@ -97,7 +102,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/8.png', './assets/images/focus-items/8.1.png'],
         'rating': 4,
-        'manufacturer': 'A+'
+        'manufacturer': 'A+',
+        'discount': 0
     },
     {
         'id': 9,
@@ -122,7 +128,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/10.png', './assets/images/focus-items/10.1.png'],
         'rating': 1,
-        'manufacturer': 'Alveus'
+        'manufacturer': 'Alveus',
+        'discount': 0
     },
     {
         'id': 11,
@@ -145,7 +152,8 @@ const ALL_FOCUS_ITEMS = [
         'currentPennies': '99',
         'regularPennies': null,
         'rating': 1,
-        'manufacturer': 'In-Ear Wraps'
+        'manufacturer': 'In-Ear Wraps',
+        'discount': 0
     },
     {
         'id': 13,
@@ -157,7 +165,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/13.png', './assets/images/focus-items/13.1.png'],
         'rating': 2,
-        'manufacturer': 'A+'
+        'manufacturer': 'A+',
+        'discount': 0
     },
     {
         'id': 14,
@@ -169,7 +178,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/14.png', './assets/images/focus-items/14.1.png'],
         'rating': 5,
-        'manufacturer': 'Oral B'
+        'manufacturer': 'Oral B',
+        'discount': 0
     },
     {
         'id': 15,
@@ -208,7 +218,8 @@ const ALL_FOCUS_ITEMS = [
         'regularPennies': null,
         'allImages': ['./assets/images/focus-items/17.png', './assets/images/focus-items/17.1.png'],
         'rating': 5,
-        'manufacturer': 'Apple'
+        'manufacturer': 'Apple',
+        'discount': 0
     },
     {
         'id': 18,
@@ -236,7 +247,8 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/19.png', './assets/images/other-clients-watched/19.1.png'],
         'rating': 5,
-        'manufacturer': 'Apple'
+        'manufacturer': 'Apple',
+        'discount': 0
     },
     {
         'id': 20,
@@ -274,7 +286,8 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/22.png', './assets/images/other-clients-watched/22.1.png'],
         'rating': 4,
-        'manufacturer': 'Samsung'
+        'manufacturer': 'Samsung',
+        'discount': 0
     }
     ,
     {
@@ -326,7 +339,8 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/26.png', './assets/images/other-clients-watched/26.1.png'],
         'rating': 4,
-        'manufacturer': 'Kingston'
+        'manufacturer': 'Kingston',
+        'discount': 0
     },
     {
         'id': 27,
@@ -337,7 +351,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPennies': '99',
         'regularPennies': null,
         'rating': 2,
-        'manufacturer': 'Star-Light'
+        'manufacturer': 'Star-Light',
+        'discount': 0
     },
     {
         'id': 28,
@@ -349,7 +364,8 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': '99',
         'allImages': ['./assets/images/focus-items/4.jpg', './assets/images/focus-items/4.1.png'],
         'rating': 3,
-        'manufacturer': 'Steinhaus'
+        'manufacturer': 'Steinhaus',
+        'discount': 0
     },
     {
         'id': 29,
@@ -373,7 +389,8 @@ const OTHER_CLIENTS_WATCHED = [
         'currentPennies': '99',
         'regularPennies': '99',
         'rating': 4,
-        'manufacturer': 'Star-Light'
+        'manufacturer': 'Star-Light',
+        'discount': 0
     },
     {
         'id': 31,
@@ -398,7 +415,8 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/32.png', './assets/images/other-clients-watched/14.1.png'],
         'rating': 1,
-        'manufacturer': 'Diamant'
+        'manufacturer': 'Diamant',
+        'discount': 0
     },
     {
         'id': 33,
@@ -410,7 +428,8 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/33.png', './assets/images/other-clients-watched/33.1.png'],
         'rating': 2,
-        'manufacturer': 'LG'
+        'manufacturer': 'LG',
+        'discount': 0
     },
     {
         'id': 34,
@@ -422,7 +441,8 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/34.png', './assets/images/other-clients-watched/34.2.png'],
         'rating': 2,
-        'manufacturer': 'Kingston'
+        'manufacturer': 'Kingston',
+        'discount': 0
     }
     ,
     {
@@ -435,7 +455,8 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/35.png', './assets/images/other-clients-watched/35.2.png'],
         'rating': 4,
-        'manufacturer': 'Samsung'
+        'manufacturer': 'Samsung',
+        'discount': 0
     },
     {
         'id': 36,
@@ -447,7 +468,8 @@ const OTHER_CLIENTS_WATCHED = [
         'regularPennies': null,
         'allImages': ['./assets/images/other-clients-watched/36.png', './assets/images/other-clients-watched/36.1.png'],
         'rating': 4,
-        'manufacturer': 'Samsung'
+        'manufacturer': 'Samsung',
+        'discount': 0
     },
 ];
 
