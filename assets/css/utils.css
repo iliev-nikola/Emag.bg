@@ -130,3 +130,12 @@ body {
 .outl-none {
   outline: none;
 }
+
+
+
+/* .slideс {
+  opacity: 0;
+  display: block;
+  transform: scale(0);
+  transition: all .7s ease-out;
+} */

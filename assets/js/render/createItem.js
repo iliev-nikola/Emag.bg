@@ -50,7 +50,6 @@ function createItemsCard(array, container) {
         regPrice.className = 'main-bckgr line';
         const itemPrice = utils.createNewElement('span', currentPr[0]);
         itemPrice.className = 'fw-600 position-absolute';
-        // const percentage = utils.calculatingPercentage(currentItem);
         const percentageBar = utils.createNewElement('div');
         if (currentItem.discount !== 0) {
             percentageBar.innerHTML = `-${currentItem.discount}%`;

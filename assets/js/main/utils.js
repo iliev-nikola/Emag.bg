@@ -162,7 +162,7 @@ const utils = (function () {
     }
 
     function onMainMouseOver() {
-        HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
+        HEADER_SANDWICH_BUTTON.className = 'cursor fas fa-times hidden color-bl-1';
         MAIN_MENU.style.visibility = 'visible';
         CATEGORIES_LINK.className = 'display-flex main-bckgr categories-btn-open';
     }
@@ -170,7 +170,7 @@ const utils = (function () {
     function onMainMouseOut() {
         MAIN_MENU.className = 'select-categories-dropdown scroll content';
         MAIN_MENU.style.visibility = 'hidden';
-        HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
+        HEADER_SANDWICH_BUTTON.className = 'cursor fas fa-bars hidden color-bl-1';
         CATEGORIES_LINK.className = 'display-flex main-bckgr categories-btn-close';
     }
 
@@ -180,11 +180,11 @@ const utils = (function () {
         MAIN_MENU.style.display = 'flex';
         MAIN_MENU.addEventListener('mouseover', onMainMouseOver);
         MAIN_MENU.addEventListener('mouseout', onMainMouseOut);
-        HEADER_SANDWICH_BUTTON.className = 'fas fa-times';
+        HEADER_SANDWICH_BUTTON.className = 'cursor fas fa-bars hidden color-bl-1';
     }
 
     function sandwichHeaderOn() {
-        HEADER_SANDWICH_BUTTON.className = 'fas fa-bars';
+        HEADER_SANDWICH_BUTTON.className = 'cursor fas fa-bars hidden color-bl-1';
         HEADER.className = 'display-flex justify-between position-relative header-scroll content';
         NAV_MENU_ONSCROLL.style.display = 'block';
         HEADER_SANDWICH_BUTTON.style.display = 'block';
