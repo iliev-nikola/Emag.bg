@@ -98,6 +98,7 @@ scrollItems(OTHER_CLIENTS_WATCHED, RIGTH_OTHER_SCROLL, LEFT_OTHER_SCROLL, OTHER_
 // SLIDESHOW IMAGES IN MAIN
 const radioBtns = Array.from(RADIO_MAIN);
 let currentSlide = 0;
+let lastSlide = 0;
 
 function slideShow() {
     if (currentSlide > 5) {
@@ -120,9 +121,7 @@ setInterval(function () {
     }
     currentSlide++;
     slideShow();
-
 }, 6000);
-
 CHEVRON_RIGHT.addEventListener('click', () => {
     currentSlide++;
     if (currentSlide === slideImages.length) {

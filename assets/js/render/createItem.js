@@ -3,7 +3,7 @@ function createItemsCard(array, container) {
     container.innerHTML = '';
     array.forEach(currentItem => {
         const cardContainer = utils.createNewElement('div');
-        cardContainer.className = 'position-relative main-bckgr items-card main-align displ-inl-bl';
+        cardContainer.className = 'position-relative main-bckgr items-card main-align displ-inl-bl fs-10';
         const mainContainer = utils.createNewElement('div');
         mainContainer.className = 'fav-main-cont';
         const tooltipContainer = utils.createNewElement('div');
@@ -23,11 +23,11 @@ function createItemsCard(array, container) {
             addFavourite.style.color = 'red';
             tooltipText.innerText = 'Добавено в Любими';
         }
-
+        const currentPr = currentItem.currentPrice.split('.');
         const tooltipShoppingCardContainer = utils.createNewElement('div');
         tooltipShoppingCardContainer.className = 'cursor shop-tooltip';
         const tooltipShoppingCard = utils.createNewElement('div', 'Добави в количката');
-        tooltipShoppingCard.className = 'color-white position-absolute display-flex tooltip-shopping-card main-align';
+        tooltipShoppingCard.className = 'color-white position-absolute display-flex fs-11 tooltip-shopping-card main-align';
         const addShoppingCard = utils.createNewElement('img');
         addShoppingCard.src = './assets/images/icons/shopping-cart.png';
         addShoppingCard.alt = 'shopping-cart-icon';
@@ -37,22 +37,24 @@ function createItemsCard(array, container) {
         const itemImage = utils.createNewElement('img');
         itemImage.className = 'mb-20 item-image';
         itemImage.src = currentItem.image;
-        const sup = utils.createNewElement('sup', currentItem.currentPennies);
-        sup.className = 'position-absolute';
+        const sup = utils.createNewElement('sup', currentPr[1]);
+        sup.className = 'position-absolute fs-10';
         const valute = utils.createNewElement('small', 'лв');
         const titleContainer = utils.createNewElement('a');
         titleContainer.href = `#article/${currentItem.id}`;
         const itemTitle = utils.createNewElement('h5', currentItem.title);
         itemTitle.className = 'fw-600';
         const regular = utils.createNewElement('div');
-        regular.className = 'main-bckgr mb-10 regular-price';
-        const regPrice = utils.createNewElement('strong', currentItem.regularPrice);
+        regular.className = 'main-bckgr mb-10 regular-price fs-12';
+        const regPrice = utils.createNewElement('strong');
         regPrice.className = 'main-bckgr line';
-        const itemPrice = utils.createNewElement('span', currentItem.currentPrice);
+        const itemPrice = utils.createNewElement('span', currentPr[0]);
         itemPrice.className = 'fw-600 position-absolute';
-        const percentage = utils.calculatingPercentage(currentItem);
-        const percentageBar = utils.createNewElement('div', `-${percentage}%`);
-        const sale = utils.createNewElement('b', `(-${percentage}%)`);
+        const percentageBar = utils.createNewElement('div');
+        if (currentItem.discount !== 0) {
+            percentageBar.innerHTML = `-${currentItem.discount}%`;
+        }
+        const sale = utils.createNewElement('b', `(-${currentItem.discount}%)`);
         percentageBar.className = 'position-absolute display-flex fw-400 fs-13 color-white percentage rounded-3';
         regular.append(regPrice);
         tooltipContainer.addEventListener('click', () => {
@@ -80,18 +82,22 @@ function createItemsCard(array, container) {
             renderHeader();
         });
 
-        const raitingContainer = utils.createNewElement('div');
-        let currentRaiting = currentItem.rating;
-        utils.rating(currentRaiting, raitingContainer);
+        const ratingContainer = utils.createNewElement('div');
+        let currentRating = currentItem.rating;
+        utils.rating(currentRating, ratingContainer);
         itemPrice.append(sup, valute);
         container.append(cardContainer);
         imageContainer.append(itemImage);
         titleContainer.append(itemTitle);
-        cardContainer.append(imageContainer, titleContainer, raitingContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer, tooltipShoppingCardContainer);
+        cardContainer.append(imageContainer, titleContainer, ratingContainer, itemPrice, addShoppingCard, percentageBar, regular, tooltipContainer, tooltipShoppingCardContainer);
         tooltipShoppingCardContainer.append(tooltipShoppingCard, addShoppingCard);
         tooltipContainer.append(tooltipText, addFavourite);
         if (currentItem.regularPrice) {
-            const sub = utils.createNewElement('sub', currentItem.regularPennies);
+            const sub = utils.createNewElement('sub');
+            let regularPr = currentItem.regularPrice;
+            regularPr = regularPr.split('.');
+            regPrice.innerHTML = regularPr[0];
+            sub.innerHTML = regularPr[1];
             sub.style.textDecoration = 'line-through';
             sub.className = 'position-absolute';
             const valute = utils.createNewElement('small', `лв `);

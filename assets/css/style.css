@@ -107,19 +107,15 @@ a {
   padding: 10px 0;
   margin-left: 15px;
   color: #717171;
-  outline: none;
   border-top-left-radius: 15px;
 }
 
 #submitBtn {
   border: none;
-  cursor: pointer;
   background: transparent;
-  font-size: 20px;
   font-weight: lighter;
   color: #0082e6;
   padding: 0 13px;
-  outline: none;
 }
 
 #submitBtn:hover {
@@ -205,7 +201,6 @@ a {
 }
 
 .fa-shopping-cart {
-  font-size: 20px;
   color: #2196f3;
 }
 
@@ -357,7 +352,6 @@ a[href="#register"]:hover {
 
 .nav-dropdown-item {
   min-height: 50px;
-  font-size: 11px;
   border-top: 1px solid rgba(173, 169, 169, 0.699);
   padding: 7px 15px;
 }
@@ -384,7 +378,6 @@ a[href="#register"]:hover {
 }
 
 .soon-added-text {
-  font-size: 10px;
   padding: 10px;
   align-self: center;
 }
@@ -409,7 +402,6 @@ a[href="#register"]:hover {
   width: 50px;
   height: fit-content;
   align-self: center;
-  cursor: pointer;
 }
 
 .shopping-cart-nav {
@@ -512,7 +504,6 @@ a[href="#register"]:hover {
   border-bottom-right-radius: 15px;
   border-top-right-radius: -10px;
   padding: 5.5px 12px 5.5px 10px;
-  font-size: 20px;
   background-color: #fe2d34;
 }
 
@@ -744,19 +735,16 @@ a[href="#register"]:hover {
 .fa-times {
   color: #00aecd;
   padding: 2px 4px;
-  cursor: pointer;
 }
 
 .red-label {
   background-color: #ef2809;
-  font-size: 10px;
   padding: 0 6px;
   border-radius: 2px;
 }
 
 .green-label {
   background-color: #090;
-  font-size: 10px;
   padding: 0 6px;
   border-radius: 2px;
 }
@@ -831,7 +819,6 @@ a[href="#register"]:hover {
 
 #section-button {
   padding: 5px 10px;
-  outline: none;
   border: none;
   line-height: 20px;
 }
@@ -842,8 +829,7 @@ a[href="#register"]:hover {
 
 #navbar-sections {
   padding-top: 7px;
-  margin-top: -7px;
-  margin-bottom: 13px;
+  margin: -7px 0 13px 0;
 }
 
 #navbar-sections li {
@@ -854,12 +840,10 @@ a[href="#register"]:hover {
 }
 
 #navbar-sections a {
-  margin: 0;
   padding: 0 5px;
   border: 2px solid #fff;
   border-radius: 5px;
   height: 40px;
-  font-size: 11px;
   justify-content: center;
 }
 
@@ -1008,7 +992,6 @@ a[href="#register"]:hover {
 
 .bulletin-form {
   padding: 0;
-  outline: none;
   border-radius: 25px;
   border: 1px solid #be2007;
   padding: 5px 10px;
@@ -1077,7 +1060,6 @@ footer {
 }
 
 .marketplace-nav h2 {
-  margin: 0;
   font-size: 32px;
 }
 
@@ -1093,7 +1075,6 @@ footer {
   border-radius: 24px;
   padding: 7px 12px;
   background-color: unset;
-  outline: none;
 }
 
 #btn-marketplace:hover {
@@ -1193,7 +1174,6 @@ footer {
 }
 
 #send-message input {
-  outline: none;
   padding: 9px 12px;
   width: 250.33px;
   align-self: center;
@@ -1204,7 +1184,6 @@ footer {
 
 #send-message button {
   background-color: rgb(0, 94, 184);
-  outline: none;
   border: none;
   width: 113px;
   padding: 9px 12px;
@@ -1215,10 +1194,6 @@ footer {
 
 #send-message button:hover {
   background-color: #004381;
-}
-
-#play-store {
-  justify-content: flex-end;
 }
 
 #play-store a {
@@ -1453,7 +1428,6 @@ footer {
 }
 
 #errorTitle {
-  font-size: 100px;
   margin-top: -40px;
 }
 
@@ -1462,7 +1436,6 @@ footer {
 }
 
 #errorText {
-  font-size: 20px;
   color: #0065b3;
   width: fit-content;
   margin: 30px auto;
@@ -1522,12 +1495,11 @@ footer {
 }
 
 .items-card sup {
-  font-size: 10px;
   top: 4px;
 }
 
 .items-card sub {
-  font-size: 10px;
+  font-size: 9px;
   bottom: 44px;
 }
 
@@ -1544,7 +1516,7 @@ footer {
 }
 
 .items-card small {
-  margin-left: 13px;
+  margin-left: 11px;
 }
 
 .percentage {
@@ -1572,9 +1544,6 @@ footer {
 }
 
 /*TOOLTIP IN ITEMS*/
-.shop-tooltip {
-  cursor: pointer;
-}
 
 .shop-tooltip .shop-card {
   width: 24px;
@@ -1590,7 +1559,6 @@ footer {
   visibility: hidden;
   height: 17px;
   background-color: #22a7f0;
-  font-size: 11px;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
   padding: 5px 10px;
@@ -1630,11 +1598,8 @@ footer {
 /*BUTTONS STYLE-FOCUS-BARS SECTION*/
 
 .arrow-buttons {
-  color: rgb(0, 94, 184);
-  font-size: 20px;
   opacity: 0.6;
   width: 42px;
-  outline: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
   height: 80px;
   top: 55%;
@@ -1770,19 +1735,12 @@ footer {
 }
 
 .compare-box span {
-  margin-left: 2px;
-  margin-top: 2px;
-}
-
-.compare-box input {
-  margin: 0;
-  vertical-align: middle;
+  margin: 2px 0 0 2px;
 }
 
 .available-item {
   background-color: #090;
   padding: 4px 6px;
-  font-size: 10.5px;
 }
 
 .items-id {
@@ -1818,11 +1776,6 @@ footer {
 
 .inactives {
   color: black;
-}
-
-.review,
-.change {
-  color: rgb(0, 94, 184);
 }
 
 .review a:hover,
@@ -1894,7 +1847,6 @@ footer {
 }
 
 .add-favourite {
-  color: rgb(0, 94, 184);
   border: 1px rgb(0, 94, 184) solid;
   font-size: 18px;
 }
@@ -1923,7 +1875,6 @@ footer {
 .main-image-item {
   width: 476px;
   height: 476px;
-  cursor: pointer;
 }
 
 .images-item {
@@ -1931,7 +1882,6 @@ footer {
   height: 48px;
   padding: 5px;
   margin: 3px;
-  cursor: pointer;
 }
 
 .images-item-hover {
@@ -2023,8 +1973,7 @@ footer {
 }
 
 .cart-inf {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0 20px;
 }
 
 .cart-title {
@@ -2058,15 +2007,6 @@ footer {
   border: 1px rgb(187, 187, 187) solid;
   outline-color: rgb(102, 102, 102);
   margin-right: 10px;
-}
-
-.cart-price {
-  justify-content: flex-end;
-}
-
-.cart-current-price,
-.current-lv-cart {
-  font-size: 20px;
 }
 
 .current-pennies-cart {
@@ -2116,10 +2056,6 @@ footer {
 
 #information-order {
   width: 260px;
-}
-
-#information-order h2 {
-  font-size: 20px;
 }
 
 #delivery-price {
@@ -2176,7 +2112,6 @@ footer {
 .inputs-voucher {
   width: 191px;
   height: 32px;
-  outline: none;
   border: 1px rgb(187, 187, 187) solid;
 }
 
@@ -2201,10 +2136,10 @@ footer {
   height: 3px;
 }
 
-.total-price-container {
+/* .total-price-container {
   display: flex;
   justify-content: flex-end;
-}
+} */
 
 .cart-total-price {
   margin-left: 50px;
@@ -2289,7 +2224,6 @@ footer {
 }
 
 #toHomePage {
-  background-color: rgb(0, 94, 184);
   padding: 7px 12px;
 }
 
@@ -2319,7 +2253,6 @@ footer {
 }
 
 #newAccount {
-  color: rgb(0, 94, 184);
   border: 1px rgb(0, 94, 184) solid;
   padding: 7px 12px;
 }
@@ -2382,6 +2315,7 @@ footer {
 }
 
 .fav-cart-icon {
+  color: white;
   align-self: center;
 }
 
@@ -2392,7 +2326,6 @@ footer {
 }
 
 .info-cart {
-  justify-content: flex-end;
   margin-bottom: 3px;
 }
 
@@ -2414,16 +2347,7 @@ footer {
 .fav-current-price,
 .fav-current-pennies,
 .fav-current-lv {
-  font-size: 18px;
   color: rgb(239, 40, 9);
-}
-
-.fav-current-pennies {
-  font-size: 11px;
-}
-
-.fav-delete {
-  color: rgb(0, 94, 184);
 }
 
 .fav-delete i {
@@ -2431,7 +2355,6 @@ footer {
 }
 
 .fav-delete span {
-  cursor: pointer;
   margin-left: 5px;
 }
 
@@ -2444,7 +2367,6 @@ footer {
   padding: 10px 0;
   width: 185px;
   text-align: start;
-  color: rgb(0, 94, 184);
 }
 
 .fav-options a:hover {
@@ -2474,7 +2396,6 @@ footer {
 }
 
 #emptyFav a {
-  background-color: rgb(0, 94, 184);
   padding: 7px 12px;
   margin-top: 15px;
 }
@@ -2541,7 +2462,6 @@ footer {
 #searchContainer input {
   border: 2px solid rgb(204, 204, 204);
   color: rgb(102, 102, 102);
-  outline: none;
 }
 
 #searchContainer select {

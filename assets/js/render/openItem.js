@@ -66,10 +66,10 @@ function openItem(currentItem) {
     const itemInformation = utils.createNewElement('div');
     const addItemContainer = utils.createNewElement('div');
     addItemContainer.className = 'add-item-in';
-    const raitingContainer = utils.createNewElement('div');
+    const ratingContainer = utils.createNewElement('div');
     const textClient = utils.createNewElement('p', 'Оценка от клиенти:');
     const review = utils.createNewElement('div');
-    review.className = 'mb-20 cursor review';
+    review.className = 'mb-20 cursor review clr-bl-94';
     const addReview = utils.createNewElement('a', 'Добави ревю');
     addReview.href = '#';
     const line = utils.createNewElement('span', '|');
@@ -81,7 +81,7 @@ function openItem(currentItem) {
     const deliveryCity = utils.createNewElement('div', `Ще се достави в: София-град(Столична)`);
     const changeBtn = utils.createNewElement('a', 'промени');
     changeBtn.href = '#';
-    changeBtn.className = 'mb-20 cursor change';
+    changeBtn.className = 'mb-20 cursor change clr-bl-94';
     const benefits = utils.createNewElement('div', 'Ползи:');
     benefits.className = 'delivery benefits-delivery';
     const giftContainer = utils.createNewElement('div');
@@ -94,7 +94,7 @@ function openItem(currentItem) {
     const cartTxt = utils.createNewElement('span', 'карта');
     const cartLink = utils.createNewElement('a', 'вижте повече');
     cartLink.href = '#';
-    cartLink.className = 'change';
+    cartLink.className = 'change clr-bl-94';
     const shipContainer = utils.createNewElement('div');
     shipContainer.className = 'benefits-containers';
     const shipIcon = utils.createNewElement('i');
@@ -110,28 +110,29 @@ function openItem(currentItem) {
     regularContainer.className = 'fw-600 position-relative regular-container-item';
     const totalContainer = utils.createNewElement('div');
     totalContainer.className = 'position-relative total-container';
-    const currentPrice = utils.createNewElement('span', currentItem.currentPrice)
+    const currPr = currentItem.currentPrice.split('.');
+    const currentPrice = utils.createNewElement('span', currPr[0])
     currentPrice.className = 'fw-600 current-price-item';
-    const currentPennies = utils.createNewElement('sup', currentItem.currentPennies);
+    const currentPennies = utils.createNewElement('sup', currPr[1]);
     currentPennies.className = 'fw-600 position-absolute current-pennies-item';
     const lv = utils.createNewElement('span', 'лв.')
     lv.className = 'fw-600 lv-item';
     if (currentItem.regularPrice) {
-        const regularPrice = utils.createNewElement('span', currentItem.regularPrice)
+        const regPr = currentItem.regularPrice.split('.');
+        const regularPrice = utils.createNewElement('span', regPr[0])
         regularPrice.className = 'regular-price-item';
-        const regularPennies = utils.createNewElement('sup', currentItem.regularPennies);
+        const regularPennies = utils.createNewElement('sup', regPr[1]);
         regularPennies.className = 'position-absolute regular-pennies-item';
         const lv = utils.createNewElement('span', 'лв.')
         lv.className = 'lv';
-        let percentage = utils.calculatingPercentage(currentItem);
-        const sale = utils.createNewElement('span', `(-${percentage}%)`);
+        const sale = utils.createNewElement('span', `(-${currentItem.discount}%)`);
         sale.className = 'item-sale';
         regularContainer.append(regularPrice, regularPennies, lv, sale);
     }
 
     totalContainer.append(currentPrice, currentPennies, lv);
     const availableText = utils.createNewElement('span', 'в наличност');
-    availableText.className = 'main-bckgr fw-700 rounded-3 available-item';
+    availableText.className = 'main-bckgr fw-700 rounded-3 available-item fs-10';
     const leasing = utils.createNewElement('span');
     const leasingTitle = utils.createNewElement('p', 'Месечни вноски');
     const btnContainer = utils.createNewElement('div');
@@ -150,7 +151,7 @@ function openItem(currentItem) {
     const cartText = utils.createNewElement('span', 'Добави в количката');
     cartText.className = 'cart-text';
     const addToFavourite = utils.createNewElement('div');
-    addToFavourite.className = 'display-flex mb-10 cursor fw-400 rounded-4 add-favourite main-align color-white';
+    addToFavourite.className = 'display-flex mb-10 cursor fw-400 rounded-4 add-favourite clr-bl-94 main-align color-white';
     const favIconContainer = utils.createNewElement('span');
     const favIcon = utils.createNewElement('i');
     favIcon.className = 'far fa-heart heart';
@@ -201,11 +202,11 @@ function openItem(currentItem) {
     compareBox.append(check, text);
     mainContainer.append(containerImages, containerInformation);
     containerInformation.append(itemInformation, addItemContainer);
-    itemInformation.append(raitingContainer);
-    raitingContainer.append(textClient);
-    let currentRaiting = currentItem.raiting;
-    utils.rating(currentRaiting, raitingContainer);
-    raitingContainer.append(review, delivery, deliveryCity, changeBtn, benefits, giftContainer, cart, shipContainer, persText);
+    itemInformation.append(ratingContainer);
+    ratingContainer.append(textClient);
+    let currentRating = currentItem.rating;
+    utils.rating(currentRating, ratingContainer);
+    ratingContainer.append(review, delivery, deliveryCity, changeBtn, benefits, giftContainer, cart, shipContainer, persText);
     giftContainer.append(giftIcon, giftText);
     cart.append(cartTxt, cartLink);
     shipContainer.append(shipIcon, shipText);

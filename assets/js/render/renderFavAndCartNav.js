@@ -9,15 +9,15 @@ function renderFavAndCart(favourites, cart) {
         const soonAddedText = utils.createNewElement('p', 'НАСКОРО ДОБАВЕНИ');
         const mainDiv = document.createElement('div');
         mainDiv.className = 'dropdown-overflow';
-        soonAddedText.className = 'soon-added-text color-bl-1';
+        soonAddedText.className = 'soon-added-text color-bl-1 fs-10';
         mainDiv.append(soonAddedText);
         FAVOURITE_NAV_CONTAINER.append(mainDiv);
         favourites.forEach(el => {
             const articleDiv = utils.createNewElement('div');
-            articleDiv.className = 'position-relative display-flex justify-between nav-dropdown-item';
+            articleDiv.className = 'position-relative display-flex justify-between fs-11 nav-dropdown-item';
             const img = utils.createNewElement('img');
             img.src = el.image;
-            img.className = 'nav-dropdown-img';
+            img.className = 'nav-dropdown-img cursor';
             const title = utils.createNewElement('a', el.title);
             title.href = `#article/${el.id}`;
             title.className = 'nav-dropdown-title';
@@ -34,12 +34,14 @@ function renderFavAndCart(favourites, cart) {
 
             const priceDiv = utils.createNewElement('div');
             const price = utils.createNewElement('p');
-            price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
+            const currentPr = el.currentPrice.split('.');
+            price.innerHTML = `${currentPr[0]}<sup>${currentPr[1]}</sup>лв.`;
             price.className = 'fw-600 price-dropdown color-bl-1';
             let regularPrice;
             if (el.regularPrice) {
+                const regPr = el.regularPrice.split('.');
                 regularPrice = utils.createNewElement('p');
-                regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
+                regularPrice.innerHTML = `${regPr[0]}<sup>${regPr[1]}</sup>лв.`;
                 regularPrice.className = 'regular-price-dropdown color-bl-1';
             }
 
@@ -47,7 +49,7 @@ function renderFavAndCart(favourites, cart) {
             priceDiv.className = 'price';
             const hiddenOptions = utils.createNewElement('div');
             const addToCartText = utils.createNewElement('p');
-            addToCartText.innerHTML = '<i class="fas fa-shopping-cart"></i>Добави в количката';
+            addToCartText.innerHTML = '<i class="fas fa-shopping-cart fs-20"></i>Добави в количката';
             addToCartText.addEventListener('click', (e) => {
                 e.stopPropagation();
                 userModel.addToCart(el.id);
@@ -97,7 +99,7 @@ function renderFavAndCart(favourites, cart) {
         CART_NAV_CONTAINER.innerHTML = `<img src="./assets/images/icons/triangle-outline-variant.png"
         class="position-absolute triangle">`;
         const soonAddedText = utils.createNewElement('p', 'НАСКОРО ДОБАВЕНИ');
-        soonAddedText.className = 'soon-added-text color-bl-1';
+        soonAddedText.className = 'soon-added-text color-bl-1 fs-10';
         const mainDiv = document.createElement('div');
         mainDiv.className = 'dropdown-overflow';
         mainDiv.append(soonAddedText);
@@ -105,7 +107,7 @@ function renderFavAndCart(favourites, cart) {
         let totalPrice = 0;
         cart.forEach(el => {
             const articleDiv = utils.createNewElement('div');
-            articleDiv.className = 'position-relative display-flex justify-between nav-dropdown-item';
+            articleDiv.className = 'position-relative display-flex justify-between fs-11 nav-dropdown-item';
             const img = utils.createNewElement('img');
             img.src = el.image;
             img.className = 'nav-dropdown-img';
@@ -127,12 +129,14 @@ function renderFavAndCart(favourites, cart) {
             count.className = 'cart-items-count';
             const priceDiv = utils.createNewElement('div');
             const price = utils.createNewElement('p');
-            price.innerHTML = `${el.currentPrice}<sup>${el.currentPennies}</sup>лв.`;
+            const currentPr = el.currentPrice.split('.');
+            price.innerHTML = `${currentPr[0]}<sup>${currentPr[1]}</sup>лв.`;
             price.className = 'fw-600 price-dropdown color-bl-1';
             let regularPrice;
             if (el.regularPrice) {
+                const regPr = el.regularPrice.split('.');
                 regularPrice = utils.createNewElement('p');
-                regularPrice.innerHTML = `${el.regularPrice}<sup>${el.regularPennies}</sup>лв.`;
+                regularPrice.innerHTML = `${regPr[0]}<sup>${regPr[1]}</sup>лв.`;
                 regularPrice.className = 'regular-price-dropdown color-bl-1';
             }
             priceDiv.append(price, regularPrice || '');
@@ -149,7 +153,7 @@ function renderFavAndCart(favourites, cart) {
             hiddenOptions.className = 'position-absolute display-flex hidden-options';
             articleDiv.append(img, title, count, priceDiv, hiddenOptions);
             mainDiv.append(articleDiv);
-            totalPrice += eval(`${el.currentPrice}.${el.currentPennies}`) * el.count;
+            totalPrice += eval(`${currentPr[0]}.${currentPr[1]}`) * el.count;
         });
 
         const totalText = utils.createNewElement('div');
