@@ -1861,6 +1861,7 @@ footer {
 }
 
 .add-shopping-cart {
+  text-align: center;
   background-image: linear-gradient(
     to right,
     rgb(74, 96, 193) 10%,
@@ -1880,6 +1881,7 @@ footer {
 
 .cart-text,
 .fav-text {
+  font-size: 16px;
   padding: 10px 30px 10px 10px;
   align-self: center;
 }
