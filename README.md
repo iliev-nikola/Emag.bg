@@ -5,7 +5,7 @@
 ### Building a SPA - copy of emag.bg website with some basic functionality
 
 - Pattern: MVC
-- Languages: Vanilla JS, HTML & CSS
+- Languages and technologies: JavaScript, HTML, CSS
 - Storage: Browser's Local Storage
 - Link to github pages: [Emag.bg](https://iliev-nikola.github.io/Emag.bg/)
 - Contributors: [Nikola Iliev](https://github.com/iliev-nikola "Nikola Iliev") & [Marina Damyanova](https://github.com/mtdamyanova "Marina Damyanova")
